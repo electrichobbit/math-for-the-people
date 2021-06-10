@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext>
+	<book xml:id="math-for-the-people-module-template">
+		<title>Math for the People - module Template</title>
+		<chapter xml:id="module-tag">
+			<title>Title of Module Goes Here</title>
+			<introduction xml:id="module-tag-introduction">
+				<p>The introduction should provide background on the topic.  It should be relatively brief - there's more space to go into background information during the background section.</p>
+				<p>Text of introduction second paragraph</p>
+			</introduction>
+			<section xml:id="module-tag-objectives">
+				<title>Objectives</title>
+				<p>
+					By the end of this module students will be able to:
+					<ol>
+						<li> Objective 1.</li>
+						<li> Objective 2.</li>
+					</ol>
+					Objectives should focus on both mathematical and social justice goals.  The objective should start with a verb (e.g. Calculate the financial costs of a payday loan.), be at an appropriate level for first-year college undergraduates, and be assessable using the provided exercises at the end of the module.  For a list of assessable activities organized by level, see <a href="https://mygrowthmindsethome.files.wordpress.com/2019/03/blooms-taxonomy.pdf">Bloom's Taxonomy</a>.  Objectives for this level will fall roughly in the range of Comprehension, Application, and Analysis.
+				</p>
+			</section>
+			<section xml:id="module-tag-background">
+				<title>Understanding the Issue</title>
+				<p> This section should explain the background in more detail, so that students are prepared to understand the social problem in context.</p>
+			</section>
+			<section xml:id="module-tag-cui-bono">
+				<title>Cui Bono - Who Benefits?</title>
+				<p> When a crime is committed, the investigation often revolves around the concept of <em>cui bono</em> - Latin for "who benefits?"  While social justice issues are not crimes (well, sometimes they are), thinking about who stands to profit from the status quo can help us to understand how to solve the problem.</p>
+			</section>
+			<section xml:id="module-tag-big-problem">
+				<title>Big Problem: Insert Big Problem Title</title>
+				<assemblage>
+					<p>Description of Big Problem - what questions do we want to use mathematics to answer?</p>
+				</assemblage>
+				<p> Text of paragraph elucidating big problem</p>
+			</section>
+			<section xml:id="module-tag-math-topic-topicname">
+				<title>Name of Math Topic I</title>
+				<p> Description of math topic.  We suggest that each module should cover 3-4 math topics.  These topics should be directly applicable to the social justice topic, but don't need to be related in other ways.  Each topic should be approachable without any specialized background  You can insert LaTeX like this: <m>a^2 + b^2 = c^2</m>.  You can include interactive elements like Desmos or Geogebra using an interactive tag, as seen in <xref ref="module-tag-math-topic-topicname-desmos-exercise-example"/>:
+				</p>
+				<figure xml:id="module-tag-math-topic-topicname-desmos-exercise-example">
+					<interactive desmos="ttox1bvxku" width="60%" aspect="2:3" />
+					<caption>This shows you how to include a Desmos object.</caption>
+				</figure>
+				<p>
+					You can include Sage math cells in your text by using a sage tag, and specifying the language in the @language attribute.  Available languages include sage, gap, gp, maxima, octave, python, r, singular, and more (a full list is available at <a href="https://doc.sagemath.org/html/en/reference/spkg/">https://doc.sagemath.org/html/en/reference/spkg/</a>.  Any characters which are special characters in xml (like &lt; or &amp;) will need to be escaped just as they would in the regular text.
+					<sage language="python">
+						<input>
+							x  = 2
+							y  = 2
+							z = x + y
+							print(z)
+						</input>
+					</sage>
+				</p>
+			</section>
+			<section xml:id="module-tag-math-topic-topicname2">
+				<title>Name of Math Topic II</title>
+				<p>Description of math topic</p>
+			</section>
+			<section xml:id="module-tag-math-topic-topicname3">
+				<title>Name of Math Topic III</title>
+				<p>Description of math topic</p>
+			</section>
+			<section xml:id="module-tag-solving-for-change">
+				<title>Solving for Change</title>
+				<p>Use the mathematics topics to explore the big problem.  Can we use mathematics to suggest solutions? </p>
+			</section>
+			<conclusion xml:id="module-tag-conclusion">
+				<p> Conclusion of module.</p>
+			</conclusion>
+			<reading-questions xml:id="module-tag-reflection">
+				<exercise> <p>Reflection or discussion question.  These questions should be non-quantitative in nature, but involve reflection on the mathematics done in analyzing the social question.</p></exercise>
+			</reading-questions>
+			<exercises xml:id="module-tag-exercises">
+				<exercise> <p>Mathematical exercise.  These exercises should be quantitative in nature, but could involve other tasks, like gathering data, using technology, or analyzing consequences to come to an answer.  The answer need not be quantitative.</p></exercise>
+				<exercise> <p>Mathematical exercise</p></exercise>
+			</exercises>
+			<section xml:id="module-tag-references">
+				<title>References</title>
+				<p>References will be in AMS style.  Please use your module-tag in the label name so that we can avoid collisions between similarly named references in multiple modules. Feel free to use a mixture of peer-reviewed and non-peer-reveiewed references.</p>
+				<biblio type="raw" xml:id="module-tag-biblio-book-reference-name">
+					A. Author, B. Second-Author, <title>Title of Reference</title>, Publisher, Place of Publication, year, DOI, <url href="http://citation.web.page"/>.
+				</biblio>
+				<biblio xml:id="module-tag-biblio-article-reference-name">
+				 	A. Author, <title>Title of Article</title>, Abbreviated Journal Title, Volume (year) page--page, <url href="http://citation.web.page"/>.
+				 </biblio>
+				 <biblio xml:id="module-tag-biblio-other-reference-name"> 
+				 	A. Author, Publisher of Information, Title of Webpage (date), <url href="http://citation.web.page"/>.
+				 </biblio>
+			</section>
+		</chapter>
+	</book>
+</pretext>
