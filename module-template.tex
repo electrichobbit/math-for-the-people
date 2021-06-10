@@ -1,0 +1,177 @@
+\documentclass[oneside,10pt]{book}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+\begin{chapter}{Title of Module Goes Here}
+%For each module, you should choose a "module tag" to use in all of the section labels on your
+%section.  The tag should be in kebab case (all lowercase, with hyphens (-) replacing spaces.
+%For example, payday-lending or racially-motivated-policing.  You should replace "module-tag"
+%everywhere it appears in this template with that tag.
+\label{module-tag}
+%The introduction should give a very brief overview of the material which will be covered in the
+%module.  This introduction will be published on the first page of the module, above the table
+%of contents in the HTML version
+\begin{section}{Introduction}
+\label{module-tag-introduction}
+Pretext has the ability to embed objects like Desmos and interactive SageMathCloud exercises.  The following is a short list of some possible interactive/multimedia elements you can insert into the text.  While these elements will not be interactive in a LaTeX document, using these formats will help us translate the document into PreText.
+
+\begin{itemize}
+\item When including images, videos, or sound files please create a zipped folder with the original files at high resolution – this will help us in creating the final PreTeXt document.  Be sure to include proper citations for any files from sources and use images/videos/files which are licensed CC-BY.
+\item To insert a Geogebra object, you'll need the ID number.  In the URL for the Geogebra object, which is of the form https://www.geogebra.org/m/KGn2d4Qd, this number is the final piece.  Copy the code below, replacing the ID number with the number of the object you want to insert.
+\begin{verbatim}
+	<figure>
+		<interactive geogebra="KGn2d4Qd"/>
+		<caption>You can include a caption describing the activity, or allow the editor to add one for you.  The editing team will also add references to the figure as appropriate in the text.</caption>
+	</figure>
+\end{verbatim}
+\item To insert a Desmos object, you'll need the ID number.  To find the ID number, go to the Desmos object that you want to share and choose ``Share,'' followed by ``Embed.''  You'll get a link that looks like https://www.desmos.com/calculator/ttox1bvxku.  The ID number is the last part of the URL.  Copy this code and replace the ID number here with the one that you wish to embed.  You can leave the width and aspect unchanged - the editor will adjust these values when putting the document in PreText.
+\begin{verbatim}
+	<figure>
+		<interactive desmos="ttox1bvxku" width="60\%" aspect="2:3"/>
+		<caption>You can include a caption describing the activity, or allow the editor to add one for you. The editing team will also add references to the figure as appropriate in the text.</caption>
+	</figure>
+\end{verbatim}
+\item To insert a video, we'll use a similar format.  You can insert a locally saved video or a link to a video using the following code.  The file should be mp4, ogg, or webm.  Make sure that your video is licensed appropriately to share.
+\begin{verbatim}
+	<figure>
+		<video source="module-tag-images/video_file.mp4"/>
+		<caption>You can include a caption describing the activity, or allow the editor to add one for you. The editing team will also add references to the figure as appropriate in the text.</caption>
+	</figure>
+\end{verbatim}
+\item If you want to insert a YouTube video, you can do so using a @youtube attribute instead of source.  You'll need the video ID, which is the final part of the youtube url (https://www.youtube.com/watch?v=v8gwa4z29Co) after the ``v=''.  There may be other characters after this, which represent other aspects of how you accessed the video, like the search engine you found it from - you just need this 11 character ID.
+\begin{verbatim}
+	<figure>
+		<video youtube="v8gwa4z29Co">
+		<caption>You can include a caption describing the activity, or allow the editor to add one for you. The editing team will also add references to the figure as appropriate in the text.</caption>
+	</figure>
+\end{verbatim}
+\item Computer programming code in Python or R (or any other languages/packages supported by SageMathCloud - see \url{https://doc.sagemath.org/html/en/reference/spkg/} for a full list) can be added to your document using the following code.  This code will be interactive in the online version of the textbook. This code can be used to introduce students to programming concepts or to do calculations. Replace the language with whatever language you wish to code in and add your own code here:
+\begin{verbatim}
+	<sage language="python">
+		<input>
+			x  = 2
+			y  = 2
+			z = x + y
+			print(z)
+		</input>
+	</sage>
+\end{verbatim}
+\end{itemize}
+\end{section}
+
+%Every module should have objectives, both for the mathematical content & for the social 
+%justice content.  You should make sure that your objectives are student-centered and 
+%culturally responsive.  For a list of assessable activities organized by level, see Bloom's 
+%Taxonomy at https://mygrowthmindsethome.files.wordpress.com/2019/03/blooms-taxonomy.pdf
+%Objectives for this level will fall roughly in the range of Comprehension, Application, and Analysis,
+%since the course is aimed at a first-year post-secondary audience.
+\begin{section}{Objectives}
+\label{module-tag-objectives}
+By the end of this module students will be able to:%
+	\begin{enumerate}
+		\item{}Objective 1.%
+		\item{}Objective 2.%
+	\end{enumerate}
+\end{section}
+
+%The first content section is Understanding the Issue.  This section serves as a deep dive into 
+%the social justice issue.  The discussion should be accessible to all student audiences,
+%regardless of background.  For some social justice issues, like racially-biased policing
+%or access to reproductive care, remember that students may have personal experiences
+%with the topic, which should be respected and validated.
+\begin{section}{Understanding The Issue}
+\label{module-tag-understanding-the-issue}
+\end{section}
+
+%The second content section is Cui Bono: Who Benefits? In this section, which is relatively short,
+%should explore who the chief obstacles are to fixing this problem.  With any social justice issue,
+%there will always be people who benefit from maintaining the status quo.  By establishing who
+%those people and institutions are, we can give students an idea of who will be most resistant
+%to change.
+\begin{section}{Cui Bono: Who Benefits?}
+\label{module-tag-cui-bono}
+\end{section}
+
+%The third content section is the Big Problem - this is a short summary of how we'll use mathematics
+%to look at the issue that we're interested in.  This summary shouldn't be long - you really just want
+%to introduce the mathematical applications.  You should start the section with a short description of
+%the big problem in the framebox.  This will be set aside in the actual text to give emphasis.
+\begin{section}{Big Problem: Insert Big Problem Title}
+\label{module-tag-big-problem}
+\framebox{
+The big problem should be summarized in this box.
+}
+\end{section}
+
+%We suggest that most modules should cover 3-4 mathematical topics.  These topics should be 
+%directly applicable to the social justice topic, but don't need to be connected in other ways. For
+%example, a module on climate change might cover correlation and regression (to show that the
+%global temperatures are rising), geometry (to explore how carbon dioxide traps solar radiation
+%in the atmosphere), and data analysis/visualization (to look at which industries and countries
+%contribute to the crisis).  Our goal is that each module should be sized to cover in 2-3 weeks
+%of class time in a traditional American 16 week course or 1-1.5 weeks in an 8 week course. Each
+%topic should be approachable without any specialized background.
+\begin{section}{Math Topic I}
+\label{module-tag-math-topic-1}
+\end{section}
+
+\begin{section}{Math Topic II}
+\label{module-tag-math-topic-2}
+\end{section}
+
+\begin{section}{Math Topic III}
+\label{module-tag-math-topic-3}
+\end{section}
+
+%Solving for Change is the keystone of each module.  This section should integrate the social
+%justice concept with the mathematics that we've learned in the previous sections.  How can
+%this mathematics be used to understand the problem, start conversations, and begin to 
+%create change?  You can integrate mathematical explorations with more specific information
+%(especially quantitative information) about the problem.  
+\begin{section}{Solving for Change}
+\label{module-tag-solving-for-change}
+\end{section}
+
+%Every module should have reading questions which encourage deeper thought and research 
+%into the topic of the module.  This doesn't necessarily need to be quantitative in nature, but
+%the questions should encourage quantitative inquiry and use of the mathematical topics
+%to understand the issue and begin creating change.
+\begin{section}{Reading Questions}
+\label{module-tag-reading-questions}
+\begin{enumerate}
+\item 
+\end{enumerate}
+\end{section}
+
+%Every module should also have exercises which give the students opportunity to practice
+%their quantitative skills. These exercises can be relatively short computations, more 
+%involved problems which require computations and reasoning about the social justice
+%topic, or more extensive projects involving research, computation, and analysis.
+\begin{section}{Exercises}
+\label{module-tag-exercises}
+\begin{enumerate}
+\item 
+\end{enumerate}
+\end{section}
+
+\begin{section}{References}
+%References will be in AMS style.  Please use your module-tag in the label name so that we can avoid collisions 
+%between similarly named references in multiple modules. Feel free to use a mixture of peer-reviewed and 
+%non-peer-reveiewed references.
+\label{module-tag-references}
+\begin{thebibliography}{3}
+	\bibitem{module-tag-biblio-book-reference-name} 
+		A. Author, B. Second-Author, \textit{Title of Book}, Publisher, Place of Publication, year, DOI, \url{http://citation.web.page}. 
+	\bibitem{module-tag-biblio-article-reference-name} 
+		A. Author, Title of Article, \textit{Abbreviated Journal Title} \textbf{Volume} (year) page--page, \url{http://citation.web.page}.
+	\bibitem{module-tag-biblio-other-reference-name} 
+		A. Author, Publisher of Information, Title of Webpage (date), \url{http://citation.web.page}.
+\end{thebibliography}
+\end{section}
+\end{chapter}
+\end{document}
