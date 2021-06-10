@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext>
+	<book xml:id="math-for-the-people-module-template">
+		<title>Math for the People - module Template</title>
+		<chapter xml:id="greenhouse-gas">
+			<title>Greenhouse Gas Emissions</title>
+			<introduction xml:id="greenhouse-gas-introduction">
+				<p>The introduction should provide background on the topic.  It should be relatively brief - there's more space to go into background information during the background section.</p>
+				<p>Text of introduction second paragraph</p>
+			</introduction>
+			<section xml:id="greenhouse-gas-objectives">
+				<title>Objectives</title>
+				<p>
+					By the end of this module students will be able to:
+					<ol>
+						<li> Describe the scale of global greenhouse gas emissions.</li>
+						<li> Compare the quantity of emissions between individuals, corporations, and nation states.</li>
+						<li> Model the greenhouse effect with varying levels of greenhouse gases.</li>
+						<li> Create data visualizations of both quantitative and qualitative data related to greenhouse gas emissions.</li>
+						<li> Extrapolate potential future values of greenhouse gas emissions using regression.</li>
+						<li> Evaluate strategies for reducing emissions using quantitative tools.</li>
+						<li> Discuss the consequences of failing to cut greenhouse gas emissions.</li>
+						<li> Propose actions to mitigate emissions in your personal life, institution, and nation</li>
+					</ol>
+				</p>
+			</section>
+			<section xml:id="greenhouse-gas-background">
+				<title>Understanding the Issue</title>
+				<p> This section should explain the background in more detail, so that students are prepared to understand the social problem in context.</p>
+			</section>
+			<section xml:id="greenhouse-gas-cui-bono">
+				<title>Cui Bono - Who Benefits?</title>
+				<p> When a crime is committed, the investigation often revolves around the concept of <em>cui bono</em> - Latin for "who benefits?"  While social justice issues are not crimes (well, sometimes they are), thinking about who stands to profit from the status quo can help us to understand how to solve the problem.</p>
+			</section>
+			<section xml:id="greenhouse-gas-big-problem">
+				<title>Big Problem: Insert Big Problem Title</title>
+				<assemblage>
+					<p>Description of Big Problem - what questions do we want to use mathematics to answer?</p>
+				</assemblage>
+				<p> Text of paragraph elucidating big problem</p>
+			</section>
+			<section xml:id="greenhouse-gas-math-topic-scientific-notation">
+				<title>Scientific Notation and Number Sense</title>
+
+
+				<p> Description of math topic.  We suggest that each module should cover 3-4 math topics.  These topics should be directly applicable to the social justice topic, but don't need to be related in other ways.  Each topic should be approachable without any specialized background  You can insert LaTeX like this: <m>a^2 + b^2 = c^2</m>. 
+				<me>y = 2*x^2 + 3\sin{x}</me>
+				 You can include interactive elements like Desmos or Geogebra using an interactive tag, as seen in <xref ref="greenhouse-gas-math-topic-topicname-desmos-exercise-example"/>:
+				}
+				</p>
+				<figure xml:id="greenhouse-gas-math-topic-topicname-desmos-exercise-example">
+					<interactive desmos="ttox1bvxku" width="60%" aspect="2:3" />
+					<caption>This shows you how to include a Desmos object.</caption>
+				</figure>
+				<p>
+					You can include Sage math cells in your text by using a sage tag, and specifying the language in the @language attribute.  Available languages include sage, gap, gp, maxima, octave, python, r, singular, and more (a full list is available at <a href="https://doc.sagemath.org/html/en/reference/spkg/">https://doc.sagemath.org/html/en/reference/spkg/</a>.  Any characters which are special characters in xml (like &lt; or &amp;) will need to be escaped just as they would in the regular text.
+					<sage language="python">
+						<input>
+							x  = 2
+							y  = 2
+							z = x + y
+							print(z)
+						</input>
+					</sage>
+				</p>
+			</section>
+			<section xml:id="greenhouse-gas-math-topic-regression">
+				<title>Regression</title>
+				<p>Description of math topic</p>
+			</section>
+			<section xml:id="greenhouse-gas-math-topic-data-visualization">
+				<title>Data Visualization</title>
+				<introduction>
+					<p>
+						Any organized collection of information used to understand or solve a problem is called <em>data</em>. When you think of data, you may think of a long list of numbers which represent a measurement.  However, this isn't generally the most useful way to look at a set of data.  When we look at data, we use <em>data visualizations</em> to help us understand the data more quickly and efficiently.  You're probably familiar with at least one type of data visualization, the graph, but we'll explore some more of the variety of ways in which people look at data in this module.
+					</p>
+				</introduction>
+				<subsection xml:id="greenhouse-gas-math-topic-data-visualization-types-of-data">
+					<title>Types of Data</title>
+					<p>
+						To understand data visualization, we first need to understand a bit about the way mathematicians talk about different kinds of data.  Mathematicians broadly divide data into two types:
+					</p>
+					<definition>
+						<title>Qualitative (Categorical) Data</title>
+						<p>
+							Data which is not numerical is called qualitative (or categorical) data.  Qualitative data can include things like names, categories of objects or people (which is where the other name, categorical, comes from), or different things which are being compared.
+						</p>
+					</definition>
+					<definition>
+						<title>Quantitative Data</title>
+						<p>
+							Data which can be represented numerically is called quantitative data.  This includes both data which is already numerical, and data which can be made numerical.  Dates are a good example of quantitative data that isn't always written in numbers (for example, "March" doesn't seem numerical, but can be represented by 3 since it is the 3rd month of the year).
+						</p>
+						<p>
+							Quantitative data naturally falls into one of two types - <em>discrete</em> and <em>continuous</em>.  While there are more complicated ways to distinguish between them mathematically, for our purpose the big difference is that with quantitative discrete data we have a small number of distinct possible responses, while with quantitative continuous data we have a large number of different possible responses.  
+						</p>
+					</definition>
+					<p>
+						It is important to be able to distinguish between quantitative discrete and quantitative continous data, because we visualize them in different ways.  Quantitative discrete data is characterized by:
+						<ul>
+							<li>Small number of different values.</li>
+							<li>Many values are repeated.</li>
+							<li>Often (but not always) quantitative discrete data is counts of objects.</li>
+						</ul>
+						Quantitative continuous data is characterized by:
+						<ul>
+							<li>Many different values.</li>
+							<li>Most data values are distinct or only occur a few times.</li>
+							<li>Often (but not always) quantitative continuous data are measurements.</li>
+						</ul>
+					</p>
+					<figure>
+						<image source="images/quantitative-data-types.png">
+							<description>
+								Images shows two boxes filled with numbers. The box on the left displays an example containing quantitative discrete data with many repeated values: 1, 2, 3, 2, 2, 5, 1, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 3, and 4. The box on the right contains quantitative continuous data with many different distinct values: 31, 53, 63, 18, 42, 31, 57, 86, 78, 29, 49, 22, 48, 85, 23, 19, 94, 11, 41, 31, 19, 17, 82, and 83.
+							</description>
+						</image>
+						<caption>
+							Quantitative discrete (left) vs. Quantitative continuous (right) data.
+						</caption>
+						
+					</figure>
+					<p>
+						Let's look at some data and decide whether it's qualitative, qunatitative discrete, or quantitative continuous.
+					</p>
+					<exercise>
+						<p>
+							A survey asks people how many cars they own.
+						</p>
+						<hint>
+							Would the answers here be numeric or non-numeric? Are multiple people likely to give the same answer? Would you expect to have many different answers?
+						</hint>
+						<answer>
+							Quantitative Discrete. The answer is a number, and most people will answer 0, 1, or 2, with with very few people giving larger numbers.
+						</answer>
+					</exercise>
+					<exercise>
+						<p>
+							A researcher collects a list of the companies which emit the most methane into the atmosphere.
+						</p>
+						<hint>
+							Would this data be numeric or non-numeric?
+						</hint>
+						<answer>
+							This is qualitative data - the data we are collecting consists of company names, not numbers.
+						</answer>
+					</exercise>
+					<exercise>
+						<p>
+							A scientist measures the amount of ozone in parts per million in the atmosphere at a particular location every day for a year.  Note: here the scientist is collecting two different (connected) pieces of data - the measurement of ozone and the day on which they collected it.
+						</p>
+						<hint>
+							Would this data be numeric or non-numeric? Are many of the measurements likely to be exactly the same on multiple days? Would you expect to have a lot of different values?
+						</hint>
+						<answer>
+							Both data sets are quantitative continuous.  The dates will be different on every day, and there will be many (365 or 366) different values.  The measurements are also unlikely to be exactly the same on different days, and there will be many different values.
+						</answer>
+					</exercise>
+				</subsection>
+				<subsection xml:id="greenhouse-gas-math-topic-data-visualization-graphs">
+					<title>Graphs</title>
+					<introduction>
+						<p>
+							Small amounts of data can be represented through things like lists and tables, but more complicated data is easier to understand through a visual representation.  Visual representations of data allow us to see patterns and trends in the data that would be much harder to detect in a simple list or table. 
+						</p>
+						<p>
+							The most common types of visual representation of data are called <em>graphs</em> or <em>charts</em>. While you're probably familiar with many types of graphs, we'll be introducing some that you may not be familiar with, and focusing on how and when to use the different types.  There are many different types of graphs, because each one is used to display different types of information and highlight different aspects of that information. In the following subsubsections, we'll go through each of the types of graphs
+						</p>
+					</introduction>i
+					<subsubsection xml:id="greenhouse-gas-math-topic-data-visualization-graphs-bar">
+						<title>Bar Graphs</title>
+						A bar graph is a 
+
+						Data from <xref ref="greenhouse-gas-biblio-emissions-by-country"/>
+						 <sage language="r">
+                			<input>
+                				categories &lt;- c("China","India","USA",
+                				"Australia","Vietnam","Canada",
+                				"Bangladesh","Nigeria","Congo (Dem. Rep.)","Colombia")
+                				levels &lt;- c(1750.00,636.40,499.81,125.59,113.56,
+                				106.85,105.14,89.78,75.34,67.98)
+                			</input>
+                		</sage>
+					</subsubsection>
+				</subsection>
+
+			</section>
+			<section xml:id="greenhouse-gas-math-topic-mathematical-models">
+				<title>Mathematical Models</title>
+				<p>Description of math topic</p>
+			</section>
+			<section xml:id="greenhouse-gas-solving-for-change">
+				<title>Solving for Change</title>
+				<p>Use the mathematics topics to explore the big problem.  Can we use mathematics to suggest solutions? </p>
+			</section>
+			<conclusion xml:id="greenhouse-gas-conclusion">
+				<p> Conclusion of module.</p>
+			</conclusion>
+			<reading-questions xml:id="greenhouse-gas-reflection">
+				<exercise> <p>Reflection or discussion question.  These questions should be non-quantitative in nature, but involve reflection on the mathematics done in analyzing the social question.</p></exercise>
+			</reading-questions>
+			<exercises xml:id="greenhouse-gas-exercises">
+				<exercise> <p>Mathematical exercise.  These exercises should be quantitative in nature, but could involve other tasks, like gathering data, using technology, or analyzing consequences to come to an answer.  The answer need not be quantitative.</p></exercise>
+				<exercise> <p>Mathematical exercise</p></exercise>
+			</exercises>
+			<section xml:id="greenhouse-gas-references">
+				<title>References</title>
+				<p>References will be in AMS style.  Please use your greenhouse-gas in the label name so that we can avoid collisions between similarly named references in multiple modules. Feel free to use a mixture of peer-reviewed and non-peer-reveiewed references.</p>
+				<biblio type="raw" xml:id="greenhouse-gas-biblio-book-reference-name">
+					A. Author, B. Second-Author, <title>Title of Reference</title>, Publisher, Place of Publication, year, DOI, <url href="http://citation.web.page"/>.
+				</biblio>
+				<biblio xml:id="greenhouse-gas-biblio-article-reference-name">
+				 	A. Author, <title>Title of Article</title>, Abbreviated Journal Title, Volume (year) page--page, <url href="http://citation.web.page"/>.
+				 </biblio>
+				 <biblio xml:id="greenhouse-gas-biblio-other-reference-name"> 
+				 	A. Author, Publisher of Information, Title of Webpage (date), <url href="http://citation.web.page"/>.
+				 </biblio>
+				 <biblio xml:id="greenhouse-gas-biblio-emissions-by-country">
+				 	Worlddata.info, Ranking of countries by greenhouse gas emissions (06-07-2021), <url href="https://www.worlddata.info/greenhouse-gas-by-country.php"/>.
+				 </biblio>
+			</section>
+		</chapter>
+	</book>
+</pretext>
