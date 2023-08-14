@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Outlier Analysis</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="gerrymandering-math-topic-statistics.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="gerrymandering.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="gerrymandering-solving-for-change.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="gerrymandering-math-topic-statistics.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="gerrymandering.html" title="Up">Up</a><a class="next-button button toolbar-item" href="gerrymandering-solving-for-change.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="active">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="gerrymandering-math-topic-outlier"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Outlier Analysis</span>
+</h2>
+<p id="p-333">In the previous section on partisan gerrymandering, each measure compared election results to some version of proportional representation, but in many states proportionality may not be the appropriate baseline.</p>
+<p id="p-334">Consider the recent history of congressional districts in the state of Massachusetts. As of 2021, Massachusetts has 9 House districts, all of which have been represented by Democrats for over 25 years. In fact, the last time a Republican represented Massachusetts was in 1994 and Democrats have won 125 consecutive House elections! Despite the lopsided nature of the state's representation, their map is not controversial and has not been challenged for any type of gerrymandering.</p>
+<p id="p-335"><dfn class="terminology">Why is this result not controversial?</dfn> Republicans do exist in Massachusetts and regularly receive between 30 and 40 percent of the vote in statewide elections (President, Governor, Senate). Proportional representation would give Republicans 3 of the 9 congressional districts; however, even though the possible number of valid districting plans exceeds the number of particles in the universe, it is impossible to come up a plan that yields even one Republican district! <a href="" class="xref" data-knowl="./knowl/gerrymandering-gerrymandering-Mass-MGGG.html" title="Bibliographic Entry 4.12.35">[4.12.35]</a> This is simply due to the geography and the fact that there are no large Republican enclaves within the state. Due to the natural distribution of their voters, <em class="emphasis">they do not form a majority in any region of Massachusetts</em>, leading to their prolonged lack of representation in Congress.</p>
+<figure class="figure figure-like" id="figure-51"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/Mass_R_areas_ELJ.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.1<span class="period">.</span></span><span class="space"> </span>These figures are taken from <a href="" class="xref" data-knowl="./knowl/gerrymandering-gerrymandering-Mass-MGGG.html" title="Bibliographic Entry 4.12.35">[4.12.35]</a> (Figure 4). As described there, they show the voting pattern for Republicans George W. Bush in the 2000 presidential race (left, by town) and Kenneth Chase in the 2006 senate race (right, by precinct). Regions shaded dark red voted in favor of the Republican candidate, while regions in orange and yellow were the most "Republican favorable" available to collect enough population to create a congressional district. Even in assembling districts this way, the Democratic candidate would have won more of the vote share.</figcaption></figure><article class="assemblage assemblage-like" id="assemblage-11"><p id="p-336">Motivating Question: If proportionality isn't necessarily an appropriate benchmark, what should we measure a district plan against? Can we determine if a plan produces an unlikely result?</p></article><dfn class="terminology">ensemble</dfn><article class="definition definition-like" id="gerrymandering-outlier"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.8.2</span><span class="period">.</span>
+</h3>An <dfn class="terminology">outlier</dfn>  is an observation that is unusual within a given context. In a large set of possible district plans, those with unlikely outcomes relative to the rest may be outliers, hence the term <dfn class="terminology">outlier analysis</dfn>. There are many different criteria for determining outliers (or potential outliers) in statistics; we will not cover those in depth here.</article><p id="p-337">Let's suppose a state with 7 districts has a proposed district plan in which the Heart Party is favored to win 6 of the 7 districts. A computer program generates 1,000,000 possible district plans and in only 100 of the plans is the Heart Party favored to win as many as 6 of the districts. Due to the unlikely nature of this outcome (occurring in only 0.01% of plans), there is evidence that the proposed plan may have been manipulated to benefit the Heart Party. That is, it represents a potential outlier.</p>
+<p id="p-338">Consider the following distribution of voters.</p>
+<figure class="table table-like" id="gerrymandering-voter-distribution"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.8.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure><p id="p-339">Suppose we want to create 5 districts of 5 voters each. Some quick math shows the best outcome for the Heart Party (with 8 total voters) is to win 2 districts and it would take some intentional packing and cracking to achieve that outcome. In the example below, we create plans that lead to this outcome.</p>
+<article class="example example-like" id="gerrymandering-outlier-analysis-example"><a href="" data-knowl="" class="id-ref example-knowl original has-tabular" data-refid="hk-gerrymandering-outlier-analysis-example"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.8.4</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-gerrymandering-outlier-analysis-example"><article class="example example-like"><p id="p-340">Draw district lines for the map given above so that the Heart party wins two disticts. Create 5 districts of 5 voters each.</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like">Note that since there are 5 voters in each district, the Heart party needs at least 3 voters in a district to win the district. How can you draw the lines so that the Heart party wins two districts?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original has-tabular" data-refid="hk-answer-7" id="answer-7"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><figure class="table table-like" id="gerrymandering-answer-outlier-analysis-example"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.8.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l2 t2 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-tabular" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">Note that there are multiple possibilities! As an alternative to the plan given as the “answer”, we could also use the plan given here. <figure class="table table-like" id="table-21"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.8.6<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r2 l2 t2 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l2 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure>
+</div></div></article></div>
+<p id="p-341">While the Heart Party achieves their best possible outcome, can we say that gerrymandering is present? In other words, is the outcome of this plan an <em class="emphasis">outlier</em> relative to other possible plans?</p>
+<p id="p-342">We can look at this from a couple of different perspectives. We turn to technology to help us, using the MGGG grid tool found here: <a class="external" href="https://mggg.org/metagraph/5x5.html" target="_blank">MGGG grid tool (opens in new tab)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-53" id="fn-53"><sup> 1 </sup></a>. It turns out that there are 4,006 ways to divide a 5x5 grid into 5 contiguous districts of 5 blocks each. The MGGG grid tool determines all 4,006 plans with the same location of voters shown here: <figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/MGGG_vote_dist.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.7<span class="period">.</span></span><span class="space"> </span>Image of Hearts and Clubs voter distribution grid from MGGG tool, matching distribution given in <a href="" class="xref" data-knowl="./knowl/gerrymandering-voter-distribution.html" title="Table 4.8.3">Table 4.8.3</a>.</figcaption></figure> It then provides the results shown in the histogram below. <figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/histogram_8_heart-star.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.8<span class="period">.</span></span><span class="space"> </span>Bar chart showing number of plans in which Heart party wins particular number of seats.</figcaption></figure> As shown in the histogram, the Heart party wins 0 districts (seats) in 961 plans (24%), 1 district in 2,421 plans (60%), and 2 districts in 624 plans (16%). (Our event, the Heart party winning 2 districts, falls in the green bar to the right.)</p>
+<p id="p-343">Alternatively, there are 1,081,575 different ways to place 8 Hearts and 17 Clubs in a 5x5 grid. This time, we consider all of these arrangements with the same district plan given above in <a href="" class="xref" data-knowl="./knowl/gerrymandering-answer-outlier-analysis-example.html" title="Table 4.8.5">Table 4.8.5</a> (the answer to <a href="" class="xref" data-knowl="./knowl/gerrymandering-outlier-analysis-example.html" title="Example 4.8.4">Example 4.8.4</a>), shown here. (Different colors denote different districts.) <figure class="figure figure-like" id="figure-54"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/MGGG_district_plan.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.9<span class="period">.</span></span><span class="space"> </span>District plan matching boundaries in <a href="" class="xref" data-knowl="./knowl/gerrymandering-answer-outlier-analysis-example.html" title="Table 4.8.5">Table 4.8.5</a>. In the image, colors are used to distinguish different districts.</figcaption></figure> The MGGG tool provides the following analysis: <figure class="figure figure-like" id="figure-55"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/histogram_8_heart-star_bottom_hist.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.10<span class="period">.</span></span><span class="space"> </span>Bar chart showing number of plans in which Heart party wins certain number of seats, given 8 Heart voters and a district plan.</figcaption></figure> In this case, the Heart party wins 2 districts in 120,450 out of the possible 1,081,575 plans, which is 11% of plans.</p>
+<p id="p-344">Either way, even though the Heart Party has maximum representation (2 seats), something happening more than 10% of the time is not all that uncommon. In research that uses statistics, 5% (1 in 20) is the most common threshold for determining whether an occurrence is considered an outlier. (Sometimes lower values such as 1% are used to capture only “stronger” outliers.)</p>
+<p id="p-345">Now suppose a ninth Heart is added to the district plan above (replacing any one of the Clubs). Mathematically, it is now possible for the Heart Party to win 3 districts, but even if they do, would it be considered an outlier and potential gerrymandering?</p>
+<article class="example example-like" id="example-13"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-13"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.8.11</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-346">Go to the <a class="external" href="https://mggg.org/metagraph/5x5.html" target="_blank">MGGG grid tool (opens in new tab)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-54" id="fn-54"><sup> 2 </sup></a> and scroll down to the section with bar graphs. Create a grid that matches <a href="" class="xref" data-knowl="./knowl/gerrymandering-voter-distribution.html" title="Table 4.8.3">Table 4.8.3</a>, then change one of the Clubs to a Heart so that there are exactly 9 Hearts. Then create a district plan (using “Build a Plan <span class="process-math">\(\mathcal{D}\)</span>”) in which Hearts win 3 of the 5 districts. Observe the distributions to determine if your plan is an outlier.</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">The specific information depends on which square in the grid is changed to a Heart. Choose different possibilities to see the different results! As one example, place a Heart in row 5, column 5. This is shown below: <figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/MGGG_new_distribution_9_hearts.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.12<span class="period">.</span></span><span class="space"> </span>Vote distribution grid from MGGG tool, modified from <a href="" class="xref" data-knowl="./knowl/gerrymandering-voter-distribution.html" title="Table 4.8.3">Table 4.8.3</a> to have 9 Hearts. Plan drawn so that Hearts win 3 seats.</figcaption></figure> Then 38 plans out of 4,006 possible plans, or 0.9%, yield 3 seats for the Heart party, as shown in histogram below: <figure class="figure figure-like" id="figure-57"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/MGGG_histogram_9_hearts.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.13<span class="period">.</span></span><span class="space"> </span>Bar chart showing number of plans in which Heart party wins some number of seats; reveals chance of winning 3 seats is small.</figcaption></figure> This outcome of Hearts winning 3 seats is an outcome occuring in less than 5% of the possible outcomes - in fact, less than 1% of possible outcomes. It appears to be an outlier when compared to the ensemble of all possible outcomes.</div></div></article></div>
+<p id="p-347">Although we can analyze all possible plans and distributions on a 5x5 grid, this is nowhere near possible with precincts on a real map. However, there are algorithmic techniques which can quickly generate thousands or millions of valid districting plans for the purpose of comparing a particular district plan of interest to an ensemble.</p></section><div class="hidden-content tex2jax_ignore" id="hk-fn-53"><div class="fn"><code class="code-inline tex2jax_ignore">mggg.org/metagraph/5x5.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-54"><div class="fn"><code class="code-inline tex2jax_ignore">mggg.org/metagraph/5x5.html</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

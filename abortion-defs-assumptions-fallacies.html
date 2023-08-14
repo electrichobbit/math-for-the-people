@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Definitions, Assumptions, and Fallacies</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="abortion-arguments.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="abortion.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="abortion-solving-for-change.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="abortion-arguments.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="abortion.html" title="Up">Up</a><a class="next-button button toolbar-item" href="abortion-solving-for-change.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="active">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="abortion-defs-assumptions-fallacies"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Definitions, Assumptions, and Fallacies</span>
+</h2>
+<section class="introduction" id="introduction-4"><p id="p-72">As we navigate arguments there are several special language features that we need to be aware of to help us communicate clearly and effectively. These features are definitions, assumptions, and logical fallacies. These features will be discussed below.</p>
+<p id="p-73">A <dfn class="terminology">definition</dfn> is a common meaning for a term that is held by a group. For example, if you asked various people to define the term dog, you would get similar answers from almost everyone that you asked. That is because the definition has many commonly experienced attributes such as being a pet or companion. One thing to be mindful about with definitions is that not all groups hold common definitions for the same term. One example would be the definition of abortion held by different groups. Some consider any termination of a pregnancy, no matter the reason, to be an abortion. Other groups consider abortion to be any elective termination of a pregnancy. This slight difference in how the groups define the common term can make discussions between individuals contentious.</p>
+<p id="p-74">An <dfn class="terminology">assumption</dfn> is a sentence that is accepted in an argument as true. Some assumptions are understood, or what we call tacit assumptions. An example of a tacit assumption would be the mental image that you generate from the sentence, "Those not yet born have been dehumanized, and so many of those born have faced increasing marginalization due to their age, ability, or perceived value". You most likely imagine a fetus and not a robot or rock. That is because we have a tacit assumption that robots cannot be born. This sentence is part of the mission statement of the pro life advocacy group <a class="external" href="https://aul.org/mission/" target="_blank">Americans United for Life</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 1 </sup></a></p>
+<p id="p-75">Other assumptions are stated more directly. This means that the assumptions are made explicit. When we make explicit assumptions, we speak them directly. An example of a directly spoken assumption would be the following quote,"We see that criminalization is not as much about the behavior of the individual, but the individual itself and the identities that they hold. We know that Black and Latinx and other folks of color are more likely to be criminalized by our criminal legal system. We know the same thing is true for young people, LGBTQ folks, undocumented communities. So the risks are high for criminalization overall. We are seeing this play out in the reproductive health care space right now and it's going to get worse."-Jamila Perritt, MD, MPH, FACOG—President &amp; CEO of Physicians for Reproductive Health <a href="" class="xref" data-knowl="./knowl/abortion-equity.html" title="Bibliographic Entry 1.12.7">[1.12.7]</a></p>
+<p id="p-76">This statement directly addresses that specific groups will face potentially punitive consequences when navigating the reproductive health system, if they are able to navigate it at all. Pause for a moment to think about internal and external features that might limit access to reproductive health for certain groups.</p>
+<p id="p-77">An assumption can sometimes be indicated by the presence of words like let, suppose, and assume in regular speech and writing. This particular type of language invites a listener or reader to engage with the possibilities that follow from an initial claim that is assumed to be true.It is important to be aware that not all assumptions are true. For social issues this is especially true. Assuming that certain parts of an argument are true, without proper investigation or consideration, can lead to false conclusions. One example of an assumption that can lead to false conclusions is using a non-shared definition.</p>
+<p id="p-78">For example, the Merriam-Webster Dictionary defines abortion as the "termination of a pregnancy after, accompanied by, resulting in, or closely follow by the death of the embryo or fetus" <a href="" class="xref" data-knowl="./knowl/abortion-def-abortion.html" title="Bibliographic Entry 1.12.1">[1.12.1]</a>. However when Catherin Glenn Foster, the President and CEO of Americans United for Life was asked if an abortion occurred in the scenario of a 10-year old rape victim who became pregnant, and terminated the pregnancy, Foster replied that an abortion did not occur because “it would probably impact [the girl’s] life, and so, therefore, it would fall under any exception and would not be an abortion.” Foster later clarified that “If a 10-year old became pregnant as a result of rape and it was threatening her life, then that’s not an abortion”.  <a href="" class="xref" data-knowl="./knowl/abortion-Maddow.html" title="Bibliographic Entry 1.12.8">[1.12.8]</a></p>
+<p id="p-79">A <dfn class="terminology">logical fallacy</dfn> is a flawed, deceptive, or false argument that can be proven wrong with proper reasoning. Arguments, as we have learned, are an important part of social interactions. This is especially true when dealing with controversial topics. Logical fallacies tend to arise commonly with controversial topics because of the presence of tacit assumptions and unshared definitions. In this section, we are going to learn to identify and refute logical fallacies.</p>
+<p id="p-80">If you look online, you will see long lists of specific false arguments. It is less important to know the names of the false arguments and have memorized strategies to win arguments than it is to be able to recognize that an argument, in general, is a bad argument. Let’s look at the following case studies.</p></section><section class="subsection" id="abortion-case-study-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">Case Study 1</span>
+</h3>
+<section class="introduction" id="introduction-5"><p id="p-81">In this case study, an <a class="external" href="https://abort73.com/abortion/common_objections/" target="_blank">anti-abortion blog</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 2 </sup></a> discusses supposed fallacies and misinformation about abortion. For this specific case analysis, we are focusing on the section titled “What if the Baby is Deformed?” Read this section carefully, and then we will discuss the argument presented by the author.</p>
+<figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="abortion-access/images/case_study_1.JPG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.1<span class="period">.</span></span><span class="space"> </span>A snippet from the website abort73.com with the argument about when babies are deformed.</figcaption></figure><figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="abortion-access/images/case_study_11.JPG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.2<span class="period">.</span></span><span class="space"> </span>A snippet from the website abort73.com with the argument about when babies are deformed.</figcaption></figure></section><section class="subsubsection" id="abortion_case-study-1-argument"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.8.1.1</span> <span class="title">Case Study 1: The Argument</span>
+</h4>
+<p id="p-82">The author of the blog post makes a very decisive claim. The claim that the author is making is that: If a parent is an abortion supporter and a child is diagnosed with an disability before birth, then the parent will abort the child. If the child is diagnosed with a disability before birth and the parent aborts the child, then the parents do not support people with disabilities. Therefore, abortion supporters do not support people with disabilities. We can assign each statement in the following way:</p>
+<ol class="decimal">
+<li id="li-57"><p id="p-derived-li-57"><span class="process-math">\(p\text{:}\)</span> A parent is an abortion supporter.</p></li>
+<li id="li-58"><p id="p-derived-li-58"><span class="process-math">\(q\text{:}\)</span> A child is diagnosed with a disability before birth.</p></li>
+<li id="li-59"><p id="p-derived-li-59"><span class="process-math">\(r\text{:}\)</span> The parent will abort the child.</p></li>
+<li id="li-60"><p id="p-derived-li-60"><span class="process-math">\(s\text{:}\)</span> Aboftion supporters do not support people with disabilities.</p></li>
+</ol>
+<p class="continuation">This can be represented by the following: <span class="process-math">\([((p\wedge q)\implies r)\wedge ((q\wedge r)\implies s)]\implies(p\implies s)\text{.}\)</span> Use the truth table generator to determine if this is a valid argument.</p></section><section class="subsubsection" id="abortion-case-study-1-discussion"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.8.1.2</span> <span class="title">Case Study 1: Discussion</span>
+</h4>
+<p id="p-83">It is clear that the author of the blog post does not support abortion. They also propose that supporters of abortion believe that children with disabilities that are diagnosable during pregnancy should be aborted, and therefore people that support abortion do not support members of the disabled community. One tacit assumption that the author makes is the claim that abortion is not an appropriate treatment for a physical or mental disability. The fallacy happens when the author states that making the choice to abort a child with a diagnosed disability is the same as not being a supporter of the disabled community. This type of fallacy is specifically called an equivocation because the author claims that two different things are in fact the same.</p></section><section class="subsubsection" id="abortion-case-study-1-Refuting"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.8.1.3</span> <span class="title">Case Study 1: Refuting the Argument</span>
+</h4>
+<p id="p-84">No matter which side of the argument for or against abortion you may fall on, you have an obligation to present an accurate argument. The largest flaw in the argument was the claim that mental disabilities can be diagnosed during pregnancy, which in some cases is true for genetic disorders like Downs Syndrome; however, not all mental disabilities can be diagnosed during pregnancy. One strategy to address this flaw is to look at data. If someone claims that a disability diagnosis justifies getting an abortion, we should check on data about children with disabilities. One place that might give us this information is the <a class="external" href="https://www.census.gov/library/publications/2021/acs/acsbr-006.html" target="_blank">US Census, specifically the report on childhood disability</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-13" id="fn-13"><sup> 3 </sup></a>. The report shows that nationally, from 2008 to 2019, the percentage of children that were reported as disabled increased during the time period. This is a neutral fact that participants on either side of the abortion debate can use to better defend a position. If someone is anti-abortion, then they can claim that an increase in children with disabilities means that more parents are being educated about options besides abortion and selecting those options for themselves and their unborn child. If someone is an abortion supporter, they can use the increase in children with disabilities to defend themselves against claims that they believe that unborn children with diagnosable birth defects deserve to be terminated. This is one strategy to refute this type of argument.</p>
+<p id="p-85">Another strategy is to ask specific questions that relate to why you personally have issues with the argument, and why you believe it to contain a fallacy. If you have questions about the diagnosis of mental disability during pregnancy, as an example, asking questions can help clarify meaning for both parties. You can get information about the meaning of mental disability from the other party because perhaps they have a different definition than what you have. This clarification is something that you could not have gained without having a productive discussion with another person. That is why it is a general strategy for exploring and refuting arguments.</p></section></section><section class="subsection" id="abortion-case-study-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.8.2</span> <span class="title">Case Study 2</span>
+</h3>
+<section class="introduction" id="introduction-6"><p id="p-86">In this next case study, we examine the argument that “life begins at conception”. Many pro life groups claim that life begins at conception. One such group is <a class="external" href="https://www.prolifewi.org/about-us" target="_blank">Pro-Life Wisconsin</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 4 </sup></a>. On this organization’s  <a class="external" href="https://www.prolifewi.org/when-does-human-life-begin" target="_blank">webpage</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-15" id="fn-15"><sup> 5 </sup></a>, they write: <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="abortion-access/images/case_study_2.JPG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span>A snippet from the Pro-Life Wisconsin's website.</figcaption></figure></p>
+<p id="p-87">The argument can be summarized by the following argument: Scientists agree that a human embryo is a human being immediate at conception. If you are a human being then you are alive. Thus, human life begins at conception.</p>
+<ol class="decimal">
+<li id="li-61"><p id="p-derived-li-61"><span class="process-math">\(p\text{:}\)</span> A human embryo is created immediately after fertilization.</p></li>
+<li id="li-62"><p id="p-derived-li-62"><span class="process-math">\(q\text{:}\)</span> A human embryo is alive.</p></li>
+</ol>
+<p class="continuation">This can be represented by the following: <span class="process-math">\((p \wedge q ) \implies q\text{.}\)</span> Use the truth table generator to determine if this is a valid argument.</p>
+<p id="p-88">We can see that this argument is valid using a truth table. However, it is not a sound argument. With no definition of “alive” given, this is an example of the fallacy Begging the Question, where a premise of an argument assumes the truth of the conclusion. Another example of begging the question can be found in the article, <dfn class="terminology">Familiar flaws in pro-life argument</dfn>, published in the <a class="external" href="https://www.montgomeryadvertiser.com/story/opinion/columnists/2016/04/21/familiar-flaws-pro-life-argument/83307426/" target="_blank">Montgomery Advertiser</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 6 </sup></a>.</p></section><section class="subsubsection" id="abortion-case-study-2-discussion"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.8.2.1</span> <span class="title">Case Study 2: Discussion</span>
+</h4>
+<p id="p-89">It turns out that trying to determine when life begins is a very difficult task particularly because there is no agreed upon definition of the word “life”. Nevertheless, since  the US Supreme Court eliminated the federal right to abortion, state legislators have been trying to codify the definition of life oftentimes without input from medical professionals. The codification of “life” would impact abortion rights, birth control, and assisted reproduction <a href="" class="xref" data-knowl="./knowl/abortion-NPR.html" title="Bibliographic Entry 1.12.9">[1.12.9]</a>.</p>
+<p id="p-90">Some common definitions of beginning of life include at conception, with a heartbeat, at first breath, or the ability to live outside of a womb with the help of the latest technology <a href="" class="xref" data-knowl="./knowl/abortion-NPR.html" title="Bibliographic Entry 1.12.9">[1.12.9]</a>. It turns out that when more technology is available, the harder this definition becomes. For example, before ultrasounds it was assumed that life began with “quickening”, or when the woman first felt a fetus move. However, this is often before a fetus can survive outside of a womb. Additionally, heart beats can be heard much earlier than feeling a fetus move. For more information regarding this topic, please refer to</p>
+<ol class="decimal">
+<li id="li-63"><p id="p-derived-li-63"><a class="external" href="https://www.wired.com/2015/10/science-cant-say-babys-life-begins/" target="_blank">https://www.wired.com/2015/10/science-cant-say-babys-life-begins/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-17" id="fn-17"><sup> 7 </sup></a></p></li>
+<li id="li-64"><p id="p-derived-li-64"><a class="external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7245522/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7245522/</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-18" id="fn-18"><sup> 8 </sup></a></p></li>
+<li id="li-65"><p id="p-derived-li-65"><a class="external" href="https://www.npr.org/sections/health-shots/2022/08/27/1119684376/when-does-life-begin-as-state-laws-define-it-science-politics-and-religion-clash" target="_blank">https://www.npr.org/sections/health-shots/2022/08/27/1119684376/when-does-life-begin-as-state-laws-define-it-science-politics-and-religion-clash</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-19" id="fn-19"><sup> 9 </sup></a></p></li>
+</ol></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn"><code class="code-inline tex2jax_ignore">aul.org/mission/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><code class="code-inline tex2jax_ignore">abort73.com/abortion/common_objections/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-13"><div class="fn"><code class="code-inline tex2jax_ignore">www.census.gov/library/publications/2021/acs/acsbr-006.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-14"><div class="fn"><code class="code-inline tex2jax_ignore">www.prolifewi.org/about-us</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-15"><div class="fn"><code class="code-inline tex2jax_ignore">www.prolifewi.org/when-does-human-life-begin</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">www.montgomeryadvertiser.com/story/opinion/columnists/2016/04/21/familiar-flaws-pro-life-argument/83307426/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-17"><div class="fn"><code class="code-inline tex2jax_ignore">www.wired.com/2015/10/science-cant-say-babys-life-begins/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-18"><div class="fn"><code class="code-inline tex2jax_ignore">www.ncbi.nlm.nih.gov/pmc/articles/PMC7245522/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-19"><div class="fn"><code class="code-inline tex2jax_ignore">www.npr.org/sections/health-shots/2022/08/27/1119684376/when-does-life-begin-as-state-laws-define-it-science-politics-and-religion-clash</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

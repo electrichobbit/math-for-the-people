@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Choosing Data Visualizations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="environmental-racism-data-classification.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="environmental-racism.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="environmental-racism-solving-for-change.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="environmental-racism-data-classification.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="environmental-racism.html" title="Up">Up</a><a class="next-button button toolbar-item" href="environmental-racism-solving-for-change.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="active">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="environmental-racism-choosing-data-visualization"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Choosing Data Visualizations</span>
+</h2>
+<section class="introduction" id="introduction-11"><p id="p-136">Data visualization is a way to graphically represent data and information by using visual elements such as charts, graphs, and maps. The purposes of data visualizations are to summarize, compare, reveal patterns, and notice anomalies present in the data; in other words, data visualization makes data more understandable to an individual.</p></section><section class="subsection" id="environmental-racism-data-visualization-importance"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Why is data visualization important?</span>
+</h3>
+<p id="p-137">In the world of big data, where we have access to a large amount of information, it is an essential skill for an individual to learn to handle a significant volume of data and devise a quick and effective way to present the data in meaningful ways to others. Data visualization is a tool that serves such purposes. It provides an intuitive way to visualize and understand trends, outliers, clusters, and patterns in given data sets. Data visualization also helps us compare different data sets and prompts us to raise questions that stimulate research and suggest ideas. It offers a meaningful way to tell a story from data but with a purpose.</p></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Types of Data Visualizations</span>
+</h3>
+<section class="introduction" id="introduction-12"><p id="p-138">Once you identify your data type, you can choose your data visualizations accordingly. For guidance, see <a href="" class="xref" data-knowl="./knowl/environmental-racism-types-of-visualizations.html" title="Table 2.6.1">Table 2.6.1</a>:</p>
+<figure class="table table-like" id="environmental-racism-types-of-visualizations"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Number of Variables</td>
+<td class="l m b0 r0 l0 t0 lines" colspan="2">Data Types</td>
+<td class="l m b0 r0 l0 t0 lines">Visualizations</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">Categorical Data</td>
+<td class="l m b0 r0 l0 t0 lines">Nominal Data</td>
+<td class="l m b0 r0 l0 t0 lines">Pie Chart</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Bar Graph</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Ordinal Data</td>
+<td class="l m b0 r0 l0 t0 lines">Pie Chart</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Bar Graph</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Quantitative Data</td>
+<td class="l m b0 r0 l0 t0 lines">Interval Data</td>
+<td class="l m b0 r0 l0 t0 lines">Histogram</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Bar Graph</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Ratio Data</td>
+<td class="l m b0 r0 l0 t0 lines">Histogram</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Bar Graph</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">Quantitative Data</td>
+<td class="l m b0 r0 l0 t0 lines">Interval Data</td>
+<td class="l m b0 r0 l0 t0 lines">Scattered Plot</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Ratio Data</td>
+<td class="l m b0 r0 l0 t0 lines">Scattered Plot</td>
+</tr>
+</table></div></figure><p id="p-139">A brief account of each of the data visualization is given below:</p></section><section class="subsubsection" id="subsubsection-7"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.6.2.1</span> <span class="title">Pie charts</span>
+</h4>
+<p id="p-140">A <dfn class="terminology">pie chart</dfn> is a visual tool that graphs categorical data and helps one understand the part-to-a-whole relationship. Visually a pie chart is circular in shape that is divided into sectors, where each sector represents the number or percentage of times an observation or category has been selected. The pie chart given in Figure~\ref{fig:Pie}, represents the the number or percentage of times respondents expressed concerns about their neighborhood issues. Each sector of the pie chart represents a distinct category, that is a particular neighborhood issue.</p>
+<p id="p-141">The pie chart given in <a href="" class="xref" data-knowl="./knowl/environmental-racism-figure-pie-chart.html" title="Figure 2.6.2">Figure 2.6.2</a> shows that</p>
+<ol class="decimal">
+<li id="li-116"><p id="p-derived-li-116">15% times respondents expressed their concerns about improper waste disposal system,</p></li>
+<li id="li-117"><p id="p-derived-li-117">10% times respondents expressed their concerns about air pollution,</p></li>
+<li id="li-118"><p id="p-derived-li-118">20% times respondents expressed their concerns about access to healthy drinking water,</p></li>
+<li id="li-119"><p id="p-derived-li-119">6% times respondents expressed their concerns about lack of greenspaces/ parks/ playgrounds,</p></li>
+<li id="li-120"><p id="p-derived-li-120">14% times respondents expressed their concerns about availability of healthcare system,</p></li>
+<li id="li-121"><p id="p-derived-li-121">2% times respondents expressed their concerns about risk of flooding/ forest fire,</p></li>
+<li id="li-122"><p id="p-derived-li-122">11% times respondents expressed their concerns about access to grocery stores/ neighborhood market,</p></li>
+<li id="li-123"><p id="p-derived-li-123">18% times they expressed their concerns about unsafe road conditions, and</p></li>
+<li id="li-124"><p id="p-derived-li-124">4% times they expressed their concerns about other neighborhood issues not included in the list.</p></li>
+</ol>
+<p id="p-142">The important thing to know about a pie chart is that the bigger the area of the sectors, the greater the values they represent. That means, in the given pie chart, since the area of the sector representing “Access to healthy drinking water” is the highest (20% of the total area), you can conclude that out of the nine given issues, the respondents chose "Access to healthy drinking water” the maximum number of times. To be precise, 20% of the times respondents said that they were concerned about healthy drinking water. Likewise, the area of the sector representing “Risk of flooding/ forest fire” is the smallest (2% of the total area), the pie chart suggests that only 2% of times respondents said that they were concerned about flooding and forest fire.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-pie-chart"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/Pie_new.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>Pie Chart representing the different neighborhood related issues that the survey respondents are concerned about.</figcaption></figure><p id="p-143">A pie chart is usually drawn to graph categorical data. To create a pie chart,</p>
+<ol class="decimal">
+<li id="li-125">
+<p id="p-144">First, create a frequency distribution table, where you will note how many times a particular category has been repeated. For example, question 2 of the "Neighborhood welfare survey" asked the respondents to indicate all the neighbourhood-related issues they were concerned about. The question provided the respondents with nine options. Each option would be considered as a category. Based on the responses, if you find that 200 responses have been collected, and 30 of them indicate lack of a proper waste disposal system, then the corresponding frequency would be 30. Likewise, if 20 out of 200 responses indicate respondents' concern about air pollution, then the corresponding frequency would be 20.</p>
+<figure class="table table-like" id="environmental-racism-neighborhood-issues"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Neighborhood-Related Issues</td>
+<td class="l m b0 r0 l0 t0 lines">Frequency</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lack of proper waste disposal system</td>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Air Pollution</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Access to Healthy Drinking Water</td>
+<td class="l m b0 r0 l0 t0 lines">40</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lack of greenspaces/parks/playgrounds</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Availability of healthcare system</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Risk of flooding/ forest fire</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Access to grocery stores/ neighborhood market</td>
+<td class="l m b0 r0 l0 t0 lines">22</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Unsafe road conditions</td>
+<td class="l m b0 r0 l0 t0 lines">36</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Others</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+</table></div></figure>
+</li>
+<li id="li-126">
+<p id="p-145">Next, calculate the relative frequency of each category and their corresponding percentage. To calculate the relative frequency of each category, divide the frequency of each category by the total number of responses. For example, the relative frequency of lack of a proper waste disposal system = <span class="process-math">\(\frac{30}{200} = \frac{3}{20}\)</span> Likewise, the relative frequency of air pollution = <span class="process-math">\(\frac{20}{200}= \frac{1}{10}\text{.}\)</span></p>
+<p id="p-146">To calculate the corresponding percentages, multiply the relative frequencies by 100. For example, the percentage corresponding to lack of a proper waste disposal system = <span class="process-math">\(\frac{3}{20}\times100 = 15\%\text{.}\)</span></p>
+<p id="p-147">That means, 15% of the times respondents expressed their concerns about lack of a proper waste disposal system in their neighborhood.</p>
+<figure class="table table-like" id="environmental-racism-neighborhood-issues-relative-frequencies"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Neighborhood-Related Issues</td>
+<td class="l m b0 r0 l0 t0 lines">Frequency</td>
+<td class="l m b0 r0 l0 t0 lines">Relative Frequency</td>
+<td class="l m b0 r0 l0 t0 lines">Percentage</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lack of proper waste disposal system</td>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines">3/20</td>
+<td class="l m b0 r0 l0 t0 lines">15%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Air Pollution</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">1/10</td>
+<td class="l m b0 r0 l0 t0 lines">10%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Access to Healthy Drinking Water</td>
+<td class="l m b0 r0 l0 t0 lines">40</td>
+<td class="l m b0 r0 l0 t0 lines">1/5</td>
+<td class="l m b0 r0 l0 t0 lines">20%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lack of greenspaces/parks/playgrounds</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">3/50</td>
+<td class="l m b0 r0 l0 t0 lines">6%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Availability of healthcare system</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines">7/50</td>
+<td class="l m b0 r0 l0 t0 lines">14%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Risk of flooding/ forest fire</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">1/50</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Access to grocery stores/ neighborhood market</td>
+<td class="l m b0 r0 l0 t0 lines">22</td>
+<td class="l m b0 r0 l0 t0 lines">10/91</td>
+<td class="l m b0 r0 l0 t0 lines">11%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Unsafe road conditions</td>
+<td class="l m b0 r0 l0 t0 lines">36</td>
+<td class="l m b0 r0 l0 t0 lines">9/50</td>
+<td class="l m b0 r0 l0 t0 lines">18%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Others</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">1/25</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure>
+</li>
+<li id="li-127"><p id="p-derived-li-127">Finally, once the percentages are calculated, create the pie chart. Divide the circle into sectors, where each sector represents a category. The relative area of each sector must match the percentage of time a particular category has been selected. For example, since 15% of the times respondents expressed their concerns about the lack of a proper waste disposal system, the area of the sector representing "lack of a proper waste disposal system" is 15% of the total area of the pie chart. Refer to <a href="" class="xref" data-knowl="./knowl/environmental-racism-figure-pie-chart.html" title="Figure 2.6.2">Figure 2.6.2</a>.</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-8"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.6.2.2</span> <span class="title">Bar graph</span>
+</h4>
+<p id="p-148">A bar graph is a visual tool that uses bars to compare data belonging to different categories. In the bar graph given given in <a href="" class="xref" data-knowl="./knowl/environmental-racism-figure-bar-chart.html" title="Figure 2.6.5">Figure 2.6.5</a>, each bar represents the number of times respondents raised concerns about different issues in their neighborhoods. As the visualization suggests, 15 respondents expressed their concerns about lack of proper waste disposal system, 10 respondents expressed their concerns about air pollution, 20 respondents expressed their concerns about access to healthy drinking water, six respondents expressed their concerns about lack of greenspaces/ pars/ playgrounds in the neighborhood, 14 respondents expressed their concerns about availability of healthcare system, 2 respondents expressed their concerns about forest fire and flooding, 11 respondents expressed their concerns about access to grocery stores and neighborhood markets, 18 respondents expressed their concerns about unsafe road conditions, and four respondents expressed their concerns about other issues in the neighborhood that are not included in the list.</p>
+<p id="p-149">The important thing to know about a bar graph is that the longer/ taller the bars are, the greater the values they represent. That means, in the given bar chart, since the height of the bar representing “Access to healthy drinking water” is the highest, you can conclude that most of the respondents, twenty to be precise, said that they were concerned about healthy drinking water. Likewise, the height of the “Risk of flooding/ forest fire” bar suggests that minimum number of respondents, two to be precise, said that they were concerned about flooding or forest fire.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-bar-chart"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/Bar_new.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span>Bar graph representing the different neighborhood related issues that the survey respondents are concerned about. <a href="" class="xref" data-knowl="./knowl/environmental-racism-image-bar-chart.html" title="Item 1">Image Description 1</a>.</figcaption></figure><p id="p-150">A bar graph is usually drawn to graph categorical data. To create a bar graph,</p>
+<ol class="decimal">
+<li id="li-128"><p id="p-151">First, create a frequency distribution table, as in <a href="" class="xref" data-knowl="./knowl/environmental-racism-neighborhood-issues.html" title="Table 2.6.3">Table 2.6.3</a>, where you will note how many times a particular category has been repeated or the given values corresponding to different categories. For example, question 2 of the "Neighborhood welfare survey" asked the respondents to indicate all the neighbourhood-related issues they were concerned about. The question provided the respondents with nine options. Each option would form one category. The survey response suggests that 20 respondents expressed their concern about access to healthy drinking water. Hence the frequency corresponding to "access to healthy drinking water" is 20.</p></li>
+<li id="li-129"><p id="p-derived-li-129">Next, draw the two axes. Along the horizontal axis, plot all the categories, and along the vertical axis mark the frequencies.</p></li>
+<li id="li-130"><p id="p-derived-li-130">Draw the bars for each category. Note that the height of a bar corresponding to a category is same as its frequency.</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-9"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.6.2.3</span> <span class="title">Histogram</span>
+</h4>
+<p id="p-152">Histogram is a visual tool used to explore the frequency distribution of quantitative data (both Interval and Ratio). The shape of a histogram decides if the data distribution is symmetric or skewed (right skewed and left skewed).</p>
+<p id="p-153">The histogram given in <a href="" class="xref" data-knowl="./knowl/environmental-racism-figure-histogram.html" title="Figure 2.6.6">Figure 2.6.6</a>, represents the frequency distribution of the “annual household income”. In this histogram, the data has been used to create five bins of size $5,000 along the <em class="emphasis">x</em>-axis, and the frequency of responses has been recorded along the <em class="emphasis">y</em>-axis. The important thing to know about a histogram is that the taller the bars are, the greater the frequency they represent. That means, in the given histogram, since the height of the first bin is the highest, 20 to be exact, you can conclude that 20 respondents said that their annual household income is between $30,000 and $35,000.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-histogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/Hist_new.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.6<span class="period">.</span></span><span class="space"> </span>Histogram representing the frequency distribution of annual household income of the survey respondents. <a href="" class="xref" data-knowl="./knowl/environmental-racism-image-histogram.html" title="Item 2">Image Description 2</a>.</figcaption></figure><p id="p-154">To explore the distribution of a quantitative data through a histogram, divide the quantitative data into ordered groups, otherwise known as bins, and count the number of data points that fall in each bin. For example, question 8 of the "Neighborhood welfare survey" asked the respondents about their annual household income. Thirty nine respondents responded to the question. The minimum recorded data is $30,000, and the maximum recorded data is $55,000. To create the histogram,</p>
+<ol class="decimal">
+<li id="li-131"><p id="p-derived-li-131">First, divide the range of data ($55,000-$30,000) into different bins of a fixed size (say $5,000). So, the bins would be, [30,000-35,000], (35,000-40,000],(40,000-45,000],(45,000-50,000],(50,000-55,000].</p></li>
+<li id="li-132"><p id="p-derived-li-132">Next, create a frequency distribution table to count the number of responses that fall under each bin.</p></li>
+<li id="li-133"><p id="p-derived-li-133">After the frequency distribution table is prepared, draw two axes. Along the horizontal axis, draw the bins and mark frequencies along the vertical axis.</p></li>
+<li id="li-134"><p id="p-derived-li-134">Finally, draw bars from the lower value of one interval to the lower value of the next interval. The height of each bar should be equal to the frequency of its corresponding interval. That is, in the "Neighborhood welfare survey", if twenty respondents said that their annual household income is between $30,000 and $35,000, then the height of the bar corresponding to the bin [30,000-35,000] would be 20.</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-10"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.6.2.4</span> <span class="title">Histogram vs Bar graph</span>
+</h4>
+<p id="p-155">Although a histogram looks like a bar graph, there exists a fundamental difference between the two.</p>
+<ul class="disc">
+<li id="li-135"><p id="p-derived-li-135">A bar graph visually represents categorical data (nominal and ordinal), whereas a histogram represents quantitative data.</p></li>
+<li id="li-136"><p id="p-derived-li-136">In a bar graph, different categories are represented along the horizontal axis (if the bar graph is oriented vertically), and the associated values are represented along the vertical axis. On the contrary, in a histogram, the horizontal axis represents the different bins of equal length, and the vertical axis represents the frequency of data.</p></li>
+<li id="li-137"><p id="p-derived-li-137">Since each bar in a bar graph represents different categories, the orders of the bars are not important, and there exist spaces between the consecutive bars. However, in a histogram, the bins are created to organize the quantitative data, so the bins are organized in ascending order, and no gaps exist between any two bins.</p></li>
+</ul></section><section class="subsubsection" id="subsubsection-11"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.6.2.5</span> <span class="title">Box plot</span>
+</h4>
+<p id="p-156">A box plot, otherwise known as a box and whisker plot, is a visual tool that uses the five-number summary of a data set to look at the spread and distribution of data. The five-number summary of a data set includes its minimum value, lower quartile <span class="process-math">\((Q_1)\text{,}\)</span> median <span class="process-math">\((Q_2)\text{,}\)</span> upper quartile <span class="process-math">\((Q_3)\text{,}\)</span> and maximum value.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-box-plot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/Boxplot_new.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>Box plot representing the annual household income the survey respondents. <a href="" class="xref" data-knowl="./knowl/environmental-racism-image-boxplot.html" title="Item 3">Image Description 3</a>.</figcaption></figure><p id="p-157">The box and whisker plot given in <a href="" class="xref" data-knowl="./knowl/environmental-racism-figure-box-plot.html" title="Figure 2.6.7">Figure 2.6.7</a>represents the annual household income of the survey respondents.</p>
+<p id="p-158">The box in the middle shows the inter-quartile range <span class="process-math">\((Q_3 – Q_1)\text{,}\)</span> which contains the middle 50% of the data. It means, 50% of the respondents said that their annual household income is between $31,000 and $40,000.</p>
+<p id="p-159">The lower and upper whiskers represent the bottom and top 25% of the responses, respectively. That means 25% of the respondents said that their annual household income is lower than $31,000 (lower whisker), and 25% of the respondents said that their annual household income is more than $40,000 (Upper whisker).</p>
+<p id="p-160">The line in the middle of the box represents the median. It passes through point $35,000 which indicates that 50% of the respondents said that their annual household income is more than $35,000, and 50% of the respondents said that their annual household income is less than $35,000.</p>
+<p id="p-161">There exists an outlier in the data set. One respondent said that their annual household income is $55,000, significantly higher than the rest of the responses.</p>
+<p id="p-162">To draw a boxplot follow the following steps:</p>
+<ol class="decimal">
+<li id="li-138"><p id="p-derived-li-138">First, organize the data in an ascending order. For example, to draw the boxplot of annual household income, first organize the incomes in an ascending order, with the lowest annual household income on the left and the highest annual household income on the right.</p></li>
+<li id="li-139"><p id="p-derived-li-139">Next, calculate the median annual household income.	The <dfn class="terminology">median</dfn> is the middle number in a sorted data set. It divides a data set into exactly two halves, such that 50% of the data points are lesser than the median, and 50% of the data points are larger than the median. If the median annual household income is $35,000, that means 50% respondents' annual household income is more than $35,000, and 50% respondents' annual household income is less than $35,000\}</p></li>
+<li id="li-140">
+<p id="p-163">Next, calculate the first and third quartile. Values that divide a data set into four equal parts (quarters) are called <dfn class="terminology">quartiles</dfn>.</p>
+<p id="p-164">The <dfn class="terminology">first quartile</dfn> or the <dfn class="terminology">lower quartile (<span class="process-math">\(Q_1\)</span>)</dfn> is the data point below which 25% of the data points, and above which 75% of the data points are located. If the first quartile of the annual household income data is $31,000, then 25% of the respondents' annual household income is less than and 75% of the respondents' annual household income is more than$31,000.</p>
+<p id="p-165">The <dfn class="terminology">third quartile</dfn> or the <dfn class="terminology">upper quartile (<span class="process-math">\(Q_3\)</span>)</dfn> is the data point below which 75% of the data points, and above which 25% of the data points are located. If the third quartile of the annual household income data is $40,000, then 75% of the respondents' annual household income is less than and 25% of the respondents' annual household income is more than$40,000.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-quartiles"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/Quartile.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.8<span class="period">.</span></span><span class="space"> </span>Figure showing how Quartiles split a data set into four equal parts. <a href="" class="xref" data-knowl="./knowl/environmental-racism-image-quartiles.html" title="Item 4">Image Description 4</a>.</figcaption></figure><p id="p-166">The difference between the third and first quartile is known as <dfn class="terminology">interquartile range</dfn> (<span class="process-math">\((Q_3 – Q_1)\)</span>).</p>
+<p id="p-167">An <dfn class="terminology">outlier</dfn> is an observation (data point), which is either too high or too low compared to the rest of the data points in a data set. For example, in the annual household income data set, the annual household income of $55,000 is an outlier. That means, the respondent having an annual household income of $55,000 is earning considerably high compared to the rest of the respondents who filled the survey.</p>
+<p id="p-168">The rule that is followed to identify an outlier in a given data set is called 1.5 x IQR. When a data set is given,</p>
+<ol class="lower-alpha">
+<li id="li-141"><p id="p-derived-li-141">First find its median, upper quartile, and the lower quartile.</p></li>
+<li id="li-142"><p id="p-derived-li-142">Next, calculate the value of interquartile range <span class="process-math">\((Q_3-Q_1)\)</span></p></li>
+<li id="li-143"><p id="p-derived-li-143">Calculate 1.5 x IQR = 1.5 x <span class="process-math">\((Q_3-Q_1)\)</span></p></li>
+<li id="li-144">
+<p id="p-169">Find the fences:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{Upper fence: }Q_3 + 1.5 * (Q_3-Q_1)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{Lower fence: }Q_1 - 1.5 * (Q_3-Q_1)
+\end{equation*}
+</div>
+</li>
+<li id="li-145"><p id="p-derived-li-145">Any data point beyond the fences, that is either lower than the lower fence or higher than the upper fence is an outlier.</p></li>
+</ol>
+</li>
+<li id="li-146">
+<p id="p-170">Finally, draw a number line (horizontal or vertical) and use the five number summaries, minimum value, lower quartile <span class="process-math">\((Q_1)\text{,}\)</span> median <span class="process-math">\((Q_2)\text{,}\)</span> upper quartile <span class="process-math">\((Q_3)\text{,}\)</span> and maximum value, to draw the box and whisker plot.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-box-plot-without-outliers"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/draw_box.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>Figure showing how to draw a box plot when there is no outlier. <a href="" class="xref" data-knowl="./knowl/environmental-racism-image-boxplot-creation.html" title="Item 5">Image Description 5</a>.</figcaption></figure><p id="p-171">If there exists one or more outlier in a data set, then the rule will be slightly different. If there is an outlier on the lower side, then to draw the lower whisker join the lower quartile and the lowest non-outlier data point. If there is an outlier on the upper side, then to draw the upper whisker join the upper quartile and the highest non-outlier value.</p>
+</li>
+</ol></section><section class="subsubsection" id="subsubsection-12"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.6.2.6</span> <span class="title">Scatter plot</span>
+</h4>
+<p id="p-172">A scatter plot is a visual tool that is used to visualize the relationship between two numeric variables. In a scatter plot, the independent variable is usually plotted along the horizontal or <span class="process-math">\(x\)</span>-axis, and the dependent variable is usually plotted along the vertical or <span class="process-math">\(y\)</span>-axis.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-scatter-plot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/scatter_new.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.10<span class="period">.</span></span><span class="space"> </span>Scatter plot representing the relationship between the number of household members of the survey respondents and their monthly grocery expenses.</figcaption></figure><p id="p-173">The scatter plot given in <a href="" class="xref" data-knowl="./knowl/environmental-racism-figure-scatter-plot.html" title="Figure 2.6.10">Figure 2.6.10</a> represents the relationship between the  <em class="emphasis">number of household members of the survey respondents</em> and their  <em class="emphasis">monthly grocery expenses</em>. As the figure suggests, the variable  <em class="emphasis">number of household members</em> is an independent variable (plotted along the <span class="process-math">\(x\)</span>-axis), and the variable  \emph{monthly grocery expense} is a dependent variable (plotted along the <span class="process-math">\(y\)</span>-axis). The scatter plot shows if there exists a relationship between the two variables, that is if the number of household members impacts the respondents’ monthly grocery expenses.</p>
+<p id="p-174">Scatter plots are drawn to explore the correlation between two variables. One variable (independent variable) is considered an explanatory variable, and the other is considered a dependent variable. For example, in the "Neighborhood welfare survey", respondents were asked about their number of household members and their monthly grocery expenses. If someone explores the possible impact of the number of household members on monthly grocery expenses, then the number of household members would be considered an independent variable, and monthly grocery expenses would be a dependent variable (depends on the number of family members). To draw a scatter plot,</p>
+<ol class="decimal">
+<li id="li-147"><p id="p-derived-li-147">Identify the independent and dependent variables.</p></li>
+<li id="li-148"><p id="p-derived-li-148">Plot independent variable along the horizontal axis or x-axis, and plot the dependent variable along the vertical axis or y-axis. Label the axes.</p></li>
+<li id="li-149"><p id="p-derived-li-149">Plot the ordered pairs (idependent variable, dependent variable).</p></li>
+</ol>
+<p id="p-175">Three types of linear correlation can be identified through the patterns displayed by a scatterplot.</p>
+<ul class="disc">
+<li id="li-150">
+<p id="p-176">If the increase/ decrease in one variable indicates an increase/ decrease in the other variable, then there exists a <dfn class="terminology">positive correlation</dfn> between the two variables.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-positive-correlation"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/Positive%20cor.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.11<span class="period">.</span></span><span class="space"> </span>Scatter plot indicating a positive correlation between two variables. Remix of <a href="" class="xref" data-knowl="./knowl/environmental-racism-biblio-positive-correlation.html" title="Bibliographic Entry 2.10.1.11">[2.10.1.11]</a></figcaption></figure>
+</li>
+<li id="li-151">
+<p id="p-177">Negative correlation: If the increase/ decrease in one variable indicates an decrease/ increase in the other variable, then there exists a negative correlation between the two variables.</p>
+<figure class="figure figure-like" id="environmental-racism-figure-negative-correlation"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/neg_cor.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.12<span class="period">.</span></span><span class="space"> </span>Scatter plot indicating a negative correlation between two variables. Remix of <a href="" class="xref" data-knowl="./knowl/environmental-racism-biblio-positive-correlation.html" title="Bibliographic Entry 2.10.1.11">[2.10.1.11]</a>.</figcaption></figure>
+</li>
+<li id="li-152">
+<p id="p-178">No correlation:</p>
+<figure class="figure figure-like" id="environmental-racism-figure-no-correlation"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="environmental-racism/images/no_Corr.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.13<span class="period">.</span></span><span class="space"> </span>Scatter plot indicating no correlation correlation between two variables. Remix of <a href="" class="xref" data-knowl="./knowl/environmental-racism-biblio-positive-correlation.html" title="Bibliographic Entry 2.10.1.11">[2.10.1.11]</a></figcaption></figure>
+</li>
+</ul></section></section></section></div></main>
+</div>
+</body>
+</html>

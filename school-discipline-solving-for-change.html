@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solving for Change</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-70.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="school-discipline.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="student-loans.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-70.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="school-discipline.html" title="Up">Up</a><a class="next-button button toolbar-item" href="student-loans.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="active">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="school-discipline-solving-for-change"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.9</span> <span class="title">Solving for Change</span>
+</h2>
+<section class="introduction" id="introduction-46"><p id="p-976">To make sense of issues with school discipline, we will analyze data. We will use the following sources: Civil Rights Data Collection (CRDC) <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-CRights-snapshot.html" title="Bibliographic Entry 8.12.141">[8.12.141]</a> <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-CRights-estimates.html" title="Bibliographic Entry 8.12.142">[8.12.142]</a> conducted by the Department of Education annually, data from the National Center of Education Statistics (NCES) <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-NCES-officers.html" title="Bibliographic Entry 8.12.137">[8.12.137]</a> <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-NCES-firearm.html" title="Bibliographic Entry 8.12.138">[8.12.138]</a>, and a report about school support staff from the American Civil Liberties Union (ACLU) <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a>. We will use data collected by official agencies and organizations as it is the most reliable. However there will always be issues of incorrect reporting, and all data should therefore be considered with the understanding that the information it provides is not perfectly accurate.</p></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.1</span> <span class="title">What is the School-to-Prison Pipeline?</span>
+</h3>
+<p id="p-977">In this introduction to the module, you will begin to think about the school-to-prison pipeline through engaging with a quote and an infographic. Rather than give you data or answers, this section gives you an opportunity to begin asking your own questions.</p>
+<article class="question example-like" id="question-1"><a href="" data-knowl="" class="id-ref question-knowl original has-image" data-refid="hk-question-1"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">8.9.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-1"><article class="question example-like"><ol class="decimal">
+<li id="li-500"><p id="p-derived-li-500">What, if anything, do you know about the school-to-prison pipeline?</p></li>
+<li id="li-501"><p id="p-derived-li-501">Read the following excerpt from <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-Landry-OK.html" title="Bibliographic Entry 8.12.135">[8.12.135]</a>: “He was always a good boy. Polite,” his grandmother says. “He was raised to be respectful.” So how did he end up in prison? “It’s like they greased the chute. Back when he was in the 9th grade, Kyron got into a fight. Boys fight. Always have. No guns, no knives, just two boys tussling. Next thing I know he is locked up. That’s just crazy! It’s wrong.” What is your reaction to this quote? Write at least three different things.How might the content of this quote be related to mathematics?</p></li>
+<li id="li-502">Consider the following infographic <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-advancement-project.html" title="Bibliographic Entry 8.12.128">[8.12.128]</a>: <figure class="figure figure-like" id="figure-99"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="school-discipline/images/infographic.png" class="contained" alt="Infographic with data about school suspensions and arrests."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.9.2<span class="period">.</span></span><span class="space"> </span>School-to-prison pipeline infographic</figcaption></figure> What do you notice about its content? What do you wonder about its content? There is no right or wrong way to notice and wonder, so please list as many observations and questions as you can. Are any of your noticings and wonderings related to math?</li>
+</ol></article></div>
+<p id="p-978">This topic may be new to you, and it also may be one that personally affects you. In this module we are primarily focusing on two aspects of the school-to-prison pipeline: school discipline (such as suspensions) and the presence of police in schools. If you have personal experiences with school discipline and police in schools, please engage with this module at your own pace and comfort level. If you know little or nothing about these topics, the following sections will provide you with more information about the problem.</p>
+<p id="p-979">We will investigate the presence of police in schools first, and will then move on to discipline. Whether in contact with teachers, school administrators, or law enforcement, we will see that many students get punished for their actions, and in a variety of ways. We will want to know if these punishments are warranted and who is affected by them the most.</p></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.2</span> <span class="title">History of police in schools</span>
+</h3>
+<section class="introduction" id="introduction-47"><p id="p-980">In this part of the module you will learn about the presence of police in schools. Before you read on, answer these questions:</p>
+<article class="question example-like" id="question-2"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-2"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">8.9.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-2"><article class="question example-like"><ol class="decimal">
+<li id="li-503"><p id="p-derived-li-503">What do you know about police officers in schools?</p></li>
+<li id="li-504"><p id="p-derived-li-504">Did you go to a school with a school resource officer (SRO)?</p></li>
+<li id="li-505"><p id="p-derived-li-505">Why would schools have SROs?</p></li>
+</ol></article></div></section><section class="subsubsection" id="subsubsection-28"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.2.1</span> <span class="title"></span>
+</h4>
+<article class="exploration project-like" id="exploration-3"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">School resource officers in schools.</span>
+</h5>
+<p id="p-981">Consider the table below, giving the number of school resource officers, number of public schools, and the number of public schools with school resource officers, by full- and part-time school resource officer status, for selected years from 2003–04 to 2015–16 <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-NCES-officers.html" title="Bibliographic Entry 8.12.137">[8.12.137]</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-NCES-officers.html ./knowl/school-discipline-biblio-other-NCES-officers.html">
+\begin{equation*}
+\begin{array}{|c|c|c|c|}\hline \text{Year}\amp \text{Public school resource officers}\amp \text{Public schools} \amp \text{Public schools with school resource officers} \\ \hline 2003-04 \amp 34000 \amp 95726 \amp 26000 \\ \hline 2005-06 \amp 36700 \amp 97382 \amp 26900 \\ \hline 2007-08 \amp 46100 \amp 98916 \amp 29400 \\ \hline 2009-10 \amp 40200 \amp 98817 \amp 25700 \\ \hline 2015-16 \amp 52100 \amp 98277 \amp 35100 \\ \hline \end{array}
+\end{equation*}
+</div>
+<p id="p-982">You can also view this table in <a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FfFsQ0PKR5caj6wCbidAI%2Ffile.json" target="_blank">CODAP</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-129" id="fn-129"><sup> 1 </sup></a>, where you can also do calculations for some of the questions. You may want to watch the <a class="external" href="https://www.youtube.com/watch?v=9ogJdB9oEvk" target="_blank">Simple formulas</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-130" id="fn-130"><sup> 2 </sup></a> tutorial to figure out how to do calculations in CODAP.</p>
+<p id="p-983">NOTE: In 2003–04, schools reported on school resource officers present at their school on a regular basis. In 2005–06, 2007–08, 2009–10, and 2015–16, schools reported on school resource officers present at their school at least once a week.</p>
+<ol class="decimal">
+<li id="li-506"><p id="p-derived-li-506">Give at least three observations you can make about the data in the table.</p></li>
+<li id="li-507"><p id="p-derived-li-507">How much did the number of SROs in schools change between 2003-04 and 2015-2016? Give the total and percent change.</p></li>
+<li id="li-508"><p id="p-derived-li-508">What percentage of schools had SROs in 2003-2004? What percentage of schools had SROs in 2015-2016? How did the percentage change?</p></li>
+<li id="li-509"><p id="p-derived-li-509">Why do you think the number of SROs has gone up so much since 2003?</p></li>
+<li id="li-510">Consider the graph below, based on data from NCES <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-NCES-officers.html" title="Bibliographic Entry 8.12.137">[8.12.137]</a>. <figure class="figure figure-like" id="figure-100"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="school-discipline/images/SROgraph.png" class="contained" alt="Bar graph of prevalence of SROs by free and reduced lunch."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.9.4<span class="period">.</span></span><span class="space"> </span>Securty staff by free and reduced lunch</figcaption></figure> What does the graph tell you about which schools are more and less likely to have school resource officers?</li>
+</ol></article><p id="p-984">You probably notice from doing this exploration that the number of SROs and the number of schools with SROs has gone up. According to <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a>, “Following the 1999 Columbine High School shooting, President Clinton called for the first round of Community Oriented Policing Services (COPS) grants as a response that would allow for school/police partnerships focused on 'school crime, drug use, and discipline problems.'' COPS is a unit of the U.S. Department of Justice. After the Sandy Hook tragedy in 2012, President Obama allocated another $45 million into COPS to fund additional school police. Federal grants were supplemented by state grants and local monies to sustain SRO programs.”</p>
+<p id="p-985">In other words, highly publicized school shootings were part of the impetus for increased presence of police in schools, even though school shootings are statistically very rare <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-crime-safety.html" title="Bibliographic Entry 8.12.143">[8.12.143]</a>.</p></section><section class="subsubsection" id="subsubsection-29"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.2.2</span> <span class="title">Summary</span>
+</h4>
+<p id="p-986">The presence of police officers in schools has significantly increased since 1999 in response to the Columbine High School and other shootings. The majority of public schools have a part-time or full-time SRO on campus, though schools with a higher percentage of free and reduced lunch eligibility are more likely to have an SRO. In the next section we will look at other supports that have been considered important for preventing school shootings and for improving well-being of students.</p></section></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.3</span> <span class="title">Presence of other student supports in schools</span>
+</h3>
+<section class="introduction" id="introduction-48"><p id="p-987">It has been argued that to prevent shootings (and for many other reasons), schools should invest in supporting students’ mental and physical well-being. However, in most states, there is a shortage of nurses, social workers, psychologists, and counselors in schools. In this section, you will compare numbers of school support staff (including SROs) in different states.</p>
+<p id="p-988">Before you continue, answer the following questions:</p>
+<article class="question example-like" id="question-3"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-3"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">8.9.5</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-3"><article class="question example-like"><ol class="decimal">
+<li id="li-511"><p id="p-derived-li-511">Was there a nurse, social worker, psychologist, and/or counselor in schools you went to?</p></li>
+<li id="li-512"><p id="p-derived-li-512">How common do you think these support staff are in schools?</p></li>
+</ol></article></div></section><section class="subsubsection" id="subsubsection-30"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.3.1</span> <span class="title"></span>
+</h4>
+<p id="p-989">We will first look at Delaware and Washington, DC as examples, and then you will have a chance to look at your own location if it is different from these two.</p>
+<article class="exploration project-like" id="exploration-4"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">School support staff in Delaware.</span>
+</h5>
+<p id="p-990">Use the following <a class="external" href="https://www.geogebra.org/classic/n6ekzput" target="_blank">Geogebra</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-131" id="fn-131"><sup> 3 </sup></a> applet to help you explore the following guiding questions about school support staff in the state of Delaware <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a></p>. <ol class="decimal">
+<li id="li-513"><p id="p-derived-li-513">Which pieces look to be similar in size? Are there relationships between the piece sizes?</p></li>
+<li id="li-514"><p id="p-derived-li-514">Show the names of the sections. Use this to help you refine your discussion above.</p></li>
+<li id="li-515"><p id="p-derived-li-515">Now select the option that allows you to see the number that corresponds with each section. Do the numeric values change any of the relationships that you developed?</p></li>
+<li id="li-516"><p id="p-derived-li-516">Do you think you would have made the same comparisons if you had known the numbers first instead of focusing on the visual representation?</p></li>
+</ol></article><p id="p-991">In this exploration, certain pieces were generally the same size even though they did not hold the same numeric value. Let’s take a minute to explore that difference between the visual representation and the numerical data.</p>
+<article class="exploration project-like" id="exploration-5"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">Exploration: School support staff in Washington DC.</span>
+</h5>
+<p id="p-992">Examine the following table with data for the school support staff in the Washington DC school district <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-ACLU-report.html">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|} \hline \text{Counselors} \amp \text{Social Workers} \amp \text{Psychologists} \amp \text{Nurses} \amp \text{Law Enforcement} \amp \text{Security Guards} \\ \hline 235 \amp 223 \amp 198 \amp 154 \amp 154 \amp 333 \\\hline \end{array}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-517"><p id="p-derived-li-517">Look at the numbers for the groups and make comparisons between them. Are there any exact ratios, meaning any comparisons between groups that are identical or can be combined to be identical?</p></li>
+<li id="li-518"><p id="p-derived-li-518">Thinking about probability, which type of support staff has the highest probability? Which type of support staff has the lowest probability?</p></li>
+<li id="li-519"><p id="p-derived-li-519">Critical thinking: How does the ratio of (Law Enforcement + Security Guards):(Counselors + Social Workers + Psychologists + Nurses) look? Why would we be interested in this ratio? Were you expecting it to be closer together or further apart? How does this help you think about the school-to-prison pipeline?</p></li>
+<li id="li-520"><p id="p-derived-li-520">Critical Thinking: Building on the idea from the previous question, what groups of support staff do students have the highest probability of encountering? How does this help you think about the school-to-prison pipeline?</p></li>
+</ol></article><p id="p-993">In the next exploration you will have a chance to look at your state or a state that you are interested in.</p>
+<article class="exploration project-like" id="exploration-6"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">Numbers in your state.</span>
+</h5>
+<p id="p-994">Read the following excerpt from <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a>:</p>
+<p id="p-995">"Given the importance of these providers, experts and professional organizations provide recommended student-to-SBHM provider ratios. The American School Counselor Association recommends a ratio of 250 students per counselor. The National Association of School Psychologists (NASP) recommends a ratio of 500-700 students per school psychologist, depending on the comprehensiveness of services being provided. School Social Work Association of America (SSWAA) recommends that social work services should also be provided at a ratio of 250 students to one social worker. Several states, along with the American Nurses Association, recommend a ratio of one school nurse to 750 students in healthy student populations."</p>
+<p id="p-996">Consider the table adapted from <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a> that gives the numbers of counselors, social workers, psychologists, nurses, teachers, law enforcement, and security guards in U.S. public schools by state in 2015-2016. You can find the table in <a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FSOrntgcLrvXC7gQ6Qxga%2Ffile.json" target="_blank">CODAP</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-132" id="fn-132"><sup> 4 </sup></a> or in <a class="external" href="https://docs.google.com/spreadsheets/d/1n5yJT_OwsdTELlJ2EQczIT1h1xvd2TKnaGs-ggg0TpM/edit?usp=sharing" target="_blank">Google Sheets</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-133" id="fn-133"><sup> 5 </sup></a> (this sheet is view only). Note that the numbers of teachers, law enforcement, and security guides are provided for your information only. You will not need this information.</p>
+<ol class="decimal">
+<li id="li-521"><p id="p-derived-li-521">Select a state. You can choose the state where you currently live, the state in which you were born, the state where you went to school, or even just a state that interests you. How many students went to school in that state in 2015-2016? (Note: Hawaii and Florida have data that may have been underreported. If you choose one of these two states, you will have to decide how to deal with the missing or incomplete information.)</p></li>
+<li id="li-522"><p id="p-derived-li-522">Calculate the number of counselors, school psychologists, social workers, and nurses that should have been employed in that state’s public schools in 2015-2016 according to the recommended ratios from the paragraph. If you wish, you can use CODAP to calculate the answers.</p></li>
+<li id="li-523"><p id="p-derived-li-523">Compare your calculated answers with actual numbers of counselors, social workers, psychologists, and nurses in the table for your chosen state. How do the numbers compare?</p></li>
+<li id="li-524"><p id="p-derived-li-524">What did you learn from this investigation and what do you still wish to know?</p></li>
+</ol></article></section><section class="subsubsection" id="subsubsection-31"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.3.2</span> <span class="title">Summary</span>
+</h4>
+<p id="p-997">The majority of public schools have a part-time or full-time SRO on campus, but not counselors, social workers, psychologists, and nurses. This is true nationwide, with some exceptions.</p></section><section class="conclusion" id="conclusion-5"><p id="p-998">In the next section, we will get to the central problem with school discipline: that it affects different populations very differently. We will first look at arrests and then at suspensions.</p></section></section><section class="subsection" id="subsection-80"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.4</span> <span class="title">Who gets arrested in schools</span>
+</h3>
+<section class="introduction" id="introduction-49"><p id="p-999">In this part of the module, you will learn about school arrests. You will look at some national statistics to draw conclusions about disparities that exist in school arrests with respect to race and ability.</p>
+<p id="p-1000">Before you continue, answer the following questions:</p>
+<article class="question example-like" id="question-4"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-4"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">8.9.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-4"><article class="question example-like"><ol class="decimal">
+<li id="li-525"><p id="p-derived-li-525">How often do you think students are arrested at school?</p></li>
+<li id="li-526"><p id="p-derived-li-526">Why do you think students are arrested at school?</p></li>
+</ol></article></div></section><section class="subsubsection" id="subsubsection-32"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.4.1</span> <span class="title"></span>
+</h4>
+<article class="exploration project-like" id="exploration-7"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.5</span><span class="period">.</span><span class="space"> </span><span class="title">School arrests.</span>
+</h5>
+<p id="p-1001">There were over 204,000 referrals to law enforcement in 2015-2016 in U.S. public schools, almost 52,000 of which were school arrests. The actual number is likely higher due to underreporting.</p>
+<p id="p-1002">Consider the table, created using data from CRDC <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-CRights-estimates.html" title="Bibliographic Entry 8.12.142">[8.12.142]</a>, that gives rates of school arrests by race and disability status by state per 10,000 in 2015-2016. Because the table is large, it is linked: <a class="external" href="https://docs.google.com/spreadsheets/d/1WFHkK319QGh4kgvfAewJfZCnckO3-vKmiZA-yqvBTHE/edit?usp=sharing" target="_blank">School arrest rates per 10,000 by state, 2015-2016</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-134" id="fn-134"><sup> 6 </sup></a>. This table is a view only Google Sheet. You can create your own copy if you want to edit it.</p>
+<p id="p-1003">You can find the table in the CODAP file <a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FXlRi8Tk40GoNW6RnEAPJ%2Ffile.json" target="_blank">School arrests: rates only</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-135" id="fn-135"><sup> 7 </sup></a>, where you can manipulate the data and do calculations with it. If you are interested in total numbers of arrests and not just the rates, you can find them in the CODAP file <a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FWtDfDjuRCCtTDxsGZ4m5%2Ffile.json" target="_blank">School arrests: all</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-136" id="fn-136"><sup> 8 </sup></a>. Review the <a class="external" href="https://www.youtube.com/watch?v=9ogJdB9oEvk" target="_blank">Simple formulas</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-137" id="fn-137"><sup> 9 </sup></a> tutorial if you need help doing calculations in CODAP.</p>
+<ol class="decimal">
+<li id="li-527"><p id="p-derived-li-527">What do you notice about this table? What do you wonder? Remember that there is no right or wrong way to notice and wonder, but try to include mathematical observations.</p></li>
+<li id="li-528"><p id="p-derived-li-528">Consider the data: How do you think the data in this table were collected? What do the data tell us and what are they unable to tell us? What biases may be present in how the data were collected and summarized?</p></li>
+<li id="li-529"><p id="p-derived-li-529">Are there groups in the table that are mutually exclusive? Explain your reasoning.</p></li>
+<li id="li-530"><p id="p-derived-li-530">Are there groups that are not mutually exclusive based on the information provided? Explain your reasoning.</p></li>
+<li id="li-531"><p id="p-derived-li-531">The table gives rates per 10,000. For example, the 10.26 in Arrests per 10000 column for all of United States means that for every 10,000 students in the United States, around 10 were arrested. The arrest rate for students with disabilities in 2015-2016 was 20.69 per 10,000. Who do you think was more likely to be arrested in 2015-2016: students with disabilities or students without disabilities? How do you know?</p></li>
+<li id="li-532"><p id="p-derived-li-532">Are there any particular groups of students who seem to be arrested more than others? What is your evidence for your conclusion?</p></li>
+<li id="li-533"><p id="p-derived-li-533">Are there any particular states or regions that seem to arrest students more than others? What is your evidence for this conclusion? To answer this question you can make a graph in CODAP. For example, you can drag the state attribute to the x-axis and one of the arrest rates to the y-axis.</p></li>
+<li id="li-534">If students from one group are arrested more than is their share of the population, we say that they are disproportionately arrested. Consider the stacked bar graph created from CRDC <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-CRights-estimates.html" title="Bibliographic Entry 8.12.142">[8.12.142]</a> data: <figure class="figure figure-like" id="figure-101"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="school-discipline/images/arrests.png" class="contained" alt="Stacked bar graph of enrollment and school arrests by race."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.9.7<span class="period">.</span></span><span class="space"> </span>School enrollment and arrests by race</figcaption></figure> Note that the graph combines Asian, American Indian or Alaska Native, and Native Hawaiian or other Pacific Islander students because the percentages of their arrests are all very low and would be hard if not impossible to see on the graph. Of the five groups in the graph, which are disproportionately arrested in schools?</li>
+<li id="li-535"><p id="p-derived-li-535">Would you say that students with disabilities are also disproportionately arrested in schools? How do you know?</p></li>
+<li id="li-536"><p id="p-derived-li-536">(Optional) There is no information about the breakdown of students arrests by offense. However, media have reported numerous stories of students being arrested for minor infractions. If you are interested, you can find some examples in the document <a class="external" href="https://docs.google.com/document/d/1NdIl1hUdew0V5mD-HNnqdcdPHtG0c-03pYoX8hhGO1k/edit?usp=sharing" target="_blank">Articles about individual instances of discipline.</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-138" id="fn-138"><sup> 10 </sup></a></p></li>
+</ol></article></section><section class="subsubsection" id="subsubsection-33"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.4.2</span> <span class="title">Summary</span>
+</h4>
+<p id="p-1004">Large numbers of arrests are made in schools every year. The arrests are disproportionately among Black students and students with disabilities.</p></section></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.5</span> <span class="title">Who gets suspended from school</span>
+</h3>
+<section class="introduction" id="introduction-50"><p id="p-1005">In this part of the module, you will learn about school suspensions and begin to make connections between school discipline and incarceration.</p>
+<p id="p-1006">Before you continue, answer the following questions:</p>
+<article class="question example-like" id="question-5"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-5"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">8.9.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-5"><article class="question example-like"><ol class="decimal">
+<li id="li-537"><p id="p-derived-li-537">Why do you think students get suspended from school?</p></li>
+<li id="li-538"><p id="p-derived-li-538">Are all groups of students equally likely to get suspended or are some groups suspended more than others?</p></li>
+</ol></article></div></section><section class="subsubsection" id="subsubsection-34"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.5.1</span> <span class="title"></span>
+</h4>
+<article class="exploration project-like" id="exploration-8"><h5 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">Prison population simulation.</span>
+</h5>
+<p id="p-1007">One tool that is used to model and understand probability is simulation. In this part of the module, we will be using a simulation to help us explore different probability scenarios to see which behaves most like our target. We can determine if information from an empirical model provides a stable foundation for a theoretical model, meaning it can be replicated or nearly replicated over a number of trials. We can also use a theoretical model to produce simulated samples which can let us know if different empirical models are valid. In this exploration, you will examine a data table that shows the overall population for men's prisons by race <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-BJS-report.html" title="Bibliographic Entry 8.12.132">[8.12.132]</a>. Then you will examine three different simulations to see which one you think would be most likely to produce the prison population given.  In reading the output from the simulations, there is an overall summary column presented at the left, which shows the mean proportion for each race for all of the trials. In the center, there are the summaries from each trial, meaning it shows the proportion for each race in each trial. Then in the far right hand column, the raw data is shown. The simulations model the selection of 50 individual prisoners in 25 repeated samples. The variable being simulated is prisoner race because that is what we are interested in modeling. Before you start working with the simulations (where you only need to select “start” to collect data), think about strategies that you can use to see if you think a model will match.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-BJS-report.html">
+\begin{equation*}
+\begin{array}{|c|c|c|c|} \hline \text{White} \amp \text{Latinx} \amp \text{Black} \amp \text{Other} \\ \hline 29\% \amp 18\% \amp 34\% \amp 19\% \\ \hline \end{array}
+\end{equation*}
+</div>
+<p id="p-1008"><a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FfDqh5opDPop1bOS1vziM%2Ffile.json" target="_blank">Simulation A</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-139" id="fn-139"><sup> 11 </sup></a> represents the general population according to the US Census.</p>
+<p id="p-1009"><a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2F0Sr50EDuWCYBujXEk68H%2Ffile.json" target="_blank">Simulation B</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-140" id="fn-140"><sup> 12 </sup></a> represents the percentages of students suspended in schools.</p>
+<p id="p-1010"><a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FJDHboerfkUFi2RU95SRs%2Ffile.json" target="_blank">Simulation C</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-141" id="fn-141"><sup> 13 </sup></a> represents the percentages with all groups being evenly distributed.</p>
+<ol class="decimal">
+<li id="li-539"><p id="p-derived-li-539">The three simulations did not present an exact match to the prison population, but which model do you think was the closest to the prison population model?</p></li>
+<li id="li-540"><p id="p-derived-li-540">What factors helped you make your decision about fitting the model?</p></li>
+<li id="li-541"><p id="p-derived-li-541">Do you think that this single variable (prisoner race) was enough to help you make a decision about the model? What additional information would you think would be useful, if any?</p></li>
+<li id="li-542"><p id="p-derived-li-542">The simulations automatically calculated the proportions of each population group. Explore the data that was produced in the simulations. How does the selection of an individual in the simulation influence the calculated proportion?</p></li>
+</ol>
+<p id="p-1011">Notes about probability: For the exploration you just completed, the outcomes of the probability experiment you conducted were the prisoners that were being simulated. There was also a specific group that was counted to create each proportion. These specific groups were the races of interest being counted. The probability is a ratio of the specific outcome of interest over the total number of outcomes. In the simulations, we looked at different races as the specific outcomes. It may be helpful to revisit the exploration with this definition and see if any of your ideas change.</p></article></section><section class="subsubsection" id="subsubsection-35"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.5.2</span> <span class="title">Analyzing school suspension data</span>
+</h4>
+<p id="p-1012">Students can receive in-school or out-of-school suspensions. In this investigation, we focus on out-of-school suspensions only.</p>
+<p id="p-1013">Consider the table, created using data from CRDC <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-CRights-estimates.html" title="Bibliographic Entry 8.12.142">[8.12.142]</a>, that gives numbers of students with one or more out-of school suspension by race and disability status and by state in 2015-2016. Because the table is large, it is linked: <a class="external" href="https://docs.google.com/spreadsheets/d/1MuNNrUmYrOJLgr63CibToSSsDa0qZw1VumG76KA4Mes/edit?usp=sharing" target="_blank">Out-of-school suspensions by state, 2015-2016</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-142" id="fn-142"><sup> 14 </sup></a>. It is a view only Google Sheet, so you need to create your own copy if you want to edit it.</p>
+<p id="p-1014">The CODAP file <a class="external" href="https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FUO2joJ483aCYf3jpvXqF%2Ffile.json" target="_blank">Out of school suspensions</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-143" id="fn-143"><sup> 15 </sup></a> contains this same information. In this investigation, you will analyze the data in the table.</p>
+<ol class="decimal">
+<li id="li-543"><p id="p-derived-li-543">Can you make some observations about the table just from looking at it? If so, what observations can you make?</p></li>
+<li id="li-544"><p id="p-derived-li-544">Make one or more graphs in CODAP to help you make sense of the table. Remember that you have to drag an attribute to the x-axis and that you may also drag an attribute to the y-axis to make a meaningful graph.</p></li>
+<li id="li-545"><p id="p-derived-li-545">What are the advantages of giving only total numbers of suspensions and not rates?</p></li>
+<li id="li-546"><p id="p-derived-li-546">What are disadvantages of giving only total numbers of suspensions and not rates?</p></li>
+<li id="li-547"><p id="p-derived-li-547">Create a formula in CODAP or use a calculator to calculate some suspension rates from the table (e.g., rates for your state by race or for a particular race by state). What do these rates tell you about how suspensions vary by state and/or race?</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-36"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">8.9.5.3</span> <span class="title">Summary</span>
+</h4>
+<p id="p-1015">As is the case with arrests, Black students and students with disabilities are disproportionately disciplined at school. While we did not look at gender in this module, it is worth noting that boys get suspended much more than girls, though racial disparities for girls’ suspensions are more pronounced.</p>
+<p id="p-1016">In the last part of the module, it may become more clear where the term school-to-prison pipeline comes from. As it turns out, students who are disciplined at school are more likely to leave school and have increased interactions with law enforcement.</p></section></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.6</span> <span class="title">Where is the pipeline?</span>
+</h3>
+<p id="p-1017">In this part of the module, we return to the concept of the school-to-prison pipeline and look at some connections between suspensions, school pushout, and incarceration.</p>
+<p id="p-1018">Before you continue, answer the following question:</p>
+<article class="question example-like" id="question-6"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-6"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">8.9.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-6"><article class="question example-like">What long-term consequences may there be for students who are suspended from school or arrested at school?</article></div>
+<article class="exploration project-like" id="exploration-9"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.9.7</span><span class="period">.</span><span class="space"> </span><span class="title">Data from Texas.</span>
+</h4>
+<p id="p-1019">In 2011, researchers from the Council of State Governments Justice Center in partnership with the Public Policy Research Institute at Texas A &amp; M University published a report <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-Texas-study.html" title="Bibliographic Entry 8.12.133">[8.12.133]</a> based on data from all public school students in Texas who were in seventh grade in 2000, 2001, and 2002. The researchers followed these students for at least six years, with access to academic and juvenile records. Among the researchers’ findings was that only 3% of the offenses for which students are disciplined are ones where by law schools are required to suspend or expel. The other 97% are at administrators’ discretion.</p>
+<p id="p-1020">The study also found that 59.6% of all the students were disciplined one or more times and 40.4% were not. The table below summarizes some of the outcomes for the different groups of students.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-Texas-study.html">
+\begin{equation*}
+\begin{array}{|c|c|c|}\hline \text{}\amp \text{Total students in the study (928,940)}\amp \text{}  \\ \hline \text{} \amp \text{Students with disciplinary actions (553,413)} \amp \text{Students without disciplinary actions (375,527)} \\ \hline \text{Held back a at least once} \amp 31\% \amp  5\% \\ \hline \text{Dropped out} \amp 10\% \amp 2\%  \\ \hline \text{Juvenile justice contact} \amp 23\% \amp 2\%  \\ \hline \end{array}
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-548"><p id="p-derived-li-548">Using what you now know about ratios, percents, and probability, explain whether the term “school-to-prison pipeline” is justified for the students from this study.</p></li>
+<li id="li-549"><p id="p-derived-li-549">What else would you like to know to better answer this question?</p></li>
+</ol></article></section><section class="subsection" id="subsection-83"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.9.7</span> <span class="title">Summary</span>
+</h3>
+<p id="p-1021">Students who were disciplined at school in Texas between 2000 and 2002 were much more likely to be held back a grade, drop out, or have contact with juvenile justice. These school discipline actions were 97% of the time at the administrators’ discretion and not mandated by school policies; and they had a lasting impact on a large number of students <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-Texas-study.html" title="Bibliographic Entry 8.12.133">[8.12.133]</a>.</p>
+<p id="p-1022">Numerous studies have found that students who are arrested at school or who have been suspended are more likely to drop out of school and have continued contact with law enforcement. A recent study <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-harvard.html" title="Bibliographic Entry 8.12.131">[8.12.131]</a> found that in Charlotte-Mecklenberg school district in North Carolina, students who were assigned to schools with higher suspension rates were significantly more likely to be arrested and incarcerated as adults, and less likely to attend a four-year college. Furthermore, the results were independent of which students were assigned to the schools (the study took place during a redrawing of school boundaries when over 50% of the students in the district were assigned to different schools), or of factors like teacher turnover. Instead, the suspension rates were most influenced by school policies and leadership.</p>
+<p id="p-1023">Since Black students and students with disabilities are disproportionately disciplined and arrested and schools, it follows that they are also disproportionately likely to drop out of school and have continued troubles with the law. This is why the school-to-prison pipeline disproportionately affects these students.</p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-129"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FfFsQ0PKR5caj6wCbidAI%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-130"><div class="fn"><code class="code-inline tex2jax_ignore">youtube.com/watch?v=9ogJdB9oEvk</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-131"><div class="fn"><code class="code-inline tex2jax_ignore">www.geogebra.org/classic/n6ekzput</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-132"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FSOrntgcLrvXC7gQ6Qxga%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-133"><div class="fn"><code class="code-inline tex2jax_ignore">docs.google.com/spreadsheets/d/1n5yJT_OwsdTELlJ2EQczIT1h1xvd2TKnaGs-ggg0TpM/edit?usp=sharing</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-134"><div class="fn"><code class="code-inline tex2jax_ignore">docs.google.com/spreadsheets/d/1WFHkK319QGh4kgvfAewJfZCnckO3-vKmiZA-yqvBTHE/edit?usp=sharing</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-135"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FXlRi8Tk40GoNW6RnEAPJ%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-136"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FWtDfDjuRCCtTDxsGZ4m5%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-137"><div class="fn"><code class="code-inline tex2jax_ignore">youtube.com/watch?v=9ogJdB9oEvk</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-138"><div class="fn"><code class="code-inline tex2jax_ignore">docs.google.com/document/d/1NdIl1hUdew0V5mD-HNnqdcdPHtG0c-03pYoX8hhGO1k/edit?usp=sharing</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-139"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FfDqh5opDPop1bOS1vziM%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-140"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2F0Sr50EDuWCYBujXEk68H%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-141"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FJDHboerfkUFi2RU95SRs%2Ffile.json</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-142"><div class="fn"><code class="code-inline tex2jax_ignore">docs.google.com/spreadsheets/d/1MuNNrUmYrOJLgr63CibToSSsDa0qZw1VumG76KA4Mes/edit?usp=sharing</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-143"><div class="fn"><code class="code-inline tex2jax_ignore">codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FUO2joJ483aCYf3jpvXqF%2Ffile.json</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

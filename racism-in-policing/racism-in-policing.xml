@@ -169,7 +169,7 @@
 				</p>
 				<sage language="r">
 					<input>
-						FIX
+						hartford &lt;- read.csv("https://raw.githubusercontent.com/electrichobbit/math-for-the-people/main/racism-in-policing/data/hartford.csv")
 						age &lt;- hartford$age
 						mean(age)
 					</input>
@@ -223,8 +223,11 @@
 				</p>
 				<sage language="r">
 					<input>
-						nrow(hartford)
-						nrow(philadelphia)
+						philadelphia &lt;- read.csv("https://raw.githubusercontent.com/electrichobbit/math-for-the-people/main/racism-in-policing/data/philadelphia.csv")
+						print("Number of Stops in Hartford:")
+						print(nrow(hartford))
+						print("Number of Stops in Philadelphia:")
+						print(nrow(philadelphia))
 					</input>
 				</sage>
 				<p>
@@ -249,8 +252,10 @@
 				</p>
 				<sage language="r">
 					<input>
-						table(hartford$race)
-						table(philadelphia$race)
+						print("Hartford")
+						print(table(hartford$race))
+						print("Philadelphia")
+						print(table(philadelphia$race))
 					</input>
 				</sage>
 				<p>
@@ -413,6 +418,7 @@
 			</p>
 			<sage language="r">
 				<input>
+					hartford &lt;- read.csv("https://raw.githubusercontent.com/electrichobbit/math-for-the-people/main/racism-in-policing/data/hartford.csv")
 					table(hartford$race,hartford$searchfrisk)
 				</input>
 			</sage>
@@ -483,22 +489,48 @@
 			For the following three exercises, edit the blocks of code in <xref ref="racism-policing-understanding-data"/> to show results for stopped drivers in Philadelphia rather than in Hartford.
 		</p>
 		<exercise>
-			What was the mean age of stopped drivers in Philadelphia during this time? What about the median? Create a histogram of the <c>age</c> variable from the <c>philadelphia</c> data.
+			<p>
+				What was the mean age of stopped drivers in Philadelphia during this time? What about the median? Create a histogram of the <c>age</c> variable from the <c>philadelphia</c> data (You will only need to load the data in once each time you open this webpage).
+			</p>
+			<sage language="r">
+				<input>
+					philadelphia &lt;- read.csv("https://raw.githubusercontent.com/electrichobbit/math-for-the-people/main/racism-in-policing/data/philadelphia.csv")
+					
+				</input>
+			</sage>
 		</exercise>
 		<exercise>
-			Create a table and bar chart of the <c>sex</c> variable from the <c>philadelphia</c> data.
+			<p>
+				Create a table and bar chart of the <c>sex</c> variable from the <c>philadelphia</c> data.
+			</p>
+			<sage language="r">
+				<input>
+					
+				</input>
+			</sage>
 		</exercise>
 		<exercise>
-			In <xref ref="racism-policing-proportions-race-in-stops"/> we analyzed how often white and Black drivers were searched after they were stopped, and how often contraband was found among those who were searched, for stopped Hartford drivers. Apply the same techniques to the Philadelphia drivers. Were stopped white or Black drivers searched at a higher rate? Was contraband found at a higher rate among white or Black searched drivers?
+			<p>
+				In <xref ref="racism-policing-proportions-race-in-stops"/> we analyzed how often white and Black drivers were searched after they were stopped, and how often contraband was found among those who were searched, for stopped Hartford drivers. Apply the same techniques to the Philadelphia drivers. Were stopped white or Black drivers searched at a higher rate? Was contraband found at a higher rate among white or Black searched drivers?
+			</p>
+			<sage language="r">
+				<input>
+					
+				</input>
+			</sage>
 		</exercise>
 		<p>
 			For the next two exercises use Bayes' theorem and the Colab notebook.
 		</p>
 		<exercise>
-			Recent data has estimated the worldwide percentage of Spam emails  as 28.5% <xref ref="racism-policing-biblio-spam-email"/>. A new software company states that their product can detect 98% of emails as spam. Sometimes (2%) of the time, the filter incorrectly labels non-spam emails as spam (false positive). With these percentages in mind, what is the true probability that an email, if labeled spam, is actually a non-spam email? (Hint: there are many ways you can approach this, but it may make sense to use A to model an event that an email is labeled spam, and B to represent that the email actually is spam.)
+			<p>
+				Recent data has estimated the worldwide percentage of Spam emails  as 28.5% <xref ref="racism-policing-biblio-spam-email"/>. A new software company states that their product can detect 98% of emails as spam. Sometimes (2%) of the time, the filter incorrectly labels non-spam emails as spam (false positive). With these percentages in mind, what is the true probability that an email, if labeled spam, is actually a non-spam email? (Hint: there are many ways you can approach this, but it may make sense to use A to model an event that an email is labeled spam, and B to represent that the email actually is spam.)
+			</p>
 		</exercise>
 		<exercise>
-			Are white motorists more likely to have a warning issued than Hispanic motorists? Use the Colab notebook to answer this question.
+			<p>
+				Are white motorists more likely to have a warning issued than Hispanic motorists? Use the Colab notebook to answer this question.
+			</p>
 		</exercise>
 	</exercises>
 	<section xml:id="racism-policing-references">

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Simple Logic</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="abortion-big-problem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="abortion.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="abortion-quantifiers.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="abortion-big-problem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="abortion.html" title="Up">Up</a><a class="next-button button toolbar-item" href="abortion-quantifiers.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="active">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="abortion-simple-logic"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Simple Logic</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-25">A <dfn class="terminology">mathematical statement</dfn> is a sentence that is either true or false, but not both at the same time. For example, consider the following sentences:</p>
+<ol class="decimal">
+<li id="li-25"><p id="p-derived-li-25">The Supreme Court’s ruling on Roe v. Wade on January 22, 1973 gave people the right to access abortion legally all across the country</p></li>
+<li id="li-26"><p id="p-derived-li-26">The Supreme Court ruled to overturn Roe v. Wade in 2022 making abortion a federal crime within the United States.</p></li>
+<li id="li-27"><p id="p-derived-li-27">Abortion should be illegal.</p></li>
+</ol>
+<p id="p-26">The first sentence is a sentence which is true, making the sentence a mathematical statement. The second sentence is false which also means that it is a mathematical statement. Lastly, the third sentence is an opinion which is neither true nor false. Therefore, the third sentence is not a mathematical statement. Determining if a sentence is a statement can be challenging as this causes us to challenge the difference between our individual belief systems and factual information. We will discuss this in further detail in our last section of this module.</p>
+<p id="p-27">Mathematical statements, or simply <dfn class="terminology">statements</dfn>, are the building blocks to mathematical logic. While mathematicians primarily focus on statements that involve mathematics such as, "The number 2 is greater than 0", the methods used by mathematicians to make sense of their discipline can be applied to other topics which use critical thinking.</p>
+<p id="p-28">There are a series of operations that we can perform on statements to get new statements. This is analogous to taking two numbers and adding, subtracting, or multiplying to get a new number. In algebra, the letters <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> are often used to represent numbers. These are called <dfn class="terminology">variables</dfn>. In logic we typically use the variables <span class="process-math">\(p\text{,}\)</span> <span class="process-math">\(q\text{,}\)</span> and <span class="process-math">\(r\)</span> to represent a statement. When we perform an operation on one or more statements, we will call the result a <dfn class="terminology">compound statement</dfn>. It is important to note that the resulting statement is, in fact, a statement. This means that a compound statement must either be true or false, but not both at the same time.</p></section><section class="subsection" id="abortion-negation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Negating and Combining Statements with "and" and "or"</span>
+</h3>
+<section class="subsubsection" id="subsubsection-1"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.5.1.1</span> <span class="title">Negations</span>
+</h4>
+<p id="p-29">The negation of a given statement switches the truth value of the original statement. For example, the negation of "Abortion is a federal crime" is "Abortion is not a federal crime". Many times, a statement can be negated by inserting the word "not", or an equivalent word into the original statement. There are many ways to symbolically represent the negation of a statement. For this module, if we represent a statement by the variable <span class="process-math">\(p\text{,}\)</span> we represent the <dfn class="terminology">negation</dfn> of <span class="process-math">\(p\)</span> by <span class="process-math">\(\neg p\text{.}\)</span> We can use a logic calculator to see how the value of <span class="process-math">\(p\)</span> and <span class="process-math">\(\neg p\)</span> are related. <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">f = propcalc.formula(" ~p ")
+f.truthtable()
+</script></pre> In the calculation above, the left most column represents the values for <span class="process-math">\(p\)</span> and the column under "value" represents the corresponding values for <span class="process-math">\(\neg p\text{.}\)</span></p></section><section class="subsubsection" id="abortion-and-or"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.5.1.2</span> <span class="title">And &amp; Or</span>
+</h4>
+<p id="p-30">As we can see, when <span class="process-math">\(p\)</span> is true, <span class="process-math">\(~p\)</span> is false and vice versa.The calculator used above generated a truth table. A <dfn class="terminology">truth table</dfn> is a table that will produce the truth values for compound statements based off of the statement variable which are typically placed to the left of the table and the truth values for the compound statement which are typically to the right in the table. We will use this truth table generator for the remainder of this module.</p>
+<p id="p-31">Two more common ways to make a compound statement is by taking two simple statements and combining them with either the word "or" or "and". For example, consider the two statements " In August 2022, abortion is legal with not gestational limit in the state of New Jersey"and "In August 2022, abortion was banned with no exception for rape or incest in the state of Alabama"<a href="" class="xref" data-knowl="./knowl/abortion-nj.html" title="Bibliographic Entry 1.12.2">[1.12.2]</a>. We can combine these statements in the following two ways:</p>
+<ol class="decimal">
+<li id="li-28"><p id="p-derived-li-28">In August 2022, abortion is legal with no gestational limit in the state of New Jersey <dfn class="terminology">or</dfn> in August 2022, abortion was banned with no exception for rape or incest in the state of Alabama.</p></li>
+<li id="li-29"><p id="p-derived-li-29">In August 2022, abortion is legal with no gestational limit in the state of New Jersey <dfn class="terminology">and</dfn> in August 2022, abortion was banned with no exception for rape or incest in the state of Alabama.</p></li>
+</ol>
+<p class="continuation">These statements are a bit awkward and can be rewritten without losing their meaning as simply:</p>
+<ol class="decimal">
+<li id="li-30"><p id="p-derived-li-30">In August 2022, abortion is legal with not gestational limit in the state of New Jersey <dfn class="terminology">or</dfn> was banned with no exception for rape or incest in the state of Alabama.</p></li>
+<li id="li-31"><p id="p-derived-li-31">In August 2022, abortion is legal with not gestational limit in the state of New Jersey <dfn class="terminology">and</dfn> was banned with no exception for rape or incest in the state of Alabama.</p></li>
+</ol>
+<p class="continuation">Both of these compound statements are true statements because the original simple statements are both true. The truth table for an "or" statement, more formally known as a <dfn class="terminology">disjunction</dfn> is given below: <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">f = propcalc.formula(" p | q ")
+f.truthtable()
+</script></pre> The truth table for an "and" statement, more formally known as a <dfn class="terminology">conjunction</dfn> is given next: <pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">f = propcalc.formula(" p & q ")
+f.truthtable()
+</script></pre> The columns on the far left represent all possible truth values of the simple statements <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> used in the compound statement. The entries on the far left of each row represent the different truth value of the simple statements used in the compound statement. The final column on the far right represents the truth value of the compound statement for the given simple statement truth values. For example the second row in the truth table above reads "When <span class="process-math">\(p\)</span> is true and <span class="process-math">\(q\)</span> is false, <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> is false".</p></section></section><section class="subsection" id="abortion-equivalent-statements"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">Equivalent Statements</span>
+</h3>
+<p id="p-32">Given a statement <span class="process-math">\(p\text{,}\)</span> we say that a statement <span class="process-math">\(q\)</span> is equivalent to <span class="process-math">\(p\)</span> if they have the same truth value. We denote equivalent statements, <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p \equiv q\text{.}
+\end{equation*}
+</div>
+<p class="continuation">For example, <span class="process-math">\(\neg(p\vee q)\equiv \neg p\wedge \neg q\)</span> because for corresponding values of <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> these compound statements have the same truth results. This can be seen by examining the truth tables below: <pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">f = propcalc.formula(" ~(p | q) ")
+f.truthtable()
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">f = propcalc.formula(" ~p&  ~q ")
+f.truthtable()
+</script></pre></p>
+<p id="p-33">Because equivalent statements have the same truth value, we can interchange one for the other without losing the meaning of a statement. Let's try the following example. You may find the following website helpful for entering in the symbols used in these calculators <a class="external" href="https://doc.sagemath.org/html/en/reference/logic/sage/logic/propcalc.html" target="_blank">Propositional Calculus</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 1 </sup></a>.</p>
+<article class="example example-like" id="example-1"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-34">Determine which of the following statements is equivalent to <span class="process-math">\(\neg(p\wedge q)\text{:}\)</span></p>
+<ol class="decimal">
+<li id="li-32"><p id="p-derived-li-32"><span class="process-math">\(\displaystyle \neg(p\vee q)\)</span></p></li>
+<li id="li-33"><p id="p-derived-li-33"><span class="process-math">\(\displaystyle \neg p\vee \neg q\)</span></p></li>
+<li id="li-34"><p id="p-derived-li-34"><span class="process-math">\(\displaystyle \neg p\wedge \neg q\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><ol id="p-35" class="decimal">
+<li id="li-35"><p id="p-derived-li-35">Not equivalent</p></li>
+<li id="li-36"><p id="p-derived-li-36">Equivalent</p></li>
+<li id="li-37"><p id="p-derived-li-37">not equivalent</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-36">The examples above are called DeMorgan’s Laws. Summarizing DeMorgan’s Laws:</p>
+<ol class="decimal">
+<li id="li-38"><p id="p-derived-li-38"><span class="process-math">\(\displaystyle \neg(p\vee q)\equiv \neg p\wedge \neg q\)</span></p></li>
+<li id="li-39"><p id="p-derived-li-39"><span class="process-math">\(\displaystyle \neg(p\wedge q)\equiv \neg p\vee \neg q\)</span></p></li>
+</ol>
+<p class="continuation">There are many other equivalent statements, as we will see in the next section.</p></section><section class="subsection" id="abortion-if-then"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">Implications (If-Then Statements)</span>
+</h3>
+<p id="p-37">An <dfn class="terminology">implication</dfn> is a statement that has a premise and a conclusion such as, "If I take birth control, then I can’t get pregnant". In this implication, the premise is the statement "I take birth control" and the conclusion is the statement "I can’t get pregnant". With an implication, the truth value of the premise and conclusion determine the truth value of the actual implication. Given two statements <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> the statement: if <span class="process-math">\(p\text{,}\)</span> then <span class="process-math">\(q\)</span> can be represented by <span class="process-math">\(p\rightarrow q\)</span> and read as "if <span class="process-math">\(p\text{,}\)</span> then <span class="process-math">\(q\)</span>", "<span class="process-math">\(p\)</span> implies <span class="process-math">\(q\)</span>", "<span class="process-math">\(p\)</span> only if <span class="process-math">\(q\)</span>", and "<span class="process-math">\(q\text{,}\)</span> if <span class="process-math">\(p\)</span>". Below is the truth table for the implication "if <span class="process-math">\(p\text{,}\)</span> then <span class="process-math">\(q\)</span>": <pre class="ptx-sagecell sagecell-sage" id="sage-6"><script type="text/x-sage">f = propcalc.formula(" p -> q ")
+f.truthtable()
+</script></pre></p>
+<p id="p-38">The truth value of implications can be counterintuitive at times. This occurs primarily when the premise is false because the implication will always be true. For example the implications below are true since the implications in all are false:</p>
+<ol class="decimal">
+<li id="li-40"><p id="p-derived-li-40">If abortions are federally protected, then people will use abortions to terminate unwanted pregnancies.</p></li>
+<li id="li-41"><p id="p-derived-li-41">If abortions are federally protected, then people will not use abortions to terminate unwanted pregnancies.</p></li>
+<li id="li-42"><p id="p-derived-li-42">If abortions are a federal crime, then more women will be jailed.</p></li>
+<li id="li-43"><p id="p-derived-li-43">If abortions are a federal crime, then more women will be jailed.</p></li>
+</ol>
+<p class="continuation">In these statements, it seems as if only one of the first two statements should be true and one of the last two statements should be true as the conclusions are negations of one another. However, all four statements are true.</p>
+<p id="p-39">It turns out that the only way for an implication to be false is when the premise is true and the conclusion is false. An example would be, "If abortions are not a federally protected right, then no-one will get an abortion".</p>
+<p id="p-40">Another counterintuitive concept that arises with implications is their negation. The negation, <span class="process-math">\(\sim (p \rightarrow q)\)</span> is equivalent to the statement <span class="process-math">\(p\wedge \sim q\text{.}\)</span> This is verified by examining their truth tables.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-7"><script type="text/x-sage">f = propcalc.formula(" ~(p-> q) ")
+f.truthtable()
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-8"><script type="text/x-sage">f = propcalc.formula(" p & ~q ")
+f.truthtable()
+</script></pre>
+<article class="example example-like" id="example-2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-41">Verify that the following statements are not equivalent to <span class="process-math">\(\sim (p \rightarrow q)\)</span> using the truth table generator below:</p>
+<ol class="decimal">
+<li id="li-44"><p id="p-derived-li-44"><span class="process-math">\(\displaystyle \sim p\rightarrow q\)</span></p></li>
+<li id="li-45"><p id="p-derived-li-45"><span class="process-math">\(\displaystyle \sim p\rightarrow \sim q\)</span></p></li>
+<li id="li-46"><p id="p-derived-li-46"><span class="process-math">\(\displaystyle p\rightarrow \sim q\)</span></p></li>
+<li id="li-47"><p id="p-derived-li-47"><span class="process-math">\(\displaystyle q\rightarrow p\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><ol id="p-42" class="decimal">
+<li id="li-48"><p id="p-derived-li-48">Not equivalent</p></li>
+<li id="li-49"><p id="p-derived-li-49">Not equivalent</p></li>
+<li id="li-50"><p id="p-derived-li-50">Equivalent</p></li>
+<li id="li-51"><p id="p-derived-li-51">not equivalent</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-43">It is important to notice that the negation of an implication is not an implication. For example, the negation of "If abortions are federally protected, then people will not use abortions to terminate unwanted pregnancies" is "Abortions are federally protected and people use abortions to terminate unwanted pregnancies" which is a false statement.</p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">doc.sagemath.org/html/en/reference/logic/sage/logic/propcalc.html</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

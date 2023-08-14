@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Probability</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="school-discipline-math-topic-percents.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="school-discipline.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-70.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="school-discipline-math-topic-percents.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="school-discipline.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-70.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="active">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="school-discipline-math-topic-probability"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.7</span> <span class="title">Probability</span>
+</h2>
+<section class="introduction" id="introduction-45"><p id="p-946">Probability is a specific type of ratio that allows the comparison of specific outcomes with the entire group of outcomes. We see probability expressed in three ways: as a fraction ranging from 0 to 1, as a decimal ranging from 0 to 1, and as a percentage ranging from 0% to 100%. All three of these expressions allow us to see a part and a whole, even if in the case of decimals and percentages where the whole is adjusted to be a multiple of ten. These different expressions can be seen in the Probability Scale below.</p>
+<figure class="figure figure-like" id="figure-98"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="school-discipline/images/probscale.jpg" class="contained" alt="Probability scale giving examples of likelihoods between 0 and 1 as fractions, decimals, and percents."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.7.1<span class="period">.</span></span><span class="space"> </span>Probability scale</figcaption></figure><p id="p-947">We have two main ways that we think about probability. One is what is called a theoretical model.  In the theoretical model, probabilities are driven by expectations of what we know. One classical example of a theoretical model is a coin flip where we know that there are two specific outcomes, or thinking about the months of the year from the probability scale. The second model is called an empirical model, and it is based on directly counting the occurrences of outcomes from events that have occurred. The empirical model is useful when the event being studied does not happen regularly. The process of selecting objects to model a process is called a probability experiment. A probability experiment offers a way to explore different outcomes. We can manually calculate the outcomes of a probability experiment, or use a tool like a simulator to help us understand a situation that is represented in a statement. Our choice to do this depends on the outcome or event that we might be looking at.</p>
+<p id="p-948">Both theoretical probability and empirical probabilities have similar building blocks. The sample space is the collection of all possible outcomes. An event consists of one or more outcomes. The probability is a ratio of the specific event of interest over the total number of outcomes. In this module, while we recognize the importance of understanding the underlying formulas for probability, we rely on simulations to develop skills that link initial statements of probability and the outcomes of experiments.</p>
+<article class="exploration project-like" id="safe"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.7.1</span><span class="period">.</span>
+</h3>Consider the statement: “A student feels safe to be themselves at school.” <ol class="decimal">
+<li id="li-497"><p id="p-derived-li-497">What outcomes are possible?</p></li>
+<li id="li-498"><p id="p-derived-li-498">Are there reasons that might cause students to feel  unsafe about being themselves?</p></li>
+<li id="li-499"><p id="p-derived-li-499">Do you think a student being themselves could make another student uncomfortable? Why or why not?</p></li>
+</ol>
+<p id="p-949">The possible outcomes are {a student feels safe, a student does not feel safe}, and that makes sense. The probability of a student feeling safe to be themselves will result in 1 out of 2 outcomes, but can we reliably predict which outcome we see? Ideally, students feeling safe to be themselves at school should be the only outcome we expect to see. In reality, we find that students do not feel safe to be themselves at school for any number of reasons. Consider the following quote: “The teachers … they thought we were selling weed in school, they thought that me and her were both selling weed ‘cause like, the way we were dressing, ‘cause we were the only girls at that middle school that dressed like boys. So it was like 'now we’re bad'.” (non-gender conforming youth from Arizona) <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-article-LGBTQ-youth.html" title="Bibliographic Entry 8.12.140: Messy, Butch, and Queer: LGBTQ Youth and the School-to-Prison Pipeline,">[8.12.140]</a>. In this quote, the student was exposed to a negative experience, accusations of illegal activity, because of choices associated with how they chose to express who they believed themself to be.</p>
+<p id="p-950">Making Sense: Think back to your experiences in school. Identify if there were similar incidents to the incident described above in your community. Do you think that how people were seen by others influenced their behavior, meaning if a label was applied to a person did they adapt to the label? Or do you think that the person stayed the same?</p></article><p id="p-951">The second type of probability that we use is the empirical model. This comes from raw data. We tend to see this in the form of tables with numeric values, instead of the summary statistics. The basic use of the empirical model is very similar to the ideas from theoretical probability, and when we think about how to make sense of data from a table of data we think about what the theoretical model might have to look like.</p>
+<article class="exploration project-like" id="arrests"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.7.2</span><span class="period">.</span>
+</h3>The data in the table below is taken from a report by the American Civil Rights Union (ACLU) <a href="" class="xref" data-knowl="./knowl/school-discipline-biblio-other-ACLU-report.html" title="Bibliographic Entry 8.12.129">[8.12.129]</a>. The report states that students in these three states have the same general probability of being arrested per 10,000 students. For many states being arrested as a form of school discipline aligns with zero tolerance offenses that qualify for expulsion. For this reason, we may make a reasonable assumption that students may not be arrested multiple times as a form of school discipline.<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-ACLU-report.html">
+\begin{equation*}
+\begin{array}{|c||c|c|}\hline \text{State}\amp \text{Total Students}\amp \text{Total Arrests}\\ \hline \text{Missouri}\amp 915,033\amp 1,487\\ \hline \text{Arkansas}\amp 480,300\amp 751 \\ \hline
+\text{Rhode Island}\amp 141,210\amp 231 \\ \hline \end{array}
+\end{equation*}
+</div>
+<p id="p-952">Our first step to exploring the claim in the document is to think about the probability that we want to build. If you are a student going to school, when it comes to being arrested, you either get arrested at school or you don’t get arrested at school. So we have two groups of students, those that get arrested and those that don’t get arrested. We also happen to know about the number of students that get arrested, as well as how many students there are. This means that we have everything we need.</p>
+<p id="p-953">To find the probability of being arrested, we find the ratio of arrests to students for each state. For this example, we will model with Missouri and you can test your ideas on Arkansas and Rhode Island.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-ACLU-report.html">
+\begin{equation*}
+\text{arrests}/\text{(total students)}=1487/915033.
+\end{equation*}
+</div>
+<p id="p-954">We can reduce this to a decimal figure, as finding common factors or a reduced form fraction is highly unlikely. This yields approximately 0.001625.Now we want to know how this fits with thinking about the probability of being arrested per 10,000 students. In other words, if the probability of getting arrested is 0.001625, this is about 0.1625%; how many arrests would that be among 10,000 students? We use this previously calculated value and solve an equation, to find a value out of 10000:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/school-discipline-biblio-other-ACLU-report.html">
+\begin{equation*}
+0.001625=p/10000
+\end{equation*}
+</div>
+<p id="p-955">Solving this equation gives a value of 16 whole students in Missouri per 10000 based on the overall probability. The report claims that you have the same probability per 10000 in all three states. Can you verify the claim?</p></article><p id="p-956">Those are the basics of probability. We can use these basic ideas of probability to help us build more complex models that can help us build more complex structures.</p></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.7.1</span> <span class="title">The complement</span>
+</h3>
+<p id="p-957">The first of these complex structures is the complement. We generally define the probability of a complement as the probability of an event of interest not happening. In <a href="" class="xref" data-knowl="./knowl/arrests.html" title="Exploration 8.7.2">Exploration 8.7.2</a>, we identified that there were two specific groups: students that got arrested and students that did not get arrested. The probability of not getting arrested can be found in two ways: either by calculating it directly or by subtracting the opposite event from 1.</p>
+<article class="example example-like" id="example-30"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-30"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.7.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-958">To find the probability of not getting arrested in school in Missouri, we know that there are 915,033 total students, and we also know that only 1,487 were arrested. So we know that the rest of the students were not arrested. So, we can subtract the arrested students from the total students to find the not arrested students, which gives us 913,546 students that were not arrested. We then find the ratio of not arrested students to total students: 913,546/915,033=0.998375, or around 99.3875%.</p>
+<p id="p-959">We can also find this by using the fact that we know the probability of getting arrested. We start with the group of all students (1), and then we subtract out the group that represents getting arrested: 1 - 0.001625=0.998375, or 99.8375%.</p>
+<p id="p-960">We get the same mathematical answers from calculating the complement using either method. It is important to understand both methods because we have to think about the different types of information that we might have available. What is something that we notice in this scenario? Can a person be both arrested and not arrested at the same time? That leads us to our second special scenario.</p></article></div></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.7.2</span> <span class="title">Mutually exclusive events</span>
+</h3>
+<p id="p-961">One consideration in probability is the consideration of if events can occur at the same time. One example of events that cannot occur at the same time are an event and its complement, so thinking about our prior example a student cannot be both arrested and not arrested at the same time. This is an example of mutually exclusive events. But when we start to think about more complicated events, like can you be a specific race and be suspended from school, the events become more complicated. Understanding if events are mutually exclusive or not, allows for better and more accurate methods of calculating probabilities. Having more accurate probability calculations can help us make more informed judgments about issues.</p>
+<article class="example example-like" id="example-31"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-31"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.7.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-962">Determine if you think the following event pairs are mutually exclusive or not. Explain to yourself why you think they are or are not mutually exclusive. What information did you use to make your decisions?</p>
+<p id="p-963">Event Pair A: Being Black and Getting suspended from school</p>
+<p id="p-964">Event Pair B: Being truant and Having regular school attendance</p>
+<p id="p-965">Event Pair C: Making good grades and Being disciplined in school</p>
+<p id="p-966">Following up: Based on models we have looked at, we realize that being Black and getting suspended can happen together, so those events are not mutually exclusive. When I know that being truant means not attending school regularly, I realize that the events in Event pair B are complements and have to be mutually exclusive. Event pair C is the most difficult to really take apart. Common sense-wise and experience-wise it seems like maybe the people who got good grades didn’t get in real trouble at school, but then again there is no reason why they couldn’t get into trouble. This means that they have to be not mutually exclusive events.</p></article></div></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.7.3</span> <span class="title">Independent Events</span>
+</h3>
+<p id="p-967">There is another way to think about multiple outcomes, and this happens when the events happen independently. In independent events, two separate events happen that have the same underlying probability, or at least we would like to think that they should (refer to <a href="" class="xref" data-knowl="./knowl/safe.html" title="Exploration 8.7.1">Exploration 8.7.1</a> for more detail). This is the crux of many arguments about school discipline. For an event to be independent, the underlying probability of the event should be the same across all subgroups. Consider an event like being enrolled in the reduced lunch program. If the probability of enrollment is approximately the same for all racial subgroups, then being in the reduced lunch group and the being in racial subgroups are independent. From your experience, do you think this is always the case? Feel free to use any relevant examples.</p>
+<p id="p-968">Let’s look at an example of how the math of independence works. For calculations, we assume that individual events are independent.</p>
+<a href="demonstration-1.html" target="_blank" class="link"></a></section></section></div></main>
+</div>
+</body>
+</html>

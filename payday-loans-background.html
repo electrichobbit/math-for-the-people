@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Understanding the Issue</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="payday-loans-objectives.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="payday-loans.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="payday-loans-cui-bono.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="payday-loans-objectives.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="payday-loans.html" title="Up">Up</a><a class="next-button button toolbar-item" href="payday-loans-cui-bono.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="active">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="payday-loans-background"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Understanding the Issue</span>
+</h2>
+<section class="subsection" id="payday-loans-background-interest-and-risk"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.1</span> <span class="title">Interest and Risk</span>
+</h3>
+<article class="definition definition-like" id="predatory-lending-interest"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Interest.</span>
+</h4>
+<p id="p-625">An amount of money, usually a percentage of the amount owed, which is added on to a debt which has not been paid.  Usually interest is added on once a month or once a year. The percentage is called the <em class="emphasis">interest rate</em>.</p></article><p id="p-626">Banks charge different interest rates in different situations.  For example, if you already have a lot of money borrowed from other banks, a bank may charge you a higher interest rate.  They do this because they are less confident that you will be able to pay the loaned money back, an idea called <em class="emphasis">risk</em>.</p>
+<article class="definition definition-like" id="predatory-lending-risk"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Risk.</span>
+</h4>
+<p id="p-627">The probability that the amount of money a bank makes on a loan or other investment is less than the amount of money that they loaned out.</p></article><p id="p-628">The risk of a loan is determined using a number of factors - the two most important are the borrower's <em class="emphasis">credit score</em> and whether the loan is <em class="emphasis">secured</em> or not.</p>
+<article class="definition definition-like" id="definition-19"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Credit Score.</span>
+</h4>
+<p id="p-629">A credit score is a number, used in the United States and a number of other countries, which assigns a number (between 300 and 850) to a person's credit risk.  Higher numbers indicate lower risk.</p></article><figure class="figure figure-like" id="figure-89"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="payday-lending/images/credit-score.jpeg" class="contained" alt="A bar with credit scores ranging from Very Bad to Excellent. Image Description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.4<span class="period">.</span></span><span class="space"> </span>"FICO Credit Score Range" by cafecredit is licensed with <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY 2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-92" id="fn-92"><sup> 1 </sup></a>. <a href="" class="xref" data-knowl="./knowl/image-description-credit-score.html" title="Item 1">Image Description 1</a>.</figcaption></figure><p id="p-630">Credit scores are determined by mathematical algorithms, and are based on many different factors.  We'll look at how they're determined in <a href="payday-loans-risk.html" class="internal" title="Section 6.6: Risk and Credit Scores">Section 6.6</a>.  The general principle of credit scores is that you are more likely to repay a loan if you have repaid other loans in the past.  While this may seem like a reasonable system at face-value, it can create huge problems for people who haven't had access to loans in the past.</p>
+<p id="p-631">The other main factor that affects risk is whether the loan is <em class="emphasis">secured</em>.  When you secure a loan, that means that you offer up something of value to guarantee that you will pay back the loan.  If you fail to pay back the loan, the lender can <em class="emphasis">reposess</em> whatever you offered up.  Large purchases - like cars or homes - are generally made on secured loans.  If you fail to pay back the loan, the lending agency will take back the car or home which you borrowed the money for.</p></section><section class="subsection" id="payday-loans-types-of-loans"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.2</span> <span class="title">Types of Loans and Lenders</span>
+</h3>
+<section class="introduction" id="introduction-36"><p id="p-632">This module is primarily concerned with understanding how payday loans work.  On the surface, payday loans may seem like a pretty good deal - but when carefully compared with other types of loans, we'll see that they can actually end up costing the borrower a lot of money.  We'll look at how they compare to other types of loans that are available to people with better credit scores</p></section><section class="subsubsection" id="payday-loans-types-of-loans-payday"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">6.2.2.1</span> <span class="title">Payday Loans</span>
+</h4>
+<figure class="figure figure-like" id="figure-90"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="payday-lending/images/payday-loan-window.jpeg" class="contained" alt="Window of a payday lender advertising loans of $50 to $500 with no credit check."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.5<span class="period">.</span></span><span class="space"> </span>"Payday Loan Place Window Graphics" by taberandrew is licensed with <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY 2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-93" id="fn-93"><sup> 2 </sup></a>.</figcaption></figure><p id="p-633">Payday loans are a type of loan often called a "loan of last resort." Anyone can take out a payday loan - the lender does not check their credit score to determine risk.  Therefore, the lender must assume that everyone taking out a payday loan is high risk - even though that may not be true.  Payday loans are generally made for a short term, usually two weeks (the name comes from taking a loan until the next payday, when it can be paid back). At the end of the two weeks, the borrower must pay back the amount they borrowed plus a fee.  Payday loans are usually for small amounts - up to $1000 - and charge a fee of $10-$30 for each $100 borrowed [<a href="" class="xref" data-knowl="./knowl/biblio-payday-loan-cfpb.html" title="Bibliographic Entry 6.11.1.98: Consumer Financial Protection Bureau: What is a Payday Loan">[6.11.1.98]</a>].  So you might borrow $200 and pay it back two weeks later, plus a $30 fee.  While this may not seem like much, this is equivalent to an annual interest rate of 360% - almost 20 times what a credit card might charge!  In <a href="payday-loans-interest.html" class="internal" title="Section 6.5: Simple and Compound Interest">Section 6.5</a> we'll see how to compute how much interest a payday loan is charging.</p>
+<figure class="figure figure-like" id="figure-91"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-9" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/3rOVmUnUM7A?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.6<span class="period">.</span></span><span class="space"> </span>A short explanation of how payday lending works from the Pew Charitable Trust.</figcaption></figure></section><section class="subsubsection" id="payday-loans-types-of-loans-bank"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">6.2.2.2</span> <span class="title">Bank Loans</span>
+</h4>
+<p id="p-634">Traditional bank loans are very different than a payday loan.  The interest rate is determined by risk (credit score), the type of loan, and what kind of security the borrower can offer for the loan.  Bank loans will have much lower interest rates than payday loans, but are not available to everyone.  Many people get their first loan - when they don't have a credit history - by having someone else <em class="emphasis">cosign</em> it.  A cosigner is someone, usually a parent or other relative, who agrees to pay back the loan if the borrower cannot.  Student loans are an example of a type of loan that often has a cosigner - if the borrower is a student, they may not have the credit history or security to borrow on their own.</p>
+<p id="p-635">One popular type of bank loan, used by many consumers, is the credit card.  A credit card is effectively an agreement between the bank and the cardholder to loan any amount of money on a short-term basis, up to a certain amount - called the <em class="emphasis">credit limit</em>.  The cardholder agrees to pay back at least the interest on the loan each month, or pay a penalty.  If the cardholder doesn't make their minimum payment each month, in addition to the penalty fees, the bank can cancel the credit card.  Falling behind on paying a credit card can quickly add up - both in fees and in damage to your credit rating.  If you have a high credit score, banks will usually agree to give you a credit card with a low interest rate.  If your credit score isn't as good, though, they will either deny you a card entirely, offer you one with a high interest rate, or require you to secure the card (pay a deposit to cover any missed payments).</p>
+<p id="p-636">Many people take out bank loans to make major purchases, like homes or cars.  A <em class="emphasis">mortgage</em> is a bank loan which uses a home or piece of property as a security.  Many people use a mortgage to borrow money to buy a home.  If they fail to repay the loan, the bank gets to take the security - in this case, their home.  When the bank takes the security from the loan, it is called a <em class="emphasis">foreclosure</em> (usually used with homes and property) or a <em class="emphasis">reposession</em> (usually used with vehicles like cars or boats).  The result is the same - the bank takes the property which was used to secure the loan.  They are then able to sell that property to earn back the money that they loaned out.  Interest rates for these types of loans tend to be much lower, because the opportunity to foreclose on the property gives the bank a way to earn their money back even if the borrower does not repay the loan.</p></section><section class="subsubsection" id="payday-loans-types-of-loans-government"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">6.2.2.3</span> <span class="title">Government Loans</span>
+</h4>
+<p id="p-637">The government - both state and federal governments in the US - is also an important provider of loans.  These loans are either provided directly by the government or secured by the government (a private bank makes the loan, and the government provides the security for the borrower). In some cases - like subsidized student loans - the government may even pay part of the interest.  Government loans provide access to money for people in need, but the process for getting one can be complicated and take time.  In addition, many government loans are restricted to particular groups, like veterans, small businesses, or first-time college students.</p>
+<p id="p-638">Some government loans can be <em class="emphasis">forgiven</em>, meaning that the government does not require the loan to be paid back in exchange for some form of service from the borrower.  For example, government student loans can be forgiven after ten years of work in public service, as long as certain requirements are met.</p></section><section class="subsubsection" id="payday-loans-types-of-loans-pawn"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">6.2.2.4</span> <span class="title">Pawn</span>
+</h4>
+<p id="p-639">A pawn is a short-term secured loan, usually made to someone with a low or no credit score.  In a pawn, the borrower brings a valuable object (usually something small, like jewelry or electronics) to a pawn shop.  The pawnbroker pays them some percentage of the value of the item, generally less than half.  The borrower must then repay the amount, plus interest.  If the borrower doesn't pay the money back, the pawnbroker can sell their item to recoup their investment.</p>
+<p id="p-640">Pawns generally offer more favorable interest rates than payday loans, since the loan is secured.  However, the borrower loses the ability to use whatever they have pawned while the money is borrowed.  For something like jewelry, that can mean living with the anxiety of losing a valuable or sentimental item.  For something like electronics, it could impact their ability to communicate or work.</p></section></section><section class="subsection" id="payday-loans-background-discriminatory-lending"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.3</span> <span class="title">Discriminatory Lending</span>
+</h3>
+<p id="p-641">The Equal Credit Opportunity Act (ECOA) is a federal law in the United States which prohibits discrimination in the loaning of money and other credit transactions <a href="" class="xref" data-knowl="./knowl/biblio-fair-lending.html" title="Bibliographic Entry 6.11.1.97: FDIC Consumer Compliance Examination Manual">[6.11.1.97]</a>.  The ECOA prohibits discrimination on the basis of</p>
+<ul class="disc">
+<li id="li-422"><p id="p-derived-li-422">Race or color;</p></li>
+<li id="li-423"><p id="p-derived-li-423">Religion;</p></li>
+<li id="li-424"><p id="p-derived-li-424">National origin;</p></li>
+<li id="li-425"><p id="p-derived-li-425">Sex;</p></li>
+<li id="li-426"><p id="p-derived-li-426">Marital Status;</p></li>
+<li id="li-427"><p id="p-derived-li-427">Age;</p></li>
+<li id="li-428"><p id="p-derived-li-428">Source of income;</p></li>
+<li id="li-429"><p id="p-derived-li-429">Excercise of consumer credit rights.</p></li>
+</ul>
+<p id="p-642">So if the ECOA exists, banks are unable to discriminate against different types of people, right? Unfortunately, no. While the ECOA makes it illegal to discriminate in mortgage lending, enforcement of the law is very challenging.  It is very difficult to prove, in a situation where so many different factors are involved, that race or national origin influenced the lenders decision.  Many lenders use complex computer algorithms to decide whether to lend to a particular borrower.  Frequently, these algorithms are <em class="emphasis">trained</em> in a process called <em class="emphasis">machine learning</em>, where the computer studies data from past loans.  The computer finds patterns in the data, and uses those patterns to make decision about whether to lend and what terms to offer.  Because that data is based on past lending decisions made by human beings, it can (and does) contain biased decisions made by those human beings.  Research has shown that these algorithms replicate the patterns of racial and ethnic discrimination that were made in the data they are trained on.<a href="" class="xref" data-knowl="./knowl/biblio-mortgage-discrimination.html" title="Bibliographic Entry 6.11.1.101: Disparity in home lending costs minorities millions, researchers find.">[6.11.1.101]</a>  Therefore, although overt discrimination is forbidden in lending, it still occurs.</p>
+<p id="p-643">In addition to the discrimination that occurs through implicit bias (both in humans and in algorithms), the ECOA, and other similar laws in different countries, still allow banks and other lenders to discriminate on the basis of risk.  Banks can choose whether or not they want to lend someone money based on how likely that person is to pay it back.</p>
+<p id="p-644">We've talked about how banks, the government, and other entities make decisions about who they will loan money to.  Those decisions are made primarily on the basis of two things: credit history and access to security.  If someone has a strong credit history - they have borrowed money and paid it back on time - or if they have access to property or someone with credit history to secure their loan - then they can obtain favorable terms for a loan.  If they do not have either of those things, then they are left to borrow money from lenders who demand much higher interest payments.</p>
+<p id="p-645">This brings us to the question, then, of which groups of people have access to those things.  Although the ECOA banned discrimination in the loaning of money in 1974, access to credit tends to be passed down through generations.  If your grandparents did not have access to credit, they may not have been able to support your parents when they needed to borrow money for education or a first home - in which case, your parents would be unable to offer the same opportunities to you.</p>
+<p id="p-646">Thus, the question of who has access to affordable credit can become a question of who has access to generational wealth.  Wealth is defined as the value of a family's assets - both money saved in bank accounts and investments as well as property like homes and cars - minus their debt.  Studies have shown that Black Americans (as well as other people of color) have far less wealth than white Americans.  In 2016, a study found that the median wealth of Black households was less than 10% of that of similar white households <a href="" class="xref" data-knowl="./knowl/biblio-mortgage-discrimination.html" title="Bibliographic Entry 6.11.1.101: Disparity in home lending costs minorities millions, researchers find.">[6.11.1.101]</a>.  Wealth tends to accumulate in families over time.  This can be direct, like inheritance, where one generation receives wealth (money or property) directly from the previous one.  It can also be indirect.  For example, a college student may indirectly inherit generational wealth when their parents pay for part or all of their college, or when they win a scholarship from opportunities provided by their parents.  This allows them to avoid taking on debt to pay for college, which would decrease their overall wealth.  This accumulated wealth, then, gives them greater opportunities to credit in their future.  The effect of generational wealth can be seen in the paradoxical relationship between wealth and debt in America.  Even though they have 10 times the median wealth, white households have median debt which is more than twice as high as Black households <a href="" class="xref" data-knowl="./knowl/biblio-mortgage-discrimination.html" title="Bibliographic Entry 6.11.1.101: Disparity in home lending costs minorities millions, researchers find.">[6.11.1.101]</a>.  The debt held by white households, though, tends to be less costly than that held by Black households.  Much of this discrepancy is due to access to cheaper forms of debt like home mortgages, home equity loans, and student loans.  Black households tend to hold more of their debt in more expensive forms of credit like credit card debt and installment loans.</p>
+<p id="p-647">On the surface, payday loans are available to anyone.  Because wealthier and white households tend to have access to other forms of credit, payday loans tend to be used primarily by poorer households and people of color.  People who do not own their own home are 57% more likely to use payday loans than homeowners.  People without a 4-year college degree are 82% more likely to use payday loans than those with degrees.  Race, though, was the greatest predictor of whether someone had used a payday loan - Blacks were more than twice as likely (105% more likely) to have used a payday loan as individuals of other races and ethnicities, even after controlling for other factors like income level and homeownership <a href="" class="xref" data-knowl="./knowl/biblio-race-and-payday-lending.html" title="Bibliographic Entry 6.11.1.103">[6.11.1.103]</a>.  If access to credit were only determined by risk - factors like income and access to security - we could expect the percentage of white and Black borrowers to be similar.</p>
+<p id="p-648">In addition to the obstacles imposed by lending discrimination and lack of generational wealth, there are other reasons why people would turn to predatory forms of lending. One very simple reason is where they live.</p>
+<p id="p-649">A study in 2019 found that there are simply fewer banks in majority Black neighborhoods.  In areas where the majority of residents were white, there was an average of 41 banks &amp; other financial institutions per 100,000 people.  In majority non-white neighborhoods, that number fell to 27 per 100,000.  Furthermore, banks in majority Black neighborhoods tended to charge higher fees than those in majority white neighborhoods <a href="" class="xref" data-knowl="./knowl/biblio-race-and-banking.html" title="Bibliographic Entry 6.11.1.104: African Americans underserved by U.S. banks: study">[6.11.1.104]</a>.</p>
+<p id="p-650">The lack of banks in majority Black neighborhoods is mirrored by a greater concentration of payday lenders.  A 2016 study in California found that the neighborhoods where payday lenders were concentrated were much more likely to be majority Black or Latinx <a href="" class="xref" data-knowl="./knowl/biblio-payday-lending-in-black-neighborhoods.html" title="Bibliographic Entry 6.11.1.105: The Demographics of California Payday Lending: A Zip Code Analysis of Storefront Locations">[6.11.1.105]</a>.  A 2020 survey found that Black respondents were more than twice as likely to say that they lived within one mile of a payday lender <a href="" class="xref" data-knowl="./knowl/biblio-payday-lending-race-survey.html" title="Bibliographic Entry 6.11.1.106: ‘It’s What We Call Reverse Redlining’: Measuring the Proximity of Payday Lenders, Pawn Shops to Black Adults">[6.11.1.106]</a>. This lack of access to low-interest lenders, coupled with easy access to high-interest lenders, is called <em class="emphasis">reverse redlining</em>.  Redlining was the (now illegal) practice of singling out minority neighborhoods for mortgage discrimination, denying loans to people buying homes in those neighborhoods.  Redlining is considered a major contributor to the generational wealth gap between Black and white americans.  Similarly, reverse redlining creates neighborhoods without access to low-interest credit - not because of bank policies, per se, but because of physical proximity to lending institutions.</p></section><section class="conclusion" id="conclusion-4"><p id="p-651">We've learned a lot about payday lenders - how they operate, why people use them, where they are, and what they do.  Now that we understand the sociological aspects of the issue, let's dive into the mathematics.  Mathematics can help us understand just how unfair payday lending is, how these lenders turn a profit, and study the inequity in where payday lenders are located.  We'll learn the mathematics we need to analyze these issues, and then dive into some deeper exploration of the inequity of payday lending.</p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-92"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-93"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

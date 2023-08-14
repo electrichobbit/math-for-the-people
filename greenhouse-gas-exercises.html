@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="greenhouse-gas-reflection.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="greenhouse-gas-references.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="greenhouse-gas-reflection.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a class="next-button button toolbar-item" href="greenhouse-gas-references.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="active">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="exercises" id="greenhouse-gas-exercises"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.10</span> <span class="title">Exercises</span>
+</h2>
+<article class="exercise exercise-like" id="exercise-82"><h3 class="heading"><span class="codenumber">1<span class="period">.</span></span></h3>
+<p id="p-604">The USA released greenhouse gases equivalent to <span class="process-math">\(6.34*10^9\)</span> metric tons of CO2 in 2021 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sources-of-emissions.html" title="Bibliographic Entry 5.11.1.83">[5.11.1.83]</a>.  <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-epa-sources.html" title="Figure 5.10.1">Figure 5.10.1</a> shows where those emissions come from. <figure class="figure figure-like" id="greenhouse-gas-epa-sources"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/epa-sources-pie-graph.png" class="contained" alt="Pie chart showing Agriculture 10%; Transportation 28%; Electric Power 25%; Industry 23%; Commercial and Residential 13%"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.10.1<span class="period">.</span></span><span class="space"> </span>Percentage of CO2 equivalent emissions in the USA by source in 2021 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sources-of-emissions.html" title="Bibliographic Entry 5.11.1.83">[5.11.1.83]</a>.</figcaption></figure></p>
+<ol class="lower-alpha">
+<li id="li-350"><p id="p-derived-li-350">Which sector accounts for the largest part of emissions? How many millions of metric tons of CO2 equivalent gases does that sector emit?</p></li>
+<li id="li-351"><p id="p-derived-li-351">Which sector accounts for the smallest part of emissions? How many millions of metric tons of CO2 equivalent gases does that sector emit?</p></li>
+<li id="li-352"><p id="p-derived-li-352">How could we use the information in this graph to prioritize laws, regulations, and other changes to reduce greenhouse gas emissions?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-83"><h3 class="heading"><span class="codenumber">2<span class="period">.</span></span></h3>
+<p id="p-605">According to <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-emissions-by-region.html" title="Bibliographic Entry 5.11.1.80">[5.11.1.80]</a>, global CO2 emissions were 37.1 billion tons in 2021.  Write this number in scientific notation.  If there were 7.8 billion people, how many tons of CO2 emissions would that be per person?</p>
+<p id="p-606">Is this a reasonable way to look at per capita emissions? Consider the following two statements:</p>
+<ul class="disc">
+<li id="li-353"><p id="p-derived-li-353">The average person worldwide uses ___ tons of CO2 per year.</p></li>
+<li id="li-354"><p id="p-derived-li-354">On average, each person worldwide uses ___ tons of CO2 per year.</p></li>
+</ul>
+<p class="continuation">where the blank is filled in with your answer.  Do you agree with these statements? Why or why not? What is the danger of using an average with a quantity like this</p>
+<p id="p-607">Repeat this exercise with just the US (2021 emissions: 5 billion tons, population 331.9 million people).  Do these numbers have the same problems as the ones above? Explain.</p></article><article class="exercise exercise-like" id="exercise-84"><h3 class="heading"><span class="codenumber">3<span class="period">.</span></span></h3>
+<p id="p-608">The graph in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-figure-emissions-by-corporation.html" title="Figure 5.10.2">Figure 5.10.2</a> uses data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-climate-majors.html" title="Bibliographic Entry 5.11.1.94">[5.11.1.94]</a> and shows the 20 corporations which have contritbuted most to global CO2 emissions.  The graph gives the total emissions for each corporation from 1965-2018. <figure class="figure figure-like" id="greenhouse-gas-figure-emissions-by-corporation"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/emissions-by-corporation.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.10.2<span class="period">.</span></span><span class="space"> </span>Total emissions (1965-2018) for the 20 corporations which have contributed most to global CO2 emissions.</figcaption></figure> The data is also shown in this table: <figure class="table table-like" id="greenhouse-gas-table-emissions-by-corporation"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.10.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Entity</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Country</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Millions of Tons of CO2 Equivalents</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">% of Global Emissions</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Saudi Aramco</td>
+<td class="l m b0 r0 l0 t0 lines">Saudi Arabia</td>
+<td class="l m b0 r0 l0 t0 lines">61143</td>
+<td class="l m b0 r0 l0 t0 lines">4.33</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Gazprom</td>
+<td class="l m b0 r0 l0 t0 lines">Russia</td>
+<td class="l m b0 r0 l0 t0 lines">44757</td>
+<td class="l m b0 r0 l0 t0 lines">3.17</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Chevron</td>
+<td class="l m b0 r0 l0 t0 lines">USA</td>
+<td class="l m b0 r0 l0 t0 lines">43787</td>
+<td class="l m b0 r0 l0 t0 lines">3.1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">ExxonMobil</td>
+<td class="l m b0 r0 l0 t0 lines">USA</td>
+<td class="l m b0 r0 l0 t0 lines">42484</td>
+<td class="l m b0 r0 l0 t0 lines">3.01</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">National Iranian Oil Co.</td>
+<td class="l m b0 r0 l0 t0 lines">Iran</td>
+<td class="l m b0 r0 l0 t0 lines">36924</td>
+<td class="l m b0 r0 l0 t0 lines">2.62</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">BP</td>
+<td class="l m b0 r0 l0 t0 lines">United Kingdom</td>
+<td class="l m b0 r0 l0 t0 lines">34564</td>
+<td class="l m b0 r0 l0 t0 lines">2.45</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Royal Dutch Shell</td>
+<td class="l m b0 r0 l0 t0 lines">The Netherlands</td>
+<td class="l m b0 r0 l0 t0 lines">32498</td>
+<td class="l m b0 r0 l0 t0 lines">2.3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Coal India</td>
+<td class="l m b0 r0 l0 t0 lines">India</td>
+<td class="l m b0 r0 l0 t0 lines">24338</td>
+<td class="l m b0 r0 l0 t0 lines">1.73</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Pemex</td>
+<td class="l m b0 r0 l0 t0 lines">Mexico</td>
+<td class="l m b0 r0 l0 t0 lines">23025</td>
+<td class="l m b0 r0 l0 t0 lines">1.63</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">PetroChina</td>
+<td class="l m b0 r0 l0 t0 lines">China</td>
+<td class="l m b0 r0 l0 t0 lines">16515</td>
+<td class="l m b0 r0 l0 t0 lines">1.17</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Petroleos de Venezuela</td>
+<td class="l m b0 r0 l0 t0 lines">Venezuela</td>
+<td class="l m b0 r0 l0 t0 lines">16029</td>
+<td class="l m b0 r0 l0 t0 lines">1.14</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Peabody Energy</td>
+<td class="l m b0 r0 l0 t0 lines">USA</td>
+<td class="l m b0 r0 l0 t0 lines">15783</td>
+<td class="l m b0 r0 l0 t0 lines">1.12</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">ConocoPhillips</td>
+<td class="l m b0 r0 l0 t0 lines">USA</td>
+<td class="l m b0 r0 l0 t0 lines">15422</td>
+<td class="l m b0 r0 l0 t0 lines">1.09</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Abu Dhabi</td>
+<td class="l m b0 r0 l0 t0 lines">United Arab Emirates</td>
+<td class="l m b0 r0 l0 t0 lines">14532</td>
+<td class="l m b0 r0 l0 t0 lines">1.03</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Kiuwait Petroleum Corp.</td>
+<td class="l m b0 r0 l0 t0 lines">Kuwait</td>
+<td class="l m b0 r0 l0 t0 lines">13923</td>
+<td class="l m b0 r0 l0 t0 lines">0.99</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Iraq National Oil Co.</td>
+<td class="l m b0 r0 l0 t0 lines">Iraq</td>
+<td class="l m b0 r0 l0 t0 lines">13162</td>
+<td class="l m b0 r0 l0 t0 lines">0.93</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total SA</td>
+<td class="l m b0 r0 l0 t0 lines">France</td>
+<td class="l m b0 r0 l0 t0 lines">12755</td>
+<td class="l m b0 r0 l0 t0 lines">0.9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Sonatrach</td>
+<td class="l m b0 r0 l0 t0 lines">Algeria</td>
+<td class="l m b0 r0 l0 t0 lines">12700</td>
+<td class="l m b0 r0 l0 t0 lines">0.9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">BHP</td>
+<td class="l m b0 r0 l0 t0 lines">Australia</td>
+<td class="l m b0 r0 l0 t0 lines">10068</td>
+<td class="l m b0 r0 l0 t0 lines">0.71</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Petrobras</td>
+<td class="l m b0 r0 l0 t0 lines">Brazil</td>
+<td class="l m b0 r0 l0 t0 lines">9061</td>
+<td class="l m b0 r0 l0 t0 lines">0.64</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">493470</td>
+<td class="l m b0 r0 l0 t0 lines">34.96</td>
+</tr>
+</table></div></figure></p>
+<ol id="p-609" class="lower-alpha">
+<li id="li-355"><p id="p-derived-li-355">Why did the person who made this visualization choose a bar chart? Explain why a line graph and a pie chart would each be inappropriate here.</p></li>
+<li id="li-356"><p id="p-derived-li-356">Use the graph and the table to find the four corporations listed from the US.  How much have they contributed overall to CO2 emissions? Give your answer in scientific notation.</p></li>
+<li id="li-357"><p id="p-derived-li-357">How could the information in this chart be used to help us create effective strategies to reduce greenhouse gas emissions?</p></li>
+</ol></article><article class="exercise exercise-like" id="greenhouse-gas-exercise-emissions-by-country"><h3 class="heading"><span class="codenumber">4<span class="period">.</span></span></h3>
+<p id="p-610">The file <a class="external" href="greenhouse-gas/data-files/owid-emissions-by-country.csv" target="_blank">Emissions by Country/Region</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-84" id="fn-84"><sup> 1 </sup></a> from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-owid-full-data.html" title="Bibliographic Entry 5.11.1.92">[5.11.1.92]</a> gives data for countries and regions around the world.  The data includes:</p>
+<ul class="disc">
+<li id="li-358"><p id="p-derived-li-358">Country Name</p></li>
+<li id="li-359"><p id="p-derived-li-359">Population</p></li>
+<li id="li-360"><p id="p-derived-li-360">Total CO2 Emissions in 2021.</p></li>
+<li id="li-361"><p id="p-derived-li-361">CO2 Emissions per capita - the total CO2 emissions divided by the population in 2021.</p></li>
+<li id="li-362"><p id="p-derived-li-362">Cumulative CO2 emissions over history.</p></li>
+<li id="li-363"><p id="p-derived-li-363">The change in atmostpheric CO2 due to land use.  This can be positive or negative - if countries plant more trees, for example, that would reduce atmospheric CO2, while clearing land or changing how it is used can increase emissions.</p></li>
+<li id="li-364"><p id="p-derived-li-364">CO2 emissions from land use per capita.</p></li>
+<li id="li-365"><p id="p-derived-li-365">Share of CO2 emissions in 2021, as a percentage of global emissions in 2021.</p></li>
+<li id="li-366"><p id="p-derived-li-366">Share of cumulative global CO2 emissions over time, as a percentage of cumulative global emissions.</p></li>
+<li id="li-367"><p id="p-derived-li-367">Share of temperature change from greenhouse gas emissions.  Certain changes or types of emissions can have larger effects on temperature change, so this may be different that then the percentage of CO2 emissions.</p></li>
+</ul>
+<p class="continuation">Use the data in the spreadsheet to answer these questions:</p>
+<ol class="lower-alpha">
+<li id="li-368"><p id="p-derived-li-368">Create a graph of the total CO2 emissions of the 10 countries with the highest emissions in the list.  What kind of graph did you choose to make and why?</p></li>
+<li id="li-369"><p id="p-derived-li-369">Create a graph which shows the percentage share of CO2 that each continent or region (the continents/regions listed are Africa, Asia, Europe, North America, Oceania, and South America) has emitted.  What kind of graph did you choose to make and why?</p></li>
+<li id="li-370"><p id="p-derived-li-370">Taking all the countries with populations smaller than the USA, create a graph which shows the relationship between population and the percentage of CO2 emissions which the country is responsible for.  What kind of graph did you choose and why? Does there seem to be a relationship between the size of the country and the percentage of CO2 emissions they're responsible for.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-86"><h3 class="heading"><span class="codenumber">5<span class="period">.</span></span></h3>
+<p id="p-611">Use the data from <a class="external" href="greenhouse-gas/data-files/owid-emissions-by-country.csv" target="_blank">Emissions by Country/Region</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-85" id="fn-85"><sup> 2 </sup></a> to answer the following questions:</p>
+<ol class="lower-alpha">
+<li id="li-371"><p id="p-derived-li-371">What kind of data is the variable <em class="emphasis">land_use_change_co2_per_capita</em>, which gives the per capita CO2 emissions due to land use change for each country or region?</p></li>
+<li id="li-372"><p id="p-derived-li-372">This variable gives the CO2 emissions from changes in land use, like clearing of land for agriculture or housing, open-pit mining, or elimination of wetlands. The values for per capita land use CO2 emissions range from -3.674 tons per person (Vanuatu) to 8.483 tons per person (Bhutan).  Explain why you would need to use a histogram to display this data.</p></li>
+<li id="greenhouse-gas-exercise-emissions-frequency-table"><p id="p-derived-greenhouse-gas-exercise-emissions-frequency-table">Create a frequency table using intervals of width 1 (<span class="process-math">\([-4,-3),[-3,-2),\ldots,[7,8),[8,9)\)</span>) for per capita land use emissions from the countries listed in the data - you can omit continents, regions, and groupings of countries by income.</p></li>
+<li id="li-374"><p id="p-derived-li-374">Use the frequency table you created in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-exercise-emissions-frequency-table.html" title="Item 5.10.5.c">Item 5.10.5.c</a> to create a histogram of the per capita land use emissions for the countries.</p></li>
+<li id="li-375"><p id="p-derived-li-375">What does the histogram tell you? Are there a lot of countries with positive land use emissions per capita, or very few? Do most countries have positive or negative emissions per capita? What does this histogram tell you about how we should focus our efforts to reduce greenhouse gas emissions from land use?</p></li>
+<li id="li-376"><p id="p-derived-li-376">We built our histogram for per capita land use change CO2 emissions.  The table also has overall land use change CO2 emissions for each country (the <em class="emphasis">land_use_change_co2</em> variable).  Why is it easier to create a histogram for the land use per capita data than the overall land use CO2 emissions? Why is it more useful to use per capita data to understand patterns in emissions than overall land use CO2 totals?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-87"><h3 class="heading"><span class="codenumber">6<span class="period">.</span></span></h3>
+<p id="p-612">The data in <a class="external" href="greenhouse-gas/data-files/owid-emissions-usa.csv" target="_blank">USA CO2 Emissions</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-86" id="fn-86"><sup> 3 </sup></a> gives the CO2 emissions (in millions of tons) and per capita CO2 emissions (in tons per person) for the USA for each year since 1800 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-owid-full-data.html" title="Bibliographic Entry 5.11.1.92">[5.11.1.92]</a>. Use the data to answer the following questions:</p>
+<ol class="lower-alpha">
+<li id="greenhouse-gas-exercise-usa-historical-co2"><p id="p-derived-greenhouse-gas-exercise-usa-historical-co2">Create a graph of the CO2 emissions from 1800 to 2022.  What kind of graph did you use and why?</p></li>
+<li id="li-378"><p id="p-derived-li-378">Use the same kind of graph to graph the per capita CO2 emissions from 1800 to 2022.  How are the patterns in the graph similar to those in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-exercise-usa-historical-co2.html" title="Item 5.10.6.a">Item 5.10.6.a</a>? How are they different?</p></li>
+<li id="li-379"><p id="p-derived-li-379">CO2 emissions rose steadily in the USA until 2005, with some notable exceptions.  Look at the graphs and the data to find at least two periods where CO2 emissions dropped for multiple years in a row.  What was going on in the USA when this occurred that could have caused the reduction in emissions?</p></li>
+<li id="li-380"><p id="p-derived-li-380">Since 2005, CO2 emissions have fallen in the USA.  Using your own research, list a few possible explanations for what has caused this reduction in emissions.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-88"><h3 class="heading"><span class="codenumber">7<span class="period">.</span></span></h3>
+<p id="p-613">Use the data provided in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-exercise-emissions-by-country.html" title="Exercise 5.10.4">Exercise 5.10.4</a> to create a graph for each of the following questions.  Explain why you chose to create the graph that you did and how it helped you answer the question.</p>
+<ol class="lower-alpha">
+<li id="li-381"><p id="p-derived-li-381">Are the continental regions which have contributed the most to cumulative global emissions the same ones that are currently contributing most to global emissions?</p></li>
+<li id="li-382"><p id="p-derived-li-382">Do countries that have high CO2 emissions per capita also have high CO2 emissions from land use per capita?</p></li>
+<li id="li-383"><p id="p-derived-li-383">Do countries with higher incomes have higher per capita CO2 emissions?</p></li>
+<li id="li-384"><p id="p-derived-li-384">Which countries have the highest per capita emissions?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-89"><h3 class="heading"><span class="codenumber">8<span class="period">.</span></span></h3>
+<p id="p-614">The file at <a class="external" href="greenhouse-gas/data-files/co2-and-temperature-anomaly.csv" target="_blank">CO2 Levels and Temperature Anomalies</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-87" id="fn-87"><sup> 4 </sup></a> (Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-global-temperature-anomaly.html" title="Bibliographic Entry 5.11.1.53">[5.11.1.53]</a> and <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-mauna-loa-co2.html" title="Bibliographic Entry 5.11.1.93">[5.11.1.93]</a>) gives the following data for every year since 1959:</p>
+<ul class="disc">
+<li id="li-385"><p id="p-derived-li-385">The mean annual CO2 level recorded at the Mauna Loa Observatory in Hawaii in parts per million (ppm).</p></li>
+<li id="li-386"><p id="p-derived-li-386">The mean annual global temperature anomaly gives the number of degrees Celsius that the mean global temperature differs from the mean temperature during the years 1901-2000.  If the temperature in a year was exactly average for the 20th century, then the anomaly would be 0.  If it is higher than the average for the 20th century, it will be greater than 0 - and less than 0 if it is lower.</p></li>
+</ul>
+<p class="continuation">Create a graph of the relationship between CO2 levels and the global temperature anomaly.  Explain why you chose the graph you did. Does there appear to be a relationship between global CO2 levels and a rise in temperature?</p></article><article class="exercise exercise-like" id="exercise-90"><h3 class="heading"><span class="codenumber">9<span class="period">.</span></span></h3>
+<p id="p-615">The two graphs shown below in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-two-axis-graphs.html" title="Figure 5.10.4">Figure 5.10.4</a> both use the data from <a class="external" href="greenhouse-gas/data-files/co2-and-temperature-anomaly.csv" target="_blank">CO2 Levels and Temperature Anomalies</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-88" id="fn-88"><sup> 5 </sup></a>.</p>
+<figure class="figure figure-like" id="greenhouse-gas-two-axis-graphs"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="greenhouse-gas/images/two-axes-one.png" class="contained"></div>
+<div class="sbspanel top" style="width:50%;"><img src="greenhouse-gas/images/two-axes-two.png" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.10.4<span class="period">.</span></span><span class="space"> </span>Two graphs of the same data on CO2 levels and global mean temperature anomaly.</figcaption></figure><p id="p-616">Answer the following questions about these graphs:</p>
+<ol class="lower-alpha">
+<li id="li-387"><p id="p-derived-li-387">In the first graph in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-two-axis-graphs.html" title="Figure 5.10.4">Figure 5.10.4</a>, does it look like CO2 is increasing, decreasing, or staying the same? What about the temperature anomaly?</p></li>
+<li id="li-388"><p id="p-derived-li-388">In the second graph in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-two-axis-graphs.html" title="Figure 5.10.4">Figure 5.10.4</a>, does it look like CO2 is increasing, decreasing, or staying the same? What about the temperature anomaly?</p></li>
+<li id="li-389"><p id="p-derived-li-389">From looking at the first graph in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-two-axis-graphs.html" title="Figure 5.10.4">Figure 5.10.4</a>, what conclusion might you draw about the relationship between CO2 levels and temperature? What about from the second graph in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-two-axis-graphs.html" title="Figure 5.10.4">Figure 5.10.4</a>?</p></li>
+<li id="li-390"><p id="p-derived-li-390">What makes the two graphs in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-two-axis-graphs.html" title="Figure 5.10.4">Figure 5.10.4</a> look so different, even though they show the same data?</p></li>
+<li id="li-391"><p id="p-derived-li-391">These graphs - usually called <em class="emphasis">dual axis charts</em> are frequently used in misleading ways.  Read more on your own about dual axis charts.  Can they be used effectively, or do you think they are best avoided?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-91"><h3 class="heading"><span class="codenumber">10<span class="period">.</span></span></h3>
+<p id="p-617">The data in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-table-vehicles-by-percentage.html" title="Table 5.10.5">Table 5.10.5</a> gives the percentage of newly registered vehicles in some European countries that are fully electric, plug-in hybrid, hybrid, gasoline, or diesel in 2019 (data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-vehicles-by-percentage.html" title="Bibliographic Entry 5.11.1.95">[5.11.1.95]</a>). <figure class="table table-like" id="greenhouse-gas-table-vehicles-by-percentage"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.10.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Entity</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent Electric</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent Plug-in Hybrid</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent Hybrid</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent Gasoline</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent Diesel</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Austria</td>
+<td class="l m b0 r0 l0 t0 lines">3%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">53%</td>
+<td class="l m b0 r0 l0 t0 lines">40%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Belgium</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">62%</td>
+<td class="l m b0 r0 l0 t0 lines">31%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Denmark</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">6%</td>
+<td class="l m b0 r0 l0 t0 lines">63%</td>
+<td class="l m b0 r0 l0 t0 lines">27%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Finland</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+<td class="l m b0 r0 l0 t0 lines">12%</td>
+<td class="l m b0 r0 l0 t0 lines">62%</td>
+<td class="l m b0 r0 l0 t0 lines">19%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">France</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">58%</td>
+<td class="l m b0 r0 l0 t0 lines">35%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Germany</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">59%</td>
+<td class="l m b0 r0 l0 t0 lines">34%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Greece</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+<td class="l m b0 r0 l0 t0 lines">68%</td>
+<td class="l m b0 r0 l0 t0 lines">27%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ireland</td>
+<td class="l m b0 r0 l0 t0 lines">3%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">9%</td>
+<td class="l m b0 r0 l0 t0 lines">40%</td>
+<td class="l m b0 r0 l0 t0 lines">46%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Italy</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+<td class="l m b0 r0 l0 t0 lines">53%</td>
+<td class="l m b0 r0 l0 t0 lines">41%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Luxembourg</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">50%</td>
+<td class="l m b0 r0 l0 t0 lines">44%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Netherlands</td>
+<td class="l m b0 r0 l0 t0 lines">14%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">6%</td>
+<td class="l m b0 r0 l0 t0 lines">71%</td>
+<td class="l m b0 r0 l0 t0 lines">8%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Norway</td>
+<td class="l m b0 r0 l0 t0 lines">42%</td>
+<td class="l m b0 r0 l0 t0 lines">14%</td>
+<td class="l m b0 r0 l0 t0 lines">12%</td>
+<td class="l m b0 r0 l0 t0 lines">16%</td>
+<td class="l m b0 r0 l0 t0 lines">16%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Portugal</td>
+<td class="l m b0 r0 l0 t0 lines">3%</td>
+<td class="l m b0 r0 l0 t0 lines">3%</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">50%</td>
+<td class="l m b0 r0 l0 t0 lines">40%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Spain</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">8%</td>
+<td class="l m b0 r0 l0 t0 lines">58%</td>
+<td class="l m b0 r0 l0 t0 lines">33%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Sweden</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">7%</td>
+<td class="l m b0 r0 l0 t0 lines">10%</td>
+<td class="l m b0 r0 l0 t0 lines">45%</td>
+<td class="l m b0 r0 l0 t0 lines">34%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Switzerland</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">6%</td>
+<td class="l m b0 r0 l0 t0 lines">60%</td>
+<td class="l m b0 r0 l0 t0 lines">28%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Turkey</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+<td class="l m b0 r0 l0 t0 lines">3%</td>
+<td class="l m b0 r0 l0 t0 lines">46%</td>
+<td class="l m b0 r0 l0 t0 lines">51%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">United Kingdom</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+<td class="l m b0 r0 l0 t0 lines">7%</td>
+<td class="l m b0 r0 l0 t0 lines">64%</td>
+<td class="l m b0 r0 l0 t0 lines">27%</td>
+</tr>
+</table></div></figure> The data is also available in this <a class="external" href="greenhouse-gas/data-files/vehicle-type-percentages.csv" target="_blank">2019 Vehicle Types Spreadsheet</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-89" id="fn-89"><sup> 6 </sup></a>.</p>
+<ol class="lower-alpha">
+<li id="li-392"><p id="p-derived-li-392">Use the data in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-table-vehicles-by-percentage.html" title="Table 5.10.5">Table 5.10.5</a> to create a graph of the types of vehicles driven in Ireland.  Why did you choose the type of graph you did? What does the graph tell you about the types of cars people drive in Ireland?</p></li>
+<li id="li-393"><p id="p-derived-li-393">Use the data in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-table-vehicles-by-percentage.html" title="Table 5.10.5">Table 5.10.5</a> to create a graph of the percentages of vehicles which are electic, plug-in hybrid, or hybrid in each country,.  Why did you choose the type of graph you did? What does the graph tell you about the usage of electric/hybrid cars across Europe?</p></li>
+<li id="li-394"><p id="p-derived-li-394">Use the data in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-table-vehicles-by-percentage.html" title="Table 5.10.5">Table 5.10.5</a>to create a graph which compares the types of vehicles driven in Norway and the United Kingdom.  Why did you choose the type of graph you did? What does the graph tell you about the differences between Norway and the United Kingdom?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-92"><h3 class="heading"><span class="codenumber">11<span class="period">.</span></span></h3>
+<p id="p-618">The data in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-table-norway-vehicle-types.html" title="Table 5.10.6">Table 5.10.6</a> gives the percentage of newly registered vehicles in Norway that were fully electric, plug-in hybrid, hybrid, gasoline, or diesel from 2013 to 2019 (data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-vehicles-by-percentage.html" title="Bibliographic Entry 5.11.1.95">[5.11.1.95]</a>). <figure class="table table-like" id="greenhouse-gas-table-norway-vehicle-types"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.10.6<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Year</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">% Electric</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">% Plug-in Hybrid</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">% Hybrid</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">% Gasoline</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">% Diesel</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2013</td>
+<td class="l m b0 r0 l0 t0 lines">6%</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+<td class="l m b0 r0 l0 t0 lines">7%</td>
+<td class="l m b0 r0 l0 t0 lines">35%</td>
+<td class="l m b0 r0 l0 t0 lines">53%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2014</td>
+<td class="l m b0 r0 l0 t0 lines">13%</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+<td class="l m b0 r0 l0 t0 lines">7%</td>
+<td class="l m b0 r0 l0 t0 lines">31%</td>
+<td class="l m b0 r0 l0 t0 lines">49%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2015</td>
+<td class="l m b0 r0 l0 t0 lines">17%</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+<td class="l m b0 r0 l0 t0 lines">7%</td>
+<td class="l m b0 r0 l0 t0 lines">30%</td>
+<td class="l m b0 r0 l0 t0 lines">41%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2016</td>
+<td class="l m b0 r0 l0 t0 lines">15%</td>
+<td class="l m b0 r0 l0 t0 lines">14%</td>
+<td class="l m b0 r0 l0 t0 lines">11%</td>
+<td class="l m b0 r0 l0 t0 lines">29%</td>
+<td class="l m b0 r0 l0 t0 lines">31%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2017</td>
+<td class="l m b0 r0 l0 t0 lines">19%</td>
+<td class="l m b0 r0 l0 t0 lines">20%</td>
+<td class="l m b0 r0 l0 t0 lines">13%</td>
+<td class="l m b0 r0 l0 t0 lines">26%</td>
+<td class="l m b0 r0 l0 t0 lines">23%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2018</td>
+<td class="l m b0 r0 l0 t0 lines">31%</td>
+<td class="l m b0 r0 l0 t0 lines">18%</td>
+<td class="l m b0 r0 l0 t0 lines">11%</td>
+<td class="l m b0 r0 l0 t0 lines">23%</td>
+<td class="l m b0 r0 l0 t0 lines">18%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2019</td>
+<td class="l m b0 r0 l0 t0 lines">42%</td>
+<td class="l m b0 r0 l0 t0 lines">14%</td>
+<td class="l m b0 r0 l0 t0 lines">12%</td>
+<td class="l m b0 r0 l0 t0 lines">16%</td>
+<td class="l m b0 r0 l0 t0 lines">16%</td>
+</tr>
+</table></div></figure> The data is also available in this <a class="external" href="greenhouse-gas/data-files/norway-vehicle-types.csv" target="_blank">Norway Vehicle Types Spreadsheet</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-90" id="fn-90"><sup> 7 </sup></a>.</p>
+<ol class="lower-alpha">
+<li id="li-395"><p id="p-derived-li-395">Graph the percentage of fully electric vehicles in Norway for each year since 2013.  Explain why you chose the graph that you did.</p></li>
+<li id="li-396"><p id="p-derived-li-396">Create a graph of the percentages of electric (fully electric, plug-in-hybrid, hybrid) and petroleum (gasoline, diesel) in Norway for each year from 2013 to 2019.  Explain why you chose to graph them the way that you did.</p></li>
+</ol></article><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.10.1</span> <span class="title">Generative AI Prompts</span>
+</h3>
+<p id="p-619">Consider using the following prompts with generative AI, such as Chat GPT, to develop additional exercises for this material.  These programs can also be used to generate solutions, but those solutions will not necessarily be correct!  These prompts have been tested with ChatGPT <a href="" class="xref" data-knowl="./knowl/biblio-greenhouse-gas-chatgpt.html" title="Bibliographic Entry 5.11.1.96">[5.11.1.96]</a>.</p>
+<ul class="disc">
+<li id="li-397"><p id="p-derived-li-397">Give me 5 questions that use examples from greenhouse gases, climate change, and global warming to teach students about using scientific notation and working with large numbers.</p></li>
+<li id="li-398"><p id="p-derived-li-398">Give 5 questions which encourage students to explore data visualizations of greenhouse gas emissions data</p></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-84"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/owid-emissions-by-country.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-85"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/owid-emissions-by-country.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-86"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/owid-emissions-usa.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-87"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/co2-and-temperature-anomaly.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-88"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/co2-and-temperature-anomaly.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-89"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/vehicle-type-percentages.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-90"><div class="fn"><code class="code-inline tex2jax_ignore">greenhouse-gas/data-files/norway-vehicle-types.csv</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Geometry and Compactness</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="gerrymandering-big-problem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="gerrymandering.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="gerrymandering-math-topic-partisan-gerrymandering.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="gerrymandering-big-problem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="gerrymandering.html" title="Up">Up</a><a class="next-button button toolbar-item" href="gerrymandering-math-topic-partisan-gerrymandering.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="active">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="gerrymandering-math-topic-compactness"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Geometry and Compactness</span>
+</h2>
+<section class="introduction" id="introduction-16"><p id="p-274">As mentioned in the chapter overview, the term “gerrymander” originated from a critique of an unusual district shape in Massachusetts in 1812. Since then, many discussions about manipulation of district boundaries have focused on the shapes of the districts. Take a look at the shapes of some recent congressional districts, as presented in a <em class="emphasis">Washington Post</em> article <a href="" class="xref" data-knowl="./knowl/gerrymandering-Post-images-districts.html" title="Bibliographic Entry 4.12.41">[4.12.41]</a>: <figure class="figure figure-like" id="figure-44"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/compactness.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span>Collection of images of 6 different districts. The districts have squiggly borders and narrow regions spread over a wide area.</figcaption></figure> This is only a sampling of bizarre district shapes; in fact, some people even created a computer font called Ugly Gerry (see <a href="" class="xref" data-knowl="./knowl/gerrymandering-ugly-gerry.html" title="Bibliographic Entry 4.12.38">[4.12.38]</a>) using real district shapes!</p>
+<p id="p-275">But what is <em class="emphasis">compactness</em>, and why should we care about districts having nice shapes? <dfn class="terminology">Compactness</dfn> is a quantitative measure of a district's shape and how tightly packed, or compact, the region is. Remember that the function of a political district is to elect someone that <em class="emphasis">represents</em> the people, needs, and interests of an area. A district over a more compact area is likely to include towns and communities with similar interests, while a district that zigs and zags across a state is more likely to intentionally exclude certain groups of people and connect regions with different local interests. In fact, most states include language emphasizing the importance of “compactness” of their districts but lack a definition or a way to measure this characteristic.</p></section><article class="assemblage assemblage-like" id="assemblage-5"><p id="p-276">Motivating Questions: To what extent can or should we use the shapes of districts to determine a potential gerrymander? Can we agree on an accepted way to measure compactness since many states specifically include it as a consideration for district plans?</p></article><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Packing and Cracking: How drawing lines can change outcomes</span>
+</h3>
+<em class="emphasis">packing</em><em class="emphasis">cracking</em><figure class="figure figure-like" id="figure-45"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/YcUDBgYodIE?&amp;modestbranding=1&amp;rel=0"></iframe></div>Introduces packing and cracking. Images show cartoon examples of plans that use these techniques to achieve desired outcomes.<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.2<span class="period">.</span></span><span class="space"> </span>TedEd video introducing packing and cracking.</figcaption></figure></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Three Ways to Measure Compactness of a District</span>
+</h3>
+<article class="remark remark-like" id="remark-1"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
+</h4>There are many different mathematical and geometric approaches for measuring the compactness of a shape. It is important to note that these measures are based entirely on district shapes and do not factor in geography, racial demographics, political party affiliation, or election results. While the shape of a district alone is not indicative of gerrymandering, it can be worthwhile to consider as one potential indicator. We examine a few measures here.</article><p id="p-277">To allow for more straighforward computations, we work in <em class="emphasis">square</em> grids in this section, noting that this is a simplification from real-life applications. We start with our square grid and a district plan drawn on the grid: <figure class="figure figure-like" id="gerrymandering-square-grid-district"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/square-grid-district.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.4<span class="period">.</span></span><span class="space"> </span>Square grid with district plan.</figcaption></figure></p>
+<p id="p-278">We defined <dfn class="terminology">compactness</dfn> above as a measure of how tightly packed a district is. The most compact district, then, is one that is as tightly packed as possible. If we are constructing our districts from squares in the grid, what shape would be as tightly packed as possible? We would want smooth edges, without any parts sticking out, so we might try to arrange our squares into a rectangular region. But a long, skinny rectangle would not be considered as tightly packed as possible: we could tighten it up even more by getting the side lengths to all be the same. Our most compact shape, then, is a square.</p>
+<p id="p-279">The first measure of compactness we discuss, the <dfn class="terminology">Polsy-Popper</dfn> measure, is found by comparing the shape of a given district to the “ideal” shape, a square - more specifically, a square that has the same perimeter as our district.</p>
+<article class="definition definition-like" id="gerrymandering-PPdef"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span>
+</h4>The <dfn class="terminology">Polsby-Popper score</dfn> is a ratio that compares the area of a district to the area of a square with the same perimeter as the district. Thus we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+PP =\displaystyle\frac{\text{Area of district}}{\text{Area of a square with the same perimeter as the district}}  \text{.}
+\end{equation*}
+</div></article><p id="p-280">In the following example, we calculate the Polsby-Popper score for the district above.</p>
+<article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like">Find the Polsby-Popper score for the district above in <a href="" class="xref" data-knowl="./knowl/gerrymandering-square-grid-district.html" title="Figure 4.5.4: District plan on square grid.">Figure 4.5.4</a>. <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like">Once you have the perimeter of the district (26), what dimensions would a square have with the same perimeter?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><span class="process-math">\(PP = \frac{72}{169} \approx 0.426.\)</span></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><p id="p-281">Omitting units and simply counting, we note the area of the district is <span class="process-math">\(18\)</span> and its perimeter is <span class="process-math">\(26\text{.}\)</span>  Since all sides must be equal in length in a square, any square that has perimeter <span class="process-math">\(26\)</span> must have sides of length <span class="process-math">\(\frac{26}{4}\)</span> or <span class="process-math">\(\frac{13}{2} \text{.}\)</span> Therefore the area of this square would be <span class="process-math">\(\left ( \frac{13}{2} \right )^2 = \frac{169}{4}\text{.}\)</span>  Now we find the ratio: <span class="process-math">\(PP = \frac{18}{(169/4)}=\frac{72}{169} \approx 0.426.\)</span></p></div></div></article></div>
+<p id="p-282">Our second measure of compactness, the <dfn class="terminology">Reock score</dfn>, again compares the given district shape to a square. However, instead of using a square with the same perimeter as the district, the Reock score compares to a <em class="emphasis">minimum-bounding square</em>, which is the smallest square that fully contains the district.</p>
+<article class="definition definition-like" id="gerrymandering-Rdef"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span>
+</h4>The <dfn class="terminology">Reock score</dfn> is a ratio that compares the district's shape to the minimum-bounding square, the smallest square that fully contains the district. We have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R =\displaystyle\frac{\text{Area of district}}{\text{Area of the smallest square containing the district}} \text{.}
+\end{equation*}
+</div></article><p id="p-283">In the image below, we show the district plan together with the smallest square containing the district. <figure class="figure figure-like" id="gerrymandering-district-with-smallest-square"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/district-with-smallest-square.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.8<span class="period">.</span></span><span class="space"> </span>District plan with minimum-bounding square. The minimum-bounding square is outlined in dashed line. Because the district is 6 squares wide at its widest point, the minimum-bounding square is 6 units by 6 units.</figcaption></figure></p>
+<p id="p-284">In the next example, we calculate the Reock score for the district above.</p>
+<article class="example example-like" id="example-6"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like">Find the Reock score for the district above. <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like">As noted above, the smallest square that contains the district is 6 units by 6 units. Find its area.</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><span class="process-math">\(R = 0.5 \)</span></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><p id="p-285">Omitting units and simply counting, we note the area of the district is <span class="process-math">\(18\)</span> and area of the smallest square that contains the district is <span class="process-math">\(36\text{.}\)</span> In this case, we have <span class="process-math">\(R = \frac{18}{36}=\frac{1}{2}=0.5\text{.}\)</span></p></div></div></article></div>
+<p id="p-286">Finally, the <dfn class="terminology">Convex Hull score</dfn> is a ratio that measures how “convex” a district shape is. In geometry, a <em class="emphasis">convex</em> shape is one in which any two points in the interior of the shape can be connected by a straight line that stays inside the shape. If there is any pair of interior points connected by a straight line that partially falls outside of the shape, then the shape is known as <em class="emphasis">concave</em>. The picture below shows an example of a convex shape (image a) versus concave shape (image b): <figure class="figure figure-like" id="gerrymandering-ConvexConcave1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="gerrymandering/ConvexConcave1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.10<span class="period">.</span></span><span class="space"> </span>Convex and concave shapes.</figcaption></figure></p>
+<p id="p-287">The <em class="emphasis">convex hull</em> of a shape is the original shape together with the minimum additional area needed to make it convex. To visualize the convex hull, imagine placing a rubber band tightly around the perimeter of the shape. If the shape is a square, or a rectangle, the rubber band will fit exactly along the edges of the shape. If the shape is not rectangular, the rubber band will stretch across any gaps created between corners of the shape. This region enclosed by the rubber band is the convex hull. The picture below shows our district together with its convex hull: <figure class="figure figure-like" id="gerrymandering-district-with-convex-hull"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/district-with-convex-hull.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.11<span class="period">.</span></span><span class="space"> </span>District plan with convex hull. The convex hull is outlined in dashed line, and can be thought of like a rubber band stretched around the district border.</figcaption></figure></p>
+<article class="definition definition-like" id="gerrymandering-CHdef"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.12</span><span class="period">.</span>
+</h4>The <dfn class="terminology">Convex Hull score</dfn> is a ratio that compares the district's shape to its convex hull. It is defined as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+CH =\displaystyle\frac{\textnormal{Area of district}}{\textnormal{Area of convex hull of district}}\text{.}
+\end{equation*}
+</div></article><p id="p-288">In the following example, we compute the Convex Hull score for the given district.</p>
+<article class="example example-like" id="example-7"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.13</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like">Find the Convex Hull score for the district above. <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like">The convex hull around the district is outlined in a dashed line. Find the area of this region by combining the area of the enclosed squares with the areas of the triangular regions formed.</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><span class="process-math">\(CH \approx 0.74 \text{.}\)</span></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><p id="p-289">Omitting units and simply counting, we note the area of the district is <span class="process-math">\(18\text{.}\)</span> The area of the convex hull that contains the district is found in pieces, combining the area of the squares with the areas of the triangular regions formed. For area of the convex hull we get <span class="process-math">\(20 + 4 + 0.5\text{.}\)</span> This yields <span class="process-math">\(CH = \frac{18}{24.5} \approx  0.74 \)</span></p></div></div></article></div>
+<article class="remark remark-like" id="remark-2"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.5.14</span><span class="period">.</span>
+</h4>The actual formulas for these scores (based in the real world rather than districts composed of squares) vary slightly from those we use here. In particular, the “ideal” compact shape used for comparison in the first two measures is a circle. In the Polsby-Popper ratio, the ideal shape is a circle with the same perimeter (circumference) as the district. In the Reock ratio, the ideal shape is the minimum-bounding circle, which is the smallest circle containing the district. Our definitions and compactness scores are <em class="emphasis">consistent</em> with the formal scores and allow for more straightforward computations.</article></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">Compactness Criteria</span>
+</h3>
+<p id="p-290">In these three measures, compactness is a geometric measure that compares the area of a district to some “ideal” compact shape. In each case we consider, the compactness score is a number between 0 and 1 that measures the compactness of the shape relative to the ideal. Districts close in shape to the ideal shape (more compact) have scores closer to 1, while those less compact (farther from the ideal) score closer to 0. When a district has much greater perimeter than we would expect for the region's area (as happens when the shape has long, skinny pieces branching off or strung together), we may suspect gerrymandering. At this time, 37 states include a compactness requirement for state legislative districts, and 18 establish similar requirements for congressional districts. However, there is no universal measure, and different states have different laws that regulate compactness. In Idaho the redistricting commission is expected to “avoid drawing distorted boundaries” <a href="" class="xref" data-knowl="./knowl/gerrymandering-idaho-law.html" title="Bibliographic Entry 4.12.40">[4.12.40]</a>, while in other states with extensive coastlines (such as Maryland) this is impossible. In fact, most states do not provide details on compactness measures but adopt a  “you know it when you see it” approach in determinations.</p>
+<article class="assemblage assemblage-like" id="assemblage-6"><p id="p-291">Compactness in the Courts: Pennsylvania's 7th congressional district adopted in 2011 (shown below) has been widely cited as an example of a district that is far from compact as a result of gerrymandering. In 2018, the state's Supreme Court ruled this (and the rest of the district plan) to be an unconstitutional gerrymander, and required the state to create a new map. <a href="" class="xref" data-knowl="./knowl/gerrymandering-LWV-PA-remedial-plan.html" title="Bibliographic Entry 4.12.34">[4.12.34]</a></p></article><figure class="figure figure-like" id="gerrymandering-paGoofy"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/paGoofy.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.15<span class="period">.</span></span><span class="space"> </span>PA 7th district, 2011 (“Goofy kicking Donald Duck”). For more on this district, see <a href="" class="xref" data-knowl="./knowl/gerrymandering-PA-goofy-district.html" title="Bibliographic Entry 4.12.39">[4.12.39]</a>.</figcaption></figure><p id="p-292">Among mathematicians and political scientists, the debate about best measures of compactness continues, but consensus has arisen around a few guiding principles:</p>
+<ul class="disc">
+<li id="li-249"><p id="p-derived-li-249">There is no number threshold for a district being deemed “compact” - the numbers are used in comparison, not for their standalone values.</p></li>
+<li id="li-250"><p id="p-derived-li-250">Compactness measures should be used across an entire districting plan, not just a single district.</p></li>
+<li id="li-251"><p id="p-derived-li-251">Comparisons should be made between districts and plans within the same state, and not across different states as each state's geography is unique.</p></li>
+<li id="li-252"><p id="p-derived-li-252">Compactness tests should measure the shape and not the size of the district.</p></li>
+<li id="li-253"><p id="p-derived-li-253">Multiple compactness tests should be used whenever possible.</p></li>
+<li id="li-254"><p id="p-derived-li-254">Compactness tests should not be the sole factor used to judge district plans.</p></li>
+</ul></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.4</span> <span class="title">Caution: Fairness Goes Beyond Geometry</span>
+</h3>
+<p id="p-293">We have repeatedly mentioned that geometry cannot be a sole measure of fairness, though many states do require it to be a consideration in redistricting. There are many different factors possibly contributing to a district's shape, as summarized in the following quote:</p>
+<blockquote class="blockquote" id="blockquote-9">"But sometimes boundaries that look odd at first glance just follow a natural geographic feature, like a river or a mountain range. Or they could be necessary to unite communities that live in different areas but share similar representational needs, like communities of color that have been subject to residential discrimination. Other times, odd boundaries are very much the product of gerrymandering. [...] The reality is that visual inspection can be a helpful, but ultimately very incomplete, analysis. It is a good first test that can help identify where a deeper dive is needed. In other words, don’t judge a book by its cover." <a href="" class="xref" data-knowl="./knowl/gerrymandering-bc-shape.html" title="Bibliographic Entry 4.12.31">[4.12.31]</a>
+</blockquote>
+<p id="p-294">The Brennan Center has gathered several examples of situations like these in this useful analysis: <a class="external" href="https://www.brennancenter.org/our-work/analysis-opinion/dont-judge-district-its-shape" target="_blank">Don't judge a district by its shape (opens new tab)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-50" id="fn-50"><sup> 1 </sup></a>. In fact, as the article points out, it is possible for a compact shape to be the result of a gerrymander too! In the following sections, we explore issues of fairness that go beyond geometry.</p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-50"><div class="fn"><code class="code-inline tex2jax_ignore">www.brennancenter.org/our-work/analysis-opinion/dont-judge-district-its-shape</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

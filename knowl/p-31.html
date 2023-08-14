@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Two more common ways to make a compound statement is by taking two simple statements and combining them with either the word "or" or "and". For example, consider the two statements " In August 2022, abortion is legal with not gestational limit in the state of New Jersey"and "In August 2022, abortion was banned with no exception for rape or incest in the state of Alabama"<a href="" class="xref" data-knowl="./knowl/abortion-nj.html" title="Bibliographic Entry 1.12.2">[1.12.2]</a>. We can combine these statements in the following two ways:</p>
+<ol class="decimal">
+<li><p>In August 2022, abortion is legal with no gestational limit in the state of New Jersey <dfn class="terminology">or</dfn> in August 2022, abortion was banned with no exception for rape or incest in the state of Alabama.</p></li>
+<li><p>In August 2022, abortion is legal with no gestational limit in the state of New Jersey <dfn class="terminology">and</dfn> in August 2022, abortion was banned with no exception for rape or incest in the state of Alabama.</p></li>
+</ol>
+<p class="continuation">These statements are a bit awkward and can be rewritten without losing their meaning as simply:</p>
+<ol class="decimal">
+<li><p>In August 2022, abortion is legal with not gestational limit in the state of New Jersey <dfn class="terminology">or</dfn> was banned with no exception for rape or incest in the state of Alabama.</p></li>
+<li><p>In August 2022, abortion is legal with not gestational limit in the state of New Jersey <dfn class="terminology">and</dfn> was banned with no exception for rape or incest in the state of Alabama.</p></li>
+</ol>
+<p class="continuation">Both of these compound statements are true statements because the original simple statements are both true. The truth table for an "or" statement, more formally known as a <dfn class="terminology">disjunction</dfn> is given below: <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">f = propcalc.formula(" p | q ")
+f.truthtable()
+</script></pre> The truth table for an "and" statement, more formally known as a <dfn class="terminology">conjunction</dfn> is given next: <pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">f = propcalc.formula(" p & q ")
+f.truthtable()
+</script></pre> The columns on the far left represent all possible truth values of the simple statements <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> used in the compound statement. The entries on the far left of each row represent the different truth value of the simple statements used in the compound statement. The final column on the far right represents the truth value of the compound statement for the given simple statement truth values. For example the second row in the truth table above reads "When <span class="process-math">\(p\)</span> is true and <span class="process-math">\(q\)</span> is false, <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> is false".</p>
+<span class="incontext"><a href="abortion-simple-logic.html#p-31" class="internal">in-context</a></span>
+</body>
+</html>

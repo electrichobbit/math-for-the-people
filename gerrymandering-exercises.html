@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="gerrymandering-reflection.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="gerrymandering.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="gerrymandering-references.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="gerrymandering-reflection.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="gerrymandering.html" title="Up">Up</a><a class="next-button button toolbar-item" href="gerrymandering-references.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="active">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="exercises" id="gerrymandering-exercises"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.11</span> <span class="title">Exercises</span>
+</h2>
+<section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.11.1</span> <span class="title">Geometry Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-1">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-20">
+<p id="p-357">(Squaretopia grid and challenges are adapted from “Gerrymandering in Squaretopia”, an exercise created by and licensed to the Metric Geometry and Gerrymandering Group)</p>
+<p id="p-358">Squaretopia consists of 90 blocks: 54 vote for the Heart (<span class="process-math">\(\heartsuit \)</span>) party and 36 vote for the Club (<span class="process-math">\(\clubsuit \)</span>) party. Consider the following challenges that reveal the power of “cracking” and “packing” districts.</p>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-41"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<p id="p-359">The grid is to be divided into 10 districts that must be contiguous and contain an equal number of voters.</p>
+<ol class="lower-alpha">
+<li id="li-286"><p id="p-derived-li-286">What is the minimum number of voters needed to win all 10 districts?</p></li>
+<li id="li-287"><p id="p-derived-li-287">What is the maximum number of districts that can be won by the Heart party? (Mathematically, not based on location of voters.)</p></li>
+<li id="li-288"><p id="p-derived-li-288">What is the maximum number of districts that can be won by the Club party? (Mathematically, not based on location of voters.)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-42"><h5 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Challenge 1: Compactness.</span>
+</h5>
+<div class="introduction" id="introduction-21"><p id="p-360">Divide Squaretopia (given below in <a href="" class="xref" data-knowl="./knowl/gerrymandering-squaretopia-hearts.html" title="Table 4.11.1">Table 4.11.1</a>) into 10 equal districts that are as “compact” as possible. How many districts does the Heart party win?</p></div>
+<p id="p-361"><figure class="table table-like" id="gerrymandering-squaretopia-hearts"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure></p></article><article class="exercise exercise-like" id="exercise-43"><h5 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Challenge 2: Proportionality.</span>
+</h5>
+<div class="introduction" id="introduction-22"><p id="p-362">Divide Squaretopia into 10 equal districts so that Heart's seat share is proportional to its overall vote share. Try to keep the districts as “compact” as possible.</p></div>
+<p id="p-363"><figure class="table table-like" id="table-23"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure></p></article><article class="exercise exercise-like" id="exercise-44"><h5 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Challenge 3: Gerrymander for Hearts.</span>
+</h5>
+<div class="introduction" id="introduction-23"><p id="p-364">Divide Squaretopia into 10 equal districts so that the Heart party wins as many districts as possible. Try to keep the districts as “compact” as possible. How many districts does the Heart party win?</p></div>
+<p id="p-365"><figure class="table table-like" id="table-24"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure></p></article><article class="exercise exercise-like" id="exercise-45"><h5 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Challenge 4: Gerrymander for Clubs.</span>
+</h5>
+<div class="introduction" id="introduction-24"><p id="p-366">Divide Squaretopia into 10 equal districts so that the Heart party wins as <em class="emphasis">few</em> districts as possible. Try to keep the districts as “compact” as possible. How many districts does the Heart party win?</p></div>
+<p id="p-367"><figure class="table table-like" id="table-25"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure></p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-368">When using grid examples, it is often easy for populations to be equal in every district, but on real maps, some deviation is allowed. The <dfn class="terminology">population deviation</dfn> of a district plan is the percentage difference between the most populous and least populous districts, relative to the <em class="emphasis">ideal population</em> (the population if all districts were equal).</p>
+<p id="p-369">For example, suppose a state with 1,000,000 people was divided into 10 districts. The most populous district contains 102,300 people and the least populous district contains 98,400 people. This means that the ideal population is 100,000 and the population deviation is 3.9%.</p>
+<span class="process-math">\(\frac{102,300-98,400}{100,000}=.039=3.9\%\)</span><p id="p-370">Courts have dictated that the maximum allowed population deviation is 0.75% for congressional plans and 10% for state legislative plans.</p>
+<ol class="lower-alpha">
+<li id="li-289">
+<p id="p-371">Suppose a state is planning to create new congressional districts and proposes a plan in which their 3 districts have the following populations:</p>
+<ol class="lower-roman">
+<li id="li-290"><p id="p-derived-li-290">District #1: 232,934</p></li>
+<li id="li-291"><p id="p-derived-li-291">District #2: 231,956</p></li>
+<li id="li-292"><p id="p-derived-li-292">District #3: 231,158</p></li>
+</ol>
+<p id="p-372">Calculate the ideal population and the population deviation for this plan. Would this proposal be allowed to move forward based on population alone?</p>
+</li>
+<li id="li-293">
+<p id="p-373">Suppose a state with a population of 2,300,000 is set to create new district plans for 8 congressional districts and 40 state legislative districts</p>
+<ol class="lower-roman">
+<li id="li-294"><p id="p-derived-li-294">The congressional proposal's least populous district has a population of 286,790. What is the maximum population allowed for another district?</p></li>
+<li id="li-295"><p id="p-derived-li-295">The state legislative proposal's most populous district has a population of 59,440. What is the minimum population allowed for another district?</p></li>
+</ol>
+</li>
+</ol></article><div class="exercisegroup" id="exercisegroup-2">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="introduction-25"><p id="p-374">The grid below represents a districting plan.  <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="gerrymandering/M4TPCompact.png" class="contained"></div></p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-47"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<p id="p-375">Calculate the Reock score for each district.</p></article><article class="exercise exercise-like" id="exercise-48"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<p id="p-376">Calculate the Polsby-Popper score for each district.</p></article><article class="exercise exercise-like" id="exercise-49"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<p id="p-377">Calculate the Convex Hull score for each district.</p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-50"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-378">For each statement, explain why the statement is not an appropriate interpretation of compactness scores.</p>
+<ol class="lower-alpha">
+<li id="li-296"><p id="p-derived-li-296">The average Polsby-Popper score of districts in Maryland is 0.115, thus the districts are not compact.</p></li>
+<li id="li-297"><p id="p-derived-li-297">The Reock score of Massachusetts' 6th district is 0.45 while the Reock score of its 5th district is 0.23, thus the 6th district is more compact.</p></li>
+<li id="li-298"><p id="p-derived-li-298">The average Polsby-Popper score of New Jersey's congressional districts is 0.20 while the average Polsby-Popper score of Pennsylvania's congressional districts is 0.33, thus Pennsylvania is more compact.</p></li>
+</ol></article></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.11.2</span> <span class="title">Partisan Gerrymandering Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="gerrymandering-first-efficiency-gap-exercise"><h4 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">Efficiency Gap.</span>
+</h4>
+<div class="introduction" id="introduction-26"><p id="p-379">The grid below represents a districting plan. Note that <span class="process-math">\(\heartsuit_2 = 2 \)</span> voters for <span class="process-math">\(\heartsuit \text{,}\)</span> and <span class="process-math">\(\clubsuit = 1 \)</span> voter for <span class="process-math">\(\clubsuit \text{.}\)</span></p></div>
+<figure class="table table-like" id="gerrymandering-district-plan-EG-exercise"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.8<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l2 t2 lines"><span class="process-math">\(\heartsuit_2 \)</span></td>
+<td class="l m b0 r0 l0 t2 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r2 l0 t2 lines"><span class="process-math">\(\clubsuit_3 \)</span></td>
+<td class="l m b2 r0 l0 t2 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b0 r0 l0 t2 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t2 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t2 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit_2 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit_4 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit_3 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit_3 \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\heartsuit_2 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l2 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit_2 \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit_2 \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l2 t0 lines"><span class="process-math">\(\clubsuit_3 \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit_3 \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit_3 \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b0 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l2 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit_2 \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(\heartsuit \)</span></td>
+<td class="l m b2 r2 l0 t0 lines"><span class="process-math">\(\clubsuit \)</span></td>
+</tr>
+</table></div></figure><ol class="lower-alpha">
+<li id="li-299"><p id="p-derived-li-299">Calculate vote totals for each district.</p></li>
+<li id="li-300"><p id="p-derived-li-300">Calculate wasted vote totals for each district.</p></li>
+<li id="li-301"><p id="p-derived-li-301">Compute the efficiency gap.</p></li>
+<li id="li-302"><p id="p-derived-li-302">Interpret the efficiency gap answer. Which party holds the advantage in this plan? How significant is their advantage?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-52"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-380">There is an alternative “shortcut” formula to calculate the efficiency gap in a districting plan:</p>
+<p id="p-381">Efficiency Gap = (% of Districts won <span class="process-math">\(-\)</span> 50%) <span class="process-math">\(-\)</span> 2 * (% of Votes <span class="process-math">\(-\)</span> 50%)</p>
+<p id="p-382">For example, in the district plan in Example 1.6.1 (given in <a href="" class="xref" data-knowl="./knowl/gerrymandering-efficiency-gap-example-district-plan.html" title="Table 4.6.2">Table 4.6.2</a>), Heart wins 3/5 = 60% of districts and has 26/45 = 57.8% of voters.</p>
+<p id="p-383">Using the formula: Efficiency Gap = (60% <span class="process-math">\(-\)</span> 50%) <span class="process-math">\(-\)</span> 2 * (57.8% <span class="process-math">\(-\)</span> 50%) = <span class="process-math">\(-5.6\)</span>%. Since we used values for Heart, the negative number here represents that the Club party holds the advantage in this map.</p>
+<p id="p-384"><em class="emphasis">Note:</em> This answer is slightly different from the original calculation due to rounding error and the fact that our grid districts needed at least 5/9 = 55.6% of voters to win (rather than 50% +1 vote).</p>
+<ol class="lower-alpha">
+<li id="li-303"><p id="p-derived-li-303">Use this alternative formula to calculate and interpret the efficiency gap in <a href="" class="xref" data-knowl="./knowl/gerrymandering-first-efficiency-gap-exercise.html" title="Exercise 4.11.11: Efficiency Gap">Exercise 4.11.11</a>. Are your answers close?</p></li>
+<li id="li-304"><p id="p-derived-li-304">Suppose a party has 60% of votes on an entire map. The “most fair” outcome according to the efficiency gap formula is that this party wins what percentage of districts? What does your answer tell you about the efficiency gap formula and proportionality?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-53"><h4 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">Efficiency Gap and Mean-Median.</span>
+</h4>
+<div class="introduction" id="introduction-27"><p id="p-385">The tables below show the results of the North Carolina congressional elections in 2018 (prior to the state ruling that partisan gerrymandering is illegal, forcing a new map to be drawn and used) and 2020. For purposes of calculations, assume that an equal number of people voted in each district. NOTE: Do not include the 100-0 districts in the calculations as candidates ran unopposed, so it does not make sense to say votes are “wasted” when voters did not have a choice on candidates.</p></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="gerrymandering/NC_Congressional_elections_district_vote_share_2018_2020.png" class="contained"></div>
+<article class="task exercise-like" id="task-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-386">Calculate and interpret the efficiency gap for each set of election results. Does either district plan give more than a +2 seat advantage to the Republicans? (Reminder: Do not include the 100-0 districts in the calculations.)</p></article><article class="task exercise-like" id="task-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-387">Calculate and interpret the Mean-Median Difference for each set of election results. Do the elections show a significant partisan bias to the Republicans under each district plan? (Again, do not include 100-0 districts in the calculations.) Use the calculator below to compute standard deviation and find <span class="process-math">\(t\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-15"><script type="text/x-sage">import numpy as np
+#compute standard deviation, mean, median, mean-median, t of Republican vote share
+
+######### ONLY ENTER DATA HERE #########
+numb = #list R vote share here, separated by commas
+######### ######### ######### #########
+
+print ("The standard deviation of the given numbers is ")
+sd = np.std([numb])
+print(N(sd))
+
+print ("The mean of the given numbers is ")
+mean = np.mean(numb)
+print(N(mean))
+
+print ("The median of the given numbers is ")
+median = np.median(numb)
+print(N(median))
+
+print ("The difference between mean and median is ")
+difference = mean-median
+print(N(difference))
+
+#use formula to compute t.
+
+print ("t = ")
+t = ((difference)*(sqrt(len(numb))))/(0.756*sd)
+print(N(t))
+</script></pre></p></article></article><article class="exercise exercise-like" id="exercise-54"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="introduction" id="introduction-28"><p id="p-388">Explore the Gerryminder redistricting simulation <a class="external" href="https://phobos.ramapo.edu/~jteigen/gerry.html" target="_blank">Gerryminder: A Redistricting Game (opens a new tab)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-63" id="fn-63"><sup> 1 </sup></a>.</p></div>
+<article class="task exercise-like" id="task-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-389">Adjust the district boundaries to get each district to ideal size.</p></article><article class="task exercise-like" id="task-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-390">Consider the seats-to-votes ratio calculation. If the election outcome (seats) is proportional to voter party (votes), what number will the seats-to-votes ratio be close to?</p></article></article></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.11.3</span> <span class="title">Racial Gerrymandering Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-55"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<article class="task exercise-like" id="task-5"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-391">Suppose a voting precinct has <span class="process-math">\(80 \%\)</span> White voters and in a recent election, <span class="process-math">\(75 \% \)</span> of voters in the precinct supported a Heart (<span class="process-math">\(\heartsuit \)</span>) party candidate. What is the maximum and minimum percentage of White voters that could have voted for the Heart candidate in the district? Complete the tables below.</p>
+<figure class="table table-like" id="table-27"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.13<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="c m b2 r0 l0 t0 lines" colspan="4">maximum White for <span class="process-math">\(\heartsuit \)</span>
+</td></tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\heartsuit \)</span> votes</td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\clubsuit \)</span> votes</td>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">White</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">80</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">non-White</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+<td class="c m b2 r0 l0 t0 lines">75</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">100</td>
+</tr>
+</table></div></figure><figure class="table table-like" id="table-28"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.14<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="c m b2 r0 l0 t0 lines" colspan="4">minimum White for <span class="process-math">\(\heartsuit \)</span>
+</td></tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\heartsuit \)</span> votes</td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\clubsuit \)</span> votes</td>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">White</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">80</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">non-White</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+<td class="c m b2 r0 l0 t0 lines">75</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">100</td>
+</tr>
+</table></div></figure><p id="p-392">maximum White for <span class="process-math">\(\heartsuit  =  \; \; \; \; /80 = \; \; \; \%\)</span></p>
+<p id="p-393">minimum White for <span class="process-math">\(\heartsuit  =  \; \; \; \; /80 = \; \; \; \%\)</span></p></article><article class="task exercise-like" id="task-6"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-394">Suppose a voting precinct has <span class="process-math">\(68 \%\)</span> Hispanic voters and in a recent election, <span class="process-math">\(36 \% \)</span> of voters in the precinct supported a Heart  (<span class="process-math">\(\heartsuit \)</span>) party candidate. What is the maximum and minimum percentage of Hispanic voters that could have voted for the Heart candidate in the precinct? Complete the tables below.</p>
+<figure class="table table-like" id="table-29"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.15<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="c m b2 r0 l0 t0 lines" colspan="4">maximum Hispanic for <span class="process-math">\(\heartsuit \)</span>
+</td></tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\heartsuit \)</span> votes</td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\clubsuit \)</span> votes</td>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">Hispanic</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">68</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">non-Hispanic</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+<td class="c m b2 r0 l0 t0 lines">36</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">100</td>
+</tr>
+</table></div></figure><figure class="table table-like" id="table-30"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.11.16<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="c m b2 r0 l0 t0 lines" colspan="4">minimum Hispanic for <span class="process-math">\(\heartsuit \)</span>
+</td></tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\heartsuit \)</span> votes</td>
+<td class="c m b2 r0 l0 t0 lines">
+<span class="process-math">\(\clubsuit \)</span> votes</td>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">Hispanic</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">68</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">non-Hispanic</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">total</td>
+<td class="c m b2 r0 l0 t0 lines">36</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">100</td>
+</tr>
+</table></div></figure><p id="p-395">maximum Hispanic for <span class="process-math">\(\heartsuit  =  \; \; \; \; /68 = \; \; \; \%\)</span></p>
+<p id="p-396">minimum Hispanic for <span class="process-math">\(\heartsuit   =  \; \; \; \; /68 = \; \; \; \%\)</span></p></article></article><article class="exercise exercise-like" id="exercise-56"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<p id="p-397">Suppose we collected data from all precincts from the scenarios in the previous exercise, then created a scatterplot and found the line of best fit.</p>
+<article class="task exercise-like" id="task-7"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-398">We obtain the following regression line equation for the relationship between White voters and Heart voters among precincts in a district:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{(\% of votes for Heart) } = 0.34 \text{ (\% of voters who are White) } + 39
+\end{equation*}
+</div>
+<p class="continuation">Using the equation above, what percentage of votes would you predict that Heart would receive from a precinct with all White voters?</p></article><article class="task exercise-like" id="task-8"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-399">We obtain the following regression line equation for the relationship between Hispanic voters and Heart voters among precincts in a district:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{(\% of votes for Heart) } = -0.23 \text{ (\% of voters who are Hispanic) } + 57
+\end{equation*}
+</div>
+<p class="continuation">Using the equation above, what percentage of votes would you predict that Heart would receive from a precinct with all Hispanic voters?</p></article><article class="task exercise-like" id="task-9"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-400">Do the answers above suggest racially polarized voting among White and Hispanic voters in this particular district? Explain.</p></article></article><article class="exercise exercise-like" id="exercise-57"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<p id="p-401">Use the <a class="external" href="https://mggg.org/metagraph/5x5.html" target="_blank">MGGG 5x5 grid interactive tool (opens new tab)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-64" id="fn-64"><sup> 2 </sup></a> to answer the following questions.</p>
+<ol class="lower-alpha">
+<li id="li-305"><p id="p-derived-li-305">Place 9 Hearts in the center of the grid and 16 Clubs around the outside. Given that there are 5 districts of 5 voters each, do you think it is more likely that Hearts wins 0 districts or 3 districts? Test this by creating an example of each scenario and comparing the bar graphs of results.</p></li>
+<li id="li-306"><p id="p-derived-li-306">Now place 9 Hearts on the border of the grid and use Clubs for the remaining 16 positions. Does this position of Hearts make it easier or harder for them to win districts compared to clustering them in the center (in the previous question)? Use the bar graphs to support your answer.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-58"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<p id="p-402">Use the <a class="external" href="https://mggg.org/metagraph/7x7.html" target="_blank">MGGG 7x7 grid interactive tool (opens new tab)</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-65" id="fn-65"><sup> 3 </sup></a> to answer the following questions.</p>
+<p id="p-403">Even though the 7x7 grid is only roughly double the amount of spaces as a 5x5 grid, the number of possible district plans vastly increases. While it might not be practical to consider all possibilities, we can use the grid simulation to take a sample of possible district plans and obtain a distribution of results (similar to the previous exercise) among the sample.</p>
+<ol class="lower-alpha">
+<li id="li-307"><p id="p-derived-li-307">Create a valid district plan (7 districts of 7 voters each) with exactly 22 Hearts in which Hearts wins 4 out of 7 districts. Is your plan an outlier for the distribution of voters that you chose? Use the “sample with MCMC” button to create a bar graph of results. What happens when you change nothing on your district plan but click the sample button again?</p></li>
+<li id="li-308"><p id="p-derived-li-308">Change your district plan by changing 4 Hearts to Clubs which do not change the outcome of any district. You should now have exactly 18 Hearts and a plan in which Hearts wins 4 out of 7 districts. Is your plan an outlier for the distribution of voters that you chose?</p></li>
+<li id="li-309"><p id="p-derived-li-309">Create multiple grids of exactly 18 Hearts but arrange the Hearts in different ways. For example, you might arrange them together in one large group, in two groups in opposite corners, or randomly scattered in the grid. For each arrangement, create the distribution of districts won by Hearts. Are there certain arrangements of the 18 Hearts that tend to result in winning more districts?</p></li>
+</ol></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-63"><div class="fn"><code class="code-inline tex2jax_ignore">phobos.ramapo.edu/~jteigen/gerry.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-64"><div class="fn"><code class="code-inline tex2jax_ignore">mggg.org/metagraph/5x5.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-65"><div class="fn"><code class="code-inline tex2jax_ignore">mggg.org/metagraph/7x7.html</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Computing the correlation is tricky.  We'll go through the process of computing it, which takes multiple steps, but in general we'll do it using software.  The R programming language lets us easily find the correlation between two sets of numbers.  Here, you'll see the two data sets we looked at above.  The cor function in R calculates the correlation between two sets of numbers - hit "Evaluate R" to calculate.  You can try different values in the exercise below - just hit "Evaluate R" to find the correlation.  You'll see that when we look at the first pair of data sets, the correlation is exactly 1: <pre class="ptx-sagecell sagecell-r" id="sage-16"><script type="text/x-sage">x <- c(1,2,5,6,12)
+y <- c(2,4,10,12,24)
+cor(x,y)
+</script></pre> If we look at the second pair, though, the correlation is a little less than 1. <pre class="ptx-sagecell sagecell-r" id="sage-17"><script type="text/x-sage">x <- c(1,2,5,6,12)
+y <- c(2,5,9,14,21)
+cor(x,y)
+</script></pre> 0.9812022 is still very close to 1, though, because these numbers still mostly fit the pattern - just not perfectly.</p>
+<span class="incontext"><a href="payday-loans-correlation.html#p-745" class="internal">in-context</a></span>
+</body>
+</html>

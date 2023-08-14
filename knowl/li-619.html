@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h3 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span>
+</h3>
+<p>Compare the total amount paid in student debt for various racial groups using <a class="external" href="https://nces.ed.gov/fastfacts/display.asp?id=900" target="_blank">this table</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-158-hidden.html" title="Footnote 9.6.6"><sup> 6 </sup></a>.</p>
+<ol class="lower-alpha">
+<li><p>Does it seem like any racial groups are being disproportionately saddled with student loan debt? How can we compare, say, debt held by white vs. Asian students to see whether the difference is larger than we'd expect? Well, first we need to quantify the idea of <em class="emphasis">what	we'd expect</em> ...what does this mean? Create an <dfn class="terminology">expected frequency table</dfn> for what you'd expect to see if there were absolutely no racial differences in student debt.</p></li>
+<li><p>Compute the difference between the observed count for each race <span class="process-math">\(O\)</span> and the expected count <span class="process-math">\(E\text{.}\)</span> What do you notice?</p></li>
+<li><p>What if we averaged all the <span class="process-math">\(O-E\)</span>\textquoteright s for each racial group? This is effectively the idea of a <dfn class="terminology">chi-squared test for goodness-of-fit</dfn>, which is used by statisticians to determine whether any differences observed are small enough to be due to chance or large enough that they give evidence of a difference. What would the equation for this average look like?</p></li>
+<li><p>We'll use a computer to perform this test in a minute. First, what groups do you think are disproportionately likely/unlikely to hold student loan debt? What racial groups have a higher/lower debt burden per person?</p></li>
+<li><p>Now, enter this data into an app such as RStudio or an online tool. In RStudio, run this code to do a chi-squared test. (In a statistics class, walk through the steps.) Output the <span class="process-math">\(p\)</span>-value (the likelihood the observed differences are due to chance alone) and \textbf{residuals}, which are basically scaled versions of the <span class="process-math">\(O-E\)</span> s for each racial group. Which are highest? Lowest? Is there evidence of racial bias?</p></li>
+</ol></article><span class="incontext"><a href="student-loans-debt-by-college-type.html#li-619" class="internal">in-context</a></span>
+</body>
+</html>

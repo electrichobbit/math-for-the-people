@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="fake-news-reading-questions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="fake-news.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fake-news-references.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="fake-news-reading-questions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="fake-news.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fake-news-references.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="active">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="exercises" id="fake-news-exercises"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.9</span> <span class="title">Exercises</span>
+</h2>
+<p id="p-238">In addition to the exercises provide here, the Case Studies at the <a class="external" href="https://callingbullshit.org/" target="_blank">Calling Bullshit</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-44" id="fn-44"><sup> 1 </sup></a> course, hosted by the University of Washington Center for an Informed Public, provide a rich set of fully developed opportunities to explore how quantitative skills can be used to detect "fake news." Instructors are encouraged to explore and use these materials in conjunction with this text.</p>
+<p id="p-239">Objective: Understand the sources and consequences of error in a single measurement.</p>
+<article class="exercise exercise-like" id="exercise-26"><h3 class="heading"><span class="codenumber">1<span class="period">.</span></span></h3>
+<p id="p-240">Method: Develop a method to measure the height of your instructor (teacher, professor, etc) and make the measurement. Use that measurement to make another measurement. Then use the second measurement in an equation.</p>
+<p id="p-241">Instructions</p>
+<ol class="lower-alpha">
+<li id="li-196"><p id="p-derived-li-196">Split up into teams of two or more.</p></li>
+<li id="li-197"><p id="p-derived-li-197">One team gets a tape measure. Another team gets a yardstick. Still another team gets a 1-ft ruler.</p></li>
+<li id="li-198"><p id="p-derived-li-198">Agree on how you will measure your instructor's height.</p></li>
+<li id="li-199"><p id="p-derived-li-199">Make the measurement according to the selected approach.</p></li>
+<li id="li-200"><p id="p-derived-li-200">Now measure the length, width, and/or height of the classroom using the instructor's height.</p></li>
+<li id="li-201"><p id="p-derived-li-201">Calculate the volume of the classroom using the length, width, and height.</p></li>
+<li id="li-202"><p id="p-derived-li-202">Compare the methods selected, the tools available, the individual measurements, and the result from the equation for the different groups.</p></li>
+<li id="li-203"><p id="p-derived-li-203">Have each group identify the possible sources of error in the exercise and how they propagate.</p></li>
+<li id="li-204"><p id="p-derived-li-204">Discuss the groups' results with respect to the five Cs explained in the text: coincidence, correlation, causation, convergence, and consensus. Which ones apply?</p></li>
+<li id="li-205"><p id="p-derived-li-205">Extrapolate the findings to general sources of misinformation, misleading information, studies and research taken in isolation, etc.</p></li>
+</ol></article><p id="p-242">Objective: Understand the assumptions which go into a "forecast" or a simulation, in this case an on-line financial calculator, and its purpose.</p>
+<article class="exercise exercise-like" id="exercise-27"><h3 class="heading"><span class="codenumber">2<span class="period">.</span></span></h3>
+<p id="p-243">Method: Study the instructions, narrative, and results for an on-line calculator that forecasts/estimates how you much you will need to save to achieve certain retirement savings goals.</p>
+<p id="p-244">Instructions:</p>
+<ol class="lower-alpha">
+<li id="li-206"><p id="p-derived-li-206">Thoroughly review the material at this link: https://www.nerdwallet.com/investing/retirement-calculator. Note: there's no need to download the app, just work with this page and see how the numbers change and, importantly, the colors adjust on the graphics</p></li>
+<li id="li-207"><p id="p-derived-li-207">Identify as many of the assumptions used to "build" this calculator - some may be obvious, some may not. Hint: A "default" value is also an assumption. There are also hidden assumptions.</p></li>
+<li id="li-208"><p id="p-derived-li-208">After reading thoroughly, go through the forms on the left and "play" with the numbers - record the "scenarios" you try by listing and grouping the values you use - age, pre-tax income, current savings, monthly savings rate, etc. You can think of the differences in the "values" you select in the same way as "errors" in the previous example.</p></li>
+<li id="li-209"><p id="p-derived-li-209">See if you can identify the assumption(s) or defaults which have the greatest impact on the results</p></li>
+<li id="li-210"><p id="p-derived-li-210">Contemplate why this calculator is available free of charge. What is the purpose of the company making this calculator available? Hint: Where does the "Get started" button take you?</p></li>
+<li id="li-211"><p id="p-derived-li-211">Did you remember to hit the link at the very top in very small print, "advertiser disclosure"? And did you click on the "list of partners" at the end of the text box?</p></li>
+<li id="li-212"><p id="p-derived-li-212">Discuss and defend whether you would classify this "calculator" as good information, misleading information, or misinformation? Or, is it independent/objective 'content' or advertising? Is it "useful" content regardless of how you classify it?</p></li>
+</ol></article><p id="p-245">Objective: Assess the validity of claims made in a public policy advertisement.</p>
+<article class="exercise exercise-like" id="exercise-28"><h3 class="heading"><span class="codenumber">3<span class="period">.</span></span></h3>
+<p id="p-246">Colgate toothpaste was once fined for making the misleading claim that "80% of dentists recommend Colgate toothpaste."</p>
+<ol class="lower-alpha">
+<li id="fake-news-exercise-colgate"><p id="p-derived-fake-news-exercise-colgate">Read about the case that was made against Colgate.  How was their claim true? How was it misleading?</p></li>
+<li id="li-214"><p id="p-derived-li-214">How could Colgate have more accurately represented the results of their survey?  Create an advertising statement that uses the same survey information you researched in <a href="" class="xref" data-knowl="./knowl/fake-news-exercise-colgate.html" title="Item 3.9.3.a">Item 3.9.3.a</a>, but is not misleading.</p></li>
+<li id="li-215"><p id="p-derived-li-215">When you hear a claim like Colgate's, why should you be suspicious about it? What particular parts of the claim sound "off"?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-29"><h3 class="heading"><span class="codenumber">4<span class="period">.</span></span></h3>
+<p id="p-247">In December 2021, the following meme circulated widely on social media:</p>
+<figure class="figure figure-like" id="fake-news-image-polarbear-meme"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/polar-bears.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.1<span class="period">.</span></span><span class="space"> </span>December 2021 meme attributed to Patrick Moore (@EcoSenseNow).</figcaption></figure><ol class="lower-alpha">
+<li id="li-216"><p id="p-derived-li-216">Evaluate the 5 claims made in the meme.  Which are true and which are false?</p></li>
+<li id="li-217"><p id="p-derived-li-217">What sources did you use to determine whether these claims are true or false? Why are these sources more reliable than the tweet?</p></li>
+<li id="li-218"><p id="p-derived-li-218">Which numerical information in the tweet should have served as a clue that some of these claims were not true? Explain why those parts of the claim are a bit suspicious.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-30"><h3 class="heading"><span class="codenumber">5<span class="period">.</span></span></h3>
+<p id="p-248">Another meme which circulated on Facebook in July 2021 shows an image of an electric car charging station, along with a claim about the miles per gallon (mpg) that the car charging will get.</p>
+<figure class="figure figure-like" id="fake-news-image-car-charger"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/diesel-charging-station.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.2<span class="period">.</span></span><span class="space"> </span>Facebook meme which circulated in July 2021, attributed to Laura Winckel.</figcaption></figure><ol class="lower-alpha">
+<li id="li-219"><p id="p-derived-li-219">The meme contains a number of quantitative claims, as well as a non-quantitative claim - that the station is running on a diesel generator, which is not true.  What are the quantitative claims being made?</p></li>
+<li id="li-220"><p id="p-derived-li-220">Which of the quantitative claims are true? Cite the sources you used to verify the claims.</p></li>
+<li id="li-221"><p id="p-derived-li-221">What about these claims should make you suspicious?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-31"><h3 class="heading"><span class="codenumber">6<span class="period">.</span></span></h3>
+<p id="p-249">An <a class="external" href="https://www.theguardian.com/sustainable-business/2017/jul/10/100-fossil-fuel-companies-investors-responsible-71-global-emissions-cdp-study-climate-change" target="_blank">article in The Guardian</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-45" id="fn-45"><sup> 2 </sup></a> on 07/10/2017 had the provocative headline "Just 100 companies responsible for 71% of global emissions, study says"</p>
+<figure class="figure figure-like" id="fake-news-image-guardian-headline"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/guardian-headline.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.3<span class="period">.</span></span><span class="space"> </span>Headline from The Guardian, 07/10/2017.</figcaption></figure><ol class="lower-alpha">
+<li id="li-222"><p id="p-derived-li-222">It is important to learn that a quantitative claim can be true, but still be misleading.  Here, the claim that just 100 companies are responsible for 71% of global emissions is (up to some uncertainty in the exact numbers) factually correct - but it is missing some important context.  Read through the article and do some research on your own.  What do most of the companies listed in this study do? What kinds of products do they produce?</p></li>
+<li id="li-223"><p id="p-derived-li-223">Based on your research in the previous problem, how is the author using the term "responsible" here? Do you agree that these companies are responsible for 71% of emissions?</p></li>
+<li id="li-224">This tweet from April 2021 refers to the claim in the headline: <figure class="figure figure-like" id="fake-news-image-emissions-bitcoin"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/emissions-bitcoin.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.4<span class="period">.</span></span><span class="space"> </span>Tweet from @tackyBalrog on April 16, 2021</figcaption></figure> How does this tweet fundamentally misunderstand the claim being made?</li>
+<li id="li-225"><p id="p-derived-li-225">What would be a better way to state the claim being made in the headline? Write your own headline which would present the same quantitative information in a less misleading way.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-32"><h3 class="heading"><span class="codenumber">7<span class="period">.</span></span></h3>
+<p id="p-250">Method: Apply "reverse quantitative analysis" (RQA), or working backwards from the numerical result to assess the error, biases, assumptions, uncertainties, exaggerations, dramatization, etc.., to this headline: "Social Isolation Is As Deadly As Smoking Up to 15 Cigarettes a Day," in a public policy/campaign ad by Meals on Wheels (<a class="external" href="www.mealsonwheelsamerica.org" target="_blank"><code class="code-inline tex2jax_ignore">www.mealsonwheelsamerica.org</code></a>) to encourage viewers/readers to donate money.</p>
+<p id="p-251">Instructions</p>
+<ol class="lower-alpha">
+<li id="li-226"><p id="p-derived-li-226">First, from a "math for the people" point of view, what are the most important words in the headline?</p></li>
+<li id="li-227"><p id="p-derived-li-227">Research this 'claim" by doing as much searching on the internet as possible and write up your findings.</p></li>
+<li id="li-228"><p id="p-derived-li-228">Ask yourself how do they define "social isolation?" How do they measure it?</p></li>
+<li id="li-229"><p id="p-derived-li-229">Explain to yourself how they have arrived at this association between social isolation and smoking.</p></li>
+<li id="li-230"><p id="p-derived-li-230">Apply the 5 Cs to this situation.</p></li>
+<li id="li-231"><p id="p-derived-li-231">Would you characterize this statement as good information, misleading information, misinformation, or a flat out lie? Or a worthwhile dramatization, useful exaggeration, or hype?</p></li>
+</ol></article><p id="p-252">Objective: Learn to identify a flawed graph.</p>
+<article class="exercise exercise-like" id="exercise-33"><h3 class="heading"><span class="codenumber">8<span class="period">.</span></span></h3>
+<p id="p-253">The data in the <a class="external" href="fake-news/data-files/unemployment-rates.csv" target="_blank">US Unemployment Spreadsheet</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-46" id="fn-46"><sup> 3 </sup></a> gives unemployment rates in the United States from the year 2000 to 2023.  Here's a graph of all of the data. <figure class="figure figure-like" id="fake-news-image-unemployment"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/unemployment.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.5<span class="period">.</span></span><span class="space"> </span>US Unemployment rates from 2000-2023.</figcaption></figure></p>
+<ol class="lower-alpha">
+<li id="li-232">Consider the graph in <a href="" class="xref" data-knowl="./knowl/fake-news-image-misleading-unemployment-obama.html" title="Figure 3.9.6">Figure 3.9.6</a> <figure class="figure figure-like" id="fake-news-image-misleading-unemployment-obama"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/misleading-unemployment-obama.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.6<span class="period">.</span></span><span class="space"> </span>US Unemployment Rises during the Obama Administration.</figcaption></figure> How is this graph misleading? What do you think that the creator of the graph was trying to prove? How could the graph be made less misleading?</li>
+<li id="li-233"><p id="p-derived-li-233">Use the data provided in <a class="external" href="fake-news/data-files/unemployment-rates.csv" target="_blank">US Unemployment Spreadsheet</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-47" id="fn-47"><sup> 4 </sup></a> to create a less misleading graph about the US Unemployment Rate during the Obama administration.</p></li>
+<li id="li-234">Consider the graph in <a href="" class="xref" data-knowl="./knowl/fake-news-image-misleading-unemployment-obama.html" title="Figure 3.9.6">Figure 3.9.6</a> <figure class="figure figure-like" id="fake-news-image-misleading-unemployment-trump"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="fake-news/images/misleading-unemployment-trump.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.7<span class="period">.</span></span><span class="space"> </span>US Unemployment Rises during the Trump Administration.</figcaption></figure> How is this graph misleading? What do you think that the creator of the graph was trying to prove? How could the graph be made less misleading?</li>
+<li id="li-235"><p id="p-derived-li-235">Use the data provided in <a class="external" href="fake-news/data-files/unemployment-rates.csv" target="_blank">US Unemployment Spreadsheet</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-48" id="fn-48"><sup> 5 </sup></a> to create a less misleading graph about the US Unemployment Rate during the Trump administration.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-34"><h3 class="heading"><span class="codenumber">9<span class="period">.</span></span></h3>
+<p id="p-254">Use the data provided in <a class="external" href="fake-news/data-files/unemployment-rates.csv" target="_blank">US Unemployment Spreadsheet</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-49" id="fn-49"><sup> 6 </sup></a> to create a misleading graph.  Choose a statement - true or false - that you would like to convince people of, and use the data to create a graph which would convince someone of that point. Explain why you chose to graph the data the way that you did.</p></article><article class="exercise exercise-like" id="exercise-35"><h3 class="heading"><span class="codenumber">10<span class="period">.</span></span></h3>
+<p id="p-255">Method: Find a flawed graph, indicate how the creator of the graph wants people to interpret it, and then discuss how it would be interpreted if the y-axis or x-axis were constructed differently.</p>
+<p id="p-256">Instructions:</p>
+<ol class="lower-alpha">
+<li id="li-236"><p id="p-derived-li-236">In a previous class, ask students to bring in graphs they find online. Partisan news organizations are a good place to look.</p></li>
+<li id="li-237"><p id="p-derived-li-237">Ask each student to show the class their graph.</p></li>
+<li id="li-238"><p id="p-derived-li-238">For each, first ask the students as a whole the likely interpretation intended and then how it could be fixed to cause people to interpret it more accurately.</p></li>
+</ol></article></section><div class="hidden-content tex2jax_ignore" id="hk-fn-44"><div class="fn"><code class="code-inline tex2jax_ignore">callingbullshit.org/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-45"><div class="fn"><code class="code-inline tex2jax_ignore">www.theguardian.com/sustainable-business/2017/jul/10/100-fossil-fuel-companies-investors-responsible-71-global-emissions-cdp-study-climate-change</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-46"><div class="fn"><code class="code-inline tex2jax_ignore">fake-news/data-files/unemployment-rates.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-47"><div class="fn"><code class="code-inline tex2jax_ignore">fake-news/data-files/unemployment-rates.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-48"><div class="fn"><code class="code-inline tex2jax_ignore">fake-news/data-files/unemployment-rates.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-49"><div class="fn"><code class="code-inline tex2jax_ignore">fake-news/data-files/unemployment-rates.csv</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

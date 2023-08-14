@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Scientific Notation and Number Sense</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="greenhouse-gas-big-problem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="greenhouse-gas-math-topic-data-visualization.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="greenhouse-gas-big-problem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a class="next-button button toolbar-item" href="greenhouse-gas-math-topic-data-visualization.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="active">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="greenhouse-gas-math-topic-scientific-notation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Scientific Notation and Number Sense</span>
+</h2>
+<section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.1</span> <span class="title">Thinking about Size Comparisons</span>
+</h3>
+<p id="p-426">How can we compare the numbers 100 and 1,000?</p>
+<p id="p-427">Answers you might have given:</p>
+<ul class="disc">
+<li id="li-317"><p id="p-derived-li-317">1,000 is 900 more than 100.</p></li>
+<li id="li-318"><p id="p-derived-li-318">100 is 900 less than 1,000.</p></li>
+<li id="li-319"><p id="p-derived-li-319">100 is 1/10 as big as 1,000.</p></li>
+<li id="li-320"><p id="p-derived-li-320">1,000 is 10 times as big as 100.</p></li>
+</ul>
+<article class="assemblage assemblage-like" id="assemblage-13"><p id="p-428">Reflection question: Look at the different ways of comparing those two numbers. What are the benefits of each of these comparisons? What are some reasons for not using some of these comparisons? Why might someone choose to use one way of comparing instead of another?</p></article><p id="p-429">How can you compare the following sets of numbers?</p>
+<ul class="disc">
+<li id="li-321"><p id="p-derived-li-321">1,000,000,000,000 and 10</p></li>
+<li id="li-322"><p id="p-derived-li-322">545,430,089,384,398,938,938,398,983,982,345,523,234,942 and 9,293,983,983,298,982,983,483</p></li>
+<li id="li-323"><p id="p-derived-li-323">0.0000000001 and 10,000,000,000,000,000</p></li>
+</ul>
+<p id="p-430">You can compare these numbers in the same ways as the ways you might have chosen to compare 100 and 1000, but they may not be as meaningful or useful.  Instead, you might want to see  Can you think of any other ways to compare these numbers?</p>
+<figure class="figure figure-like" id="figure-59"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/0fKBhvDjuy0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.5.1<span class="period">.</span></span><span class="space"> </span>Powers of Ten is a (slightly outdated) movie from the 1970s which shows how the different powers of ten are related.</figcaption></figure><p id="p-431">Understanding very large numbers can be hard to do.  Some strategies for trying to understand very large numbers are:</p>
+<ul class="disc">
+<li id="li-324"><p id="p-derived-li-324">Breaking the number down into smaller pieces.  For example, say you were trying to understand the number $1,000,000,000 (1 billion dollars).  If you made $100 an hour, and you worked full-time (40 hours per week in the US), 50 weeks a year, it would take 5000 years for you to earn $1,000,000,000...and that doesn't even account for taxes!<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(\$100/\text{hour})*(40\text{hours/week})*(50\text{weeks/year})*(5000\text{years}) = \$1,000,000,000
+\end{equation*}
+</div></p></li>
+<li id="li-325"><p id="p-derived-li-325">Changing the units of the number can be helpful, especially when there is another unit which might help you understand better. The Aqua satellite, used to measure greenhouse gas emissions, orbits 2,300,000 feet above the Earth. This large number is easier to comprehend if you convert it into 436 miles <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-aqua-satellite.html" title="Bibliographic Entry 5.11.1.76">[5.11.1.76]</a></p></li>
+<li id="li-326"><p id="p-derived-li-326">Comparing the quantity to something else you already can envision.  The 2,300,000 feet or 436 miles we found in the previous bullet is still somewhat difficult to understand.  Thinking of this as the distance from Washington D.C. to Boston, or from San Diego to San Jose, can be more helpful (at least if you've been to those cities).</p></li>
+<li id="li-327"><p id="p-derived-li-327">Looking at the quantity per person, or per unit area, or per some other unit. In 2020, the US used 763 million gallons of oil, on average, every day <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-us-oil-consumption.html" title="Bibliographic Entry 5.11.1.75">[5.11.1.75]</a>.  That is a little bit more than 2 gallons per person.</p></li>
+</ul></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.2</span> <span class="title">What is Scientific Notation?</span>
+</h3>
+<p id="p-432">So far, we have been writing numbers using decimal notation. Decimal notation is our usual way of writing the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to talk about a number. But, sometimes decimal notation can make it more difficult to understand really big or really small numbers. Scientific notation is a way of writing very large or very small numbers in order to make the numbers easier for people to understand. Scientific notation also makes it easier to write down numbers that would be very long in decimal notation.</p>
+<article class="definition definition-like" id="definition-7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Scientific Notation.</span>
+</h4>
+<p id="p-433">We say a number is in <em class="emphasis">scientific notation</em> if it is written in the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A.XXXX * 10^{power}
+\end{equation*}
+</div>
+<p class="continuation">where A is the first non-zero digit in the number, and <em class="emphasis">power</em> is the appropriate power.</p></article><p id="p-434">To put a number into scientific notation, we first figure out what the place is of the first nonzero digit.  Each place in a number corresponds to a power of 10 - for example, the hundreds place corresponds to <span class="process-math">\(10^2 = 100\text{,}\)</span> while the millions place corresponds to <span class="process-math">\(10^6 = 1,000,000\text{.}\)</span>  If <span class="process-math">\(n &gt; 0\text{,}\)</span> then <span class="process-math">\(10^n\)</span> is a 1 followed by <span class="process-math">\(n\)</span> 0s.  The ones place is <span class="process-math">\(10^0 = 1\text{.}\)</span></p>
+<p id="p-435">For negative values of <span class="process-math">\(n\text{,}\)</span> we get decimals.  For example, <span class="process-math">\(10^{-1} = \frac{1}{10^1} = 0.1\text{,}\)</span> one-tenth.  <span class="process-math">\(10^{-3} = \frac{1}{10^3} = 0.001\text{,}\)</span> one one-thousandth.</p>
+<p id="p-436">To do arithmetic with numbers in scientific notation, you proceed differently depending on what you're doing.</p>
+<article class="assemblage assemblage-like" id="assemblage-14"><p id="p-437">To multiply/divide numbers in scientific notation, you can divide both the decimal part and the exponent part separately.</p>
+<p id="p-438">To add or subtract numbers in scientific notation, you'll need to write them both with the same power (use whichever power is larger), and then add or subtract the decimal parts.</p>
+<p id="p-439">If you end up with a zero in front of the decimal, you'll need to move the decimal place over one or more places:</p></article><p id="p-440">Try this yourself in the examples below.  Don't worry about rounding - we'll talk about how to decide how many decimal places to round to in the next section.</p>
+<article class="example example-like" id="example-14"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-14"><article class="example example-like">Find the product of <span class="process-math">\(2.23*10^3\)</span> and <span class="process-math">\(4.25*10^{-4}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(2.23*4.25)*(10^3*10^{-4}) = 9.48*10^{-1}
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<article class="example example-like" id="example-15"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-15"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-15"><article class="example example-like">Find the sum of <span class="process-math">\(5.72*10^5\)</span> and <span class="process-math">\(6.43*10^6\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0.572*10^6 + 6.43*10^6 = 7.00*10^6
+\end{equation*}
+</div></div></div>
+</div></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.3</span> <span class="title">Significant figures</span>
+</h3>
+<p id="p-441">When working with numbers with lots of decimal digits, how many digits should you keep? This is the idea behind <em class="emphasis">signficant figures</em>.</p>
+<article class="definition definition-like" id="definition-8"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Significant Figures.</span>
+</h4>
+<p id="p-442">The number of significant figures or significant digits in a number which has been rounded is the total number of digits written, minus any leading zeros (zeros written before the first non-zero digit).  Numbers that have not been rounded have an infinite number of significant figures.</p></article><p id="p-443">For example, the number 123.4567 has 7 significant digits, but so does the number 0.0001234567.  The number 1.234567000 has 10 significant digits, because we count the zeros which aren't leading zeros.</p>
+<article class="example example-like" id="example-16"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-16"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like">The population of the United States was 328,239,523 in 2019 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-us-population.html" title="Bibliographic Entry 5.11.1.71">[5.11.1.71]</a>. How many significant digits does this number have?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-444">There are 9 significant digits here.</p></div></div>
+</div></article></div>
+<p id="p-445">In a number written in scientific notation, we count the significant digits the same way.  For example, the number <span class="process-math">\(1.2345*10^{-3}\)</span> has 5 significant digits (notice that this is the same as if we had written it as <span class="process-math">\(0.0012345\)</span>).</p>
+<article class="example example-like" id="example-17"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-17"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-446">The United States emitted the equivalent of <span class="process-math">\(6.558*10^9\)</span> metric tons of carbon dioxide in greenhouse gases during 2019 <a href="" class="xref" data-knowl="./knowl/greehouse-gas-biblio-emissions-inventory.html" title="Bibliographic Entry 5.11.1.72">[5.11.1.72]</a>. How many significant figures are there in this number?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><p id="p-447">There are 4 significant figures.</p></div></div>
+</div></article></div>
+<p id="p-448">Significant figures are important because they tell us how accurate numbers are.  Say we wanted to know what the average CO2 emissions per person were in the United States.  We can take the numbers we had in the last two examples and divide:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{6.558*10^9}{328,239,523} = 19.979312485169557...
+\end{equation*}
+</div>
+<p class="continuation">The calculator produces a number of digits here, but how can we know how many values to round to? Significant figures give us a way to decide this.</p>
+<article class="assemblage assemblage-like" id="assemblage-15"><p id="p-449">When multiplying or dividing two numbers, round to the smaller number of significant digits.</p>
+<p id="p-450">When adding or subtracting two numbers, round to the smaller number of decimal places (significant figures after the decimal point).</p></article><p id="p-451">For our example above, since the population number has 9 significant digits, and the CO2 emissions only has 4, we will round to 4 decimal places and say that the emissions per person is <span class="process-math">\(19.98\)</span> metric tons per person.  Compare this to what we do when we subtract.</p>
+<p id="p-452">Say we want to know how many more tons of CO2 equivalents per person were emitted in the US than in China.  In 2019, China had <span class="process-math">\(1.3902*10^{10}\)</span> (5 significant figures) of CO2 equivalent emissions <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-emissions-china.html" title="Bibliographic Entry 5.11.1.73">[5.11.1.73]</a>, and the population was 1,433,783,686 (10 significant figures) <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-china-population.html" title="Bibliographic Entry 5.11.1.74">[5.11.1.74]</a>. So in China, the emissions per person were</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/greenhouse-gas-biblio-emissions-china.html ./knowl/greenhouse-gas-biblio-china-population.html">
+\begin{equation*}
+\frac{1.3902*10^10}{1,433,783,686} = 9.6960232814...
+\end{equation*}
+</div>
+<p class="continuation">Since we're dividing, we keep 5 significant figures and get <span class="process-math">\(9.69602\)</span> tons of CO2 equivalent emissions per person.  If we want to know how many more tons are emitted per person in the US, we subtract:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/greenhouse-gas-biblio-emissions-china.html ./knowl/greenhouse-gas-biblio-china-population.html">
+\begin{equation*}
+19.98 - 9.9602 = 10.0198
+\end{equation*}
+</div>
+<p class="continuation">Since we are subtracting, we take the lesser of the significant figures after the decimal - 2 in this case.  So we round the answer to 10.02 metric tons more per person.</p>
+<p id="p-453">What’s that big ‘E’ on my calculator? You’ve probably seen an output like this before on your calculator.</p>
+<p id="p-454">The second line might look really complicated, but this is just the way your calculator was programmed to write numbers in scientific notation. The product of 315,246 and 134,512,361 is too big to fit all of it on the calculator screen in one line. So, the calculator programmers decided to represent that product using scientific notation. 4.240448376E13 means the same thing as <span class="process-math">\(4.240448376 * 10^{13}\text{.}\)</span></p>
+<p id="p-455">But, not all calculators use ‘E’ to describe very large or very small numbers. Desmos provides an <a class="external" href="https://www.desmos.com/scientific" target="_blank">online scientific calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-66" id="fn-66"><sup> 1 </sup></a> that anyone can use. If you try to add, subtract, multiply, or divide two numbers with more than 9 digits, Desmos will automatically write them in scientific notation.  Instead of using the capital E, Desmos writes scientific notation the same way that we've seen.</p>
+<p id="p-456">An important note: There are other symbols that you might see sometimes on your calculator that look similar to this capital E, but they actually mean very different things.</p>
+<ul class="disc">
+<li id="li-328"><p id="p-derived-li-328"><span class="process-math">\(e\text{:}\)</span> The lowercase e is a number that is important for lots of applications of mathematics. The name of this number is the same as the name of the letter:  e. It is equal to about 2.71828, and should not be confused with the scientific notation symbol.</p></li>
+<li id="li-329"><p id="p-derived-li-329"><span class="process-math">\(\Sigma\text{:}\)</span>This symbol, which looks like a sideways W,  is called ‘sigma’. Sigma is a Greek letter, and it is sometimes used in mathematics to talk about addition.</p></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-66"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/scientific</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

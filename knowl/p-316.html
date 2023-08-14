@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Returning to our example above, we have (mean <span class="process-math">\(-\)</span> median) = <span class="process-math">\(-4.8\)</span> and number of districts is <span class="process-math">\(5\text{.}\)</span> Using technology, we compute <span class="process-math">\(t\text{:}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-12"><script type="text/x-sage"># compute standard deviation of Heart vote share
+import numpy as np
+sd = np.std([53, 55, 52, 54, 27])
+
+# use formula to compute t
+t = ((-4.8)*(sqrt(5)))/(0.756*sd)
+print (N(t))
+</script></pre> Since <span class="process-math">\(|t| = 1.33 &lt; 1.75\text{,}\)</span> we conclude here that there is no statistically significant evidence of gerrymandering.</p>
+<span class="incontext"><a href="gerrymandering-math-topic-partisan-gerrymandering.html#p-316" class="internal">in-context</a></span>
+</body>
+</html>

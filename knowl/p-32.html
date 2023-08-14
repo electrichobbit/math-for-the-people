@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>Given a statement <span class="process-math">\(p\text{,}\)</span> we say that a statement <span class="process-math">\(q\)</span> is equivalent to <span class="process-math">\(p\)</span> if they have the same truth value. We denote equivalent statements, <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p \equiv q\text{.}
+\end{equation*}
+</div>
+<p class="continuation">For example, <span class="process-math">\(\neg(p\vee q)\equiv \neg p\wedge \neg q\)</span> because for corresponding values of <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> these compound statements have the same truth results. This can be seen by examining the truth tables below: <pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">f = propcalc.formula(" ~(p | q) ")
+f.truthtable()
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">f = propcalc.formula(" ~p&  ~q ")
+f.truthtable()
+</script></pre></p>
+<span class="incontext"><a href="abortion-simple-logic.html#p-32" class="internal">in-context</a></span>
+</body>
+</html>

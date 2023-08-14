@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solving for Change</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="student-loans-intersectional-inequities.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="student-loans.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="math-for-the-people-references.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="student-loans-intersectional-inequities.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="student-loans.html" title="Up">Up</a><a class="next-button button toolbar-item" href="math-for-the-people-references.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="active">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="student-loans-solving-for-change"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.8</span> <span class="title">Solving for Change</span>
+</h2>
+<p id="p-1077">In August <span class="process-math">\(2022\text{,}\)</span> President Biden committed to forgiving <span class="process-math">\(\$10,000\)</span> in student debt for around <span class="process-math">\(43\)</span> million debtors in the U.S., with an additional <span class="process-math">\(\$10,000\)</span> being forgiven for Pell Grant recipients. The debt was forgiven only for single adults earning under <span class="process-math">\(\$125,000\)</span> a year and married couples earning under <span class="process-math">\(\$250,000\)</span> a year <a href="" class="xref" data-knowl="./knowl/boseBidenSaysWill2022.html" title="Bibliographic Entry 9.11.144: Biden says US will forgive $10k in student loans for millions of Americans">[9.11.144]</a>.</p>
+<p id="p-1078">Student debt in the U.S. in <span class="process-math">\(2022\text{,}\)</span> when President Biden proposed his student loan debt forgiveness plan, was roughly equal to the size of the economy of Brazil <a href="" class="xref" data-knowl="./knowl/koezeTollStudentDebt2022.html" title="Bibliographic Entry 9.11.157: The Toll of Student Debt in the U.S.">[9.11.157]</a>. Additionally, the amount of funding for higher education provided by state governments has declined from around <span class="process-math">\(70\%\)</span> in the <span class="process-math">\(1970\)</span>s to slightly under <span class="process-math">\(60\%\)</span> in <span class="process-math">\(2019\)</span> \cite{koezeTollStudentDebt2022"/&gt;.</p>
+<p id="p-1079">An independent analysis by the University of Pennsylvania Wharton School of Business found that about two-thirds of the financial benefit from Biden's student loan forgiveness plan will be to households making <span class="process-math">\(\$88,000\)</span> or less per year, especially households earning between <span class="process-math">\(\$51,000\)</span> and <span class="process-math">\(\$82,000\)</span> a year <a href="" class="xref" data-knowl="./knowl/pennwhartonbudgetmodelBidenStudentLoan2022.html" title="Bibliographic Entry 9.11.169: The Biden Student Loan Forgiveness Plan: Budgetary Costs and Distributional Impact">[9.11.169]</a>. The impact to the U.S. budget will be between <span class="process-math">\(\$469\)</span> and <span class="process-math">\(\$519\)</span> billion.</p>
+<p id="p-1080">The Wharton School also released the data in <a href="" class="xref" data-knowl="./knowl/student-loans-table-debt-forgiven-by-income.html" title="Table 9.8.1: Student Loan Debt Forgiven by Income Level">Table 9.8.1</a> on the distribution of student loan forgiveness benefits by income. <figure class="table table-like" id="student-loans-table-debt-forgiven-by-income"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.8.1<span class="period">.</span></span><span class="space"> </span>Student Loan Debt Forgiven by Income Level</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines"></th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">All Ages</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Age <span class="process-math">\(25\)</span>-<span class="process-math">\(35\)</span>
+</th>
+</tr>
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Income Group</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percentage of benefit</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percentage of benefit</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bottom <span class="process-math">\(20\%\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(13.27\%\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(10.97\%\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">21st to 40th percentile</td>
+<td class="l m b0 r0 l0 t0 lines">22.89%</td>
+<td class="l m b0 r0 l0 t0 lines">24.56%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">41st to 60th percentile</td>
+<td class="l m b0 r0 l0 t0 lines">30.90%</td>
+<td class="l m b0 r0 l0 t0 lines">30.62%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">61st to 80th percentile</td>
+<td class="l m b0 r0 l0 t0 lines">23.19%</td>
+<td class="l m b0 r0 l0 t0 lines">23.03%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">81st to 90th percentile</td>
+<td class="l m b0 r0 l0 t0 lines">8.06%</td>
+<td class="l m b0 r0 l0 t0 lines">10.39%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">91st to 95th percentile</td>
+<td class="l m b0 r0 l0 t0 lines">1.70%</td>
+<td class="l m b0 r0 l0 t0 lines">0.43%</td>
+</tr>
+</table></div></figure></p>
+<p id="p-1081"><a href="" class="xref" data-knowl="./knowl/student-loans-table-debt-forgiven-by-income.html" title="Table 9.8.1: Student Loan Debt Forgiven by Income Level">Table 9.8.1</a> shows the distribution of student loan forgiveness benefit by income under the <span class="process-math">\(2022\)</span> Biden student loan forgiveness plan. Most of the debt forgiven would have accumulated for those in the <span class="process-math">\(25\)</span>-<span class="process-math">\(35\)</span> age group; hence, this column may be more representative of the plan's effects. No benefit is expected to go to the top <span class="process-math">\(5\%\)</span> of earners in either age group. Data from Wharton School of Business <a href="" class="xref" data-knowl="./knowl/pennwhartonbudgetmodelBidenStudentLoan2022.html" title="Bibliographic Entry 9.11.169: The Biden Student Loan Forgiveness Plan: Budgetary Costs and Distributional Impact">[9.11.169]</a>.</p>
+<p id="p-1082">Assume for a moment that these policies stay constant for the next <span class="process-math">\(10\)</span> years (perhaps an unlikely assumption given the changes in policy between Presidential administrations as well as Supreme Court challenges).</p>
+<ol class="decimal">
+<li id="li-628"><p id="p-derived-li-628">What percentage of the benefit will your age and income group receive <span class="process-math">\(10\)</span> years from now?</p></li>
+<li id="li-629"><p id="p-derived-li-629">If you are in one of the groups (single adults earning under <span class="process-math">\(\$125,000\)</span> a year and married couples earning under <span class="process-math">\(\$250,000\)</span> a year, plus an additional <span class="process-math">\(\$10,000\)</span> for Pell Grant recipients) that President Biden targeted for debt forgiveness in <span class="process-math">\(2022\text{,}\)</span> what amount of debt will you have forgiven?</p></li>
+<li id="li-630"><p id="p-derived-li-630">Do you believe that President Biden's student loan debt forgiveness policy is a good idea? Why or why not? Do its benefits for lower-income debtors outweigh its impats on the U.S. budget? Estimate whether your taxes will rise as a result and, if so, by how much, using a well-explained dimensional analysis.</p></li>
+<li id="li-631">
+<p id="p-1083">The following note from the Wharton Budget Model <a href="" class="xref" data-knowl="./knowl/pennwhartonbudgetmodelBidenStudentLoan2022.html" title="Bibliographic Entry 9.11.169: The Biden Student Loan Forgiveness Plan: Budgetary Costs and Distributional Impact">[9.11.169]</a>, describes the income groups listed in <a href="" class="xref" data-knowl="./knowl/student-loans-table-debt-forgiven-by-income.html" title="Table 9.8.1: Student Loan Debt Forgiven by Income Level">Table 9.8.1</a>: "Estimate household income percentile thresholds for 2022 all age: 20%: $28,784; 40%: $50,795; 60%: $82,400; 80%: $141,096; 90% $212,209; 95%: $321,699; 99%: $961,711; 99.9%: $3,668,499."</p>
+<ol class="lower-alpha">
+<li id="li-632"><p id="p-derived-li-632">Given this information, estimate the percentage of the student loan forgiveness plan your income group will receive.</p></li>
+<li id="li-633"><p id="p-derived-li-633">The Congressional Budget Office <a href="" class="xref" data-knowl="./knowl/virginiafoxxCostsSuspendingStudent.html" title="Bibliographic Entry 9.11.175: Costs of Suspending Student Loan Payments and Canceling Debt">[9.11.175]</a>, a nonpartisan organization within the legislative branch of the United States government, estimated the total cost of Biden's student loan forgiveness program at <span class="process-math">\(\$400\)</span> billion. Use this estimate, together with the information above, to estimate how much total debt relief (in U.S. dollars) your income and age group wlil receive <span class="process-math">\(10\)</span> years from now.</p></li>
+</ol>
+</li>
+<li id="li-634">
+<p id="p-1084">President Biden's loan forgiveness program involves an ``income cap'', which means that the program only applies to individuals who earn below <span class="process-math">\(\$125,000\)</span> or households who earn below <span class="process-math">\(\$250,000\)</span> each year. According to the Wharton analysis shown in Table <a href="" class="xref" data-knowl="./knowl/pennwhartonbudgetmodelBidenStudentLoan2022.html" title="Bibliographic Entry 9.11.169: The Biden Student Loan Forgiveness Plan: Budgetary Costs and Distributional Impact">[9.11.169]</a>, whether or not an income cap is applied, the most loan forgiveness would go to households earning between <span class="process-math">\(\$51,000\)</span> and <span class="process-math">\(\$82,000\)</span> a year.</p>
+<ol class="lower-alpha">
+<li id="li-635"><p id="p-derived-li-635">What income percentile(s) in <a href="" class="xref" data-knowl="./knowl/student-loans-table-debt-forgiven-by-income.html" title="Table 9.8.1: Student Loan Debt Forgiven by Income Level">Table 9.8.1</a> do these earners belong to?</p></li>
+<li id="li-636"><p id="p-derived-li-636">Assuming that the loan forgiveness policy stays constant for the next <span class="process-math">\(10\)</span> years, estimate the percentage of loan forgiveness that will apply to these income percentile(s). Make the simplifying assumption that all student loan borrowers are individuals and not households.</p></li>
+<li id="li-637"><p id="p-derived-li-637">Does the Wharton estimate make sense? Why or why not?</p></li>
+</ol>
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

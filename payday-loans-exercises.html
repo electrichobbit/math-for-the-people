@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="payday-loan-reflection.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="payday-loans.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="payday-loans-references.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="payday-loan-reflection.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="payday-loans.html" title="Up">Up</a><a class="next-button button toolbar-item" href="payday-loans-references.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="active">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="exercises" id="payday-loans-exercises"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.10</span> <span class="title">Exercises</span>
+</h2>
+<article class="exercise exercise-like" id="exercise-98"><h3 class="heading"><span class="codenumber">1<span class="period">.</span></span></h3>
+<p id="p-797">A payday lender charges an annual percentage rate of 350% (simple interest).  If you borrow $200 for two weeks, how much will you have to pay back? How much will you have to pay back if you renew the loan three times (for a total of 8 weeks)?</p></article><article class="exercise exercise-like" id="exercise-99"><h3 class="heading"><span class="codenumber">2<span class="period">.</span></span></h3>
+<p id="p-798">The most common way that states have "banned" payday loans is by prohibiting annual percentage rates above a certain level, usually 36%.  Consider a payday loan of $400, where the loan is due back plus a payment of $40 in two weeks.  How much money would you save if the loan charged an annual percentage rate of 36% (simple interest) instead?  Remember that your time needs to be converted to years!</p></article><article class="exercise exercise-like" id="exercise-100"><h3 class="heading"><span class="codenumber">3<span class="period">.</span></span></h3>
+<p id="p-799">You borrow $500 from a payday lender for 2 weeks, and they charge you a fee of $50 when you repay the loan.  What is the equivalent annual percentage rate?  How much interest would you have paid if you borrowed the money on a credit card which charged 18% instead?</p></article><article class="exercise exercise-like" id="exercise-101"><h3 class="heading"><span class="codenumber">4<span class="period">.</span></span></h3>
+<p id="p-800">You borrow $100 from a payday lender for 2 weeks, and they charge you a fee of $20 every two weeks until you pay off the loan.  Assume that it takes you 3 months before you can pay off the loan.  How much do you end up paying total?  What is the equivalent annual percentage rate?</p></article><article class="exercise exercise-like" id="exercise-102"><h3 class="heading"><span class="codenumber">5<span class="period">.</span></span></h3>
+<p id="p-801">You borrow $100 from a payday lender for 2 weeks, and they charge you a fee of $20 every two weeks until you pay off the loan.  Assume that it takes you 3 months before you can pay off the loan.  How much money would you save if the loan charged 36% (APR) simple interest instead?</p></article><article class="exercise exercise-like" id="exercise-103"><h3 class="heading"><span class="codenumber">6<span class="period">.</span></span></h3>
+<p id="p-802">You borrow $500 and pay it back after 2 months.  Calculate how much you would pay total in each of these scenarios.  All interest rates are given as Annual Percentage Rates (APR) so be sure to use time in years!</p>
+<ol class="lower-alpha">
+<li id="li-438"><p id="p-derived-li-438">You borrow the money from a friend who charges you 7% simple interest.</p></li>
+<li id="li-439"><p id="p-derived-li-439">You put the purchase on a credit card that charges 21% compounded daily.</p></li>
+<li id="li-440"><p id="p-derived-li-440">You put the purchase on a credit card that charges 21% compounded daily, plus a late fee of $10 for not paying the debt off after the first month.</p></li>
+<li id="li-441"><p id="p-derived-li-441">You borrow the money from a payday lender that charges you a fee of $10 each week that you don't repay the loan.</p></li>
+</ol>
+<p id="p-803">How do the amounts compare in each situation?  Explain why someone might choose to use a payday loan instead of a credit card or a personal loan from a friend.</p></article><article class="exercise exercise-like" id="exercise-104"><h3 class="heading"><span class="codenumber">7<span class="period">.</span></span></h3>
+<p id="p-804">The map in <a href="" class="xref" data-knowl="./knowl/payday-lending-rate-map.html" title="Figure 6.8.1">Figure 6.8.1</a> gives the payday lending rates in US states where predatory lending is still legal. Compute the total amount you would pay on a payday loan of $400 in Nevada, Indiana, and Ohio, if you paid it off after 6 months.  How different are the amounts? Does the interest rate make a big difference in how much you pay?</p></article><article class="exercise exercise-like" id="exercise-payday-lending-state-rates"><h3 class="heading"><span class="codenumber">8<span class="period">.</span></span></h3>
+<p id="p-805">Working as a class, use the map in <a href="" class="xref" data-knowl="./knowl/payday-lending-rate-map.html" title="Figure 6.8.1">Figure 6.8.1</a> to calculate the total amount you would pay on a payday loan of $400 in every state.  According to the Center for Responsible Lending, the average payday borrower flips the loan 8 times, so we will use 18 weeks (the initial 2 weeks plus 8 more 2 week periods) for the borrowing time.  Calculate the amount that the borrower would pay, using simple interest and the APR rates from <a href="" class="xref" data-knowl="./knowl/payday-lending-rate-map.html" title="Figure 6.8.1">Figure 6.8.1</a> to find how much the typical borrower would pay on the loan in each state where payday lending is still allowed.</p></article><article class="exercise exercise-like" id="exercise-106"><h3 class="heading"><span class="codenumber">9<span class="period">.</span></span></h3>
+<p id="p-806">A payday lender loans you $400, with a fee of $60 due when you pay the loan back in two weeks.  If the lender believes there is a 5% chance that you will not pay back the loan at all, what is the expected value for the lender?</p></article><article class="exercise exercise-like" id="exercise-107"><h3 class="heading"><span class="codenumber">10<span class="period">.</span></span></h3>
+<p id="p-807">A payday lender loans you $300, with a fee of $35 due when you pay the loan back in two weeks.  If the lender believes that there is a 2% chance that you will not pay back the loan at all, what is the expected value for the lender?</p></article><article class="exercise exercise-like" id="exercise-108"><h3 class="heading"><span class="codenumber">11<span class="period">.</span></span></h3>
+<p id="p-808">A payday lender charges $50 to loan you $400 for two weeks.  Calculate the expected value for the lender if</p>
+<ol class="lower-alpha">
+<li id="li-442"><p id="p-derived-li-442">There is a 2% chance you do not repay the loan at the end of two weeks.</p></li>
+<li id="li-443"><p id="p-derived-li-443">There is a 5% chance you do not repay the loan at the end of two weeks.</p></li>
+<li id="li-444"><p id="p-derived-li-444">There is a 10% chance you do not repay the loan at the end of two weeks.</p></li>
+<li id="li-445"><p id="p-derived-li-445">There is a 15% chance you do not repay the loan at the end of two weeks.</p></li>
+<li id="li-446"><p id="p-derived-li-446">Explain how lenders could use this information to decide if they should loan to a particular client.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-109"><h3 class="heading"><span class="codenumber">12<span class="period">.</span></span></h3>
+<p id="p-809">According to the CFPB <a href="" class="xref" data-knowl="./knowl/biblio-cfpb-payday-lending-report.html" title="Bibliographic Entry 6.11.1.113: CFPB Data Point: Payday Lending">[6.11.1.113]</a>, 20% of the borrowers of payday loans eventually default.  However, many of these borrowers make one or more payments before they default.  Consider a $300 payday loan which charges a $40 fee every two weeks.</p>
+<ol class="lower-alpha">
+<li id="li-447"><p id="p-derived-li-447">If there is a 20% chance that the borrower defaults without making any payments and an 80% chance that they repay the loan after two weeks, what is the expected value for the lender?</p></li>
+<li id="li-448"><p id="p-derived-li-448">If there is a 20% chance that the borrower defaults after making one payment and an 80% chance that the borrower repays the loan after 4 weeks, what is the expected value for the lender?</p></li>
+<li id="li-449"><p id="p-derived-li-449">If there is a 20% chance that the borrower defaults after making two payments and an 80% chance that the borrower repays the loan after 6 weeks, what is the expected value for the lender?</p></li>
+<li id="li-450"><p id="p-derived-li-450">Explain how payday lenders could use this calculation to make money even when lenders have a high chance of default.</p></li>
+<li id="li-451"><p id="p-derived-li-451">People generally default on loans because they are in severe financial distress. Research the consequences of defaulting on a loan - what effect can it have on a person's ability to borrow money, open bank accounts, get a job, or obtain housing? How long can these effects last?</p></li>
+<li id="li-452"><p id="p-derived-li-452">Discuss the ethical ramifications of loaning money to someone with such a high likelihood of default, given the severe negative consequences of a default.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-110"><h3 class="heading"><span class="codenumber">13<span class="period">.</span></span></h3>
+<p id="p-810">A payday lender loans you $300.  Every two weeks that you do not pay off the loan, you own the lender $30.  The lender believes there is a 10% chance that you will pay the loan off after two weeks, a 20% chance that you will pay the loan off after 4 weeks, a 30% chance you will pay the loan off after 6 weeks, a 30% chance that you will pay the loan off after 8 weeks, and a 10% chance that you will go 8 weeks and stop making payments (<em class="emphasis">defaulting</em> on the loan).  Complete the table below by computing how much money the lender makes in each scenario, and the chance of them making that much money.  Remember to use a negative number if they lose money. <figure class="table table-like" id="exercise-payday-lending-expected-value"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.10.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b2 r2 l0 t0 lines">Event</th>
+<th scope="col" class="c m b2 r2 l0 t0 lines">Probability</th>
+<th scope="col" class="r m b2 r2 l0 t0 lines">Amount Lender Makes</th>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 2 weeks</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 4 weeks</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 6 weeks</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 8 weeks</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Defaults after 8 weeks</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+</table></div></figure> Use your table to compute the expected value for the lender.</p></article><article class="exercise exercise-like" id="exercise-111"><h3 class="heading"><span class="codenumber">14<span class="period">.</span></span></h3>
+<p id="p-811">A lender in North Dakota loans you $400.  Use the data in <a href="" class="xref" data-knowl="./knowl/payday-lending-rate-map.html" title="Figure 6.8.1">Figure 6.8.1</a> to determine how much you would pay if you paid the loan off after 2 weeks, 4 weeks, 6 weeks, or 8 weeks.  The table below gives the probabilities that the lender believes you will pay off the loan after a certain amount of time, or that you will default after 8 weeks of payments: <figure class="table table-like" id="exercise-payday-lending-expected-value-with-map"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.10.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b2 r2 l0 t0 lines">Event</th>
+<th scope="col" class="c m b2 r2 l0 t0 lines">Probability</th>
+<th scope="col" class="r m b2 r2 l0 t0 lines">Amount Lender Makes</th>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 2 weeks</td>
+<td class="r m b2 r2 l0 t0 lines">0.05</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 4 weeks</td>
+<td class="r m b2 r2 l0 t0 lines">0.15</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 6 weeks</td>
+<td class="r m b2 r2 l0 t0 lines">0.30</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Pays off in 8 weeks</td>
+<td class="r m b2 r2 l0 t0 lines">0.20</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0 lines">Defaults after 8 weeks</td>
+<td class="r m b2 r2 l0 t0 lines">0.30</td>
+<td class="r m b2 r2 l0 t0 lines"></td>
+</tr>
+</table></div></figure> Complete the table and use it to calculate the expected value for the lender.  What is the expected value for the lender? Should they expect to make money off the loan?</p></article><article class="exercise exercise-like" id="exercise-112"><h3 class="heading"><span class="codenumber">15<span class="period">.</span></span></h3>
+<p id="p-812">You are applying for a loan from a bank that charges 8% interest, compounded monthly.</p>
+<ol class="lower-alpha">
+<li id="li-453"><p id="p-derived-li-453">If you pay the loan off in one lump sum after 2 years, how much will you owe?</p></li>
+<li id="li-454"><p id="p-derived-li-454">The bank believes, based on your credit score, that there is a 5% chance that you will not pay back the loan (called a default).  Using your answer from the previous question, calculate the expected value of the loan for the bank.</p></li>
+<li id="li-455"><p id="p-derived-li-455">Repeat the last problem, but this time assume that there is a 20% chance that you will not pay back the loan.  What is the expected value for the bank now?</p></li>
+<li id="li-456"><p id="p-derived-li-456">Repeat the previous question, but this time assume that the bank charges 15% interest.  How much money do you owe after 2 years? What is the expected value for the bank if there is a 20% chance that you will not pay back the loan?</p></li>
+<li id="li-457"><p id="p-derived-li-457">Do these calculations justify why the bank charges higher interest rates for some people than others? Explain why you gave your answer.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-113"><h3 class="heading"><span class="codenumber">16<span class="period">.</span></span></h3>
+<p id="p-813">You borrow $800 from a payday lender to help cover your rent.  The payday lender charges you $20 every two weeks until you pay off the loan.</p>
+<ol class="lower-alpha">
+<li id="li-458"><p id="p-derived-li-458">How much do you pay the payday lender total if it takes you 2 years to pay off the loan?</p></li>
+<li id="li-459"><p id="p-derived-li-459">What is the expected value for the lender, if there is a 5% chance that you don't pay the loan back after 2 years?</p></li>
+<li id="li-460"><p id="p-derived-li-460">What is the expected value for the lender if there is a 20% chance that you don't pay the loan back after 2 years?</p></li>
+<li id="li-461"><p id="p-derived-li-461">Explain why the lender can expect to make money on this loan, no matter how likely you are not to pay it back, as long as there is some chance that you will pay it back.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-114"><h3 class="heading"><span class="codenumber">17<span class="period">.</span></span></h3>
+<p id="p-814">The file <a class="external" href="payday-lending/Data_Files/Alabama_Payday.csv" target="_blank">Alabama_Payday.csv</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-99" id="fn-99"><sup> 1 </sup></a> contains the data we looked at in <a href="payday-loans-solving-for-change.html" class="internal" title="Section 6.8: Solving for Change">Section 6.8</a>, but with two more columns - the population of each county and the number of payday lenders per 100,000 people in each county. In the chapter, we discussed the possibility that our correlation between payday lenders and larger Black populations might actually be a correlation between larger counties and larger Black populations, since we would expect larger counties to have more payday lenders.  Computing a figure per 100,000 people in an area is a common way to compare statistics in areas of differing populations.</p>
+<p id="p-815">Calculate the correlation to see if larger counties do have more payday lenders.  Then calculate the correlation between the number of payday lenders per 100,000 people and the percentage of each race in that county to see if there is still a correlation after we adjust for population. You can use the code window below, a spreadsheet program, or your calculator.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-22"><script type="text/x-sage">
+</script></pre></article><article class="exercise exercise-like" id="exercise-payday-lending-county-data"><h3 class="heading"><span class="codenumber">18<span class="period">.</span></span></h3>
+<p id="p-816">The file <a class="external" href="payday-lending/Data_Files/county-lender-data.csv" target="_blank">county-lender-data.csv</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-100" id="fn-100"><sup> 2 </sup></a> contains data similar to what we looked at in the previous problem, but for every county in the United States of America (all data is from the 2021 County Business Patterns (CBP) and 2021 American Community Survey (ACS) of the US Census <a href="" class="xref" data-knowl="./knowl/biblio-census.html" title="Bibliographic Entry 6.11.1.111: United States Census CEDSCI.">[6.11.1.111]</a>).  This file contains:</p>
+<ul class="disc">
+<li id="li-462"><p id="p-derived-li-462">County Name</p></li>
+<li id="li-463"><p id="p-derived-li-463">State Name</p></li>
+<li id="li-464"><p id="p-derived-li-464">The number of payday lenders or similar businesses (more accurately, these are businesses classified as NAICS code 522390 <a href="" class="xref" data-knowl="./knowl/biblio-payday-lending-naics-522390.html" title="Bibliographic Entry 6.11.1.115: 522390 - Other Activities Related to Credit Intermediation">[6.11.1.115]</a>, which includes check-cashing and money-wiring services, in addition to payday lending) in that county.</p></li>
+<li id="li-465"><p id="p-derived-li-465">The population of the county.</p></li>
+<li id="li-466"><p id="p-derived-li-466">The percentage of the county which is white.</p></li>
+<li id="li-467"><p id="p-derived-li-467">The percentage of the county which is Black.</p></li>
+<li id="li-468"><p id="p-derived-li-468">The percentage of the county who identify as Hispanic (note that as this is a cultural identity, individuals who identify as Hispanic can be white, Black, or neither).</p></li>
+<li id="li-469"><p id="p-derived-li-469">The median household income in the county.</p></li>
+<li id="li-470"><p id="p-derived-li-470">The percentage of people in the county over age 18 who have a high school diploma (or equivalent) or higher degree.</p></li>
+<li id="li-471"><p id="p-derived-li-471">The number of payday lenders (NAICS code 522390) per 100,000 people in each county.</p></li>
+</ul>
+<p id="p-817">Choose a state to examine.  Using the code window below, a calculator, or a spreadsheet program, calculate the correlation between the number of payday lenders and population, percentage white, percentage Black, percentage Hispanic, median income, and percentage of people with a high school diploma or equivalent.  Which of these correlations are strongest for your state? Which are weakest? Explain what this tells you about where payday lenders are located.</p>
+<p id="p-818">Now repeat the exercise above, but use the number of payday lenders per 100,000 people.  Which correlations are strongest for your state? Which are weakest? Explain what this tells you about where payday lenders are located.  Why is this more useful than what you uncovered above?</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-23"><script type="text/x-sage">
+</script></pre></article><article class="exercise exercise-like" id="exercise-116"><h3 class="heading"><span class="codenumber">19<span class="period">.</span></span></h3>
+<p id="p-819">The correlation values can be very different for different states.  Repeat the work you did in <a href="" class="xref" data-knowl="./knowl/exercise-payday-lending-county-data.html" title="Exercise 6.10.18">Exercise 6.10.18</a>, using the data from <a class="external" href="payday-lending/Data_Files/county-lender-data.csv" target="_blank">county-lender-data.csv</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-101" id="fn-101"><sup> 3 </sup></a> and looking at the correlations between each variable and the number of payday lenders per 100,000 people, for the states of Missouri and New York.  What is different about the correlations for these two states? Look at the data and do your own research on these two states - what might explain these very different correlations?</p></article><article class="exercise exercise-like" id="exercise-payday-lending-class-correlations"><h3 class="heading"><span class="codenumber">20<span class="period">.</span></span></h3>
+<p id="p-820">Working as a class, divide up the states and territories given in the file <a class="external" href="payday-lending/Data_Files/county-lender-data.csv" target="_blank">county-lender-data.csv</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-102" id="fn-102"><sup> 4 </sup></a>.  Calculate the correlations between each variable (percent white, percent Black, percent Hispanic, median income, percentage with high school diploma or higher) and the number of payday lenders per 100,000 people.  Create a table as a class, using a shared spreadsheet or other document, with all of the correlations.  What is the strongest correlation for each state? What is the weakest correlation?  What patterns do you see in the correlations? Discuss the results as a class.</p></article><article class="exercise exercise-like" id="exercise-118"><h3 class="heading"><span class="codenumber">21<span class="period">.</span></span></h3>
+<p id="p-821">Using your results from <a href="" class="xref" data-knowl="./knowl/exercise-payday-lending-state-rates.html" title="Exercise 6.10.8">Exercise 6.10.8</a>, <a href="" class="xref" data-knowl="./knowl/exercise-payday-lending-class-correlations.html" title="Exercise 6.10.20">Exercise 6.10.20</a>, and your own research, prepare a class letter to submit to your local government (city, county, or state) about payday lending.  You should discuss how the calculations can help government officials to regulate payday lenders and understand the effect of these predatory lenders on communities.</p></article><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.10.1</span> <span class="title">Generative AI Prompts</span>
+</h3>
+<p id="p-822">Consider using the following prompts with generative AI, such as Chat GPT, to develop additional exercises for this material.  These programs can also be used to generate solutions, but those solutions will not necessarily be correct!  These prompts have been tested with ChatGPT <a href="" class="xref" data-knowl="./knowl/biblio-payday-lending-chatgpt.html" title="Bibliographic Entry 6.11.1.117">[6.11.1.117]</a>.</p>
+<ul class="disc">
+<li id="li-472"><p id="p-derived-li-472">Give me 10 math problems about simple interest and payday lending that encourage students to engage with the economic disparities of payday lending.</p></li>
+<li id="li-473"><p id="p-derived-li-473">Give me 10 math problems about calculating the expected value of a payday loan for the lender. Focus on the challenges payday loans create for individuals and communities.</p></li>
+<li id="li-474"><p id="p-derived-li-474">I've given my students a file which contains data on the number of predatory lending institutions in each county, as well as data on race, income, and education.  Give me 10 problems which use correlation to help students uncover patterns in the data and how predatory lending institutions are distributed.</p></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-99"><div class="fn"><code class="code-inline tex2jax_ignore">payday-lending/Data_Files/Alabama_Payday.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-100"><div class="fn"><code class="code-inline tex2jax_ignore">payday-lending/Data_Files/county-lender-data.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-101"><div class="fn"><code class="code-inline tex2jax_ignore">payday-lending/Data_Files/county-lender-data.csv</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-102"><div class="fn"><code class="code-inline tex2jax_ignore">payday-lending/Data_Files/county-lender-data.csv</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

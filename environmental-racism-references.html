@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>References</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="environmental-racism-exercises.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="environmental-racism.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fake-news.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="environmental-racism-exercises.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="environmental-racism.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fake-news.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="active">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="environmental-racism-references"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.10</span> <span class="title">References</span>
+</h2>
+<section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.10.1</span> <span class="title">Bibliography</span>
+</h3>
+<article class="bib" id="environmental-racism-biblio-cradle"><div class="bibitem">[10]</div>  <div class="bibentry">Allen, B. (2006). Cradle of a revolution? The industrial transformation of Louisiana's lower Mississippi river (pp. 112-119). Johns Hopkins University Press.</div></article><article class="bib" id="environmental-racism-biblio-positive-correlation"><div class="bibitem">[11]</div>  <div class="bibentry">Atanassova, V. (2010). <a class="external" href="https://en.wikipedia.org/wiki/File:Strong--weak--no-correlation.png" target="_blank"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/File:Strong--weak--no-correlation.png</code></a>. <a class="external" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank">CC-BY-SA-3.0 Unported</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-39" id="fn-39"><sup> 1 </sup></a>.</div></article><article class="bib" id="environmental-racism-biblio-dumping"><div class="bibitem">[12]</div>  <div class="bibentry">Bullard, R. D. (2018). Dumping in Dixie: Race, class, and environmental quality. Routledge.</div></article><article class="bib" id="environmental-racism-biblio-blackmail"><div class="bibitem">[13]</div>  <div class="bibentry">Bullard, R. D. (2019). Environmental blackmail in minority communities. In Race and the incidence of environmental hazards (pp. 82-95). Routledge.</div></article><article class="bib" id="environmental-racism-biblio-cancer-alley"><div class="bibitem">[14]</div>  <div class="bibentry">Castellon, I. G. (2021). Cancer Alley and the Fight Against Environmental Racism. Vill. Envtl. LJ, 32, 15.</div></article><article class="bib" id="environmental-racism-biblio-cancer-and-water"><div class="bibitem">[15]</div>  <div class="bibentry">Gottlieb, Marise, Carr, Jean, Morriess, Daniel (1981). Cancer and drinking water in Louisiana: colon and rectum. International Journal of Epidemiology, 10, 2, 117-126. Oxford University Press.</div></article><article class="bib" id="environmental-racism-biblio-covid-vaccines"><div class="bibitem">[16]</div>  <div class="bibentry">Launch &amp; Scale Speedometer. <a class="external" href="https://launchandscalefaster.org/COVID-19" target="_blank"><code class="code-inline tex2jax_ignore">https://launchandscalefaster.org/COVID-19</code></a>Duke Global Health Innovation Center. <a class="external" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-BY-NC-SA-4.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-40" id="fn-40"><sup> 2 </sup></a>.</div></article><article class="bib" id="environmental-racism-biblio-diamond"><div class="bibitem">[17]</div>  <div class="bibentry">Lerner, S. (2006). Diamond: A struggle for environmental justice in Louisiana's chemical corridor. MIT Press.</div></article><article class="bib" id="environmental-racism-biblio-reed1991"><div class="bibitem">[18]</div>  <div class="bibentry">Reed, Susan (1991) His Family Ravaged by Cancer, an Angry Louisiana Man Wages War onthe Very Air That He Breathes. People 35(11). <a class="external" href="http//www.people.com/people/archive/0,,20114739,00.html" target="_blank"><code class="code-inline tex2jax_ignore">http//www.people.com/people/archive/0,,20114739,00.html</code></a>, accessed April 21, 2010.</div></article><article class="bib" id="environmental-racism-biblio-census"><div class="bibitem">[19]</div>  <div class="bibentry">Shrider, E., Kollar, M., Chen, F., Semega, J. (2021) <a class="external" href="https://www.census.gov/data/tables/2021/demo/income-poverty/p60-273.html" target="_blank"><code class="code-inline tex2jax_ignore">https://www.census.gov/data/tables/2021/demo/income-poverty/p60-273.html</code></a>. U.S. Census Bureau.</div></article><article class="bib" id="environmental-racism-biblio-lived-experience"><div class="bibitem">[20]</div>  <div class="bibentry">Singer, M. (2011). Down cancer alley: The lived experience of health and environmental suffering in Louisiana’s chemical corridor. Medical Anthropology Quarterly, 25(2), 141-163.</div></article><article class="bib" id="environmental-racism-biblio-covid-singapore"><div class="bibitem">[21]</div>  <div class="bibentry">Sreevalsan-Nair, J., Vangimalla, R. R., &amp; Ghogale, P. R. (2020). Analysis of clinical recovery-period and recovery rate estimation of the first 1000 COVID-19 patients in Singapore. medRxiv</div></article><article class="bib" id="environmental-racism-biblio-chemical-plant"><div class="bibitem">[22]</div>  <div class="bibentry">WClarke (2017). Exxon Mobil Refinery in Baton Rouge, Louisiana, seen from the top of the Louisiana State Capitol. <a class="external" href="https://commons.wikimedia.org/wiki/File:Exxon_Mobil_oil_refinery_-_Baton_Rouge,_Louisiana.jpg" target="_blank"><code class="code-inline tex2jax_ignore">https://commons.wikimedia.org/wiki/File:Exxon_Mobil_oil_refinery_-_Baton_Rouge,_Louisiana.jpg</code></a>. <a class="external" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">CC-BY-SA-4.0 International</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-41" id="fn-41"><sup> 3 </sup></a>.</div></article></section><section class="subsection" id="environmental-racism-image-descriptions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.10.2</span> <span class="title"></span>
+</h3>
+<ol class="decimal">
+<li id="environmental-racism-image-bar-chart"><p id="p-derived-environmental-racism-image-bar-chart">Bar chart with neighborhood issues listed along the horizontal axis and frequency on the vertical axis.  Above each neighborhood issue is a bar with height equal to the frequency of responses which were concerned with that issue, as listed in <a href="" class="xref" data-knowl="./knowl/environmental-racism-neighborhood-issues.html" title="Table 2.6.3">Table 2.6.3</a>.</p></li>
+<li id="environmental-racism-image-histogram">Histogram with categories of income along the horizontal axis and frequency on the vertical axis. Above each income range is a bar with height equal to the frequency of respondents who had an income in that range. Data comes from <a href="" class="xref" data-knowl="./knowl/environmental-racism-table-histogram.html" title="Table 2.10.1">Table 2.10.1</a>. <figure class="table table-like" id="environmental-racism-table-histogram"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Household Income</td>
+<td class="l m b0 r0 l0 t0 lines">Frequency</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[30000,35000]</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(35000,40000]</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(40000,45000]</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(45000,50000]</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(50000,55000]</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+</table></div></figure>
+</li>
+<li id="environmental-racism-image-boxplot"><p id="p-derived-environmental-racism-image-boxplot">A graph with annual household income on the vertical axis. On the graph is a rectangular region (called the box) between 31,000 and 40,000, with a line across it at 35,000.  There is an x at 37,500.  Coming out of the top and bottom of the box are two "whiskers" - a vertical line with a horizontal line attached to its end. The lower whisker is at 30,000, and the upper whisker is at 53000.  There is a single point, marked by a dot, at 55,000.</p></li>
+<li id="environmental-racism-image-quartiles"><p id="p-derived-environmental-racism-image-quartiles">A horizontal bar split into 4 pieces, each labeled as 25% of the total. The line between the first and second bar is labeled as Q1. The line between the second and third bar is labeled as median or Q2. The line between the third and fourth bar is labeled as Q3.  There are also brackets above and below the bar. The brackets below the bar each contain two of the pieces, and are labeled as 50%.  The bracket above the bar contains three of the pieces and is labeld as 75%.</p></li>
+<li id="environmental-racism-image-boxplot-creation"><p id="p-derived-environmental-racism-image-boxplot-creation">A drawing of a horizontal boxplot, with a rectangular box, and a whisker on the left and right end of the box. There are vertical lines drawn at the left whisker, the left end of the box, part of the way across the box, the right end of the box, and at the right whisker.  These lines are labeled as minimum value (left whisker), lower quartile (left end of box), median (partway across box), upper quartile (right end of box), and maximum value (right whisker).</p></li>
+<li id="environmental-racism-image-covid-recovery">Vertical bar chart with days from positive confirmation to clinical recovery on the horizontal axis and number of clinically recovered patients on the vertical axis.  The height of each bar corresponds to the values in <a href="" class="xref" data-knowl="./knowl/environmental-racism-table-covid-recovery.html" title="Table 2.10.2">Table 2.10.2</a>. <figure class="table table-like" id="environmental-racism-table-covid-recovery"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Days from Positive Confirmation to Clinical Recovery</td>
+<td class="l m b0 r0 l0 t0 lines">Number of Clinically Recovered Patients</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">18</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">22</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">23</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">24</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">25</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">26</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">27</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">29</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">31</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">32</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">33</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">34</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure>
+</li>
+<li id="environmental-racism-image-covid-race">Vertical bar chart with race/ethnicity along the horizontal axis and percentage on the vertical axis.  There are two bars for each race - one representing the percentage of the overall population and the other representing the percentage of COVID-19 hospitalizations.  Each bar has height corresponding to the data in <a href="" class="xref" data-knowl="./knowl/environmental-racism-table-covid-race.html" title="Table 2.10.3">Table 2.10.3</a> <figure class="table table-like" id="environmental-racism-table-covid-race"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Race/Ethnicity</td>
+<td class="l m b0 r0 l0 t0 lines">Percentage of Residents living in COVID-NET counties</td>
+<td class="l m b0 r0 l0 t0 lines">Percentage of COVID-19 hospitalizations</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Non-Hispanic White</td>
+<td class="l m b0 r0 l0 t0 lines">59%</td>
+<td class="l m b0 r0 l0 t0 lines">45%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Non-Hispanic Black</td>
+<td class="l m b0 r0 l0 t0 lines">18%</td>
+<td class="l m b0 r0 l0 t0 lines">33%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hispanic</td>
+<td class="l m b0 r0 l0 t0 lines">14%</td>
+<td class="l m b0 r0 l0 t0 lines">8%</td>
+</tr>
+</table></div></figure>
+</li>
+<li id="environmental-racism-image-covid-vaccines">Horizontal bar chart with countries along the vertical axis and number of vaccine doses along the horizontal axis.  Each country has two bars - one representing the confirmed dose purchases, and the other representing potential dose purchases.  Each bar has width corresponding to the data in <a href="" class="xref" data-knowl="./knowl/environmental-racism-table-covid-vaccines.html" title="Table 2.10.4">Table 2.10.4</a>. <figure class="table table-like" id="environmental-racism-table-covid-vaccines"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Country/Region</td>
+<td class="l m b0 r0 l0 t0 lines">Confirmed Dose Purchase (Millions)</td>
+<td class="l m b0 r0 l0 t0 lines">Potential Dose Purchase (Millions)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">USA</td>
+<td class="l m b0 r0 l0 t0 lines">1000</td>
+<td class="l m b0 r0 l0 t0 lines">2600</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">EU</td>
+<td class="l m b0 r0 l0 t0 lines">1500</td>
+<td class="l m b0 r0 l0 t0 lines">2000</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">India</td>
+<td class="l m b0 r0 l0 t0 lines">1600</td>
+<td class="l m b0 r0 l0 t0 lines">1600</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">UK</td>
+<td class="l m b0 r0 l0 t0 lines">375</td>
+<td class="l m b0 r0 l0 t0 lines">507</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Indonesia</td>
+<td class="l m b0 r0 l0 t0 lines">225</td>
+<td class="l m b0 r0 l0 t0 lines">450</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Canada</td>
+<td class="l m b0 r0 l0 t0 lines">375</td>
+<td class="l m b0 r0 l0 t0 lines">414</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Japan</td>
+<td class="l m b0 r0 l0 t0 lines">290</td>
+<td class="l m b0 r0 l0 t0 lines">290</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Brazil</td>
+<td class="l m b0 r0 l0 t0 lines">196</td>
+<td class="l m b0 r0 l0 t0 lines">196</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Mexico</td>
+<td class="l m b0 r0 l0 t0 lines">170</td>
+<td class="l m b0 r0 l0 t0 lines">179</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Vietnam</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">150</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Latin America (w/o Brazil)</td>
+<td class="l m b0 r0 l0 t0 lines">150</td>
+<td class="l m b0 r0 l0 t0 lines">150</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Australia</td>
+<td class="l m b0 r0 l0 t0 lines">135</td>
+<td class="l m b0 r0 l0 t0 lines">135</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Chile</td>
+<td class="l m b0 r0 l0 t0 lines">84</td>
+<td class="l m b0 r0 l0 t0 lines">84</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Egypt</td>
+<td class="l m b0 r0 l0 t0 lines">55</td>
+<td class="l m b0 r0 l0 t0 lines">55</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Argentina</td>
+<td class="l m b0 r0 l0 t0 lines">47</td>
+<td class="l m b0 r0 l0 t0 lines">47</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Uzbekistan</td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bangladesh</td>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Taiwan</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+</tr>
+</table></div></figure>
+</li>
+</ol></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-39"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-sa/3.0/deed.en</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-40"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-nc-sa/4.0/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-41"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-sa/4.0/deed.en</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

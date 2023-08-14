@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data Visualization</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="greenhouse-gas-math-topic-scientific-notation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="greenhouse-gas-math-topic-mathematical-models.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="greenhouse-gas-math-topic-scientific-notation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a class="next-button button toolbar-item" href="greenhouse-gas-math-topic-mathematical-models.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="active">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="greenhouse-gas-math-topic-data-visualization"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.6</span> <span class="title">Data Visualization</span>
+</h2>
+<section class="introduction" id="introduction-30"><p id="p-457">Any organized collection of information used to understand or solve a problem is called <em class="emphasis">data</em>. When you think of data, you may think of a long list of numbers which represent a measurement.  However, this isn't generally the most useful way to look at a set of data.  When we look at data, we use <em class="emphasis">data visualizations</em> to help us understand the data more quickly and efficiently.  You're probably familiar with at least one type of data visualization, the graph, but we'll explore some more of the variety of ways in which people look at data in this module.</p></section><section class="subsection" id="greenhouse-gas-math-topic-data-visualization-types-of-data"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.6.1</span> <span class="title">Types of Data</span>
+</h3>
+<p id="p-458">To understand data visualization, we first need to understand a bit about the way mathematicians talk about different kinds of data.  Mathematicians broadly divide data into two types:</p>
+<article class="definition definition-like" id="definition-9"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Qualitative (Categorical) Data.</span>
+</h4>
+<p id="p-459">Data which is not numerical is called qualitative (or categorical) data.  Qualitative data can include things like names, categories of objects or people (which is where the other name, categorical, comes from), or different things which are being compared.</p></article><article class="definition definition-like" id="definition-10"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Quantitative Data.</span>
+</h4>
+<p id="p-460">Data which can be represented numerically is called quantitative data.  This includes both data which is already numerical, and data which can be made numerical.  Dates are a good example of quantitative data that isn't always written in numbers (for example, "March" doesn't seem numerical, but can be represented by 3 since it is the 3rd month of the year).</p>
+<p id="p-461">Quantitative data naturally falls into one of two types - <em class="emphasis">discrete</em> and <em class="emphasis">continuous</em>.  While there are more complicated ways to distinguish between them mathematically, for our purpose the big difference is that with quantitative discrete data we have a small number of distinct possible responses, while with quantitative continuous data we have a large number of different possible responses.</p></article><p id="p-462">It is important to be able to distinguish between quantitative discrete and quantitative continous data, because we visualize them in different ways.  Quantitative discrete data is characterized by:</p>
+<ul class="disc">
+<li id="li-330"><p id="p-derived-li-330">Small number of different values.</p></li>
+<li id="li-331"><p id="p-derived-li-331">Many values are repeated.</p></li>
+<li id="li-332"><p id="p-derived-li-332">Often (but not always) quantitative discrete data is counts of objects.</p></li>
+</ul>
+<p class="continuation">Quantitative continuous data is characterized by:</p>
+<ul class="disc">
+<li id="li-333"><p id="p-derived-li-333">Many different values.</p></li>
+<li id="li-334"><p id="p-derived-li-334">Most data values are distinct or only occur a few times.</p></li>
+<li id="li-335"><p id="p-derived-li-335">Often (but not always) quantitative continuous data are measurements.</p></li>
+</ul>
+<figure class="figure figure-like" id="figure-60"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/quantitative-data-types.png" class="contained" alt="Two boxes filled with numbers. The box on the left displays an example containing quantitative discrete data with many repeated values: 1, 2, 3, 2, 2, 5, 1, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 3, and 4. The box on the right contains quantitative continuous data with many different distinct values: 31, 53, 63, 18, 42, 31, 57, 86, 78, 29, 49, 22, 48, 85, 23, 19, 94, 11, 41, 31, 19, 17, 82, and 83."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.3<span class="period">.</span></span><span class="space"> </span>Quantitative discrete (left) vs. Quantitative continuous (right) data.</figcaption></figure><p id="p-463">Let's look at some data and decide whether it's qualitative, qunatitative discrete, or quantitative continuous.</p>
+<article class="exercise exercise-like" id="exercise-59"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-59"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.6.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-59"><article class="exercise exercise-like"><p id="p-464">A survey asks people how many cars they own.</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like">Would the answers here be numeric or non-numeric? Are multiple people likely to give the same answer? Would you expect to have many different answers?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-8" id="answer-8"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like">Quantitative Discrete. The answer is a number, and most people will answer 0, 1, or 2, with with very few people giving larger numbers.</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-60"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-60"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.6.5</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-60"><article class="exercise exercise-like"><p id="p-465">A researcher collects a list of the companies which emit the most methane into the atmosphere.</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like">Would this data be numeric or non-numeric?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-9" id="answer-9"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-9"><div class="answer solution-like">This is qualitative data - the data we are collecting consists of company names, not numbers.</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-61"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-61"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.6.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-61"><article class="exercise exercise-like"><p id="p-466">A scientist measures the amount of ozone in parts per million in the atmosphere at a particular location every day for a year.  Note: here the scientist is collecting two different (connected) pieces of data - the measurement of ozone and the day on which they collected it.</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like">Would this data be numeric or non-numeric? Are many of the measurements likely to be exactly the same on multiple days? Would you expect to have a lot of different values?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-10" id="answer-10"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like">Both data sets are quantitative continuous.  The dates will be different on every day, and there will be many (365 or 366) different values.  The measurements are also unlikely to be exactly the same on different days, and there will be many different values.</div></div></article></div></section><section class="subsection" id="greenhouse-gas-math-topic-data-visualization-graphs"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.6.2</span> <span class="title">Graphs</span>
+</h3>
+<section class="introduction" id="introduction-31"><p id="p-467">Small amounts of data can be represented through things like lists and tables, but more complicated data is easier to understand through a visual representation.  Visual representations of data allow us to see patterns and trends in the data that would be much harder to detect in a simple list or table.</p>
+<p id="p-468">The most common types of visual representation of data are called <em class="emphasis">graphs</em> or <em class="emphasis">charts</em>. While you're probably familiar with many types of graphs, we'll be introducing some that you may not be familiar with, and focusing on how and when to use the different types.  There are many different types of graphs, because each one is used to display different types of information and highlight different aspects of that information. In the following subsubsections, we'll go through each of the types of graphs</p></section><section class="subsubsection" id="greenhouse-gas-math-topic-data-visualization-graphs-bar"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.6.2.1</span> <span class="title">Bar Graphs</span>
+</h4>
+<p id="p-469">A bar graph is a graph which represents data as bars of various heights.  A bar graph can be used in several different ways.</p>
+<p id="p-470">The first way that a bar graph can be used is to display a single set of qualitative or quantitative discrete data.  This is done by taking a data set and translating it into a <em class="emphasis">frequency table</em>.</p>
+<article class="definition definition-like" id="definition-11"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Frequency Table.</span>
+</h5> A frequency table lists each of the distinct values in a data set followed by the <em class="emphasis">frequency</em> of that value - the number of times that it appears in the data set.</article><p id="p-471">An example of a frequency table, which displays a quantitative discrete data set is given below.  The American Community Survey, part of the US Census, asks Americans how many vehicles their household has access to (either owned or shared). The number of vehicles is quantitative discrete because most households in the USA have access to 0, 1, 2, or 3 cars. The data from 2019 is shown in the table <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-acs-vehicle-access.html" title="Bibliographic Entry 5.11.1.51">[5.11.1.51]</a>:</p>
+<figure class="table table-like" id="table-vehicle-access"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.6.8<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Number of Vehicles Available</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Millions of Households</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">10.6</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">39.8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">45.3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">18.1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">6.3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5+</td>
+<td class="l m b0 r0 l0 t0 lines">2.7</td>
+</tr>
+</table></div></figure><p id="p-472">This data can be turned into a bar graph which uses the frequency (the number of households in millions that gave a particular response) as the height of the bars.</p>
+<figure class="figure figure-like" id="figure-61"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/bar-chart-vehicle-access.png" class="contained" alt="Bar graph showing vehicle access per household. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-473">If your data set is quantitative continuous, you can still create a frequency table, but you need to sort the data into ranges.  If you don't, most of your data values will have very low frequencies, and you'll have a ton of different values to graph.  A bar graph which displays quantitative continuous data with that data sorted into ranges is called a <em class="emphasis">histogram</em>.</p>
+<p id="p-474">The data below represents the per capita emissions, in tons of CO2 per person, of 97 nations across the world.  You can see from the data that if we look at the frequency of each value, almost all of them have frequency 1 (a handful, like 0.09 and 0.13, have frequency 2).  Creating a bar graph of these values wouldn't be very useful, but if we sort them into categories - 0 to 5, 5 to 10, etc. - we can see more patterns in the data.</p>
+<p id="p-475">0.02, 0.04, 0.07, 0.09, 0.09, 0.13, 0.13, 0.23, 0.25, 0.26, 0.29, 0.32, 0.36, 0.38, 0.52, 0.55, 0.56, 0.6, 0.67, 0.85, 0.86, 0.99, 1.01, 1.05, 1.09, 1.1, 1.11, 1.13, 1.23, 1.46, 1.52, 1.59, 1.68, 1.69, 1.74, 1.76, 1.92, 1.94, 1.95, 2, 2.19, 2.3, 2.37, 2.38, 2.45, 2.48, 2.5, 2.52, 2.56, 2.66, 2.72, 2.75, 3.38, 3.48, 3.58, 3.66, 3.79, 4.02, 4.08, 4.17, 4.21, 4.53, 4.64, 4.66, 4.83, 5.18, 5.67, 5.67, 5.76, 5.81, 5.94, 6.2, 7.08, 7.2, 7.46, 7.64, 7.67, 7.87, 8.31, 8.41, 8.76, 9, 9.07, 9.85, 12.76, 12.96, 14.49, 14.82, 15.25, 16.44, 17.69, 18.82, 19.31, 21.12, 23.47, 31.45, 36.46</p>
+<p id="p-476">Notice that in making our categories, we're careful to not let them overlap - we don't want to accidentally count a value, like 10, that is on the edge in two categories.  We also want to make sure that we don't have too many different categories.  While you can make a histogram with as many categories as you like, it's generally best to keep the number of categories small, so that there are a lot of data elements in most of them.  If you use too many categories, then you will be back in the situation where almost every column contains just one or two elements.</p>
+<figure class="table table-like" id="table-per-capita-co2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.6.10<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Per Capita Emissions</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Number of Countries</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[0,5)</td>
+<td class="l m b0 r0 l0 t0 lines">65</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[5,10)</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[10,15)</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[15,20)</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[20,25)</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[25,30)</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[30,35)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[35,40)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="figure-62"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/histogram-co2.png" class="contained" alt="Histogram showing the number of countries with per capita emissions at a particular level. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.11<span class="period">.</span></span><span class="space"> </span>Countries in the world, sorted by their per capita CO2 emissions in tons of CO2 per person.  Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-emissions-by-country.html" title="Bibliographic Entry 5.11.1.50">[5.11.1.50]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-histogram-co2.html" title="Item 3">Image Description 3</a>.</figcaption></figure><p id="p-477">A bar graph can also be used to display a correspondence between two different types of data, as long as one of them is quantitative.  The quantitative data will be used for the height of the bar.  For example, the table below shows the amount of methane produced by the ten countries which produce the most greenhouse gases, in equivalent tons of carbon dioxide. The country names are qualitative data, and each country has a corresponding quantitative continuous value which represents the amount of methane they produce. This data is taken from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-emissions-by-country.html" title="Bibliographic Entry 5.11.1.50">[5.11.1.50]</a>.</p>
+<figure class="table table-like" id="table-top-ten-methane"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.6.12<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Country</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Total Methane Emissions in Equivalent Tons of CO2</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">China</td>
+<td class="l m b0 r0 l0 t0 lines">1.17E+10</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">United States</td>
+<td class="l m b0 r0 l0 t0 lines">5.51E+09</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">India</td>
+<td class="l m b0 r0 l0 t0 lines">3.04E+09</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Japan</td>
+<td class="l m b0 r0 l0 t0 lines">1.17E+09</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Brazil</td>
+<td class="l m b0 r0 l0 t0 lines">9.39E+08</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Germany</td>
+<td class="l m b0 r0 l0 t0 lines">7.84E+08</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Canada</td>
+<td class="l m b0 r0 l0 t0 lines">6.52E+08</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Saudi Arabia</td>
+<td class="l m b0 r0 l0 t0 lines">6.26E+08</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Australia</td>
+<td class="l m b0 r0 l0 t0 lines">5.02E+08</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">United Kingdom</td>
+<td class="l m b0 r0 l0 t0 lines">4.38E+08</td>
+</tr>
+</table></div></figure><p id="p-478">You can create a bar graph for this data by creating a bar for each country, and using the amount of methane as the height of the bar.</p>
+<figure class="figure figure-like" id="figure-63"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/bar-chart-methane.png" class="contained" alt="Graph showing bars with sizes corresponding to the methane emissions of 10 countries, dominated by China, the United States, and India. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.13<span class="period">.</span></span><span class="space"> </span>Methane Emissions of the ten largest polluters, in the equivalent amount of CO2. Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-emissions-by-country.html" title="Bibliographic Entry 5.11.1.50">[5.11.1.50]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-bar-chart-methane.html" title="Item 4">Image Description 4</a></figcaption></figure><p id="p-479">To summarize, bar graphs are generally used to display a single set of data or to show a correspondence between two data sets.  They are one of the most versatile and flexible forms of data visualization, and can be used in a variety of contexts.  Unless there is a good reason to choose another type of graph, a bar graph is usually the best way to take a first look at a set of data.</p></section><section class="subsubsection" id="subsubsection-14"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.6.2.2</span> <span class="title">Pie Charts</span>
+</h4>
+<p id="p-480">A pie chart is a specialized type of graph which is used to display a single set of data.  It is usually used when there are a small number of different data values (less than 10), but can be used effectively with more.  In a pie chart, a circle is divided into wedges, with each wedge corresponding to a different data value or group of data values.  The size of the wedge is determined by the percentage of the data which matches that data value  or group of values.</p>
+<p id="p-481">To create a pie chart, you should first create a frequency table.  However, unlike a bar graph, to create a pie chart you need to know the <em class="emphasis">relative frequency</em>.</p>
+<article class="definition definition-like" id="definition-12"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Relative Frequency.</span>
+</h5> The relative frequency of a data value is the percentage of overall values which match that data value.  It can be calculated by taking the frequency and dividing it by the total number of data values.</article><p id="p-482">Let's add relative frequency to <a href="" class="xref" data-knowl="./knowl/table-vehicle-access.html" title="Table 5.6.8">Table 5.6.8</a>.  First, we calculate the total number of data values, by adding up all the frequencies.  There are 122.8 million households total in this data set.  To find the relative frequency, we just take each frequency and divide by 122.8.  For example, because 10.57 million households do not have access to a car at all, the relative frequency of the data value 0 is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/table-vehicle-access.html ./knowl/greenhouse-gas-biblio-acs-vehicle-access.html ./knowl/table-per-capita-co2.html ./knowl/greenhouse-gas-image-pie-chart-co2.html">
+\begin{equation*}
+\frac{10.57}{122.8} = 0.0861 = 9\%
+\end{equation*}
+</div>
+<p id="p-483">We repeat this for each value to fill in the rest of the frequency table.</p>
+<figure class="table table-like" id="table-34"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.6.15<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Number of Vehicles Available</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Millions of Households</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percentage of Households</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">10.57</td>
+<td class="l m b0 r0 l0 t0 lines">9%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">39.82</td>
+<td class="l m b0 r0 l0 t0 lines">32%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">45.29</td>
+<td class="l m b0 r0 l0 t0 lines">37%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">18.09</td>
+<td class="l m b0 r0 l0 t0 lines">15%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">6.30</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5+</td>
+<td class="l m b0 r0 l0 t0 lines">2.74</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="l m b0 r0 l0 t0 lines">122.80</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><p id="p-484">Once we have a frequency table with relative frequency, we can create a pie chart.  To create a pie chart, divide the circle into wedges, where each wedge takes up some percentage of the total circle.  Those percentages should match the relative frequencies in your frequency table.  Making a pie chart by hand can be tricky, because you need to estimate what different percentages of the circle would be.</p>
+<figure class="figure figure-like" id="figure-64"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/pie-chart-vehicle-access-us.png" class="contained" alt="A circle divided into wedges, one for each data value in the table above, with the size of the wedge determined by the relative frequency."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.16<span class="period">.</span></span><span class="space"> </span>Number of vehicles accessible to each household in the United States, as a percentage of the total number of households.  Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-acs-vehicle-access.html" title="Bibliographic Entry 5.11.1.51">[5.11.1.51]</a>.</figcaption></figure><p id="p-485">For quantitative continuous data, your wedges of the pie chart will correspond to ranges of values instead of individual values.  For example, here is the data from <a href="" class="xref" data-knowl="./knowl/table-per-capita-co2.html" title="Table 5.6.10">Table 5.6.10</a>, with relative frequencies:</p>
+<figure class="table table-like" id="table-35"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.6.17<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Per Capita Emissions</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Number of Countries</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Relative Frequency</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[0,5)</td>
+<td class="l m b0 r0 l0 t0 lines">65</td>
+<td class="l m b0 r0 l0 t0 lines">67%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[5,10)</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">20%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[10,15)</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[15,20)</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[20,25)</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">2%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[25,30)</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[30,35)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[35,40)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="l m b0 r0 l0 t0 lines">97</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><p id="p-486">When we create a pie chart from this data, we get the following image</p>
+<figure class="figure figure-like" id="figure-65"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/pie-chart-co2-1.png" class="contained" alt="A circle divided into wedges, one for each range of values in the table. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.18<span class="period">.</span></span><span class="space"> </span>Number of countries with per capita CO2 emissions in the given ranges. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-pie-chart-co2.html" title="Item 5">Image description 5</a>.</figcaption></figure><p id="p-487">Note that in the image, several wedges represent very small percentages of the total number of countries.  This provides very little information and makes the graph more cluttered. Let's re-do our frequency table, combining all of the categories above 20 tons per person into one group:</p>
+<figure class="table table-like" id="table-36"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.6.19<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Per Capita Emissions</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Number of Countries</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Relative Frequency</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[0,5)</td>
+<td class="l m b0 r0 l0 t0 lines">65</td>
+<td class="l m b0 r0 l0 t0 lines">67%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[5,10)</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">20%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[10,15)</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[15,20)</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">5%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">&gt; 20</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">4%</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="l m b0 r0 l0 t0 lines">97</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><p id="p-488">The pie chart now has only 5 categories, and is much less cluttered.  The information - that most countries have CO2 emissions less than 5 tons per person, and that only a few countries have very high per capita emissions, is now presented much more clearly.</p>
+<figure class="figure figure-like" id="figure-66"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/pie-chart-co2-2.png" class="contained" alt="A circle divided into wedges, one for each data value in the table above, with the size of the wedge determined by the relative frequency."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.20<span class="period">.</span></span><span class="space"> </span>Number of countries with per capita CO2 emissions in the given ranges.</figcaption></figure></section><section class="subsubsection" id="subsubsection-15"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.6.2.3</span> <span class="title">Scatterplots and Line Graphs</span>
+</h4>
+<p id="p-489">Our next type of graph is used when we have a correspondence between two quantitative continuous data sets.  In a <em class="emphasis">scatterplot</em>, we plot a point on the x-y coordinates which represents a pair of data values.  Those points, then, can reveal patterns in how the data sets are related.</p>
+<p id="p-490">Our data set for this example will consist of gross domestic product (GDP), a measure of how wealthy a country is, and CO2 emissions.  Both of these numbers will naturally be larger for larger countries, because more people will produce more wealth and more CO2, so we consider the <em class="emphasis">per capita</em> numbers, meaning the amount of money or CO2 per person.  We can get these numbers by taking the total amount and dividing by the population of the country.  If you already know that there is a relationship between data sets because of something like population, dividing out by the value is an easy way to eliminate that relationship.  This is called <em class="emphasis">normalizing</em> the data set.</p>
+<p id="p-491">Because our data set has these values for 165 countries, we will not include the data table in the text.  The data can be found in <a class="external" href="data-files/co2-emissions-vs-gdp-2018.xlsx" target="_blank">gdp and co2 emissions for all countries in 2018 [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-67" id="fn-67"><sup> 1 </sup></a> (data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-gdp-vs-co2.html" title="Bibliographic Entry 5.11.1.52">[5.11.1.52]</a>).  We can construct a scatterplot by taking each pair of values and creating a point.  For example, the nation of Qatar has per capita CO2 emissions of 39.27 tons per person, and a GDP of $153,764 per person.  This is because Qatar is a very small nation (Qatar only had 2.7 million people in 2018, when this data was collected) which produces a large amount of oil - oil production is a major source of CO2 emissions and countries with large oil production tend to use more fossil fuels. Qatar would be marked by a dot at x = 39.27, and y = 153,764. Yemen, a country close to Qatar, but much poorer and with much less oil production (and which was fighting a civil war in 2018) has per capita CO2 emissions of only 0.35 tons per person, and a per capita GDP of only $2,285 per person.  The dot for Yemen would be at x=0.35 and y=2,285.</p>
+<p id="p-492">Here is a scatterplot of the entire data set:</p>
+<figure class="figure figure-like" id="greenhouse-gas-math-topic-data-visualization-graphs-scatterplot-gdp-co2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/scatterplot-gdp-co2.png" class="contained" alt="Scatterplot of the gdp and co2 data.  Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.21<span class="period">.</span></span><span class="space"> </span>Scatterplot of the relationship between GDP and CO2, per capita, of nations in 2018. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-scatterplot-gdp-co2.html" title="Item 6">Image Description 6</a>.</figcaption></figure><p id="p-493">Scatterplots are useful because they help us see patterns in the data.  In this graph, we can see that for countries with low emissions and low GDP, an increase in GDP generally corresponds to an increase in CO2 emissions.  This makes sense, because we associate increased economic activity with increased usage of fossil fuels.  We see this especially in the dot for Qatar, located at the extreme right &amp; top of the graph.  However, a number of wealthier nations, including Norway (84,580, 8.21), Singapore (68,402, 6.65), Ireland (64,684, 8.85), Switzerland (61,373, 4.33), and Sweden (45,542, 4.19) don't fit this trend, having much lower emissions than nations with similar GDPs.  Similarly, there are a number of nations with much higher emissions than countries with similar GDPs - Trinidad &amp; Tobago (28,549, 27.24), Mongolia (13,383, 20.35), Kazakhstan (25,308, 17.45), and Bahrain (39,499, 20.14).  While you can see this from looking at the data table, it is much easier to see these data points that stand out (called <em class="emphasis">outliers</em>) from looking at the scatterplot.</p>
+<p id="p-494">Each of these countries has a unique reason why their CO2 emissions are lower or higher than expected from GDP.  Do some research on your own and see if you can explain why they don't fit the general trend of the other points.</p>
+<p id="p-495">When we have two quantitative continuous data sets where there are no repeated values in one data set, a type of scatterplot called a <em class="emphasis">line graph</em> can be used.  In a line graph, the data set with no repeated values is marked on the horizontal axis.  Adjacent points are then connected by short lines.</p>
+<p id="p-496">Line graphs are used to imply that, although we do not have data values for every x-axis value, we can assume that the data between values follows a similar pattern.  The lines are a visual way of indicating this.  Line graphs are frequently used when one data set represents time (since there will only be one data value for each time).</p>
+<p id="p-497">The data in <a class="external" href="data-files/global-temperature-anomaly.xlsx" target="_blank">global mean temperature anomalies [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-68" id="fn-68"><sup> 2 </sup></a> is from the National Oceanic and Atmospheric Administration (NOAA).  This data gives the global mean temperature anomaly for every year from 1880 to 2019.  Because we have a correspondence between quantitative continuous data values (year and global mean temperature anomaly), and because there is only one value for each year, this data is an ideal candidate for a line graph.</p>
+<figure class="figure figure-like" id="figure-68"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/line-graph-global-temperature-anomaly.png" class="contained" alt="Line graph of the global mean temperature anomaly. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.22<span class="period">.</span></span><span class="space"> </span>Line graph of the global mean temperature anomaly fom 1880 to 2019. Data is from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-global-temperature-anomaly.html" title="Bibliographic Entry 5.11.1.53">[5.11.1.53]</a>.  <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-line-graph-global-temperature-anomaly.html" title="Item 7">Image Description 7</a>.</figcaption></figure></section><section class="subsubsection" id="greenhouse-gas-math-topic-data-visualization-graphs-combining-graphs"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.6.2.4</span> <span class="title">Combining Graphs</span>
+</h4>
+<p id="p-498">You can show multiple data sets at the same time by combining these graphs in various ways.  If the two data sets have quantitative values in the same (or similar) ranges, it may make sense to combine them into a single bar chart (with different colored/shaded bars for each data set) or a single line graph (with a different color/pattern for each data set).</p>
+<p id="p-499">For example, the data in <a class="external" href="data-files/paired-line-graph-co2-us-china.xlsx" target="_blank">total co2 emissions of the USA and China [Excel Spreadsheet]</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-69" id="fn-69"><sup> 3 </sup></a> is from the World Bank.  The data gives the CO2 emissions of the United States and China from 1960 to 2018 in kilotons.  Because these data sets have a similar scale, we can display them on a single graph.  We use a line graph because the data set is quantitative continuous and has a single value for each year.</p>
+<figure class="figure figure-like" id="figure-69"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/paired-line-graph-co2-us-china.png" class="contained" alt="Line graphs of the total CO2 emissions of the United States and China. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.23<span class="period">.</span></span><span class="space"> </span>Paired line graph of the total CO2 emissions of the United States and China from 1960 to 2018 in gigatons. Data is from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-overall-co2-emissions.html" title="Bibliographic Entry 5.11.1.54">[5.11.1.54]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-paired-line-graph-co2-us-china.html" title="Item 8">Image Description 8</a>.</figcaption></figure><p id="p-500">If you have data with very different scales, though, a paired line graph is not a great choice.  Consider the graph below, which shows CO2 emissions for the United States again (in gigatons) and the emissions for Singapore, a much smaller nation with much lower emissions.</p>
+<figure class="figure figure-like" id="figure-70"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/paired-line-graph-co2-us-singapore.png" class="contained" alt="Line graphs of the total CO2 emissions of the United States and Singapore. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.24<span class="period">.</span></span><span class="space"> </span>Paired line graph of the total CO2 emissions of the United States and Singapore from 1960 to 2018 in gigatons. Data is from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-overall-co2-emissions.html" title="Bibliographic Entry 5.11.1.54">[5.11.1.54]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-paired-line-graph-co2-us-singapore.html" title="Item 9">Image Description 9</a>.</figcaption></figure><p id="p-501">Because Singapore's emissions are so much less than those of the United States, the graph shows them to be essentially 0 - which is not the case.  We don't see anything of the pattern of how Singaporean emissions have changed over the past 60 years because the US emissions are so much larger.  To show these two data sets together, it is better to graph them each individually.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="figure-71"><img src="greenhouse-gas/images/side-by-side-line-graph-singapore.png" class="contained" alt="Line graphs of the total CO2 emissions of Singapore. Image description available."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.25<span class="period">.</span></span><span class="space"> </span>Total CO2 emissions of Singapore from 1960 to 2018 in kilotons. Data is from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-overall-co2-emissions.html" title="Bibliographic Entry 5.11.1.54">[5.11.1.54]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-side-by-side-line-graph-co2-singapore.html" title="Item 10">Image Description 10</a>.</figcaption></figure></div>
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="figure-72"><img src="greenhouse-gas/images/side-by-side-line-graph-us.png" class="contained" alt="Line graphs of the total CO2 emissions of the United States. Image description available."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.26<span class="period">.</span></span><span class="space"> </span>Total CO2 emissions of the United States from 1960 to 2018 in kilotons. Data is from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-overall-co2-emissions.html" title="Bibliographic Entry 5.11.1.54">[5.11.1.54]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-side-by-side-line-graph-co2-us.html" title="Item 11">Image Description 11</a>.</figcaption></figure></div>
+</div></div>
+<p id="p-502">Bar charts can be combined in a similar way - putting bars for two different things on the same graph if they have similar scales, or putting two bar charts side by side if they have different scales.  Here's a bar chart that shows the percentage of households that own 0, 1, 2, 3, 4, or 5+ vehicles in Great Britain and in the United States.</p>
+<figure class="figure figure-like" id="figure-73"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/vehicles-per-household-uk-us.png" class="contained" alt="Bar chart of vehicle ownership in Great Britain and the United States. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.27<span class="period">.</span></span><span class="space"> </span>Percentage of households owning 0, 1, 2, 3, 4, and 5 or more vehicles in Great Britain (data from 2014-2016) and the United States (data from 2019). Data is from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-acs-vehicle-access.html" title="Bibliographic Entry 5.11.1.51">[5.11.1.51]</a> and <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-ons-vehicle-access.html" title="Bibliographic Entry 5.11.1.55">[5.11.1.55]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-paired-bar-graph-vehicles-gb-us.html" title="Item 12">Image Description 12</a>.</figcaption></figure><p id="p-503">Looking at a paired bar graph like this can help you compare the amounts for different data sets.  For example, this graph shows us that Americans tend to own more cars per households than the British, and are more likely to have a car in their household.</p>
+<p id="p-504">If we want to compare two data sets using pie charts, you can take the same approach and look at two pie charts side-by-side.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="figure-74"><img src="greenhouse-gas/images/pie-chart-vehicle-access-us.png" class="contained" alt="Pie chart of household vehicle access in the USA. Image description available."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.28<span class="period">.</span></span><span class="space"> </span>Number of vehicles accessible to each household in the United States, as a percentage of the total number of households.  Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-acs-vehicle-access.html" title="Bibliographic Entry 5.11.1.51">[5.11.1.51]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-pie-chart-vehicles-us.html" title="Item 13">Image Description 13</a>.</figcaption></figure></div>
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="figure-75"><img src="greenhouse-gas/images/pie-chart-vehicle-access-uk.png" class="contained" alt="Pie chart of household vehicle access in Great Britain. Image description available."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.29<span class="period">.</span></span><span class="space"> </span>Number of vehicles accessible to each household in Great Britain, as a percentage of the total number of households.  Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-ons-vehicle-access.html" title="Bibliographic Entry 5.11.1.55">[5.11.1.55]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-pie-chart-vehicles-gb.html" title="Item 14">Image Description 14</a>.</figcaption></figure></div>
+</div></div>
+<p id="p-505">A more effective way to display the data from two pie charts is to combine them into a stacked bar chart. A stacked bar chart is used to compare the relative frequencies of data in two different data sets.  The data can be any kind of data, but if it is quantitative continuous it will need to be divided into categories.  In a stacked bar chart, each bar acts like a pie chart - with the different sections of the bars representing the percentages of the entire group. Each bar goes all the way from the bottom (0%) to the top (100%), split up into pieces which represent the percentages.</p>
+<figure class="figure figure-like" id="figure-76"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/stacked-bar-chart-vehicles-uk-us.png" class="contained" alt="Stacked bar chart comparing vehicle ownership in the United States and Great Britain. Image Description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.30<span class="period">.</span></span><span class="space"> </span>Number of vehicles accessible to each household in the United States compared to Great Britain, as a percentage of the total number of households.  Data from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-ons-vehicle-access.html" title="Bibliographic Entry 5.11.1.55">[5.11.1.55]</a> and <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-acs-vehicle-access.html" title="Bibliographic Entry 5.11.1.51">[5.11.1.51]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-stacked-bar-chart-vehicles-gb-us.html" title="Item 15">Image Description 15</a>.</figcaption></figure><p id="p-506">Notice here that our bar chart is horizontal instead of vertical.  This is entirely an aesthetic choice - we can do horizontal or vertical bars for any chart.  You should do whichever looks better or fits better in your document.  Here, we used horizontal bars so that we could fit the percent values on each section of the bar.</p></section><section class="subsubsection" id="greenhouse-gas-math-topic-data-visualization-graphs-other-visualizations"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.6.2.5</span> <span class="title">Other Ways of Visualizing Information</span>
+</h4>
+<p id="p-507">The internet has greatly changed the way that people visualize data.  With books, magazines, and newspapers, data visualizations were restricted to static images like graphs and charts.  The modern internet provides the ability to use more dynamic and interactive data visualizations.  These data visualizations can be useful and help people understand data better, but they can also be overwhelming.  We'll look at some examples and talk about the advantages and disadvantages of these types of data visualizations.</p>
+<p id="p-508">One example of a data visualization using the internet is a video which shows multiple different graphs.  Sometimes these visualizations will just be a series of graphs like the ones we've seen before.  For example, the graph in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-scatterplot-gdp-co2.html" title="Figure 5.6.21">Figure 5.6.21</a> showed the relationship between the gross domestic product (GDP) and CO2 emissions per person for countries in 2018. The video in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-video-scatterplot-gdp-co2.html" title="Figure 5.6.31">Figure 5.6.31</a> shows the same data, but for every year from 1961 to 2014.  It also adds another data set - how much the temperature in that country has gone up or down from the average over 1961-2018.  The temperature change is represented by the color and size of the dot.</p>
+<figure class="figure figure-like" id="greenhouse-gas-math-topic-data-visualization-graphs-video-scatterplot-gdp-co2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-5" class="video" controls=""><source src="greenhouse-gas/images/video-scatterplot-gdp-co2.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.31<span class="period">.</span></span><span class="space"> </span>National gross domestic product and CO2 emissions per person 1961-2014. Video by Antti Lipponen, <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC-BY-2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-70" id="fn-70"><sup> 4 </sup></a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-video-scatterplot-gdp-co2.html" title="Bibliographic Entry 5.11.1.56">[5.11.1.56]</a>.</figcaption></figure><p id="p-509">This graph contains a lot of information - 3 different data sets (GDP, CO2 Emissions, and temperature change) for every country for every year from 1961-2014.  Looking at all of that data in a table could be overwhelming, but this visualization makes it easier to see certain patterns.  We can see that in general, as time changes, the nations of the world are getting richer (the points move right), producing more CO2 (the points move up), and hotter (the points get larger and more red).  We can also see that despite all these changes, inequality persists - some countries remain poor while others get even more wealthy.</p>
+<p id="p-510">In some ways, though, the visualization also hides other information.  This graph uses a logarithmic scale on both axes. In a normal scale on a graph (what we call a linear scale in mathematics), when you go a unit over on the graph, you add the same amount on the scale - so you may go from 10 at one mark, to 20 at the next, to 30 at the next, adding 10 each time.  In a logarithmic scale, instead of adding each time, you multiply by the same amount.  For example, on this graph, the marks on the horizontal axis go from 100 to 1000, multiplying by 10, and then to 10,000, multiplying by 10 again, and then 100,000, multiplying by 10 again.</p>
+<p id="p-511">Logarithmic scales are used when we have very small numbers and very large numbers in the same graph, like we do here - some countries have much lower GDPs than others, because of global wealth inequality. The logarithmic scale conceals an increase in inequality in this graph - as the points move to the left and up, the gap between the poorest &amp; least emitting countries and the wealthiest &amp; most emitting countries is getting larger and larger.</p>
+<p id="p-512">Other video data visualizations use different graphing techniques.  The video in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-video-temperature-anomalies.html" title="Figure 5.6.32">Figure 5.6.32</a>, the position of the points doesn't really convey any information (it's just determined by the country's name in the English alphabet), but the size and color of the dot gives the temperature anomaly for that country in a particular month.  You can see the points get larger and redder as the climate warms.</p>
+<figure class="figure figure-like" id="greenhouse-gas-math-topic-data-visualization-graphs-video-temperature-anomalies"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><video id="video-6" class="video" controls=""><source src="greenhouse-gas/images/video-temperature-anomalies.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.32<span class="period">.</span></span><span class="space"> </span>Monthly temperature anomaly for countries from 1880-2017. Video by Antti Lipponen, <a class="external" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC-BY-2.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-71" id="fn-71"><sup> 5 </sup></a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-video-temperature-anomalies.html" title="Bibliographic Entry 5.11.1.57">[5.11.1.57]</a>.</figcaption></figure><p id="p-513">The visualization in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-video-temperature-anomalies.html" title="Figure 5.6.32">Figure 5.6.32</a> gives the viewer a very clear picture of how severe and widespread the warming has been in countries around the world.  It does not, however, give a lot of data on how that warming is spread out, because the countries are arranged alphabetically.  The video in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-video-map-co2.html" title="Figure 5.6.33">Figure 5.6.33</a> shows the CO2 emissions per country for each year from 1850 to 2016, but arranged on a map of the world (unfortunately, a Mercator projection, which creates a biased map where northern countries appear much larger than those near the equator).  This allows the viewer to see a different kind of pattern - the geographical relationship between countries with high CO2 emissions.</p>
+<figure class="figure figure-like" id="greenhouse-gas-math-topic-data-visualization-graphs-video-map-co2"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-7" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/oa-1vTTsOn0?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.33<span class="period">.</span></span><span class="space"> </span>Map of the world, showing greenhouse gas emissions per person for each country. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-video-per-capita-co2.html" title="Bibliographic Entry 5.11.1.58">[5.11.1.58]</a>.</figcaption></figure><p id="p-514"><a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-video-map-co2.html" title="Figure 5.6.33">Figure 5.6.33</a> shows us that greenhouse gas emissions per person have grown most in large fossil fuel producing nations like the USA, Canada, and Russia, as well as smaller nations in West Asia like Oman and Saudia Arabia.  It does conceeal some of the highest emitters, like Bahrain and Qatar, which can be seen in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-video-scatterplot-gdp-co2.html" title="Figure 5.6.31">Figure 5.6.31</a>, because they are too small to show up clearly on the map.</p>
+<p id="p-515">Data visualizations on the internet can also be interactive.  The Earth Sciences Communications Team at the National Aeronautics and Space Association's (NASA) Jet Propulsion Laboratory has produced several outstanding interactive data visualizations around climate change.  The <a class="external" href="https://climate.nasa.gov/interactives/climate-time-machine" target="_blank">Climate Time Machine</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-72" id="fn-72"><sup> 6 </sup></a> allows viewers to see how the climate has changed over time in four different ways - sea ice, sea level, CO2 emissions, and temperature change. <a class="external" href="https://climate.nasa.gov/earth-now/#/" target="_blank">Earth Now</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-73" id="fn-73"><sup> 7 </sup></a> is even more elaborate, allowing the viewer to display a wide range of global data sets on an animated globe, and to look at that data over a range of time or at a point in history.</p></section><section class="subsubsection" id="greenhouse-gas-math-topic-data-visualization-graphs-accessibility"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.6.2.6</span> <span class="title">Accessibiliity</span>
+</h4>
+<p id="p-516">All of these data visualizations - both the static images we saw before and the videos here - have one major flaw.  These visualizations, because they convey data visually, are only accessible to people without visual impairment.  People with no sight or sight which is limited in some way (like color-blindness) may be unable to use data visualizations as effectively as people without visual impairment.</p>
+<p id="p-517">Visualizations can also present challenges to other people.  A fast-moving video, for example, may be difficult to follow for someone with dyslexia who needs more time to read.  Someone who is hearing-impaired may need captions if there is spoken text or sounds.  Translators exist for text in webpages, but the text in an image or video cannot be translated easily into another language.</p>
+<p id="p-518">When creating data visualizations, it is important to think about who will be able to use it.  The more accessible you make your visualization, the more people will be able to benefit from it.  Here are some tips for how to make your data visualizations accessible:</p>
+<ul class="disc">
+<li id="li-336"><p id="p-derived-li-336">Avoid using color alone to differentiate data - and use highly contrasting colors if you do need to use color.  People with color-blindness or limited vision may be able to distinguish highly contrasting colors better.</p></li>
+<li id="li-337"><p id="p-derived-li-337">Make data available in another format.  A data table - which can be read out by a screen reader - may be more useful than a graph for someone who is visually impaired.</p></li>
+<li id="li-338"><p id="p-derived-li-338">Don't try to let the graph speak for itself - label everything clearly and in a large font. Explain what the graph shows in the accompanying text.</p></li>
+<li id="li-339"><p id="p-derived-li-339">Choose a good title for your graph.  People with reading or attention disabilities may read only the title, so make sure it conveys as much information about what the graph means as possible.</p></li>
+<li id="li-340"><p id="p-derived-li-340">Use redundancy - for example, a particular quality may be represented by both the color and size of a dot.  If someone doesn't notice or can't detect one quality, they may be able to detect the other.</p></li>
+</ul>
+<p id="p-519">One example of accessibility is the creation of data sonifications - like a visualization, but with sound.  The online graphing calculator Desmos, for example, has a feature called <a class="external" href="https://www.desmos.com/accessibility#audio-trace" target="_blank">Audio Trace</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-74" id="fn-74"><sup> 8 </sup></a> which allows users to hear a graph in the graphing calculator.  The sound moves across stereo speakers from left to right, and increases in pitch as the graph increases (with static added when it's negative).  This allows visually-impaired people the opportunity to hear the same patterns that others can see in the graph.</p>
+<p id="p-520">A powerful climate change sonification from the Center for Computer Research in Music and Acoustics at Stanford University is "shown" in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-math-topic-data-visualization-graphs-accessibility-sonification.html" title="Figure 5.6.34">Figure 5.6.34</a>. In this sonification, which starts roughly 400 years ago, the CO2 levels in the atmosphere provide the pitch for a background tone, while a strumming guitar sound gets louder and higher in pitch as temperature anomalies increase.  The result is a haunting sound which becomes more and more urgent as time approaches the present - just like the climate crisis.</p>
+<figure class="figure figure-like" id="greenhouse-gas-math-topic-data-visualization-graphs-accessibility-sonification"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-8" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ONuA9HmkF3M?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.6.34<span class="period">.</span></span><span class="space"> </span>Climate data from the past 400 years as a single sound file.  The pitch of the background tone rises as carbon dioxide in the atmosphere increases, while the plucked sound of the guitar increases in volume and pitch as global temperatures increase. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-climate-sound.html" title="Bibliographic Entry 5.11.1.59">[5.11.1.59]</a></figcaption></figure></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-67"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/co2-emissions-vs-gdp-2018.xlsx</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-68"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/global-temperature-anomaly.xlsx</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-69"><div class="fn"><code class="code-inline tex2jax_ignore">data-files/paired-line-graph-co2-us-china.xlsx</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-70"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-71"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/2.0/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-72"><div class="fn"><code class="code-inline tex2jax_ignore">climate.nasa.gov/interactives/climate-time-machine</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-73"><div class="fn"><code class="code-inline tex2jax_ignore">climate.nasa.gov/earth-now/#/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-74"><div class="fn"><code class="code-inline tex2jax_ignore">www.desmos.com/accessibility#audio-trace</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

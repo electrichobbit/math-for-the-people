@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solving for Change</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="payday-loans-correlation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="payday-loans.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="payday-loan-reflection.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="payday-loans-correlation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="payday-loans.html" title="Up">Up</a><a class="next-button button toolbar-item" href="payday-loan-reflection.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="active">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="payday-loans-solving-for-change"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.8</span> <span class="title">Solving for Change</span>
+</h2>
+<section class="introduction" id="introduction-40"><p id="p-763">Now that we understand interest rates, risk, and correlation, we can begin to really look at the problem of predatory lending.  The Center for Responsible Lending (CRL) tracks payday lending across the country.  Using a $300 loan, they calculated the annual percentage rate that you would pay in interest in each state of the United States.  Note that some of the states have no rate listed - those states have passed laws which make predatory lending unprofitable.</p>
+<figure class="figure figure-like" id="payday-lending-rate-map"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="payday-lending/images/payday-rates.png" class="contained" alt="Map of the United States with typical payday loan APR. Image description available."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.8.1<span class="period">.</span></span><span class="space"> </span>Payday lending rates by state. States with no percentage listed have passed laws effectively outlawing predatory payday lending, usually by banning interest rates over a particular level (Minnesota's ban goes into effect on 1/1/2024). Calculations are based on a $400 loan in June 2023. Image adapted from work by Spitfire19, <a class="external" href="https://creativecommons.org/licenses/by/1.0" target="_blank">CC BY 1.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-96" id="fn-96"><sup> 1 </sup></a>, via Wikimedia Commons. The adapted image is by Mark Branson <a class="external" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-97" id="fn-97"><sup> 2 </sup></a>. Data from <a href="" class="xref" data-knowl="./knowl/biblio-crl-payday-rates.html" title="Bibliographic Entry 6.11.1.110: Map of U.S. Payday Interest Rates.">[6.11.1.110]</a>. <a href="" class="xref" data-knowl="./knowl/image-descriptions-payday-rates.html" title="Item 2">Image Description 2</a>.</figcaption></figure><p id="p-764">All of these rates are unfair and predatory, but some of them are appalling.  In Texas, payday lenders charge up to 664% interest on a $300 loan - that means that over the course of a year, if you borrow $300, you end up paying back</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/biblio-crl-payday-rates.html ./knowl/image-descriptions-payday-rates.html">
+\begin{equation*}
+A = 300 + 300*(6.64)*(1) = \$2,292
+\end{equation*}
+</div>
+<p id="p-765">That's $1,992 in interest on a $300 loan - about $75 every two weeks.  Payday lenders tend to break their loans down into smaller amounts in order to make it seem like less.  Rather than saying $1,992 in interest every year, or even $75 every two weeks on a $300 loan, they would say, "Our fee is $25 for every $100 you borrow, paid back after two weeks."  If that 2 weeks ends, and you can't re-pay the loan...another $25 for every $100 is charged.  For a borrower struggling to make ends meet, the fees add up like clockwork.</p>
+<p id="p-766">Lenders make many arguments about why they should be able to charge these rates.  Sometimes they say that because people are willing to pay their rates, they should be able to charge them - if it were too much, no one would pay them.  They say that they have to charge such high interest rates because the risk of default - a borrower not paying back their loan - is so high.  And they make the argument that if they didn't lend money to these people, no one else would.</p>
+<p id="p-767">All of these arguments have some merit, and if we want to fight predatory lending, we need to learn to make counter-arguments.  This is where our newly learned mathematical skills come into play.</p></section><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.8.1</span> <span class="title">If people are willing to pay...</span>
+</h3>
+<p id="p-768">The first argument for payday lending says, basically, that if people are willing to pay for a payday loan, then it should be legal to offer them.  This is a free market argument - essentially saying that if the fees were too much, the market wouldn't support them.</p>
+<p id="p-769">There is definitely something to this argument - in Texas, for example, in 2021, there is no cap on the interest that can be charged for a payday loan, but as we saw above, the average rate is 664%.  This is essentially letting the market choose the rate - lenders have stopped at this point because no one will pay rates higher.</p>
+<p id="p-770">The people who borrow loans at these ultra-high interest rates, though, don't do it because they have plenty of money to throw around.  They do it because they have no other choice.  We can see this by looking at the correlation between the number of payday lenders and where people live.</p>
+<p id="p-771"><a href="" class="xref" data-knowl="./knowl/table-alabama-lenders.html" title="Table 6.8.2">Table 6.8.2</a> shows data, taken from the 2012 American Community Survey (part of the Census) on the 20 largest counties in Alabama.  For each, we have the number of 522390 establishments (a category which includes payday lenders and related businesses which provide financial services outside of the traditional banking sector), the percentage of the population which is white, the percentage of the population which is Black, and the median household income.</p>
+<p id="p-772"><figure class="table table-like" id="table-alabama-lenders"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.8.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">County</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Number of Payday Lenders</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent White</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Percent Black</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Median Household Income</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Baldwin County</td>
+<td class="r m b0 r0 l0 t0 lines">16</td>
+<td class="r m b0 r0 l0 t0 lines">86.3</td>
+<td class="r m b0 r0 l0 t0 lines">8.8</td>
+<td class="r m b0 r0 l0 t0 lines">48378</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Calhoun County</td>
+<td class="r m b0 r0 l0 t0 lines">15</td>
+<td class="r m b0 r0 l0 t0 lines">75.6</td>
+<td class="r m b0 r0 l0 t0 lines">21.4</td>
+<td class="r m b0 r0 l0 t0 lines">39169</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Cullman County</td>
+<td class="r m b0 r0 l0 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">96.4</td>
+<td class="r m b0 r0 l0 t0 lines">1.1</td>
+<td class="r m b0 r0 l0 t0 lines">37287</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">DeKalb County</td>
+<td class="r m b0 r0 l0 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">94</td>
+<td class="r m b0 r0 l0 t0 lines">0.8</td>
+<td class="r m b0 r0 l0 t0 lines">38445</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Elmore County</td>
+<td class="r m b0 r0 l0 t0 lines">10</td>
+<td class="r m b0 r0 l0 t0 lines">75.9</td>
+<td class="r m b0 r0 l0 t0 lines">20.9</td>
+<td class="r m b0 r0 l0 t0 lines">53328</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Etowah County</td>
+<td class="r m b0 r0 l0 t0 lines">10</td>
+<td class="r m b0 r0 l0 t0 lines">81.3</td>
+<td class="r m b0 r0 l0 t0 lines">15</td>
+<td class="r m b0 r0 l0 t0 lines">34264</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Houston County</td>
+<td class="r m b0 r0 l0 t0 lines">14</td>
+<td class="r m b0 r0 l0 t0 lines">70.2</td>
+<td class="r m b0 r0 l0 t0 lines">26.5</td>
+<td class="r m b0 r0 l0 t0 lines">40409</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Jefferson County</td>
+<td class="r m b0 r0 l0 t0 lines">82</td>
+<td class="r m b0 r0 l0 t0 lines">53.2</td>
+<td class="r m b0 r0 l0 t0 lines">42.6</td>
+<td class="r m b0 r0 l0 t0 lines">43959</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lauderdale County</td>
+<td class="r m b0 r0 l0 t0 lines">9</td>
+<td class="r m b0 r0 l0 t0 lines">87.2</td>
+<td class="r m b0 r0 l0 t0 lines">10</td>
+<td class="r m b0 r0 l0 t0 lines">41908</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lee County</td>
+<td class="r m b0 r0 l0 t0 lines">14</td>
+<td class="r m b0 r0 l0 t0 lines">70.2</td>
+<td class="r m b0 r0 l0 t0 lines">22.8</td>
+<td class="r m b0 r0 l0 t0 lines">45043</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Limestone County</td>
+<td class="r m b0 r0 l0 t0 lines">5</td>
+<td class="r m b0 r0 l0 t0 lines">80.7</td>
+<td class="r m b0 r0 l0 t0 lines">12.5</td>
+<td class="r m b0 r0 l0 t0 lines">47999</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Madison County</td>
+<td class="r m b0 r0 l0 t0 lines">23</td>
+<td class="r m b0 r0 l0 t0 lines">69.2</td>
+<td class="r m b0 r0 l0 t0 lines">24.5</td>
+<td class="r m b0 r0 l0 t0 lines">56839</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Marshall County</td>
+<td class="r m b0 r0 l0 t0 lines">9</td>
+<td class="r m b0 r0 l0 t0 lines">90.6</td>
+<td class="r m b0 r0 l0 t0 lines">2.1</td>
+<td class="r m b0 r0 l0 t0 lines">36197</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Mobile County</td>
+<td class="r m b0 r0 l0 t0 lines">51</td>
+<td class="r m b0 r0 l0 t0 lines">60.6</td>
+<td class="r m b0 r0 l0 t0 lines">35.1</td>
+<td class="r m b0 r0 l0 t0 lines">39691</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Montgomery County</td>
+<td class="r m b0 r0 l0 t0 lines">33</td>
+<td class="r m b0 r0 l0 t0 lines">39.6</td>
+<td class="r m b0 r0 l0 t0 lines">55.3</td>
+<td class="r m b0 r0 l0 t0 lines">41807</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Morgan County</td>
+<td class="r m b0 r0 l0 t0 lines">9</td>
+<td class="r m b0 r0 l0 t0 lines">82.2</td>
+<td class="r m b0 r0 l0 t0 lines">11.8</td>
+<td class="r m b0 r0 l0 t0 lines">45051</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">St. Clair County</td>
+<td class="r m b0 r0 l0 t0 lines">8</td>
+<td class="r m b0 r0 l0 t0 lines">87.7</td>
+<td class="r m b0 r0 l0 t0 lines">9.2</td>
+<td class="r m b0 r0 l0 t0 lines">51859</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Shelby County</td>
+<td class="r m b0 r0 l0 t0 lines">15</td>
+<td class="r m b0 r0 l0 t0 lines">81.1</td>
+<td class="r m b0 r0 l0 t0 lines">11.2</td>
+<td class="r m b0 r0 l0 t0 lines">65728</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Talladega County</td>
+<td class="r m b0 r0 l0 t0 lines">9</td>
+<td class="r m b0 r0 l0 t0 lines">64.2</td>
+<td class="r m b0 r0 l0 t0 lines">34</td>
+<td class="r m b0 r0 l0 t0 lines">31547</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Tuscaloosa County</td>
+<td class="r m b0 r0 l0 t0 lines">17</td>
+<td class="r m b0 r0 l0 t0 lines">67</td>
+<td class="r m b0 r0 l0 t0 lines">30.4</td>
+<td class="r m b0 r0 l0 t0 lines">41139</td>
+</tr>
+</table></div></figure></p>
+<p id="p-773">We can look at the correlations between these different data sets.  For example, the R code below calculates the correlation between the number of payday lenders and the white population of a county, which is -0.68.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-19"><script type="text/x-sage">lenders <- c(16, 15, 6, 6, 10, 10, 14, 82, 9, 14, 5, 23, 9, 51, 33, 9, 8, 15, 9, 17)
+percent.white <- c(86.3, 75.6, 96.4, 94, 75.9, 81.3, 70.2, 53.2, 87.2, 70.2, 80.7, 69.2, 90.6, 60.6, 39.6, 82.2, 87.7, 81.1, 64.2, 67)
+cor(lenders,percent.white)
+</script></pre>
+<p id="p-774">This means that there is a negative correlation between the percentage of a county which is white and the number of payday lenders - that is, the more white people live in a county, the fewer payday lenders will you find.  Because Alabama is largely a biracial state (with non-white and non-Black minority populations making up a very small percentage of the population), we see a similar (but reversed) correlation between Black population and payday lenders of 0.67 - so more Black people in a county corresponds to more payday lenders. The R code to calculate that correlation is next.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-20"><script type="text/x-sage">lenders <- c(16, 15, 6, 6, 10, 10, 14, 82, 9, 14, 5, 23, 9, 51, 33, 9, 8, 15, 9, 17)
+percent.black <- c(8.8, 21.4, 1.1, 0.8, 20.9, 15, 26.5, 42.6, 10, 22.8, 12.5, 24.5, 2.1, 35.1, 55.3, 11.8, 9.2, 11.2, 34, 30.4)
+cor(lenders,percent.black)
+</script></pre>
+<p id="p-775">When we see a correlation like this, as we discussed before, we need to remember that it's not proof of a cause - just evidence.  One thing we should always be thinking about is the possibility of <em class="emphasis">confounding</em>.  Confounding is when another factor we're not thinking about causes a change in our data.  For example, here, poverty could be a confounding factor.  Because of the deep legacy of racial inequality in the United States, Black people are more likely to live in poverty.  Could the correlation between counties with higher Black populations and payday lenders actually be because those counties are poorer?  Let's look and see if there is a correlation between median income and the number of payday lenders.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-21"><script type="text/x-sage">lenders <- c(16, 15, 6, 6, 10, 10, 14, 82, 9, 14, 5, 23, 9, 51, 33, 9, 8, 15, 9, 17)
+median.income <- c(48378, 39169, 37287, 38445, 53328, 34264, 40409, 43959, 41908, 45043, 47999, 56839, 36197, 39691, 41807, 45051, 51859, 65728, 31547, 41139)
+cor(lenders,median.income)
+</script></pre>
+<p id="p-776">The correlation here is 0.02, extremely close to 0.  Remember that a correlation of 0 means that there is no relationship between the two data sets - that when one increases, the other is equally likely to increase or decrease.  So median income doesn't predict the number of payday lenders nearly as well as race.</p>
+<p id="p-777">In the exercises, we'll consider another possible confounding factor - population.  Is it possible that the counties with larger Black populations just have more people, and thus more payday lenders?</p></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.8.2</span> <span class="title">We have to charge those rates, because of the risk!</span>
+</h3>
+<p id="p-778">The second argument made for why payday loans are "fair" is that the lenders are taking a large risk by making the loans - so they should be entitled to charge high interest rates. One question here - which we won't focus on - is whether it is fair to charge interest at all, or if our society should have a more effective way of providing capital to those who lack it. <a class="external" href="https://www.kiva.org/" target="_blank">Kiva</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-98" id="fn-98"><sup> 3 </sup></a> is a non-profit organization that provides loans without interest worldwide, for example.  But even working within the existing framework of capitalism, where any money borrowed must be repaid with interest, we can ask the question of what level of interest is fair.</p>
+<p id="p-779">Let's look at how much money payday lenders are making on loans, through the lens of expected value.  In 2015, the Center for Responsible Lending (CRL) found that 46% of all payday loan borrowers <em class="emphasis">defaulted</em> on their loans within two years <a href="" class="xref" data-knowl="./knowl/biblio-crl-defaults.html" title="Bibliographic Entry 6.11.1.112: Payday Mayday:Visible and Invisible Payday Lending Defaults">[6.11.1.112]</a>.  A default on a loan occurs when the lender is unable to meet the terms of the loan. While this doesn't necessarily mean that they didn't pay the loan back (in fact, the CRL found that 66% of those defaulting eventually paid their loans back in full, plus any fees that they would have paid for defaulting, like late fees), it does mean that the lender is losing some money on the investment.  The same study found that 20% of loans are <em class="emphasis">charged off</em> within two years, meaning that the lender gives up on collecting the debt. Again, this doesn't mean they lose all of their money, since the loans are then usually sold to a debt collector who tries to collect some or all of the money, but they do lose much of their investment in this case.</p>
+<p id="p-780">Obviously, these situations are very complicated, and there are a lot of possible results, so as we did before, we'll consider a simplified version.</p>
+<p id="p-781">Let's assume that 20% of the time, the lender loses everything (the loan is charged off).  26% of the time (in the other defaults), they get paid back the full value of the loan, plus the interest, plus late fees.  In the remaining 54% of cases, the lender pays back the loan in full.</p>
+<p id="p-782">In a 2014 report, the Consumer Financial Protection Bureau (CFPB) found that the median payday loan sequence is repaid after one month <a href="" class="xref" data-knowl="./knowl/biblio-cfpb-payday-lending-report.html" title="Bibliographic Entry 6.11.1.113: CFPB Data Point: Payday Lending">[6.11.1.113]</a>.  So in our scenario above, there are 3 possibilities - 20% of the time, the lender loses everything; 26% of the time, they get back the loan, plus the interest and late fees; and 54% of the time they get their loan back plus interest.</p>
+<p id="p-783">Let's say someone borrows $300 for one month in California at a 460% interest rate.  The late fee for a defaulting lender is $25. How much money should the payday lender expect to make off of them?</p>
+<p id="p-784">First we need to calculate the interest paid, using the simple interest formula:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = 300 + 300*4.60*\frac{1}{12} = \$415
+\end{equation*}
+</div>
+<p class="continuation">The borrower ends up paying $415 total, or $115 in interest.</p>
+<p id="p-785">Now we can calculate expected value.  We take each probability and multiply it times the amount that the lender earns (or a negative value, if they lose money).  Then we add them up.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0.20*(-300) + 0.26*(115+25) + 0.54*(115) = \$38.50
+\end{equation*}
+</div>
+<p class="continuation">On average, the lender earns $38.50 on the $300 loan.</p>
+<p id="p-786">Of course, many borrowers end up renewing their loans for much more than a month.  Unlike a borrower who pays back their loan quickly, who may just have a temporary emergency need for money, these borrowers struggle to ever pay back their loan, racking up more fees each time they renew the loan.</p>
+<p id="p-787">What if we look at the exact same scenario, but the borrower borrows the money for a year?  Then they will pay back a total of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = 300 + 300*4.60*1 = \$1680
+\end{equation*}
+</div>
+<p class="continuation">The borrower ends up paying $1,680 total, so $1,380 in interest.  If they default on the loan, they also end up paying late fee (possibly more than one, but let's assume just one).  We can calculate the expected value for the payday lender:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0.20*(-300) + 0.26*(1380+25) + 0.54*(1380) = \$1050.50
+\end{equation*}
+</div>
+<p class="continuation">For every borrower that pays their loan back after a year of fees, on average, the lender can expect to earn $1050.50!  This illustrates the fundamental mechanic of payday lending - the lenders make more money if they lend to borrowers who can just barely afford to pay the loan back.  They have a vested interest in lending to people who are struggling to get by instead of those who are dealing with an unexpected emergency.</p></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.8.3</span> <span class="title">If we don't lend to them, who will?</span>
+</h3>
+<p id="p-788">This point, of all those made, is the most salient.  Payday lenders exist because for many people with poor credit, there are no other options.  If a borrower has something of value to pawn, they could use a pawn broker - but for people struggling to get by, things of value may be too precious to pawn (the computer that a student uses for school; heirloom jewelry; the car used to get to work).</p>
+<p id="p-789">However, as compelling as this argument might be, it turns out to be false.  Many states have banned payday lending, usually by setting a cap of 36% on annual interest rates.  While this cap may seem high when compared to interest rates on credit cards and other types of loans, it is generally low enough to make payday lending untenable.  In 2017, the Center for Responsible Lending studied states which have passed these kinds of bans, and found that banning payday loans did not significantly impact borrowers' access to credit <a href="" class="xref" data-knowl="./knowl/biblio-shark-free-waters.html" title="Bibliographic Entry 6.11.1.114: Shark‐Free Waters: States are Better Off without Payday Lending.">[6.11.1.114]</a>. Borrowers who would otherwise have used a payday loan, had they been legal, turned to products such as lines of credit, installment loans, loans from religious institutions, and payment plans with creditors.  Because of the high interest rates and predatory fees, researchers found that taking out payday loans actually made consumers more likely to have negative financial outcomes, like declaring bankruptcy.</p>
+<p id="p-790">In the absence of payday lenders, financial institutions like credit unions can fill the gap.  Many credit unions, which are non-profits, offer payday alternative loans to their members.  These loans function much like payday loans, but with interest rates that are much more reasonable.  Removing bad actors like payday lenders creates more space for financial services like these to be successul in our communities.</p></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.8.4</span> <span class="title">What Can We Do?</span>
+</h3>
+<p id="p-791">The payday lending industry has deep pockets and strong connections to maany of the powerful people in this country.</p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-96"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by/1.0</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-97"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-nc/4.0/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-98"><div class="fn"><code class="code-inline tex2jax_ignore">www.kiva.org/</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

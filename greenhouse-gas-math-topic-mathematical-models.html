@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mathematical Models</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="greenhouse-gas-math-topic-data-visualization.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="greenhouse-gas-solving-for-change.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="greenhouse-gas-math-topic-data-visualization.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a class="next-button button toolbar-item" href="greenhouse-gas-solving-for-change.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="active">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="greenhouse-gas-math-topic-mathematical-models"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.7</span> <span class="title">Mathematical Models</span>
+</h2>
+<section class="introduction" id="introduction-32"><p id="p-521">Mathematical models provide a means of capturing how a confluence of variables factor into and effect situations They can also be used to make predictions regarding what is to come.  In this section we examine models that lend insight into global warming and the average global temperature predictions.  We will look at the Green House Effect and explore how to predict temperature increase based on varying amounts (distributions) of certain greenhouse gasses.  The main green house gasses are carbon dioxide, methane, and nitrous oxide.  Each has its own impact on temperature increase dependent on a combination of qualities including lifetime, abundance, and radiative capacity.  Units and other measures are often defined to capture how a confluence of qualities effect a particular inpact.  Global Warming Potential (GWP) and Global Temperature Potential (GTP) are two such examples that will also examine in this section.</p></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.7.1</span> <span class="title">The Green House Effect</span>
+</h3>
+<p id="p-522">The overarching idea of the Green House effect is that energy in the form of radiation enters the atmosphere  ("the green house") and while some of the radiation escapes, a percentage of it gets trapped.  This trapped radiation is trapped energy or heat which results in increasing the ambient temperature.  The percentage of energy that gets trapped and the resulting temperature increase depends on the molecular make up of the atmosphere.</p>
+<p id="p-523">Green House gasses are gasses that trap energy.  Some of the gasses such as water vapor (<span class="process-math">\(H_20\)</span>) are necessary for maintaining a stable temperature warm enough to supports life.   However, growing amounts of other Green House gasses such as carbon dioxide (<span class="process-math">\(CO_2 \)</span> ), nitrious oxide (<span class="process-math">\(N_2O\)</span> ), and methane <span class="process-math">\((CH_4)\)</span> have the effect of increasing the temperature potentially beyond livable conditions.  How much energy gets trapped the depends on the molecular make up of the atmosphere.</p>
+<p id="p-524">In this section we will work through a simplified mathematical model with the goal of building intuition for how each compnent plays a role in the system.</p>
+<article class="definition definition-like" id="definition-13"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Blackbody.</span>
+</h4>
+<p id="p-525">When electromagnetic radiation is incident upon an object, some of the radition is absorbed while some is reflected.  The specific proportions that are absorbed and radiated depend on the  properties of the object and whether it is in thermodynamic equlibrium with the surrounding evironment.  A  <em class="alert">blackbody</em> is an perfect object in the sense that it abosorbs <em class="emphasis">all</em> the radiation incident upon it and emits radiation depending solely on its temperature. </p></article><p id="p-526">There are two important properties of blackbodies that we will rely on in our modeling. One is that blackbodies are "perfect" emitters.</p>
+<ul class="disc">
+<li id="li-341"><p id="p-derived-li-341">Not only is the amount of radiation emitted dependent only on temperature but also, for a fixed temperature, blackbodies emit at the maximal energy level.  More specifics of this radiation are described below.</p></li>
+<li id="li-342"><p id="p-derived-li-342">Blackbodies emit radiation isotropically, meaning the radiation is equally dispersed in all directions.</p></li>
+</ul>
+<article class="definition definition-like" id="definition-14"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Blackbody Radiation.</span>
+</h4>
+<p id="p-527"> A blackbody in thermodynamic equilibrium (i.e with constant uniform temperature) emits electromagnetic radiation at a spectrum of wavelengths determined solely by the temperature of the body. The emission brom blackbodies is called <em class="alert">blackbody radiation</em> .</p>
+<p id="p-528">Blackbodies emit different amounts of energy at different wavelengths.  How much radiation a blackbody emits at each wavelength is called the <em class="alert">blackbody spectrum</em> and is determined by Plank's law.</p></article><p id="p-529">Below is a graph showing the blackbody spectrum.  Each curve is the spectrum for blackbody at the indicated temperature.  The temperatures are in Kelvin.  Note that <span class="process-math">\(0^o C \)</span> is <span class="process-math">\(273.15 K\)</span> and <span class="process-math">\(T(^oC) = T(K) - 273.15\)</span> so for high temperatures like <span class="process-math">\(3000 K\)</span> or <span class="process-math">\(2726.85^o C\)</span> the magnitude in degress Kelvin and degrees Celcius are on the order of magnitude.  For reference the sun has a temperature of 5778 Kelvin</p>
+<figure class="figure figure-like" id="figure-81"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/black_body.png" class="contained" alt=" This is a graph of the blackbody spectrum depicting the amount of radiation emmitted at each wavelength for blackbodies at temperatues of 3,000 Kelvin, 4,000 Kelvin, and 5000 Kelvin.  Each curve has a single peak and is skewed left.  At the temerature increases, the peak of the curve shifts left, occuring at shorter wavelenghts.  The wavelengths in the UV spectrum (0.01 to 0.38 \(\mu m \)) are indicated by a vertical rectangle.  The blackbody at 3000 Kelvin peaks in intensity at about 0.97 \(\mu m \) (in the near infrared).  The blackbody at 4000 Kelvin peaks in intesity at about 0.725  \(\mu m \) (visible but slightly too long for red).  The blackbody at 5000 Kelvin peaks in intensity at 0.58 \(\mu m \) (visible green light)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.3<span class="period">.</span></span><span class="space"> </span>This graph depicts the blackbody spectrum showing the intensity of emission versus wavlength for blackbodies at temperatures of 3000, 4000, and 5000 Kelvin.</figcaption></figure><p id="p-530">Very few objects are perfect blackbodies.  However many are close enough in the sense that assuming blackbody radiation in calculations yeilds results that lend an accurate perspective. Of course the closer an object is to being a blackbody, the more acurate the calculations will be.  For our models we will need the relationship between the amount of radiation emitted by a blackbody and its temperature. The Stefan-Boltzmann law gives this relationship and states that the total energy, <span class="process-math">\(J \)</span> emitted per unit area per unit time by a blackbody is directly proportional to the fourth power of its temperature.  The units are terms joules per second per square meter and are denoted <span class="process-math">\(j/sm^2\)</span> .  So <span class="process-math">\(J \propto T^4 \)</span> or <span class="process-math">\(J =\sigma T^4  j/s m^2\)</span>   where <span class="process-math">\(\sigma = 5.67 \times 10^{-8} \)</span> with units of <span class="process-math">\({W\,m^{-2}\,K^{-4}}  \)</span> is the Stefan-Boltzman constant. </p>
+<p id="p-531">The radiative bodies that will play a role in our models are the Sun, Earth, and layers of the atmosphere.  In our calculations we will assume that the Sun and Earth radiate as perfect blackbodies.  The layers of the atmosphere are not close enough to perfect blackbodies so we will take them to be what is called <em class="alert">graybodies</em>.</p>
+<article class="definition definition-like" id="definition-15"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Graybody.</span>
+</h4>
+<p id="p-532">The term graybody refers to an imperfect blackbody in the sense that it absorbs only a propotion of the incident radiation.  Graybodies can be more reflective of reality and adjusting for the lower absorption rate is a matter of scaling by what is called the emissivity. </p></article><article class="definition definition-like" id="definition-16"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Emissivity.</span>
+</h4>
+<p id="p-533">The <em class="alert">emissivity, <span class="process-math">\(\epsilon \)</span></em> of a radiating object is the ratio of the amount of radiation the object emits compared to amount of radiation a blackbody at the same temperature, emits. </p></article><p id="p-534">The emissivity is a proportion and thus dimensionless.</p>
+<article class="exercise exercise-like" id="exercise-62"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-62"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-62"><article class="exercise exercise-like"><p id="p-535">The emissivity ranges between which two values?</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-11" id="hint-11"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like">Think about the extremem cases.  What is the most incident radiation an object can abosorb and what is the least as compared to that of a blackbody?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-11" id="answer-11"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like">The emissivity ranges bewtween 0 and 1 inclusive.</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-63"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-63"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.7</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-63"><article class="exercise exercise-like"><p id="p-536">Interpret the meaning of a radiating body with the minimal and the maximal emissivity.  Why does this make sense?</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-12" id="hint-12"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like">What does it mean for the emmissivty ratio to be equal to 0 in terms of how much radiation it absorbs? What does it mean for the ration to be eqaul to 1 in terms of how much radiation it absorbs.  What does this tell you about the type of object?</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-12" id="answer-12"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like">When the emissivity of a radiating body is 0, a radiating body aborbs none of the incent radiation and is thus a perfect reflector.  When the emissivity is 1, a radiating body absorbs as much incedent radiation as a blackbody.  Namely it aborbs all the incident radiation and is thus a perfect blackbody.</div></div></article></div>
+<p id="p-537">A graybody that absorbs only a proportion of incident radiation also emits a proportion of the blackbody radiation.  For our models we assume the proportion absorbed is the same as the proportion emitted.  This absorption/emission propotion is exactly the emissivity of the object. So, for a graybody at temperature, <span class="process-math">\(T\text{,}\)</span> with emissivity <span class="process-math">\(\epsilon\)</span> the total energy, <span class="process-math">\(J\text{,}\)</span> emitted per unit area per unit time is <span class="process-math">\(J =\epsilon\sigma T^4 j/sm^2 \text{.}\)</span></p>
+<article class="exercise exercise-like" id="exercise-64"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-64"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-64"><article class="exercise exercise-like"><p id="p-538">What is the amount of radiation, <span class="process-math">\(J \text{,}\)</span> emitted by radiating bodies with minimal and maximal emissivity.  Why does this make sense?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-13" id="answer-13"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-13"><div class="answer solution-like">When the emissivity of a radiating body is 0, the body emits <span class="process-math">\(J = \epsilon \sigma T^4 = 0 j/sm^2  \text{.}\)</span>  So a body that absorbs no incident radiation also emits no radiation.  When the emissivity is 1, the body emits <span class="process-math">\(J = \epsilon \sigma T^4 = \sigma T^4  j/sm^2\)</span> which matches that of a</div></div></article></div></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.7.2</span> <span class="title">Modeling the Green House Effect</span>
+</h3>
+<section class="introduction" id="introduction-33"><p id="p-539">Our goal is not to create a perfect model that caputes every physical detail but rather invoke some simple mathematics so that we can view the conceptual model through an analytical lense.  In the process we will introduce and engage with the mathematical thought that goes into modeling.  We will work our way up step by step each time making a single generalization reflecting a bit more physical reality.</p>
+<p id="p-540">There are three major players in our series of models: our Sun, the Earth, and the Atmosphere.</p>
+<p id="p-541">The Sun radiates energy in all directions.  Some of the Sun's energy is reflected by the atomosphere and the rest reaches the Earth.  In our models, we will assume that the amount of solar energy reaching the Earth is fixed.  We will deonte this value by <span class="process-math">\(Q\text{.}\)</span>  However, in reality, the amount of solar energy reaching Earth is starting to increase. This increase is caused by a decrease in <em class="alert">albedo</em>.  Albedo, denoted <span class="process-math">\(\alpha \text{,}\)</span> is the proportion of solar energy that is reflected by the atmosphere.   Melting ice caps, catalyzed by global warming, are responsible for the decrease in albedo.  While we will not take the changing albedo into account, doing so could make a great extension project.</p>
+<p id="p-542">We will denote the amount of energy the Earth radiates by <span class="process-math">\(J_E \text{.}\)</span> For the purpose of our models we will take the Earth to be a blackbody.  By the Stefan-Boltzmann law, <span class="process-math">\(J_E \propto T_E^4 \)</span> or <span class="process-math">\(J_E =\sigma T_E^4  j/s m^2\)</span> where <span class="process-math">\(T_E \)</span> is the temperature of Earth's surface.</p>
+<p id="p-543">We will be treating the atmosphere as a graybody.  Initially we will take the atmosphere to be a single body.  We wil denote the amount of energy that radiates out from the atmosphere as <span class="process-math">\(J_a \text{.}\)</span>  As a graybody, <span class="process-math">\(J_a \propto T_a^4 \)</span> and <span class="process-math">\(J_a=\epsilon_a \sigma T_a^4  j/s m^2\)</span> where <span class="process-math">\(T_a \)</span> is the temperature of the atmosphere and <span class="process-math">\(\epsilon_a \)</span> is the emissivity of the atmosphere.  Recall that as graybody, the atmosphere also aborbs only a proportion, <span class="process-math">\(\epsilon_a \text{,}\)</span> of radiation incidident upon it.</p>
+<p id="p-544">One key assumption is that all compents are equilibrium.</p></section><section class="subsubsection" id="subsubsection-19"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.7.2.1</span> <span class="title">First Model: one level of atmosphere</span>
+</h4>
+<p id="p-545">In this model we have our Sun, the Earth's surface, and the atmosphere.  Solar energy reaches Earth's surface.  The Earth   radiates out engery as a blackbody.  The atmosphere absorbs a proportion, <span class="process-math">\(\epsilon_a \text{,}\)</span> of energy radiated by the earth and also radiates out energy as a graybody. <figure class="figure figure-like" id="figure-82"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/one_layer_model.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.9<span class="period">.</span></span><span class="space"> </span>The Sun, Earth's surface, and atmosphere all radiate out energy as well as absorb energy from the other bodies.</figcaption></figure></p>
+<p id="p-546">In the diagram above, each arrow starts at a radiating body and arrives to an absorbing body.</p>
+<p id="p-547">Let's recall our variables.</p>
+<ul class="disc">
+<li id="li-343"><p id="p-derived-li-343"><span class="process-math">\(Q \)</span> is the amount of solar energy reaching Earth's surface.</p></li>
+<li id="li-344"><p id="p-derived-li-344"><span class="process-math">\(J_E\)</span> is the energy radiated per unit area by Earth surface.</p></li>
+<li id="li-345"><p id="p-derived-li-345"><span class="process-math">\(J_a \)</span> is the energy radiated per unit area by the atmosphere.</p></li>
+</ul>
+<p id="p-548">Both the Earth's surface and the atomosphere radiate isotropically (i.e equally in all directions).  We capture this in our model by assuming half of the energy radiated by the atmosphere escapes out while half radiates back towards the earth. Since the Earth is a lower physical boundary in our model, we assume all the earth's radiation moves outwards and reaches the atmosphere.   Let's include radiation labels in out diagram. <figure class="figure figure-like" id="figure-83"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/one_layer_label.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.7.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure></p>
+<p id="p-549">Recall that our system involving the Sun, Earth, and atmosphere is in a state of equilibrium.  This means the amount of radiation absorbed by each body is equal to the amount radiation that body emits. We can write out a set of equilibrium equations.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+\amp \amp\text{ absorbed} =  \text{ emitted} \\
+\amp \amp \\
+Earth: \amp \amp Q + J_a  =  J_E \\
+\amp \amp \\
+atmosphere: \amp \amp \epsilon_a J_E = 2J_a
+\end{align*}
+</div>
+<p class="continuation"> Now let's use the Stefan-Boltzman law to write the radiation <span class="process-math">\(J_E\)</span> and <span class="process-math">\(J_a\)</span> in terms of temperature. With <span class="process-math">\(J_a=\epsilon_a \sigma T_a^4 ~ j/s m^2 \)</span> and  <span class="process-math">\(J_E = \sigma T_E^4 j/sm^2 \)</span> the equations become</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+\begin{align*}
+Earth: \amp\amp Q +  \epsilon_a \sigma T_a^4   =  \sigma T_E^4 \\
+\amp \amp \\
+atmosphere: \amp \amp \epsilon_a\sigma T_E^4 = 2\epsilon_a \sigma T_a^4
+\end{align*}
+</div>
+<p class="continuation">What we really want to understand is how the emissivity of the atmosphere <span class="process-math">\(\epsilon_a \text{,}\)</span> affects the temperatures of the Earth and the atmosphere since emissivity is the link between greenhouse gasses and temperature increas. The higher the emissivity, <span class="process-math">\(\epsilon_a \text{,}\)</span> the more radiation our atmospher absorbs or traps. The absorption of radiation is due to molecules in the atmosphere and higher concentrations of greenhouse gasses push up <span class="process-math">\(\epsilon_a \text{.}\)</span></p>
+<p id="p-550">First use the "atmosphere" equation to relate the termperatures of the Earth and atmosphere. Simplifying the last "atmosphere" equation we see that the temperature of the Earth is related to that of the atmosphere by  <span class="process-math">\(T^4_E = 2 T^4_a \)</span> or</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
+\begin{align*}
+T_e = \sqrt[4]{2}T_a \phantom{lslsls} \amp or \amp T_e = 1.19T_a  
+\end{align*}
+</div>
+<p class="continuation">Now we use the "earth" equation to write <span class="process-math">\(T_e \)</span> and <span class="process-math">\(T_a\)</span> in terms of the know quatities,Q and <span class="process-math">\(\sigma \text{,}\)</span> and the emissivity <span class="process-math">\(\epsilon_a \text{.}\)</span></p>
+<p id="p-551">Substituting <span class="process-math">\(T^4_E = 2T^4_a \)</span> into the "earth" equation we have <span class="process-math">\(Q + \epsilon_a\sigma T_a^4 = 2\sigma T^4_a \)</span> .</p>
+<p id="p-552">Solving for <span class="process-math">\(T_a^4 \)</span> yields <span class="process-math">\(T^4_a = \frac{Q}{\sigma(2-\epsilon_a)}\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-4">
+\begin{align*}
+T^4_a  =  \frac{Q}{\sigma(2-\epsilon_a)} \phantom{a} \amp or \amp \phantom{a} T_a = \left(\frac{Q}{\sigma(2-\epsilon_a)}\right)^{\frac{1}{4}} \phantom{a} K \\
+\amp \amp \\
+T^4_E =  \frac{2Q}{\sigma(2-\epsilon_a)} \phantom{a} \amp or \amp \phantom{a} T_E  = \left(\frac{2Q}{\sigma(2-\epsilon_a)}\right)^{\frac{1}{4}} \phantom{a} K 
+\end{align*}
+</div>
+<p class="continuation">Let's plug in the values for the constants.</p>
+<ul class="disc">
+<li id="li-346"><p id="p-derived-li-346"><span class="process-math">\(\displaystyle Q = 239.2 W ^*\)</span></p></li>
+<li id="li-347"><p id="p-derived-li-347"><span class="process-math">\(\displaystyle \sigma = 5.67 \times 10^{-8} {W\,m^{-2}\,K^{-4}} \)</span></p></li>
+</ul>
+<p class="continuation"><span class="process-math">\(^*\)</span>Note:  (<span class="process-math">\(Q = \frac{S}{4}(1-\alpha)\)</span>  with the solar constant <span class="process-math">\(S = 1367 Wm^{-2} \)</span> and albedo <span class="process-math">\(\alpha = 0.3\)</span>)</p>
+<p id="p-553">So our equations become</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-5">
+\begin{align*}
+T_a  =  \frac{254.9}{(2-\epsilon_a)} \phantom{a} K  \phantom{a} \amp  and \amp \phantom{a} T_E  =  \frac{303.3}{(2-\epsilon_a)} \phantom{a} K
+\end{align*}
+</div>
+<article class="exercise exercise-like" id="exercise-65"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-65"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.11</span><span class="period">.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-65"><article class="exercise exercise-like"><p id="p-554">What happens to <span class="process-math">\(T_E\)</span> and <span class="process-math">\(T_a \)</span> as <span class="process-math">\(\epsilon_a\)</span> increases?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-14" id="answer-14"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-14"><div class="answer solution-like">Emissivity ranges from 0 to 1. So when <span class="process-math">\(\epsilon_a\)</span> increases <span class="process-math">\(T_E\)</span> and <span class="process-math">\(T_a \)</span> both increase since the denominator decreases.</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-66"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-66"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.12</span><span class="period">.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-66"><article class="exercise exercise-like"><p id="p-555">Based on the possible values for <span class="process-math">\(\epsilon_a\)</span> what are the possible temperature ranges for <span class="process-math">\(T_E\)</span> and <span class="process-math">\(T_a \)</span> ?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-15" id="answer-15"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-15"><div class="answer solution-like">Emissivity ranges from 0 to 1. <span class="process-math">\(T_a \)</span> ranges from 127.45 to 254.9 K.  When <span class="process-math">\(\epsilon_a = 0 \text{,}\)</span> <span class="process-math">\(T_a \)</span> is at its minimum of 127.45 K and when  <span class="process-math">\(\epsilon_a = 1 \text{,}\)</span> <span class="process-math">\(T_a \)</span> is at its maximum of 254.9 K.  <span class="process-math">\(T_E \)</span> ranges from 151.65 to 303.3 K.</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-67"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-67"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.13</span><span class="period">.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-67"><article class="exercise exercise-like"><p id="p-556">What happens to the rate of atmospheric absorption as <span class="process-math">\(\epsilon_a\)</span> increases ?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-16" id="answer-16"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-16"><div class="answer solution-like">It's increasing.</div></div></article></div>
+<p id="p-557">Currently the sufrace temerpature of the Earth is about <span class="process-math">\(15.2 ^{o}C\text{.}\)</span>  In Kelvin this is <span class="process-math">\(T_E = 288.3 K\text{.}\)</span>  If we plug this temperature into our equation above  we can use our model to predict the current atmospheric emissivity.</p>
+<article class="exercise exercise-like" id="exercise-68"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-68"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.14</span><span class="period">.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-68"><article class="exercise exercise-like"><p id="p-558">Take the current temperature of the earth to be <span class="process-math">\(T_E = 288.3 K \text{.}\)</span> What does out model predic <span class="process-math">\(\epsilon_a\)</span> is?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-17" id="answer-17"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-17"><div class="answer solution-like">Solving for <span class="process-math">\(\epsilon_a \)</span> we find <span class="process-math">\(\epsilon_a = 2- \left( \frac{303.3 }{T_E}  \right)\text{.}\)</span>  So for <span class="process-math">\(T_E = 288.3  K \text{,}\)</span> <span class="process-math">\(\epsilon_a = 0.947 \)</span><span class="process-math">\(\epsilon_a = 0.78 \)</span>
+</div></div></article></div>
+<p id="p-559">For the current Earth temperature of 288.3 K or <span class="process-math">\(15^oC\text{,}\)</span> our model estimates <span class="process-math">\(\epsilon_a\)</span> as  0.947.  The actual value of <span class="process-math">\(\epsilon_a \text{,}\)</span> accoding to  , is predicted to be <span class="process-math">\(\epsilon_a = 0.78 \text{.}\)</span> In the next section you will have a chance to incorporate more details and develop a more presice model.  In the meantime,  while our model is somewhat off, we can still look at how a change in emissivity due to an increase in green house gasses effects the Earth's temperature.</p>
+<p id="p-560">According to  if the amount of carbon dioxide in the atmosphere doubles , it will cause the atmospheric emissivity to increase by 0.019.</p>
+<p id="p-561">Let's use our model to see the what is effect of an increase of 0.019 in emissivity (and thus in doubling the amount of carbon dioxide in the atmosphere) on the Eath's temperature. We have two options for using our model to predict the change in temperature.</p>
+<ul class="disc">
+<li id="li-348"><p id="p-derived-li-348">We can use the actual value of <span class="process-math">\(T_E = 288.3 \)</span> and our predicted value of 0.947 for <span class="process-math">\(\epsilon_a\)</span></p></li>
+<li id="li-349"><p id="p-derived-li-349">We can use the actual value of 0.78 for <span class="process-math">\(\epsilon_a\)</span> and the current temperature predicted by our model for <span class="process-math">\(T_E \)</span></p></li>
+</ul>
+<article class="exercise exercise-like" id="exercise-69"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-69"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.15</span><span class="period">.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-69"><article class="exercise exercise-like"><p id="p-562">Use the actual value of 288.3 K for <span class="process-math">\(T_E \)</span> and the our model's predition of 0.947 for <span class="process-math">\(\epsilon_a\)</span> . If the amount of carbon in the atmosphere were to double today so that <span class="process-math">\(\epsilon_a\)</span> would increase by 0.019, use our model to determine the increase in the Earth's temperature.  In the atmosphere's temperature.</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-18" id="answer-18"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-18"><div class="answer solution-like">
+<span class="process-math">\(\epsilon_a\)</span> would increase from 0.947 to 0.966 and our model predeicts that the Earth's temperature <span class="process-math">\(T_E\)</span> will increase <span class="process-math">\(5^o\)</span> from 288.3 K  to  293.3 K  or from  <span class="process-math">\(15.3^oC\)</span> to <span class="process-math">\(20.3^oC\)</span>
+</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-70"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-70"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.7.16</span><span class="period">.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-70"><article class="exercise exercise-like"><p id="p-563">Use the actual value of 0.78 for <span class="process-math">\(\epsilon_a\)</span> and the current temperature predicted by our model for <span class="process-math">\(T_E \text{.}\)</span>  If the amount of carbon in the atmosphere were to double today, <span class="process-math">\(\epsilon_a\)</span> would increase from 0.019 from 0.78 to 0.80.  According to our model, what is the increase in the Earth's temperature?  In the atmosphere's temperature?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-19" id="answer-19"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-19"><div class="answer solution-like">According to our model <span class="process-math">\(T_E \)</span> would increase from 248.6 K  to 252.6 K  or from <span class="process-math">\(11.6^o C \)</span> to <span class="process-math">\(15.6 ^o C \)</span>  so would increase <span class="process-math">\(4^oC\text{.}\)</span>  <span class="process-math">\(T_a \)</span> would increase from</div></div></article></div>
+<p id="p-564">In the exercises above you determined that if the amount of carbon dioxide in the atmosphere were to double, the Earth's temperature would increase <span class="process-math">\(4^o\)</span> or <span class="process-math">\(5^o\)</span> depending on if we used the actual value for earth's temperature or atmosphe's emissivity and used our model to predict the emissivity or temperature respectively.</p>
+<p id="p-565">Let's compare our results to those stated in the literature.  According to , the Earth's temperature is currently 288.3 K or <span class="process-math">\(15.2^oC \)</span> and the atmospheric emissivity is <span class="process-math">\(\epsilon_a = 0.78 \text{.}\)</span>  If the amount of carbon dixoide in the atmosphere were to double <span class="process-math">\(\epsilon_a \)</span> is predicted to increase from 0.78 to 0.80 which in turn would cause the Earth's temperature to increase <span class="process-math">\(1.2^o\)</span> from 288.3 K (<span class="process-math">\(15.2^oC\)</span>)  to 289.5 K (<span class="process-math">\(16.4^oC \)</span>).</p>
+<p id="p-566">Our model is not that far off and while our model is not precise it allows us to see and feel the effect of doubling the level of carbon dioxide in the atmosphere.  However, when it comes to climate change and predicting temperature increase we do want to experts to have a smaller margin of error.</p>
+<p id="p-567">Now that we have developed some analytical intuition for the greenhouse effect, we are ready for the next step.  We will build on our current model, taking into accout other physical factors that will hopefully result is more presision.</p></section></section></section></div></main>
+</div>
+</body>
+</html>

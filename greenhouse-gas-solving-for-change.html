@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Solving for Change</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="greenhouse-gas-math-topic-mathematical-models.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="payday-loans.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="greenhouse-gas-math-topic-mathematical-models.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="greenhouse-gas.html" title="Up">Up</a><a class="next-button button toolbar-item" href="payday-loans.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="active">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="internal">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="greenhouse-gas-solving-for-change"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.8</span> <span class="title">Solving for Change</span>
+</h2>
+<section class="introduction" id="introduction-34"><p id="p-568">How can the mathematics we've learned help us to understand the issue of greenhouse gas emissions better? And how can it help us find solutions and areas to focus our energy?</p>
+<p id="p-569">We're going to use our mathematics knowledge to try to answer three questions: Who is responsible for greenhouse gas emissions, what are the strategies for reducing emissions, and what are the most effective ways for us to combat climate change?</p></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.8.1</span> <span class="title">Who is responsible for greenhouse gas emissions?</span>
+</h3>
+<p id="p-570">The question of responsibility for greenhouse gas emissions has emerged as a major one in recent years. The Kyoto Protocol, a 1997 treaty, and the Paris Climate Accords, in 2016, sought to set targets for individual nations to reduce their greenhouse gas emissions.  These treaties approached climate change from the perspective of shared responsibility, in a historical sense.  Figure <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-figure-cumulative-co2-emissions-region.html" title="Figure 5.8.1">Figure 5.8.1</a> shows how this responsibility for global emissions has changed over time in a <em class="emphasis">stacked 100% line graph</em>.  A stacked 100% line graph is like a pie chart stretched out over time - each vertical "slice" of the graph represents the percentage that that region contributed to global greenhouse gas emissions in that year.  You can see in the graph that at the beginning (1750), Europe contributed 100% of the recorded emissions of CO2.  As time goes on, other regions, like the USA, began to contribute more, and in the 20th century emissions from other parts of the world, like China, India, and the remainder of North America, began to grow.</p>
+<figure class="figure figure-like" id="greenhouse-gas-figure-cumulative-co2-emissions-region"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/cumulative-co2-emissions-region.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.8.1<span class="period">.</span></span><span class="space"> </span>Percentage of total global CO2 emissions since 1750. EU-27 contains emissions from the 27 nations of the European Union in 2021, with the United Kingdom and Russia (and other nations) in Europe (excl. EU-27). Image CC-BY 4.0 by Hannah Ritchie <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-co2-historical-data.html" title="Bibliographic Entry 5.11.1.77">[5.11.1.77]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-co2-historical-emissions.html" title="Item 16">Image Description 16</a>.</figcaption></figure><p id="p-571">In the Kyoto Protocol and the Paris Climate Accords, one of the main points of discussion was how much each nation should be asked to cut their emissions. Major emitters today, like China and India, argued that the burden of stopping greenhouse gas emissions should fall mainly on developed nations like the United States, the United Kingdom, and other European countries, because the CO2 that those nations emitted in the past has been and still is a major contributor to climate change. Those nations now enjoy a high quality of life at least in part because of the emissions which they made in the past, but many have substantially reduced their emissions already.  Emissions from Europe &amp; the United States account for 58% of total cumulative emissions since 1750, but only 30% of current emissions in 2019 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-co2-annual-data.html" title="Bibliographic Entry 5.11.1.78">[5.11.1.78]</a>.</p>
+<p id="p-572">Developed nations, on the other hand, argued that emissions reductions must be made by developing nations like China and India, because those nations account for such a large part of current emissions. While Asia accounts for 29% of historical emissions since 1750, in 2019 they accounted for 55% of current emissions, as seen in Figure <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-figure-annual-co2-emissions-region.html" title="Figure 5.8.2">Figure 5.8.2</a>.  Because they account for such a large part of current emissions, substantial reductions in their emissions would make a much larger difference in future CO2 levels.</p>
+<figure class="figure figure-like" id="greenhouse-gas-figure-annual-co2-emissions-region"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="greenhouse-gas/images/annual-co2-emissions-by-region.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.8.2<span class="period">.</span></span><span class="space"> </span>Percentage of annual global CO2 emissions since 1750. EU-27 contains emissions from the 27 nations of the European Union in 2021, with the United Kingdom and Russia (and other nations) in Europe (excl. EU-27). Image CC-BY 4.0 by Hannah Ritchie and Max Roser <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-co2-annual-data.html" title="Bibliographic Entry 5.11.1.78">[5.11.1.78]</a>. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-image-co2-annual-emissions.html" title="Item 17">Image Description 17</a>.</figcaption></figure><p id="p-573">The Paris Climate Accords provided a mechanism for countries to set individual commitments to reducing emissions.  These commitments are reviewed every 5 years, with the overall goal of limiting temperature rise to another <span class="process-math">\(1.5^\circ C\text{.}\)</span> The agreement also seeks to provide funding to developing nations to help them reduce their emissions <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-paris-agreement.html" title="Bibliographic Entry 5.11.1.79">[5.11.1.79]</a>.  This agreement seeks to strike a balance between the responsibility of nations who have already contributed to current greenhouse gas levels, and those nations which are contributing now.</p>
+<p id="p-574">This table contains the emissions for each region in 2019 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-emissions-by-region.html" title="Bibliographic Entry 5.11.1.80">[5.11.1.80]</a> and the population of each region in 2019 <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-world-population.html" title="Bibliographic Entry 5.11.1.81">[5.11.1.81]</a>.  We use data from 2019 so that we can ignore the effects of the pandemic, which caused an (unfortunately, short-term) reduction in CO2 emissions that was unequal across different regions.</p>
+<figure class="table table-like" id="table-37"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.8.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Region</td>
+<td class="l m b0 r0 l0 t0 lines">2019 Emissions</td>
+<td class="l m b0 r0 l0 t0 lines">Population</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">International Transport</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.26*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Oceania</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4.71*10^8\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4.2*10^7\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Asia (excluding China &amp; India)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(7.49*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.8*10^9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">China</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.05*10^{10}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.43*10^9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">India</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.63*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.37*10^9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Africa</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.41*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.31*10^9\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">South America</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.07*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(4.27*10^8\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">North America (excluding USA)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(1.2*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.58*10^8\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">United States</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(5.26*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3.29*10^8\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Europe (excluding EU-27)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.52*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.35*10^8\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">EU-27</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2.91*10^9\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(5.13*10^8\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(3.67*10^{10}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(7.71*10^9\)</span></td>
+</tr>
+</table></div></figure><p id="p-575">What does this table tell us about each region's share of emissions?  Use the data in the table to answer the questions below.</p>
+<article class="exercise exercise-like" id="exercise-71"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-71"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.8.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-71"><article class="exercise exercise-like"><p id="p-576">Which region on this list contributed the most CO2 to the atmosphere in 2019?</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-13" id="hint-13"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-13"><div class="hint solution-like">Remember, in scientific notation, you compare the exponents first and then the digits.</div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-20" id="answer-20"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-20"><div class="answer solution-like">China, with <span class="process-math">\(1.05*10^{10}\)</span> tons of CO2 in 2019, had higher emissions than any other region, because the exponent is larger than any other.</div></div></article></div>
+<article class="exercise exercise-like" id="exercise-72"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-72"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.8.5</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-72"><article class="exercise exercise-like"><p id="p-577">Some countries,like China, argue that their emissions are naturally higher because they have more people.  Compare the United States and China - if you look instead at tons of CO2 per person, which one has higher emissions?</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-14" id="hint-14"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-14"><div class="hint solution-like">To find emissions per person, divide the total emissions by the population.  Be careful to divide correctly with scientific notation!</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">In China, we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1.05*10^{10}\text{ tons }CO_2}{1.43*10^9 \text{ people}} = 7.34\text{ tons }CO_2/\text{ person}
+\end{equation*}
+</div>In the USA, we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{5.26*10^9\text{ tons }CO_2}{3.29*10^8 \text{ people}} = 15.99\text{ tons }CO_2/\text{ person}
+\end{equation*}
+</div>The USA produces more than twice as much <span class="process-math">\(CO_2\)</span> per person as China.</div></div></article></div>
+<p id="p-578">What are the factors that should be used in deciding how much each country should reduce emissions? Should the population of the country play a role in making this decision? What about the overall wealth and how developed the country is? Should larger countries, like India and China, that are still developing be allowed to reduce emissions less than well-developed regions like the USA and Europe?  The effects of global warming are also unevenly distributed, with low-lying, typhoon-prone countries in Oceania and drought-prone &amp; desertifying countries in Africa being hardest hit.  These regions have lower emissions (Oceania's total is skewed up by the presence of Australia and New Zealand, both highly developed countries with higher emissions).  Should they be asked to make the same sacrifices as other nations in terms of cutting emissions, when they will also need to be dealing with the other consequences of global warming?  All of these are questions that mathematics can help us understand, by allowing us to compare the quantities involved, and the consequences of changing those quantities.</p></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.8.2</span> <span class="title">What are the strategies for reducing emissions?</span>
+</h3>
+<p id="p-579">You may have heard of the <dfn class="terminology">carbon footprint</dfn>, a particular individual's contribution to the carbon dioxide in the atmosphere.  The idea of a carbon footprint is that each individual is responsible for their part of the greenhouse gas emission problem, and that they should do their part to help fix it.  The <a class="external" href="https://coolclimate.berkeley.edu/calculator" target="_blank">Cool Climate Calculator</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-75" id="fn-75"><sup> 1 </sup></a> from the University of California at Berkeley is one such carbon footprint calculator.  The Cool Climate Calculator estimates how much carbon you personally produce, from sources such as driving, electricity, and foods you eat.  It then provides suggestions for how you can reduce you carbon footprint, by doing things like driving less, carpooling, buying more efficient appliances, or becoming a vegetarian.</p>
+<p id="p-580">The idea of using carbon footprints to reduce emissions is that if everyone were aware of how much carbon they used, and made small changes, then our overall carbon use would go down.  For example, livestock - animals raised for meat and other food products like milk - are estimated to make up 14.5% of global greenhouse gas emissions <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-livestock.html" title="Bibliographic Entry 5.11.1.82">[5.11.1.82]</a>.  Therefore, if everyone in the world switched to a vegan diet, those emissions would be reduced - though not eliminated, since they would be replaced by the emissions necessary to feed everyone a vegan diet instead.</p>
+<p id="p-581">Of course, getting everyone in the world to switch to a vegan diet would be very challenging.  Individual actions to reduce emissions, like changing diet, buying more fuel-efficient vehicles, and switching to LED light bulbs do have an effect on overall emissions, but that effect is small.  Effective climate change mitigation requires that these changes be made on a much larger scale.</p>
+<p id="p-582">The global pandemic, which shuttered businesses and reduced driving and energy use across the world, reduced carbon emissions into the atmosphere by only 5.4% <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-pandemic.html" title="Bibliographic Entry 5.11.1.84">[5.11.1.84]</a>.  Experts estimate that we would need to reduce emissions by about 10 times that in order to keep global warming to 2 degrees Centigrade above pre-industrial levels. <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-necessary-reduction.html" title="Bibliographic Entry 5.11.1.85">[5.11.1.85]</a>.  If you think about how your life changed during the pandemic, imagine having to make similarly dramatic changes every year for 10 years to get a sense of how much you would need to change your life to solve this problem - and not only would you need to do it, but you would need to get everyone else to agree to do it too.</p>
+<p id="p-583">While the carbon footprint encourages <em class="emphasis">individuals</em> to make change in their own lives, other solutions focus on making broader change across entire countries or across the world.  For example, another way to reduce emissions from livestock production would be to increases taxes and fees on meat production, encouraging people to eat less.  The most effective ways to reduce emissions from driving - estimated to make up 25% of US emissions <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sources-of-emissions.html" title="Bibliographic Entry 5.11.1.83">[5.11.1.83]</a> include requiring cars to have higher gas mileage, increasing the cost of gasoline, and developing better public transit.</p>
+<p id="p-584">By looking at the problem from a mathematical perspective, we can start to get an appreciation for the scale of the problem and which solutions will be most effective at solving it.  The United Nations Environmental Programme has an interactive infographic on a <a class="external" href="https://www.unep.org/interactive/six-sector-solution-climate-change/" target="_blank">Six Sector Solution for Climate Change</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-76" id="fn-76"><sup> 2 </sup></a> which talks about the way that the solutions must balance individual and government action.</p>
+<article class="exercise exercise-like" id="exercise-73"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-73"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.8.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-73"><article class="exercise exercise-like"><p id="p-585">Which sector does the UN identify as the one where emissions can be cut the most? What are some strategies that they suggest to accomplish this?</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">The UN document identifies Energy as the sector where the most change can be accomplished, and suggests repealing policies which benefit the fossil fuel industry, introducing policies to support renewable energy, and reducing individual energy consumption.</div></div></article></div></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.8.3</span> <span class="title">Consequences of Failing to Act</span>
+</h3>
+<p id="p-586">The Intergovernmental Panel on Climate Change (IPCC) has built mathematical models - like the ones we studied in <a href="greenhouse-gas-math-topic-mathematical-models.html" class="internal" title="Section 5.7: Mathematical Models">Section 5.7</a>, but much more complicated - to predict how much global temperatures will rise in the future.  These models are referred to as Representative Concentration Pathways (RPC), because they represent how the concentration of CO<span class="process-math">\(_2\)</span> will change throughout the future <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-rcp.html" title="Bibliographic Entry 5.11.1.87">[5.11.1.87]</a>.  These models range from RCP2.6, in which humans manage to limit global warming to an average of 1.5 degrees Celsius, to RCP4.5 with an increase of 2.4 degrees celsius, RCP6.0 with an increase of 3 degrees, and RCP8.5, in which humans continue to increase emissions as we have been for centuries, with global warming on average of 4.9 degrees Celsius by the year 2100 (and more beyond that).</p>
+<p id="p-587">These mathematical models are built the same way that the ones in <a href="greenhouse-gas-math-topic-mathematical-models.html" class="internal" title="Section 5.7: Mathematical Models">Section 5.7</a> are - using the physical properties of greenhouse gases.  Because they also depend upon assumptions about complicated climatological process, like the role of melting sea ice in cooling the Earth or how the warming sea levels reduce the carbon capacity of plankton in the ocean, the predicted warming can vary greatly in a particular model.  The RCP8.5 model, for example, predicts global warming of 4.9 degrees by 2100, but with a margin of error around 1.3 degrees <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sea-level-rise.html" title="Bibliographic Entry 5.11.1.88">[5.11.1.88]</a>.  This means that the modelers are confident (in this case, 90% confident) that the actual sea level rise in this scenario would be between <span class="process-math">\(4.9 - 1.3 = 3.6\)</span> and <span class="process-math">\(4.9 + 1.3 = 6.2\)</span> degrees Celsius.  This would produce a corresponding global sea rise of 0.53 to 1.78 meters (1.74 to 5.84 feet).</p>
+<p id="p-588">This sea level rise would not be evenly distributed, because colder water is more dense than warm water.  For example, water around Antarctica and Greenland would actually cool, because of the melting ice contributed by a warmer climate.  Water in warmer areas would expand more.  <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-table-sea-level-rise.html" title="Table 5.8.7">Table 5.8.7</a>, from <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sea-level-rise.html" title="Bibliographic Entry 5.11.1.88">[5.11.1.88]</a>, gives lower, median, and upper estimates of the amount of sea level rise that different cities will experience under three scenarios - when warming is limited to 2℃, 4℃, and 5℃ by 2100.</p>
+<figure class="table table-like" id="greenhouse-gas-table-sea-level-rise"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.8.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">City</td>
+<td class="l m b0 r0 l0 t0 lines" colspan="3">2 °C</td>
+<td class="l m b0 r0 l0 t0 lines" colspan="3">4 °C</td>
+<td class="l m b0 r0 l0 t0 lines" colspan="3">5 °C</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Low</td>
+<td class="l m b0 r0 l0 t0 lines">Median</td>
+<td class="l m b0 r0 l0 t0 lines">Upper</td>
+<td class="l m b0 r0 l0 t0 lines">Low</td>
+<td class="l m b0 r0 l0 t0 lines">Median</td>
+<td class="l m b0 r0 l0 t0 lines">Upper</td>
+<td class="l m b0 r0 l0 t0 lines">Low</td>
+<td class="l m b0 r0 l0 t0 lines">Median</td>
+<td class="l m b0 r0 l0 t0 lines">Upper</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bangkok</td>
+<td class="l m b0 r0 l0 t0 lines">0.12</td>
+<td class="l m b0 r0 l0 t0 lines">0.19</td>
+<td class="l m b0 r0 l0 t0 lines">0.32</td>
+<td class="l m b0 r0 l0 t0 lines">0.35</td>
+<td class="l m b0 r0 l0 t0 lines">0.59</td>
+<td class="l m b0 r0 l0 t0 lines">1.17</td>
+<td class="l m b0 r0 l0 t0 lines">0.49</td>
+<td class="l m b0 r0 l0 t0 lines">0.87</td>
+<td class="l m b0 r0 l0 t0 lines">1.91</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Dublin</td>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+<td class="l m b0 r0 l0 t0 lines">0.18</td>
+<td class="l m b0 r0 l0 t0 lines">0.31</td>
+<td class="l m b0 r0 l0 t0 lines">0.28</td>
+<td class="l m b0 r0 l0 t0 lines">0.52</td>
+<td class="l m b0 r0 l0 t0 lines">1.12</td>
+<td class="l m b0 r0 l0 t0 lines">0.36</td>
+<td class="l m b0 r0 l0 t0 lines">0.73</td>
+<td class="l m b0 r0 l0 t0 lines">1.79</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Glasgow</td>
+<td class="l m b0 r0 l0 t0 lines">0.03</td>
+<td class="l m b0 r0 l0 t0 lines">0.11</td>
+<td class="l m b0 r0 l0 t0 lines">0.25</td>
+<td class="l m b0 r0 l0 t0 lines">0.11</td>
+<td class="l m b0 r0 l0 t0 lines">0.38</td>
+<td class="l m b0 r0 l0 t0 lines">0.97</td>
+<td class="l m b0 r0 l0 t0 lines">0.15</td>
+<td class="l m b0 r0 l0 t0 lines">0.54</td>
+<td class="l m b0 r0 l0 t0 lines">1.58</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Guangzhou</td>
+<td class="l m b0 r0 l0 t0 lines">0.12</td>
+<td class="l m b0 r0 l0 t0 lines">0.21</td>
+<td class="l m b0 r0 l0 t0 lines">0.34</td>
+<td class="l m b0 r0 l0 t0 lines">0.36</td>
+<td class="l m b0 r0 l0 t0 lines">0.62</td>
+<td class="l m b0 r0 l0 t0 lines">1.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.51</td>
+<td class="l m b0 r0 l0 t0 lines">0.91</td>
+<td class="l m b0 r0 l0 t0 lines">1.93</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hamburg</td>
+<td class="l m b0 r0 l0 t0 lines">0.17</td>
+<td class="l m b0 r0 l0 t0 lines">0.27</td>
+<td class="l m b0 r0 l0 t0 lines">0.4</td>
+<td class="l m b0 r0 l0 t0 lines">0.42</td>
+<td class="l m b0 r0 l0 t0 lines">0.69</td>
+<td class="l m b0 r0 l0 t0 lines">1.25</td>
+<td class="l m b0 r0 l0 t0 lines">0.56</td>
+<td class="l m b0 r0 l0 t0 lines">0.95</td>
+<td class="l m b0 r0 l0 t0 lines">1.95</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ho Chi Minh</td>
+<td class="l m b0 r0 l0 t0 lines">0.12</td>
+<td class="l m b0 r0 l0 t0 lines">0.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.33</td>
+<td class="l m b0 r0 l0 t0 lines">0.37</td>
+<td class="l m b0 r0 l0 t0 lines">0.62</td>
+<td class="l m b0 r0 l0 t0 lines">1.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.5</td>
+<td class="l m b0 r0 l0 t0 lines">0.9</td>
+<td class="l m b0 r0 l0 t0 lines">1.96</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hong Kong</td>
+<td class="l m b0 r0 l0 t0 lines">0.13</td>
+<td class="l m b0 r0 l0 t0 lines">0.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.32</td>
+<td class="l m b0 r0 l0 t0 lines">0.37</td>
+<td class="l m b0 r0 l0 t0 lines">0.61</td>
+<td class="l m b0 r0 l0 t0 lines">1.18</td>
+<td class="l m b0 r0 l0 t0 lines">0.52</td>
+<td class="l m b0 r0 l0 t0 lines">0.9</td>
+<td class="l m b0 r0 l0 t0 lines">1.9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Jakarta</td>
+<td class="l m b0 r0 l0 t0 lines">0.11</td>
+<td class="l m b0 r0 l0 t0 lines">0.18</td>
+<td class="l m b0 r0 l0 t0 lines">0.3</td>
+<td class="l m b0 r0 l0 t0 lines">0.34</td>
+<td class="l m b0 r0 l0 t0 lines">0.58</td>
+<td class="l m b0 r0 l0 t0 lines">1.12</td>
+<td class="l m b0 r0 l0 t0 lines">0.49</td>
+<td class="l m b0 r0 l0 t0 lines">0.85</td>
+<td class="l m b0 r0 l0 t0 lines">1.8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Kuala Lumpur</td>
+<td class="l m b0 r0 l0 t0 lines">0.11</td>
+<td class="l m b0 r0 l0 t0 lines">0.18</td>
+<td class="l m b0 r0 l0 t0 lines">0.31</td>
+<td class="l m b0 r0 l0 t0 lines">0.33</td>
+<td class="l m b0 r0 l0 t0 lines">0.58</td>
+<td class="l m b0 r0 l0 t0 lines">1.19</td>
+<td class="l m b0 r0 l0 t0 lines">0.47</td>
+<td class="l m b0 r0 l0 t0 lines">0.86</td>
+<td class="l m b0 r0 l0 t0 lines">1.92</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lagos</td>
+<td class="l m b0 r0 l0 t0 lines">0.14</td>
+<td class="l m b0 r0 l0 t0 lines">0.21</td>
+<td class="l m b0 r0 l0 t0 lines">0.34</td>
+<td class="l m b0 r0 l0 t0 lines">0.38</td>
+<td class="l m b0 r0 l0 t0 lines">0.62</td>
+<td class="l m b0 r0 l0 t0 lines">1.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.52</td>
+<td class="l m b0 r0 l0 t0 lines">0.9</td>
+<td class="l m b0 r0 l0 t0 lines">1.92</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">London</td>
+<td class="l m b0 r0 l0 t0 lines">0.12</td>
+<td class="l m b0 r0 l0 t0 lines">0.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.33</td>
+<td class="l m b0 r0 l0 t0 lines">0.3</td>
+<td class="l m b0 r0 l0 t0 lines">0.55</td>
+<td class="l m b0 r0 l0 t0 lines">1.15</td>
+<td class="l m b0 r0 l0 t0 lines">0.38</td>
+<td class="l m b0 r0 l0 t0 lines">0.75</td>
+<td class="l m b0 r0 l0 t0 lines">1.82</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Manila</td>
+<td class="l m b0 r0 l0 t0 lines">0.13</td>
+<td class="l m b0 r0 l0 t0 lines">0.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.34</td>
+<td class="l m b0 r0 l0 t0 lines">0.37</td>
+<td class="l m b0 r0 l0 t0 lines">0.63</td>
+<td class="l m b0 r0 l0 t0 lines">1.22</td>
+<td class="l m b0 r0 l0 t0 lines">0.51</td>
+<td class="l m b0 r0 l0 t0 lines">0.92</td>
+<td class="l m b0 r0 l0 t0 lines">1.99</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">New Orleans</td>
+<td class="l m b0 r0 l0 t0 lines">0.16</td>
+<td class="l m b0 r0 l0 t0 lines">0.24</td>
+<td class="l m b0 r0 l0 t0 lines">0.37</td>
+<td class="l m b0 r0 l0 t0 lines">0.39</td>
+<td class="l m b0 r0 l0 t0 lines">0.63</td>
+<td class="l m b0 r0 l0 t0 lines">1.27</td>
+<td class="l m b0 r0 l0 t0 lines">0.52</td>
+<td class="l m b0 r0 l0 t0 lines">0.88</td>
+<td class="l m b0 r0 l0 t0 lines">2.01</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">New York</td>
+<td class="l m b0 r0 l0 t0 lines">0.2</td>
+<td class="l m b0 r0 l0 t0 lines">0.31</td>
+<td class="l m b0 r0 l0 t0 lines">0.46</td>
+<td class="l m b0 r0 l0 t0 lines">0.48</td>
+<td class="l m b0 r0 l0 t0 lines">0.78</td>
+<td class="l m b0 r0 l0 t0 lines">1.43</td>
+<td class="l m b0 r0 l0 t0 lines">0.64</td>
+<td class="l m b0 r0 l0 t0 lines">1.09</td>
+<td class="l m b0 r0 l0 t0 lines">2.24</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">San Francisco</td>
+<td class="l m b0 r0 l0 t0 lines">0.1</td>
+<td class="l m b0 r0 l0 t0 lines">0.16</td>
+<td class="l m b0 r0 l0 t0 lines">0.3</td>
+<td class="l m b0 r0 l0 t0 lines">0.27</td>
+<td class="l m b0 r0 l0 t0 lines">0.49</td>
+<td class="l m b0 r0 l0 t0 lines">1.15</td>
+<td class="l m b0 r0 l0 t0 lines">0.37</td>
+<td class="l m b0 r0 l0 t0 lines">0.73</td>
+<td class="l m b0 r0 l0 t0 lines">1.87</td>
+</tr>
+</table></div></figure><p id="p-589">The <a class="external" href="https://coastal.climatecentral.org/" target="_blank">Coastal Risk Screening Tool</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-77" id="fn-77"><sup> 3 </sup></a> by Climate Central allows you to see maps of different cities after sea levels have risen. For example, this map shows the <a class="external" href="https://coastal.climatecentral.org/map/12/-74.0854/40.6792/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.2&amp;water_unit=m" target="_blank">New York City area with 2.2m of sea level rise</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-78" id="fn-78"><sup> 4 </sup></a>, the upper limit of the sea level rise estimated in <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sea-level-rise.html" title="Bibliographic Entry 5.11.1.88">[5.11.1.88]</a>.  You can see that large parts of the area are underwater, including Newark and LaGuardia International Airports, Coney Island, and large parts of downtown Manhattan, including the World Trade Center.  The densely populated city of Guangzhou, China, would suffer even more <a class="external" href="https://coastal.climatecentral.org/map/11/113.5688/22.784/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.0&amp;water_unit=m" target="_blank">under the worst-case scenario of 1.99 m of sea level rise</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-79" id="fn-79"><sup> 5 </sup></a>.</p>
+<article class="exercise exercise-like" id="exercise-74"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-74"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.8.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-74"><article class="exercise exercise-like"><p id="p-590">What would London look like with the median sea level rise from 5℃ of global warming?</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like">The median sea level rise from 5℃ of global warming is 0.78m, so we can round to 0.8m.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-591">Putting this into the map, we get the following <a class="external" href="https://coastal.climatecentral.org/map/10/-0.1016/51.5289/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.8&amp;water_unit=m" target="_blank">map of London</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-80" id="fn-80"><sup> 6 </sup></a>.  Substantial parts of South London would be under water, and even more of the port areas east of the city.</p></div></div></article></div>
+<article class="exercise exercise-like" id="exercise-75"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-75"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.8.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-75"><article class="exercise exercise-like"><p id="p-592">The article <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-sea-level-rise.html" title="Bibliographic Entry 5.11.1.88">[5.11.1.88]</a> gives sea level rise figures for 136 coastal cities in Table S2.  Find the median sea level rise in Miami if global warming is 5℃ by 2100.  How does this compare to the median sea level rise if global warming is limited to 2℃ by 2100?</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like">The median sea level rise with 5℃ is 0.86 m.  With 2℃ it is 0.22 m.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
+<p id="p-593">With 0.9 m of sea level rise, substantial parts of Miami Beach and areas around the river will be flooded, as seen in <a class="external" href="https://coastal.climatecentral.org/map/12/-80.1871/25.7679/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.9&amp;water_unit=m" target="_blank">this map of Miami</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-81" id="fn-81"><sup> 7 </sup></a>.</p>
+<p id="p-594">With 0.2 m of sea level rise, only small coastal areas will flood, as seen in <a class="external" href="https://coastal.climatecentral.org/map/13/-80.2073/25.7657/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.2&amp;water_unit=m" target="_blank">this map of Miami</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-82" id="fn-82"><sup> 8 </sup></a>.</p>
+</div></div></article></div>
+<p id="p-595">Of course, all of these sea level rise calculations only account for the level of the sea under normal conditions.  Other factors, like tides and winds, especially the storm surge from hurricanes, can produce temporarily much higher sea levels.  Cities like Miami already experience flooding during high tides, which can reach as high as 1.2 m above current sea level <a href="" class="xref" data-knowl="./knowl/greenhouse-gas-biblio-miami-tides.html" title="Bibliographic Entry 5.11.1.89">[5.11.1.89]</a>.  Global warming will increase the frequency and amplitude of these high tides, making the flooding even worse.</p>
+<p id="p-596">Mathematical models can be used to estimate the storm surge from future storms. Like the rise in sea level, this is very specific to particular areas - in this case, because of the geography that causes storm surge.  The shape of the sea in a particular area can increase flooding in one area and decrease it in others.  A mathematical model of New York harbor in New York City predicts that storm surges from hurricanes, which currently average 2 m, could be 2.75 m on average by 2100 in the RCP4.5 (2.4 ℃ of warming) scenario or over 3 m in the RCP8.6 (5 ℃ of warming) scenario.</p>
+<article class="exercise exercise-like" id="exercise-76"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-76"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.8.10</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-76"><article class="exercise exercise-like"><p id="p-597">Use the maps to see what New York City would look like if it suffered a hurricane with a 3 m storm surge, on top of the median sea level rise from 5 ℃ of global warming.</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like">3 m plus median sea level rise of 1.09 m is 4.09 meters above the current sea level.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">4.1 meters over current sea level would inundate huge portions of the New York City area, as seen in <a class="external" href="https://coastal.climatecentral.org/map/10/-73.9797/40.6979/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=4.1&amp;water_unit=m" target="_blank">this map of New York City</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-83" id="fn-83"><sup> 9 </sup></a>.  All three major airports are underwater, and entire neighborhoods - Downtown, SoHo, Long Island City, Flushing, Jersey City, Hoboken -  would be damaged.</div></div></article></div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-75"><div class="fn"><code class="code-inline tex2jax_ignore">coolclimate.berkeley.edu/calculator</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-76"><div class="fn"><code class="code-inline tex2jax_ignore">www.unep.org/interactive/six-sector-solution-climate-change/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-77"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-78"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/12/-74.0854/40.6792/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.2&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-79"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/11/113.5688/22.784/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=2.0&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-80"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/10/-0.1016/51.5289/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.8&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-81"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/12/-80.1871/25.7679/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.9&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-82"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/13/-80.2073/25.7657/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=0.2&amp;water_unit=m</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-83"><div class="fn"><code class="code-inline tex2jax_ignore">coastal.climatecentral.org/map/10/-73.9797/40.6979/?theme=water_level&amp;map_type=water_level_above_mhhw&amp;basemap=roadmap&amp;contiguous=true&amp;elevation_model=best_available&amp;refresh=true&amp;water_level=4.1&amp;water_unit=m</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

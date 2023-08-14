@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Understanding data</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math for the People">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://web.stevenson.edu/mbranson/math-for-the-people.html" target="_blank"><img src="images/Math_Fist.PNG" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="math-for-the-people.html"><span class="title">Math for the People</span></a></h1>
+<p class="byline">Mark Branson (Editor), Whitney George (Editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="racism-in-policing-big-problem.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="racism-in-policing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="racism-in-policing-bayes-theorem.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="racism-in-policing-big-problem.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="racism-in-policing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="racism-in-policing-bayes-theorem.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="math-for-the-people-front-matter.html" data-scroll="math-for-the-people-front-matter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="instructors-note.html" data-scroll="instructors-note" class="internal">A Note for Instructors</a></li>
+<li><a href="students-note.html" data-scroll="students-note" class="internal">A Note for Students</a></li>
+<li><a href="contributors.html" data-scroll="contributors" class="internal">Contributors</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="abortion.html" data-scroll="abortion" class="internal"><span class="codenumber">1</span> <span class="title">Abortion Access Throughout the United States</span></a><ul>
+<li><a href="abortion-objectives.html" data-scroll="abortion-objectives" class="internal">Objectives</a></li>
+<li><a href="abortion-background.html" data-scroll="abortion-background" class="internal">Understanding the Issue</a></li>
+<li><a href="abortion-cui-bono.html" data-scroll="abortion-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="abortion-big-problem.html" data-scroll="abortion-big-problem" class="internal">Big Problem: Restricting Abortion Access</a></li>
+<li><a href="abortion-simple-logic.html" data-scroll="abortion-simple-logic" class="internal">Simple Logic</a></li>
+<li><a href="abortion-quantifiers.html" data-scroll="abortion-quantifiers" class="internal">Quantifiers</a></li>
+<li><a href="abortion-arguments.html" data-scroll="abortion-arguments" class="internal">Arguments</a></li>
+<li><a href="abortion-defs-assumptions-fallacies.html" data-scroll="abortion-defs-assumptions-fallacies" class="internal">Definitions, Assumptions, and Fallacies</a></li>
+<li><a href="abortion-solving-for-change.html" data-scroll="abortion-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="abortion-reflection.html" data-scroll="abortion-reflection" class="internal">Reading Questions</a></li>
+<li><a href="abortion-exercises.html" data-scroll="abortion-exercises" class="internal">Exercises</a></li>
+<li><a href="abortion-references.html" data-scroll="abortion-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="environmental-racism.html" data-scroll="environmental-racism" class="internal"><span class="codenumber">2</span> <span class="title">Environmental Racism</span></a><ul>
+<li><a href="environmental-racism-objectives.html" data-scroll="environmental-racism-objectives" class="internal">Objectives</a></li>
+<li><a href="environmental-racism-understanding-the-issue.html" data-scroll="environmental-racism-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="environmental-racism-cui-bono.html" data-scroll="environmental-racism-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="environmental-racism-big-problem.html" data-scroll="environmental-racism-big-problem" class="internal">The Big Problem: Environmental Racism</a></li>
+<li><a href="environmental-racism-data-classification.html" data-scroll="environmental-racism-data-classification" class="internal">Data Classification</a></li>
+<li><a href="environmental-racism-choosing-data-visualization.html" data-scroll="environmental-racism-choosing-data-visualization" class="internal">Choosing Data Visualizations</a></li>
+<li><a href="environmental-racism-solving-for-change.html" data-scroll="environmental-racism-solving-for-change" class="internal">Solving for change</a></li>
+<li><a href="environmental-racism-reading-questions.html" data-scroll="environmental-racism-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="environmental-racism-exercises.html" data-scroll="environmental-racism-exercises" class="internal">Exercises</a></li>
+<li><a href="environmental-racism-references.html" data-scroll="environmental-racism-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="fake-news.html" data-scroll="fake-news" class="internal"><span class="codenumber">3</span> <span class="title">Fake News</span></a><ul>
+<li><a href="fake-news-objectives.html" data-scroll="fake-news-objectives" class="internal">Objectives</a></li>
+<li><a href="fake-news-understanding-the-issue.html" data-scroll="fake-news-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="fake-news-cui-bono.html" data-scroll="fake-news-cui-bono" class="internal">Cui Bono – Who Benefits?</a></li>
+<li><a href="fake-news-big-problem.html" data-scroll="fake-news-big-problem" class="internal">Big Problem</a></li>
+<li><a href="fake-news-error-analysis.html" data-scroll="fake-news-error-analysis" class="internal">Error Analysis</a></li>
+<li><a href="fake-news-misleading-graphs.html" data-scroll="fake-news-misleading-graphs" class="internal">Misleading Graphs</a></li>
+<li><a href="fake-news-solving-for-change.html" data-scroll="fake-news-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="fake-news-reading-questions.html" data-scroll="fake-news-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="fake-news-exercises.html" data-scroll="fake-news-exercises" class="internal">Exercises</a></li>
+<li><a href="fake-news-references.html" data-scroll="fake-news-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="gerrymandering.html" data-scroll="gerrymandering" class="internal"><span class="codenumber">4</span> <span class="title">Gerrymandering</span></a><ul>
+<li><a href="gerrymandering-objectives.html" data-scroll="gerrymandering-objectives" class="internal">Objectives</a></li>
+<li><a href="gerrymandering-background.html" data-scroll="gerrymandering-background" class="internal">Understanding the Issue</a></li>
+<li><a href="gerrymandering-cui-bono.html" data-scroll="gerrymandering-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="gerrymandering-big-problem.html" data-scroll="gerrymandering-big-problem" class="internal">Big Problem: Using Mathematics to Determine Fairness</a></li>
+<li><a href="gerrymandering-math-topic-compactness.html" data-scroll="gerrymandering-math-topic-compactness" class="internal">Geometry and Compactness</a></li>
+<li><a href="gerrymandering-math-topic-partisan-gerrymandering.html" data-scroll="gerrymandering-math-topic-partisan-gerrymandering" class="internal">Partisan Gerrymandering</a></li>
+<li><a href="gerrymandering-math-topic-statistics.html" data-scroll="gerrymandering-math-topic-statistics" class="internal">Racial Gerrymandering and Statistics</a></li>
+<li><a href="gerrymandering-math-topic-outlier.html" data-scroll="gerrymandering-math-topic-outlier" class="internal">Outlier Analysis</a></li>
+<li><a href="gerrymandering-solving-for-change.html" data-scroll="gerrymandering-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="gerrymandering-reflection.html" data-scroll="gerrymandering-reflection" class="internal">Reading Questions</a></li>
+<li><a href="gerrymandering-exercises.html" data-scroll="gerrymandering-exercises" class="internal">Exercises</a></li>
+<li><a href="gerrymandering-references.html" data-scroll="gerrymandering-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="greenhouse-gas.html" data-scroll="greenhouse-gas" class="internal"><span class="codenumber">5</span> <span class="title">Greenhouse Gas Emissions</span></a><ul>
+<li><a href="greenhouse-gas-objectives.html" data-scroll="greenhouse-gas-objectives" class="internal">Objectives</a></li>
+<li><a href="greenhouse-gas-background.html" data-scroll="greenhouse-gas-background" class="internal">Understanding the Issue</a></li>
+<li><a href="greenhouse-gas-cui-bono.html" data-scroll="greenhouse-gas-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="greenhouse-gas-big-problem.html" data-scroll="greenhouse-gas-big-problem" class="internal">Big Problem: What is the best way to reduce greenhouse gas emissions?</a></li>
+<li><a href="greenhouse-gas-math-topic-scientific-notation.html" data-scroll="greenhouse-gas-math-topic-scientific-notation" class="internal">Scientific Notation and Number Sense</a></li>
+<li><a href="greenhouse-gas-math-topic-data-visualization.html" data-scroll="greenhouse-gas-math-topic-data-visualization" class="internal">Data Visualization</a></li>
+<li><a href="greenhouse-gas-math-topic-mathematical-models.html" data-scroll="greenhouse-gas-math-topic-mathematical-models" class="internal">Mathematical Models</a></li>
+<li><a href="greenhouse-gas-solving-for-change.html" data-scroll="greenhouse-gas-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="greenhouse-gas-reflection.html" data-scroll="greenhouse-gas-reflection" class="internal">Reading Questions</a></li>
+<li><a href="greenhouse-gas-exercises.html" data-scroll="greenhouse-gas-exercises" class="internal">Exercises</a></li>
+<li><a href="greenhouse-gas-references.html" data-scroll="greenhouse-gas-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="payday-loans.html" data-scroll="payday-loans" class="internal"><span class="codenumber">6</span> <span class="title">Payday Loans</span></a><ul>
+<li><a href="payday-loans-objectives.html" data-scroll="payday-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="payday-loans-background.html" data-scroll="payday-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="payday-loans-cui-bono.html" data-scroll="payday-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="payday-loans-big-problem.html" data-scroll="payday-loans-big-problem" class="internal">The Big Problem: Predatory Lending</a></li>
+<li><a href="payday-loans-interest.html" data-scroll="payday-loans-interest" class="internal">Simple and Compound Interest</a></li>
+<li><a href="payday-loans-risk.html" data-scroll="payday-loans-risk" class="internal">Risk and Credit Scores</a></li>
+<li><a href="payday-loans-correlation.html" data-scroll="payday-loans-correlation" class="internal">Correlation</a></li>
+<li><a href="payday-loans-solving-for-change.html" data-scroll="payday-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="payday-loan-reflection.html" data-scroll="payday-loan-reflection" class="internal">Reading Questions</a></li>
+<li><a href="payday-loans-exercises.html" data-scroll="payday-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="payday-loans-references.html" data-scroll="payday-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="racism-in-policing.html" data-scroll="racism-in-policing" class="internal"><span class="codenumber">7</span> <span class="title">Racism in Policing</span></a><ul>
+<li><a href="racism-in-policing-objectives.html" data-scroll="racism-in-policing-objectives" class="internal">Objectives</a></li>
+<li><a href="racism-in-policing-understanding-the-issue.html" data-scroll="racism-in-policing-understanding-the-issue" class="internal">Understanding the Issue</a></li>
+<li><a href="racism-in-policing-cui-bono.html" data-scroll="racism-in-policing-cui-bono" class="internal">Cui Bono: Who Benefits?</a></li>
+<li><a href="racism-in-policing-big-problem.html" data-scroll="racism-in-policing-big-problem" class="internal">Big Problem: Racially-biased Policing</a></li>
+<li><a href="racism-policing-understanding-data.html" data-scroll="racism-policing-understanding-data" class="active">Understanding data</a></li>
+<li><a href="racism-in-policing-bayes-theorem.html" data-scroll="racism-in-policing-bayes-theorem" class="internal">Bayes' Theorem</a></li>
+<li><a href="racism-policing-solving-for-change.html" data-scroll="racism-policing-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="racism-policing-reading-questions.html" data-scroll="racism-policing-reading-questions" class="internal">Reading Questions</a></li>
+<li><a href="racism-policing-exercises.html" data-scroll="racism-policing-exercises" class="internal">Exercises</a></li>
+<li><a href="racism-policing-references.html" data-scroll="racism-policing-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="school-discipline.html" data-scroll="school-discipline" class="internal"><span class="codenumber">8</span> <span class="title">School Discipline</span></a><ul>
+<li><a href="school-discipline-objectives.html" data-scroll="school-discipline-objectives" class="internal">Objectives</a></li>
+<li><a href="school-discipline-background.html" data-scroll="school-discipline-background" class="internal">Understanding the Issue</a></li>
+<li><a href="school-discipline-cui-bono.html" data-scroll="school-discipline-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="school-discipline-big-problem.html" data-scroll="school-discipline-big-problem" class="internal">Big Problem: School-to-Prison Pipeline</a></li>
+<li><a href="school-discipline-math-topic-ratios.html" data-scroll="school-discipline-math-topic-ratios" class="internal">Ratios</a></li>
+<li><a href="school-discipline-math-topic-percents.html" data-scroll="school-discipline-math-topic-percents" class="internal">Percents</a></li>
+<li><a href="school-discipline-math-topic-probability.html" data-scroll="school-discipline-math-topic-probability" class="internal">Probability</a></li>
+<li><a href="section-70.html" data-scroll="section-70" class="internal">Using CODAP</a></li>
+<li><a href="school-discipline-solving-for-change.html" data-scroll="school-discipline-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="school-discipline-reflection.html" data-scroll="school-discipline-reflection" class="internal">Reading Questions</a></li>
+<li><a href="school-discipline-exercises.html" data-scroll="school-discipline-exercises" class="internal">Exercises</a></li>
+<li><a href="school-discipline-references.html" data-scroll="school-discipline-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="student-loans.html" data-scroll="student-loans" class="internal"><span class="codenumber">9</span> <span class="title">Student Loans</span></a><ul>
+<li><a href="student-loans-objectives.html" data-scroll="student-loans-objectives" class="internal">Objectives</a></li>
+<li><a href="student-loans-background.html" data-scroll="student-loans-background" class="internal">Understanding the Issue</a></li>
+<li><a href="student-loans-cui-bono.html" data-scroll="student-loans-cui-bono" class="internal">Cui Bono - Who Benefits?</a></li>
+<li><a href="student-loans-big-problem.html" data-scroll="student-loans-big-problem" class="internal">Big Problem: the Staggering and Inequitable Burden of U.S. Student Debt</a></li>
+<li><a href="student-loans-math-topic-changes-in-college-tuition.html" data-scroll="student-loans-math-topic-changes-in-college-tuition" class="internal">Changes in College Tuition over Time</a></li>
+<li><a href="student-loans-debt-by-college-type.html" data-scroll="student-loans-debt-by-college-type" class="internal">Student Debt by College Type</a></li>
+<li><a href="student-loans-intersectional-inequities.html" data-scroll="student-loans-intersectional-inequities" class="internal">the Intersectional Inequities of Student Debt</a></li>
+<li><a href="student-loans-solving-for-change.html" data-scroll="student-loans-solving-for-change" class="internal">Solving for Change</a></li>
+<li><a href="student-loans-reflection.html" data-scroll="student-loans-reflection" class="internal">Reading Questions</a></li>
+<li><a href="student-loans-exercises.html" data-scroll="student-loans-exercises" class="internal">Exercises</a></li>
+<li><a href="student-loans-references.html" data-scroll="student-loans-references" class="internal">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="math-for-the-people-references.html" data-scroll="math-for-the-people-references" class="internal"><span class="codenumber">10</span> <span class="title">References</span></a><ul><li><a href="math-for-the-people-bibliography.html" data-scroll="math-for-the-people-bibliography" class="internal">Bibliography</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="racism-policing-understanding-data"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.5</span> <span class="title">Understanding data</span>
+</h2>
+<section class="introduction" id="introduction-42"><p id="p-835">We have two large data sets, adapted from the Stanford Open Policing Project <a href="" class="xref" data-knowl="./knowl/racism-policing-biblio-stanford-open.html" title="Bibliographic Entry 7.10.124">[7.10.124]</a>, giving information on vehicular stops in Hartford, CT and Philadelphia, PA between April 1, 2014 and September 29, 2016. Anyone can access these data sets at <a class="external" href="https://openpolicing.stanford.edu" target="_blank"><code class="code-inline tex2jax_ignore">https://openpolicing.stanford.edu</code></a>. Below are the first two rows from the Philadelphia data set.\\</p>
+<figure class="table table-like" id="table-52"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">7.5.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">date</td>
+<td class="l m b0 r0 l0 t0 lines">time</td>
+<td class="l m b0 r0 l0 t0 lines">age</td>
+<td class="l m b0 r0 l0 t0 lines">race</td>
+<td class="l m b0 r0 l0 t0 lines">sex</td>
+<td class="l m b0 r0 l0 t0 lines">searchfrisk</td>
+<td class="l m b0 r0 l0 t0 lines">contraband</td>
+<td class="l m b0 r0 l0 t0 lines">arrest</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2014-04-01</td>
+<td class="l m b0 r0 l0 t0 lines">0:00:00</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">white</td>
+<td class="l m b0 r0 l0 t0 lines">male</td>
+<td class="l m b0 r0 l0 t0 lines">FALSE</td>
+<td class="l m b0 r0 l0 t0 lines">NA</td>
+<td class="l m b0 r0 l0 t0 lines">FALSE</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2014-04-01</td>
+<td class="l m b0 r0 l0 t0 lines">0:04:00</td>
+<td class="l m b0 r0 l0 t0 lines">33</td>
+<td class="l m b0 r0 l0 t0 lines">black</td>
+<td class="l m b0 r0 l0 t0 lines">male</td>
+<td class="l m b0 r0 l0 t0 lines">FALSE</td>
+<td class="l m b0 r0 l0 t0 lines">NA</td>
+<td class="l m b0 r0 l0 t0 lines">FALSE</td>
+</tr>
+</table></div></figure><p id="p-836">We call each row an <dfn class="terminology">observational unit</dfn> or <dfn class="terminology">observation</dfn>. In this case, each observation is one vehicular stop. Each column is called a <dfn class="terminology">variable</dfn>; here we have 8 variables. First, the date and time of the stop are provided. The next three variables give the age, race, and sex of the driver of the vehicle.</p>
+<p id="p-837">The <code class="code-inline tex2jax_ignore">searchfrisk</code> variable is <code class="code-inline tex2jax_ignore">TRUE</code> if the vehicle was searched or the driver was frisked and <code class="code-inline tex2jax_ignore">FALSE</code> otherwise. If either the vehicle was searched or the driver was frisked, <code class="code-inline tex2jax_ignore">contraband</code> is <code class="code-inline tex2jax_ignore">TRUE</code> if an item was found which was illegal for the driver to possess and <code class="code-inline tex2jax_ignore">FALSE</code> otherwise. If no search or frisk was conducted, contraband cannot be found, so <code class="code-inline tex2jax_ignore">NA</code> (for ``not available'') is written. Finally, the driver is either arrested (<code class="code-inline tex2jax_ignore">TRUE</code>) or not arrested (<code class="code-inline tex2jax_ignore">FALSE</code>).</p>
+<p id="p-838">The <code class="code-inline tex2jax_ignore">age</code> variable is a <dfn class="terminology">numerical</dfn> variable since the response is a number and it makes sense to perform arithmetic operations on these numbers, such as addition, subtraction, or computing averages. The last five variables are not numerical. Since the responses to these variables fall into different categories, these are called <dfn class="terminology">categorical</dfn> variables. We won't be analyzing the <code class="code-inline tex2jax_ignore">date</code> and <code class="code-inline tex2jax_ignore">time</code> variables, but whether they are considered numerical or categorical depends on the situation.</p></section><section class="subsection" id="racism-policing-understanding-data-summarizing-data"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.5.1</span> <span class="title">Summarizing Data</span>
+</h3>
+<section class="subsubsection" id="racism-policing-understanding-data-summarizing-data-numerical"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">7.5.1.1</span> <span class="title">Numerical data</span>
+</h4>
+<p id="p-839">Suppose we are given the following values of a numerical variable:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[2,10,3,6,8,3,4,5,2,3,5,6,1,7,9,8,10,8.]
+\end{equation*}
+</div>
+<p id="p-840">These values could represent the cost of 18 different taxi rides or 18 students' scores on a quiz or the number of petals on 18 different flowers.</p>
+<p id="p-841">We often want to find the ``center'' or ``middle'' of the values. To compute the <dfn class="terminology">mean</dfn>, we simply add up the values and divide the total by the number of values. In this case, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{2+10+3+6+8+3+4+5+2+3+5+6+1+7+9+8+10+8}{18}=\frac{100}{18}\approx 5.56.
+\end{equation*}
+</div>
+<p id="p-842">We could say that, on average, each taxi ride cost $5.56, or that the average score on the quiz was 5.56. But sometimes the mean can hide useful information. Suppose we have a class of 10 students and one student has 10 cookies, while the other 9 students have 0 cookies. The mean number of cookies each student has is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{10+0+0+0+0+0+0+0+0+0}{10}=1.
+\end{equation*}
+</div>
+<p id="p-843">So, on average, each student has 1 cookie. But the ``average student'' definitely does not have one cookie--in fact, almost all of the students have 0 cookies!</p>
+<p id="p-844">The <dfn class="terminology">median</dfn> is the middle value once the data is sorted (if there is an even number of values, the median is the mean of the two middle values). For our initial example, we first sort the data:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[1,2,2,3,3,3,4,5,5,6,6,7,8,8,8,9,10,10.]
+\end{equation*}
+</div>
+<p id="p-845">Since there is an even number of values, we take the mean of the two values in the middle, which are 5 and 6. Hence the median is <span class="process-math">\(\frac{5+6}{2}=5.5\text{.}\)</span> Notice that half of the values are less than the median and half are greater.</p>
+<p id="p-846">But what if we want to know more about the data we have than just the mean and median? We can create a <dfn class="terminology">histogram</dfn>. The histogram below provides one way to visualize the data from our initial example.</p>
+<figure class="figure figure-like" id="racism-in-policing-figure-histogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="racism-in-policing/images/hist.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.5.2<span class="period">.</span></span><span class="space"> </span>FIX</figcaption></figure><p id="p-847">On the <span class="process-math">\(x\)</span>-axis, we've grouped our values into intervals--the leftmost interval goes from 0 to 2, inclusive. The height of the bar in this interval (called the <dfn class="terminology">frequency</dfn>) is 3, since there are three values (<span class="process-math">\(1,2,2\)</span>) in our data in this interval. The next interval goes from 2 to 4. The interval includes 4 but it does not include 2. The frequency here is 4, because our data included three 3s and one 4. The third interval goes from 4 to 6, and again includes its upper endpoint, 6, but not its lower endpoint, 4. The frequency here is 4, because our data included two 5s and two 6s. The final two intervals are from 6 to 8 (including 8 but not 6) and 8 to 10 (including 10 but not 8). The frequencies in the last two intervals are 4 and 3, respectively.</p>
+<p id="p-848">Let us apply these ideas to the <code class="code-inline tex2jax_ignore">age</code> variable from the Hartford data. Since there 9630 stops recorded in this data set, computing the mean and median by hand would take a long time! Instead, we'll use <code class="code-inline tex2jax_ignore">R</code>, a programming language heavily used in statistics. The functions <code class="code-inline tex2jax_ignore">mean</code> and <code class="code-inline tex2jax_ignore">median</code> give the mean and median of the variable <code class="code-inline tex2jax_ignore">age</code>, while <code class="code-inline tex2jax_ignore">hist</code> creates the histogram. Just hit "Evaluate <code class="code-inline tex2jax_ignore">R</code>"" below each block of code to see the results!</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-24"><script type="text/x-sage">hartford <- read.csv("https://raw.githubusercontent.com/electrichobbit/math-for-the-people/main/racism-in-policing/data/hartford.csv")
+age <- hartford$age
+mean(age)
+</script></pre>
+<pre class="ptx-sagecell sagecell-r" id="sage-25"><script type="text/x-sage">median(age)
+</script></pre>
+<pre class="ptx-sagecell sagecell-r" id="sage-26"><script type="text/x-sage">hist(age)
+</script></pre></section><section class="subsubsection" id="racism-policing-understanding-data-categorical-data"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">7.5.1.2</span> <span class="title">Categorical data</span>
+</h4>
+<p id="p-849">If our data is categorical, none of the previous methods work--we can't take averages or sort the data from least to greatest. Nor can we create intervals and use these to make histograms.</p>
+<p id="p-850">However, there are still a couple things we can do! We can summarize data in a <dfn class="terminology">table</dfn> or make a <dfn class="terminology">bar chart</dfn>.</p>
+<p id="p-851">Consider the <code class="code-inline tex2jax_ignore">sex</code> variable from the Hartford data set. We first make a table in <code class="code-inline tex2jax_ignore">R</code></p>
+<pre class="ptx-sagecell sagecell-r" id="sage-27"><script type="text/x-sage">sex <- hartford$sex
+table(sex)
+</script></pre>
+<p id="p-852">From this table, we can see exactly how many of the stopped drivers were male and female. Then, we can use these numbers to determine the <dfn class="terminology">proportion</dfn> of stopped drivers who were female by dividing the number of females (which we just found in the table) by the total number of stops (which we know is 9630). We can get a visual representation of this same data by making a bar chart.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-28"><script type="text/x-sage">barplot(table(sex))
+</script></pre></section></section><section class="subsection" id="racism-policing-proportions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.5.2</span> <span class="title">Proportions</span>
+</h3>
+<section class="subsubsection" id="racism-policing-proportions-traffic-stops"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">7.5.2.1</span> <span class="title">Are there more traffic stops in Hartford or Philadelphia?</span>
+</h4>
+<p id="p-853">This question seems easy to answer. We can determine the number of stops in each city between April 1, 2014 and September 29, 2016 using the <code class="code-inline tex2jax_ignore">nrow</code> function.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-29"><script type="text/x-sage">philadelphia <- read.csv("https://raw.githubusercontent.com/electrichobbit/math-for-the-people/main/racism-in-policing/data/philadelphia.csv")
+print("Number of Stops in Hartford:")
+print(nrow(hartford))
+print("Number of Stops in Philadelphia:")
+print(nrow(philadelphia))
+</script></pre>
+<p id="p-854">There were a lot more stops in Philadelphia (678,445) than in Hartford (9630)! In fact, there were</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/racism-policing-biblio-census-hartford.html ./knowl/racism-policing-biblio-census-philadelphia.html">
+\begin{equation*}
+\frac{678445}{9630}\approx 70
+\end{equation*}
+</div>
+<p id="p-855">times as many traffic stops in Philadelphia than in Hartford. Does this mean people in Philadelphia are worse drivers or commit more crime? Not necessarily--there are many more people in Philadelphia, so it makes sense that there are more traffic stops. Using data from the U.S. Census Bureau, we see that Philadelphia had approximately 1,555,000 people in 2015 and Hartford had 125,000 <a href="" class="xref" data-knowl="./knowl/racism-policing-biblio-census-hartford.html" title="Bibliographic Entry 7.10.125">[7.10.125]</a>, <a href="" class="xref" data-knowl="./knowl/racism-policing-biblio-census-philadelphia.html" title="Bibliographic Entry 7.10.126">[7.10.126]</a>. Therefore, there were</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/racism-policing-biblio-census-hartford.html ./knowl/racism-policing-biblio-census-philadelphia.html">
+\begin{equation*}
+\frac{155000}{125000}\approx 12.4
+\end{equation*}
+</div>
+<p id="p-856">times as many people in Philadelphia than in Hartford.</p>
+<p id="p-857">Well, that's interesting. Philadelphia had about 13 times the population, but 70 times the number of traffic stops as Hartford. These data show us that, there were many more traffic stops in Philadelphia than in Hartford in this time frame, <em class="emphasis">even when we control for population</em>. Unfortunately, the data cannot tell us <em class="emphasis">why</em> this is the case. Further research, with the help of experts in policing, history, crime, and a slew of other subjects may help us.</p></section><section class="subsubsection" id="racism-policing-proportions-race-in-stops"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">7.5.2.2</span> <span class="title">Are Black drivers stopped more often than drivers of other races?</span>
+</h4>
+<p id="p-858">Now let's look at the racial makeup of the stopped drivers in each city. The data here isn't perfect; there are only six possible options for race: <code class="code-inline tex2jax_ignore">asian/pacific islander</code>, <code class="code-inline tex2jax_ignore">black</code>, <code class="code-inline tex2jax_ignore">hispanic</code>, <code class="code-inline tex2jax_ignore">white</code>, <code class="code-inline tex2jax_ignore">other</code>, and <code class="code-inline tex2jax_ignore">unknown</code>. Many, many people do not fit neatly into one of these categories, but we do what we can with the data we have. We use the <code class="code-inline tex2jax_ignore">table</code> function to get the numbers we want.</p>
+<pre class="ptx-sagecell sagecell-r" id="sage-30"><script type="text/x-sage">print("Hartford")
+print(table(hartford$race))
+print("Philadelphia")
+print(table(philadelphia$race))
+</script></pre>
+<p id="p-859">Using these tables and the total number of stops in each city, we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/racism-policing-biblio-census-hartford.html ./knowl/racism-policing-biblio-census-philadelphia.html">
+\begin{equation*}
+\frac{3589}{9630}\approx 37.3\% \textrm{ and } \frac{435548}{678445}\approx 64.2\%
+\end{equation*}
+</div>
+<p id="p-860">of the drivers stopped were Black in Hartford and Philadelphia, respectively. We now compare these percentages to 2015 population data from the US Census Bureau. For Hartford, 37.3\% of the drivers stopped were Black and 38\% of the population was Black--these numbers seem to indicate that Black drivers were not stopped more frequently than drivers of other races <a href="" class="xref" data-knowl="./knowl/racism-policing-biblio-census-hartford.html" title="Bibliographic Entry 7.10.125">[7.10.125]</a>. In Philadelphia, however, 64.2\% of the drivers stopped were Black while only 42.4\% of the population was Black <a href="" class="xref" data-knowl="./knowl/racism-policing-biblio-census-philadelphia.html" title="Bibliographic Entry 7.10.126">[7.10.126]</a>. It seems as though Black drivers were disproportionately stopped in Philadelphia during this time. Let's use the data on searches, contraband, and arrests to give us more insight.</p></section></section></section></div></main>
+</div>
+</body>
+</html>
