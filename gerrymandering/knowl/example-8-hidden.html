@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-07-29T02:56:53-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body><article class="example example-like">The table below shows hypothetical data from the 15 voting precincts in a given town. For each precinct, the percentage of White voters and the percentage of votes for the Heart candidate are shown. Each of those pairs becomes a point on the scatterplot. <figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.7.9<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
+<tr>
+<td class="c m b2 r0 l0 t2 lines">precinct</td>
+<td class="c m b2 r0 l0 t2 lines">% White</td>
+<td class="c m b2 r0 l0 t2 lines">% \(\heartsuit \)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">1</td>
+<td class="c m b2 r0 l0 t0 lines">80</td>
+<td class="c m b2 r0 l0 t0 lines">72</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">2</td>
+<td class="c m b2 r0 l0 t0 lines">45</td>
+<td class="c m b2 r0 l0 t0 lines">55</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">3</td>
+<td class="c m b2 r0 l0 t0 lines">64</td>
+<td class="c m b2 r0 l0 t0 lines">69</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">4</td>
+<td class="c m b2 r0 l0 t0 lines">78</td>
+<td class="c m b2 r0 l0 t0 lines">65</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines">50</td>
+<td class="c m b2 r0 l0 t0 lines">47</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">6</td>
+<td class="c m b2 r0 l0 t0 lines">59</td>
+<td class="c m b2 r0 l0 t0 lines">57</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">7</td>
+<td class="c m b2 r0 l0 t0 lines">61</td>
+<td class="c m b2 r0 l0 t0 lines">62</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">8</td>
+<td class="c m b2 r0 l0 t0 lines">35</td>
+<td class="c m b2 r0 l0 t0 lines">46</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">9</td>
+<td class="c m b2 r0 l0 t0 lines">41</td>
+<td class="c m b2 r0 l0 t0 lines">52</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">10</td>
+<td class="c m b2 r0 l0 t0 lines">24</td>
+<td class="c m b2 r0 l0 t0 lines">32</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">11</td>
+<td class="c m b2 r0 l0 t0 lines">52</td>
+<td class="c m b2 r0 l0 t0 lines">60</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">12</td>
+<td class="c m b2 r0 l0 t0 lines">28</td>
+<td class="c m b2 r0 l0 t0 lines">42</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">13</td>
+<td class="c m b2 r0 l0 t0 lines">46</td>
+<td class="c m b2 r0 l0 t0 lines">60</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">14</td>
+<td class="c m b2 r0 l0 t0 lines">37</td>
+<td class="c m b2 r0 l0 t0 lines">45</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">15</td>
+<td class="c m b2 r0 l0 t0 lines">55</td>
+<td class="c m b2 r0 l0 t0 lines">60</td>
+</tr>
+</table></div></figure><p xmlns:svg="http://www.w3.org/2000/svg">Now we plot the points. Note that this can be done using any spreadsheet program. Click the Evaluate button to display the scatterplot.</p>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">s = scatter_plot([[80, 72],[45,55],[64, 69], [78, 65], [50, 47], [59, 57], [61, 62], [35, 46], [41, 52], [24, 32], [52, 60], [28, 42], [46, 60],[37, 45], [55, 60] ])
+show(s)
+</script></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Next we determine the <em class="emphasis">line of best fit</em>, a line that approximates the data points that we have entered. This is done through a process called <dfn class="terminology">linear regression</dfn>, in which we find the line that minimizes the total distance from the data points to the line. We are looking for an equation of the form \(y = ax + b\text{,}\) where \(y\) represents the percentage of votes for the Heart candidate and \(x\) represents the percentage of voters in the precinct who are White. We use technology to determine the values of \(a\) and \(b\text{.}\) Here we use Sage, although any spreadsheet program is able to do the same analysis. Our code below follows this <a class="external" href="http://sage.brandoncurtis.com/data-fitting.html" target="_blank">Sage tutorial by Brandon Curtis (opens in new tab)</a>.</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage"># enter the data from the precincts as ordered pairs, where the first coordinate is the percentage of White voters and the second coordinate is the percentage of Heart votes
+precincts = [[80, 72],[45,55],[64, 69], [78, 65], [50, 47], [59, 57], [61, 62], [35, 46], [41, 52], [24, 32], [52, 60], [28, 42], [46, 60],[37, 45], [55, 60]]
+
+# set up a linear model with adjustable parameters a and b that describes the data
+var('a, b, x')
+model(x) = a * x + b
+
+# use find_fit command to calculate the values of the parameters that best fit the model to the data
+sol = find_fit(precincts,model)
+show(sol)
+
+# define f(x), the model with the parameters set to the fitted values
+f(x) = model(a=sol[0].rhs(),b=sol[1].rhs())
+
+# create an empty plot object
+a = plot([])
+# add a plot of the model, displaying x values from 0 to 85
+a += plot(f(x),x,[0,85])
+
+# add a scatterplot of the precinct data, in red
+a += list_plot(precincts,color='red')
+show(a)
+</script></div>
+<p>How do we interpret the output? In our example, we found \(a \approx 0.6\) and \(b \approx 24.7\text{,}\) so our line of best fit is given approximately by \(y = 0.6x + 24.7\text{.}\) In other words,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{(% of votes for Heart) } = 0.6 \text{ (% of voters who are White) } + 24.7.
+\end{equation*}
+</div>
+<p class="continuation">We can use this to predict the voting patterns of each group. Suppose in a given precinct, 100% of voters are White. Then using our model, our prediction is that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{(% of votes for Heart) } = 0.6 (100) + 24.7 = 84.7\%.
+\end{equation*}
+</div>
+<p class="continuation">Now consider a precinct in which 0% of voters are White. Then using our model, our prediction is that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{(% of votes for Heart) } = 0.6 (0) + 24.7 = 24.7\%.
+\end{equation*}
+</div>
+<p class="continuation">In other words, we predict that the Heart candidate is the candidate of choice for 24.7% of the non-White voters. Do the White voters appear to be a politically cohesive group? What about the non-White voters?</p></article></body>
+</html>

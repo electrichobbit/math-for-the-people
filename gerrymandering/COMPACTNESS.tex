@@ -1,0 +1,111 @@
+<section xml:id="module-tag-math-topic-topicname1">
+	<title>Geometry and Compactness</title>
+		<introduction> While the shape of a district alone is not indicative of gerrymandering, it is worthwhile to consider as one potential indicator. </introduction>
+				<assemblage>
+					<p>Motivating Questions: To what extent can or should we use the shapes of districts to determine a potential gerrymander?
+ Can we agree on an accepted way to measure compactness since many states specifically include it?
+</p>
+				</assemblage>
+<subsection> <title>Packing and Cracking: How drawing lines can change outcomes</title>
+Most people have seen an example of an unusually shaped district (we include several below). But why might this happen anyway? How can the shape of a district matter if we count all votes equally? Consider this brief introduction to two key terms: <em>packing</em> and <em>cracking</em>.
+
+</subsection>
+			<subsection>
+			<title>What is compactness and how can we measure it?</title>
+			<p><term>Compactness </term> is a quantitative measure of a district's shape and how compact, or tightly packed, the region is. Take a look at the shapes of some recent congressional districts. </p>
+			<image source="compactness.jpg" />
+		<p> This is only a sampling of bizarre district shapes; in fact, you can even download a font for your computer          <url href="https://www.uglygerry.com/"/> that uses only real district shapes!</p>
+<p>  But why should we care about districts having nice shapes? Remember that the function of a political district is to elect someone that <em>represents</em> the people, needs, and interests of your area. A district over a more compact area is likely to include towns and communities with similar interests while a district that zigs and zags across a state is more likely to intentionally exclude certain groups of people and connect regions with different local interests. In fact, most states include language emphasizing the "compactness" of their districts but lack a definition or a way to measure this characteristic. </p>
+
+<remark> There are many different mathematical and geometric approaches for measuring the compactness of a shape. It is important to note that these measures are based entirely on district shapes and do not factor in racial demographics, political party affiliation, or election results. We will examine a few measures now. </remark>
+</subsection>
+
+			<subsection>
+			<title> Three Ways to Measure Compactness of a District </title>
+			<p>We will work in <em>squar</em>e grids in this section, noting that this is a simplification from the formal definitions in real-life applications.  The actual formulas for the scores (based in the real world rather than squares)  vary slightly from those we use here. However, our definitions and compactness scores are <em>consistent</em> with the formal scores and allow for more straightforward computations. In each case we consider the compactness score is a number between 0 and 1 (more compact being closer to 1, less compact closer to 0). </p>
+			<sidebyside>
+			<p> Consider the grid at right:
+			<ul>
+			<li> Light gray grid lines correspond to a squaretopia-like state </li>
+ <li> Black = the borders for one proposed district in this state </li>
+ <li> Green = smallest square that fully contains the district  </li>
+  <li> Red = the “convex hull” (rubber band around district)  </li>
+  </ul>
+  </p>
+  			<image source="SquareMapPic.png" />
+</sidebyside>
+
+
+			<definition xml:id="PPdef"> <term> The Polsby-Popper score </term>  is a ratio that compares the district's shape to the most compact shape possible</definition>
+			<m> PP =\displaystyle\frac{\text{Area of district}}{\text{Area of a square with the same perimeter as the district}}  </m>
+<p> The following example asks you to calculate the Polsby-Popper score for the district above. </p><example> Find the Polsby-Popper score for the district above.
+<answer> <m> PP = \frac{72}{169} \approx 0.426.</m> </answer>
+<hint> Once you have the perimeter of the district (26), what dimensions would a square have with the same perimeter? </hint>
+<solution> <p> Omitting units and simply counting, we note the area of the district is <m>18</m> and its perimeter is <m>26</m>.  Since all sides must be equal in length in a square, any square that has perimeter <m>26</m> must have sides of length <m>26/4</m> or <m>13/2</m>. Therefore the area of this square would be <m>(13/2)^2</m> or <m>169/4. </m>  Now we find the ratio <m> PP = \frac{18}{(169/4)}=\frac{72}{169} \approx 0.426.</m></p>  </solution>
+ </example>
+
+<definition xml:id="Rdef"> <term>The Reock score </term> is a ratio that compares the district's shape to the minimum-bounding square, or the smallest square that fully contains the district. (<em> Again on real maps, this would be the minimum-bounding circle rather than a square.)</em></definition>
+<m> R =\displaystyle\frac{\text{Area of district}}{\text{Area of the smallest square containing the district}} </m>
+<p> The following example asks you to calculate the Reock score for the district above. </p> <example> Find the Reock score for the district above.
+<answer> <m> R = 0.5 </m> </answer>
+<hint>The smallest square that contains the district is outlined in green, you will need to find its area. </hint>
+<solution>
+<p> Omitting units and simply counting, we note the area of the district is <m>18</m> and area of the smallest square that contains the district is 36.  In this case, you can see <m> R = \frac{18}{36}=\frac{1}{2}=0.5</m></p>
+</solution>
+</example>
+
+
+
+
+<definition xml:id="CHdef"> Finally, the <term> Convex Hull score </term> is a ratio that measures how "convex" a district shape is. In geometry, a <em> convex </em> shape is one in which any two points in the interior of the shape can be connected by a straight line that stays inside the shape. If you can find any pair of interior points connected by a straight line that partially falls outside of the shape, then the shape is known as <em>concave</em>. See the picture here for a representation of convex (image a) versus concave (image b) : <image source="ConvexConcave1.png" width= "50%"/> The <em> convex hull </em> of a shape is the shape with the minimum additional area needed to make it convex. This is equivalent to placing a rubber band tightly around the perimeter of the shape.</definition>
+<m> CH =\displaystyle\frac{\textnormal{Area of district}}{\textnormal{Area of convex hull of district}}</m>
+<p> The following example asks you to calculate the Convex Hull score for the district above. </p> <example> Find the Convex Hull score for the district above.
+<answer> <m> CH \approx 0.74 </m> </answer>
+<hint>The convex hull around the district is outlined in red, you will need to find its area. </hint>
+<solution>
+<p> Omitting units and simply counting, we note the area of the district is <m>18</m> and area of the convex hull that contains the district is found in pieces. For area of the convex hull we get <m> 4.5 + 6 +11 + 3  </m>.  In this case, you can see <m> CH = \frac{18}{24.5} \approx  0.74 </m></p>
+</solution>
+</example>
+
+
+
+
+</subsection>
+
+<subsection>
+			<title> Compactness Criteria </title>
+	As we have seen, compactness is a geometric measure related to the area of a region compared to its perimeter. When a district has much greater perimeter than we would expect for the region's area, we may suspect gerrymandering. At this time, 37 states require establish a compactness requirements for state legislative districts, and 18 establish similar requirements for congressional districts. However, there is no universal measure and these states have different laws that regulate compactness. In Idaho the redistricting commission is expected to "avoid drawing distorted boundaries" <xref ref="idaho-law"/> while in other states with extensive coastlines (such as Maryland), this is impossible. In fact, most states do not provide details on compactness measures but adopt a  "you know it when you see it" approach in determinations. Among mathematicians and political scientists, the debate about best measures of compactness continues, but consensus has arise around a few guiding principles:
+	
+	IDAHO-LAW 
+	https://legislature.idaho.gov/statutesrules/idstat/Title72/T72CH15/SECT72-1506/
+	
+
+	<ul>
+	<li> There is no number threshold for a district being deemed "compact" - the numbers are used in comparison, not for their standalone values.</li>
+	<li>Compactness measures should be used across an entire districting plan, not just a single district. </li>
+	<li>Comparisons should be made between districts and plans within the same state, and not across different states as each state's geography is unique. </li>
+	<li>  Compactness tests should measure the shape and not the size of the district.</li>
+	<li> Multiple compactness tests should be used whenever possible. </li>
+	<li> Compactness tests should not be the sole factor used to judge district plans. </li>
+	</ul>
+
+	<p> In the exercises for this section you will be asked to calculate the Polsby-Popper, Reock, and Convex Hull scores for all of the districts in a state's districting plan. </p>
+	</subsection>
+
+
+	<subsection> <title> Caution: Fairness Goes Beyond Geometry </title>
+	
+	
+	<p> <em>Incorporate this bit</em> Taken from https://www.wiscontext.org/packing-cracking-and-art-gerrymandering-around-milwaukee: Pennsylvania's 7th congressional district adopted in 2011 did not follow standards related to the compactness rule, and was determined by that state's Supreme Court in February 2018 to be an unconstitutional example of gerrymandering. WITH PICTURE </p>
+	
+	
+	<p> We have repeatedly mentioned that geometry cannot be a sole measure of fairness, though many states do require it to be a consideration in redistricting. In the following sections, you will explore issues of fairness that go beyond geometry. </p>
+
+	<observation> "But sometimes boundaries that look odd at first glance just follow a natural geographic feature, like a river or a mountain range. Or they could be necessary to unite communities that live in different areas but share similar representational needs, like communities of color that have been subject to residential discrimination. Other times, odd boundaries are very much the product of gerrymandering. [...]
+The reality is that visual inspection can be a helpful, but ultimately very incomplete, analysis. It is a good first test that can help identify where a deeper dive is needed. In other words, don’t judge a book by its cover." (cite) </observation>
+
+<p>You are encouraged to see several examples of these situations gathered in this useful analysis: <url href="https://www.brennancenter.org/our-work/analysis-opinion/dont-judge-district-its-shape">The Brennan Center, a nonpartisan law and policy institute </url> </p>
+	</subsection>
+
+
+</section>
